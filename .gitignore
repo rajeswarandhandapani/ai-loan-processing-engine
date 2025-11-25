@@ -1,0 +1,67 @@
+# Root .gitignore for AI Loan Processing Engine
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*.tmp
+*.log
+.vscode/
+.idea/
+*.iml
+
+# Python general
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+env.bak/
+
+# Python tooling / caches
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+.pyre/
+.coverage
+.coverage.*
+htmlcov/
+.cache/
+
+# Backend-specific (FastAPI app)
+backend/__pycache__/
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/.coverage
+backend/htmlcov/
+backend/.cache/
+backend/venv/
+backend/.venv/
+
+# Node / Angular frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/.angular/cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment / secrets
+.env
+.env.*
+backend/.env
+backend/.env.*
+frontend/.env
+frontend/.env.*
+
+# Local databases
+*.sqlite3
+*.db
+*.db-journal
