@@ -16,11 +16,11 @@
 
 - [ ] **Day 8:** Setup FastAPI skeleton (main.py, routers). Create `/health` endpoint.
 - [ ] **Day 9:** Create `/upload` endpoint. Accept PDF file, save locally, run Document Intelligence, return JSON.
-- [ ] **Day 10:** Implement **LangChain/Semantic Kernel** basic agent. Setup state management (in-memory dict).
-- [ ] **Day 11:** Integrate **AI Search (RAG)** tool into the Agent. Allow Agent to query policy.
-- [ ] **Day 12:** Integrate **AI Language** service for sentiment analysis on user input.
-- [ ] **Day 13:** Create `/chat` endpoint. Connect User Message -> Agent -> Response.
-- [ ] **Day 14:** Testing: Use Postman/curl to simulate a full conversation flow.
+- [ ] **Day 10:** Implement **LangChain**-based agent core (no tools yet). Define conversation memory and basic routing.
+- [ ] **Day 11:** Add agent tools for **Azure Document Intelligence** and **Azure AI Search**, plus in-memory session state.
+- [ ] **Day 12:** Implement **RAG flow** with Azure AI Search (index sample lending policy and retrieve relevant chunks). Wire into the agent as a tool.
+- [ ] **Day 13:** Integrate **Azure AI Language** (sentiment, entities) and finalize `/chat` endpoint (User Message -> Agent -> Response).
+- [ ] **Day 14:** Backend end-to-end testing using Postman/curl, plus basic error handling and logging for all core endpoints.
 
 ## Week 3: Frontend Development (Angular)
 **Goal:** Build a clean, professional UI for the loan applicant.
@@ -31,7 +31,7 @@
 - [ ] **Day 18:** Build **Chat Component**. Display user vs. agent messages bubbles.
 - [ ] **Day 19:** Integrate `/chat` API. Handle loading states (typing indicators).
 - [ ] **Day 20:** Add "Dashboard View": Visualize extracted data (e.g., Revenue Chart) using a simple chart library.
-- [ ] **Day 21:** Polish UI: Add easy error handling (toasts) and gradient styling matching the portfolio.
+- [ ] **Day 21:** UI polish & buffer: Fix small frontend bugs, refine responsive layout, add error handling (toasts), and apply final gradient styling to match the portfolio.
 
 ## Week 4: Integration & Polish
 **Goal:** Connect the pieces, fix bugs, and prepare for portfolio showcase.
@@ -41,7 +41,7 @@
 - [ ] **Day 24:** Add **README.md** with screenshots and setup instructions.
 - [ ] **Day 25:** Create a short **Demo Video** (OBS Studio / Loom).
 - [ ] **Day 26:** Cleanup code (add comments, type hints, remove unused imports).
-- [ ] **Day 27:** (Optional) Deploy Backend to Azure Container Apps or Render.
-- [ ] **Day 28:** (Optional) Deploy Frontend to GitHub Pages or Azure Static Web Apps.
+- [ ] **Day 27:** Deploy Backend to Azure Container Apps or Render (production-like environment for demo).
+- [ ] **Day 28:** Deploy Frontend to GitHub Pages or Azure Static Web Apps and connect it to the live backend.
 - [ ] **Day 29:** Final Portfolio Update: Add project link to your main website.
 - [ ] **Day 30:** Celebrate! Post on LinkedIn.
