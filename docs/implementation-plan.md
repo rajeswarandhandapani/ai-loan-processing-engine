@@ -4,7 +4,7 @@
 **Goal:** Get all Azure resources running and verify connectivity with simple Python scripts.
 
 - [x] **Day 1:** Create Azure Account & Resource Group. Provision **Azure OpenAI** and **Azure Document Intelligence**.
-- [ ] **Day 2:** Initialize Git repo, project structure, and Python virtual environment. Install SDKs.
+- [x] **Day 2:** Initialize Git repo, project structure, and Python virtual environment. Install SDKs.
 - [ ] **Day 3:** **Script 1:** Write a Python script to upload a sample PDF to **Document Intelligence** and print extraction results.
 - [ ] **Day 4:** Provision **Azure AI Search** and **Azure AI Language**. Save all keys to a local `.env` file.
 - [ ] **Day 5:** **Script 2:** Write a Python script to index a sample "Lending Policy" PDF into **Azure AI Search**.
@@ -14,7 +14,7 @@
 ## Week 2: Backend Development (FastAPI)
 **Goal:** Build the core API that orchestrates the AI services.
 
-- [ ] **Day 8:** Setup FastAPI skeleton (main.py, routers). Create `/health` endpoint.
+- [x] **Day 8:** Setup FastAPI skeleton (main.py, routers). Create `/health` endpoint.
 - [ ] **Day 9:** Create `/upload` endpoint. Accept PDF file, save locally, run Document Intelligence, return JSON.
 - [ ] **Day 10:** Implement **LangChain**-based agent core (no tools yet). Define conversation memory and basic routing.
 - [ ] **Day 11:** Add agent tools for **Azure Document Intelligence** and **Azure AI Search**, plus in-memory session state.
