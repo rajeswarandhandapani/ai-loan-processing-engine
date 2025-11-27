@@ -4,22 +4,25 @@ Application configuration management.
 Loads environment variables and provides settings for Azure AI services.
 """
 
+import os
+from pathlib import Path
 from functools import lru_cache
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+BACKEND_DIR = Path(__file__).resolve().parent.parent
 
 class Settings(BaseSettings):
     """Application settings loaded from environment variables."""
 
     # Azure Document Intelligence
-    AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT: str
-    AZURE_DOCUMENT_INTELLIGENCE_KEY: str
+    AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT: str  | None = None
+    AZURE_DOCUMENT_INTELLIGENCE_KEY: str | None = None
 
     # Azure OpenAI
-    AZURE_OPENAI_ENDPOINT: str
-    AZURE_OPENAI_API_KEY: str
-    AZURE_OPENAI_DEPLOYMENT_NAME: str
+    AZURE_OPENAI_ENDPOINT: str | None = None
+    AZURE_OPENAI_API_KEY: str | None = None
+    AZURE_OPENAI_DEPLOYMENT_NAME: str | None = None
 
     # Optional: Azure AI Search
     AZURE_SEARCH_ENDPOINT: str | None = None
@@ -34,7 +37,7 @@ class Settings(BaseSettings):
     debug: bool = False
 
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=os.path.join(BACKEND_DIR, ".env"),
         env_file_encoding="utf-8",
         case_sensitive=False,
         extra="ignore"
