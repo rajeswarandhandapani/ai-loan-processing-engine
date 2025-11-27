@@ -4,6 +4,8 @@ Application configuration management.
 Loads environment variables and provides settings for Azure AI services.
 """
 
+from functools import lru_cache
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
