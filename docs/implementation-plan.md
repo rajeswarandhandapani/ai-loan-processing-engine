@@ -6,7 +6,7 @@
 - [x] **Day 1:** Create Azure Account & Resource Group. Provision **Azure OpenAI** and **Azure Document Intelligence**.
 - [x] **Day 2:** Initialize Git repo, project structure, and Python virtual environment. Install SDKs.
 - [x] **Day 3:** **Script 1:** Write a Python script to upload a sample PDF to **Document Intelligence** and print extraction results.
-- [ ] **Day 4:** Provision **Azure AI Search** and **Azure AI Language**. Save all keys to a local `.env` file.
+- [x] **Day 4:** Provision **Azure AI Search** and **Azure AI Language**. Save all keys to a local `.env` file.
 - [ ] **Day 5:** **Script 2:** Write a Python script to index a sample "Lending Policy" PDF into **Azure AI Search**.
 - [ ] **Day 6:** **Script 3:** Write a Python script to query **Azure OpenAI** (Hello World chat).
 - [ ] **Day 7:** Buffer day / Review & Organize code.
