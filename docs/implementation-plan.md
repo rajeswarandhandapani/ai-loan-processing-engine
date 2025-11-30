@@ -9,7 +9,7 @@
 - [x] **Day 4:** Provision **Azure AI Search** and **Azure AI Language**. Save all keys to a local `.env` file.
 - [x] **Day 5:** **Script 2:** Write a Python script to index a sample "Lending Policy" PDF into **Azure AI Search**.
 - [x] **Day 6:** **Script 3:** Write a Python script to query **Azure OpenAI** (Hello World chat).
-- [ ] **Day 7:** Buffer day / Review & Organize code.
+- [x] **Day 7:** Buffer day / Review & Organize code.
 
 ## Week 2: Backend Development (FastAPI)
 **Goal:** Build the core API that orchestrates the AI services.

@@ -34,9 +34,14 @@ from azure.search.documents.indexes.models import (
     VectorSearchProfile,
     HnswAlgorithmConfiguration,
 )
+from azure.ai.documentintelligence import DocumentIntelligenceClient
 from openai import AzureOpenAI
 
 from app.config import settings
+
+# Constants
+BACKEND_DIR = Path(__file__).resolve().parent.parent
+SAMPLE_POLICY_PDF = BACKEND_DIR / "tests/sample_data/policy/sample_lending_policy.pdf"
 
 
 class LendingPolicyIndexer:
@@ -59,14 +64,61 @@ class LendingPolicyIndexer:
         # Initialize Azure OpenAI client for embeddings
         self.openai_client = AzureOpenAI(
             api_key=settings.AZURE_OPENAI_API_KEY,
-            api_version="2024-02-01",
+            api_version="2024-06-01",
             azure_endpoint=settings.AZURE_OPENAI_ENDPOINT
         )
         
         # Embedding model (text-embedding-ada-002 is common)
         self.embedding_model = "text-embedding-ada-002"
         
+        # Initialize Document Intelligence client (optional, for PDF extraction)
+        self.doc_intelligence_client = None
+        if settings.AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT and settings.AZURE_DOCUMENT_INTELLIGENCE_KEY:
+            self.doc_intelligence_client = DocumentIntelligenceClient(
+                endpoint=settings.AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT,
+                credential=AzureKeyCredential(settings.AZURE_DOCUMENT_INTELLIGENCE_KEY)
+            )
+        
         print("✓ Indexer initialized successfully")
+    
+    def extract_text_from_pdf(self, pdf_path: Path) -> str:
+        """Extract text from a PDF file using Azure Document Intelligence.
+        
+        Args:
+            pdf_path: Path to the PDF file
+            
+        Returns:
+            Extracted text content
+        """
+        if not self.doc_intelligence_client:
+            print("⚠️  Document Intelligence not configured, using fallback sample text")
+            return self.create_sample_policy_text()
+        
+        if not pdf_path.exists():
+            print(f"⚠️  PDF file not found at {pdf_path}, using fallback sample text")
+            return self.create_sample_policy_text()
+        
+        print(f"\n📄 Extracting text from PDF: {pdf_path.name}")
+        
+        with open(pdf_path, "rb") as f:
+            poller = self.doc_intelligence_client.begin_analyze_document(
+                model_id="prebuilt-layout",
+                body=f,
+                content_type="application/pdf"
+            )
+        result = poller.result()
+        
+        # Extract all text content
+        extracted_text = []
+        for page in result.pages:
+            if page.lines:
+                for line in page.lines:
+                    extracted_text.append(line.content)
+        
+        full_text = "\n".join(extracted_text)
+        print(f"✓ Extracted {len(full_text)} characters from {len(result.pages)} pages")
+        
+        return full_text
     
     def create_index(self) -> None:
         """Create the Azure AI Search index with vector search capabilities."""
@@ -436,8 +488,12 @@ def main():
         # Create the index
         indexer.create_index()
         
-        # Get sample policy text
-        policy_text = indexer.create_sample_policy_text()
+        # Try to extract text from PDF, fall back to sample text if unavailable
+        if SAMPLE_POLICY_PDF.exists():
+            policy_text = indexer.extract_text_from_pdf(SAMPLE_POLICY_PDF)
+        else:
+            print(f"⚠️  PDF not found at {SAMPLE_POLICY_PDF}, using sample text")
+            policy_text = indexer.create_sample_policy_text()
         
         # Index the document
         indexer.index_document(policy_text)
