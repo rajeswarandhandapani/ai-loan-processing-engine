@@ -15,7 +15,7 @@
 **Goal:** Build the core API that orchestrates the AI services.
 
 - [x] **Day 8:** Setup FastAPI skeleton (main.py, routers). Create `/health` endpoint.
-- [ ] **Day 9:** Create `/upload` endpoint. Accept PDF file, save locally, run Document Intelligence, return JSON.
+- [x] **Day 9:** Create `/upload` endpoint. Accept PDF file, save locally, run Document Intelligence, return JSON.
 - [ ] **Day 10:** Implement **LangChain**-based agent core (no tools yet). Define conversation memory and basic routing.
 - [ ] **Day 11:** Add agent tools for **Azure Document Intelligence** and **Azure AI Search**, plus in-memory session state.
 - [ ] **Day 12:** Implement **RAG flow** with Azure AI Search (index sample lending policy and retrieve relevant chunks). Wire into the agent as a tool.
