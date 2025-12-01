@@ -9,6 +9,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
+from app.routers import document_intelligence_router
 
 
 @asynccontextmanager
@@ -48,10 +49,8 @@ async def root():
     return {"message": "Welcome to AI Loan Processing Engine", "version": "1.0.0"}
 
 
-# Include routers here as you create them
-# from app.routers import loan_router, chat_router
-# app.include_router(loan_router, prefix="/api/v1")
-# app.include_router(chat_router, prefix="/api/v1")
+# Include routers
+app.include_router(document_intelligence_router, prefix="/api/v1")
 
 
 if __name__ == "__main__":
