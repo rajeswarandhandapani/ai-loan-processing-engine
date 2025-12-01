@@ -7,3 +7,20 @@ This package contains data models for:
 - Chat messages and sessions
 """
 
+from app.models.document_intelligence_models import (
+    DocumentType,
+    DocumentField,
+    DocumentTable,
+    DocumentPage,
+    DocumentAnalysisResponse,
+    DocumentUploadResponse,
+)
+
+__all__ = [
+    "DocumentType",
+    "DocumentField",
+    "DocumentTable",
+    "DocumentPage",
+    "DocumentAnalysisResponse",
+    "DocumentUploadResponse",
+]
