@@ -9,7 +9,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
-from app.routers import document_intelligence_router
+from app.routers import document_intelligence_router, chat_router
 
 
 @asynccontextmanager
@@ -51,6 +51,7 @@ async def root():
 
 # Include routers
 app.include_router(document_intelligence_router, prefix="/api/v1")
+app.include_router(chat_router, prefix="/api/v1")
 
 
 if __name__ == "__main__":
