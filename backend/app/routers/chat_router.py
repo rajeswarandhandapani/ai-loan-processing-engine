@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from app.services.agent_service import AgentService
-from app.models.chat import ChatRequest, ChatResponse
+from app.models.chat_models import ChatRequest, ChatResponse
 
 
 

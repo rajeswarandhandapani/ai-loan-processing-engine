@@ -21,15 +21,14 @@ class AgentService:
             model=self.llm,
             system_prompt="You are a helpful loan processing assistant. Always be accurate and follow financial regulations.",
             tools=[],
-            checkpointer=self.checkpointer,
-            verbose=True
+            checkpointer=self.checkpointer
         )
 
 
-    async def chat(self, message: str, session_id: str):
+    async def chat(self, message: str, session_id: str) -> str:
         """Process a chat message using the AI agent."""
-        response = await self.agent.ainvoke({
-            "input": message,
-            "thread_id": session_id
-        })
+        response = self.agent.invoke(
+            {"messages": [{"role": "user", "content": message}]},
+            {"configurable": {"thread_id": session_id}}
+        )
         return response["messages"][-1].content
