@@ -1,5 +1,5 @@
-from langchain_azure import AzureChatOpenAI
-from langchain.memory import InMemorySaver
+from langchain_openai import AzureChatOpenAI
+from langgraph.checkpoint.memory import InMemorySaver
 from langchain.agents import create_agent
 from app.config import settings
 
@@ -7,17 +7,21 @@ class AgentService:
     """Service class for managing AI agent interactions and loan processing."""
     
     def __init__(self):
+
         self.llm = AzureChatOpenAI(
             azure_endpoint=settings.AZURE_OPENAI_ENDPOINT,
+            api_key=settings.AZURE_OPENAI_API_KEY,
             azure_deployment=settings.AZURE_OPENAI_DEPLOYMENT_NAME,
-            api_version="2024-06-01",
-            api_key=settings.AZURE_OPENAI_API_KEY
+            api_version=settings.AZURE_OPENAI_API_VERSION
         )
+
         self.checkpointer = InMemorySaver()
+
         self.agent = create_agent(
-            llm=self.llm,
-            checkpointer=self.checkpointer,
+            model=self.llm,
+            system_prompt="You are a helpful loan processing assistant. Always be accurate and follow financial regulations.",
             tools=[],
+            checkpointer=self.checkpointer,
             verbose=True
         )
 
