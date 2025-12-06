@@ -7,7 +7,7 @@ from app.services.document_intelligence_service import DocumentIntelligenceServi
 document_intelligence_service = DocumentIntelligenceService()
 
 @tool
-async def analyze_financial_document(file_path: Path, document_type: str = "prebuilt-layout") -> Dict[str, Any]:
+async def analyze_financial_document(file_path: str, document_type: str = "prebuilt-layout") -> Dict[str, Any]:
     """
     Analyze uploaded financial documents (e.g., bank statements, invoices, receipts, tax forms)
 
@@ -27,7 +27,7 @@ async def analyze_financial_document(file_path: Path, document_type: str = "preb
     """
     try:
         result = await document_intelligence_service.analyze_document(
-            file_path=file_path,
+            file_path=Path(file_path),
             document_type=document_type,
         )
         return result.model_dump()

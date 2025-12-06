@@ -27,18 +27,17 @@ class AgentService:
         ]
 
         # Define System prompt
-        self.system_prompt = """
-            You are a helpful loan processing assistant. Always be accurate and follow financial regulations.
+        self.system_prompt = """You are a helpful loan processing assistant. Always be accurate and follow financial regulations.
 
-            Your role is to:
-            1. Interview the loan applicants and gather all the required information.
-            2. Analyze uploaded financial documents (income statements, balance sheets, etc.)
-            3. Check the eligibility of the loan applicant based on the lending policy.
-            4. Provide clear, professional guidance throught the loan application process.
+Your role is to:
+1. Interview the loan applicants and gather all the required information.
+2. Analyze uploaded financial documents (income statements, balance sheets, etc.) when the user provides a file path.
+3. Check the eligibility of the loan applicant based on the lending policy using the search tool.
+4. Provide clear, professional guidance throughout the loan application process.
 
-            You have access to the following tools:
-            {self.tools}
-        """
+When a user uploads a document, use the analyze_financial_document tool to extract information.
+When you need to check lending policies or eligibility criteria, use the search_lending_policy tool.
+"""
 
         # Initialize the checkpointer
         self.checkpointer = InMemorySaver()

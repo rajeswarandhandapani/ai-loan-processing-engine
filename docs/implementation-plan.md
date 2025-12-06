@@ -17,7 +17,7 @@
 - [x] **Day 8:** Setup FastAPI skeleton (main.py, routers). Create `/health` endpoint.
 - [x] **Day 9:** Create `/upload` endpoint. Accept PDF file, save locally, run Document Intelligence, return JSON.
 - [x] **Day 10:** Implement **LangChain**-based agent core (no tools yet). Define conversation memory and basic routing.
-- [ ] **Day 11:** Add agent tools for **Azure Document Intelligence** and **Azure AI Search**, plus in-memory session state.
+- [x] **Day 11:** Add agent tools for **Azure Document Intelligence** and **Azure AI Search**, plus in-memory session state.
 - [ ] **Day 12:** Implement **RAG flow** with Azure AI Search (index sample lending policy and retrieve relevant chunks). Wire into the agent as a tool.
 - [ ] **Day 13:** Integrate **Azure AI Language** (sentiment, entities) and finalize `/chat` endpoint (User Message -> Agent -> Response).
 - [ ] **Day 14:** Backend end-to-end testing using Postman/curl, plus basic error handling and logging for all core endpoints.

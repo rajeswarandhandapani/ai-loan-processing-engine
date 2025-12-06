@@ -36,9 +36,13 @@ def search_lending_policy(query: str) -> Dict[str, Any]:
             include_total_count=True
         )
         
+        # Convert iterator to list and get count properly
+        results_list = [dict(result) for result in results]
+        total_count = results.get_count() if results.get_count() is not None else len(results_list)
+        
         return {
-            "results": [result for result in results],
-            "total_count": results.get("@odata.count", 0)
+            "results": results_list,
+            "total_count": total_count
         }
     except Exception as e:
         return {
