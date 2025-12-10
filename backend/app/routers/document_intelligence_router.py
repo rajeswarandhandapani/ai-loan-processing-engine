@@ -4,6 +4,7 @@ Document Intelligence API router.
 Provides endpoints for document upload and analysis using Azure Document Intelligence.
 """
 
+import logging
 import tempfile
 import os
 from pathlib import Path
@@ -17,7 +18,9 @@ from app.models.document_intelligence_models import (
     DocumentAnalysisResponse,
 )
 from app.services.document_intelligence_service import DocumentIntelligenceService
+from app.logging_config import get_logger
 
+logger = get_logger(__name__)
 router = APIRouter(prefix="/documents", tags=["Document Intelligence"])
 
 # Initialize service
@@ -56,8 +59,11 @@ async def upload_document(
     Returns:
         DocumentUploadResponse with analysis results
     """
+    logger.info(f"Document upload request received - File: {file.filename}, Type: {document_type.value}")
+    
     # Validate file extension
     if not file.filename or not validate_file_extension(file.filename):
+        logger.warning(f"Invalid file type uploaded: {file.filename}")
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=f"Invalid file type. Allowed types: {', '.join(ALLOWED_EXTENSIONS)}",
@@ -72,13 +78,17 @@ async def upload_document(
             content = await file.read()
             temp_file.write(content)
             temp_file_path = Path(temp_file.name)
+        
+        logger.debug(f"File saved to temporary location: {temp_file_path}")
 
         # Analyze the document
+        logger.info(f"Starting document analysis for: {file.filename}")
         analysis_result = await document_service.analyze_document(
             file_path=temp_file_path,
             document_type=document_type.value,
         )
 
+        logger.info(f"Document analysis completed successfully for: {file.filename}")
         return DocumentUploadResponse(
             success=True,
             message="Document analyzed successfully",
@@ -88,6 +98,7 @@ async def upload_document(
         )
 
     except Exception as e:
+        logger.error(f"Document analysis failed for {file.filename}: {str(e)}", exc_info=True)
         return DocumentUploadResponse(
             success=False,
             message="Document analysis failed",
@@ -100,6 +111,7 @@ async def upload_document(
         # Clean up temporary file
         if temp_file_path and temp_file_path.exists():
             os.unlink(temp_file_path)
+            logger.debug(f"Cleaned up temporary file: {temp_file_path}")
 
 
 @router.get(

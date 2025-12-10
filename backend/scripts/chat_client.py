@@ -1,4 +1,5 @@
 import sys
+import logging
 from pathlib import Path
 from openai import AzureOpenAI
 
@@ -6,6 +7,11 @@ from openai import AzureOpenAI
 BACKEND_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BACKEND_DIR))
 from app.config import settings
+from app.logging_config import setup_logging, get_logger
+
+# Initialize logging
+setup_logging()
+logger = get_logger(__name__)
 
 def create_openai_client():
     """
@@ -26,24 +32,24 @@ def run_hello_world_test():
     This is the core requirement for Day 6.
     """
     if not settings.AZURE_OPENAI_DEPLOYMENT_NAME:
-        print("❌ Error: AZURE_OPENAI_DEPLOYMENT_NAME not found in your .env file.")
+        logger.error("AZURE_OPENAI_DEPLOYMENT_NAME not found in your .env file.")
         return
 
-    print("🚀 Testing Azure OpenAI 'Hello World'...")
-    print(f"   - Endpoint: {settings.AZURE_OPENAI_ENDPOINT}")
-    print(f"   - Deployment: {settings.AZURE_OPENAI_DEPLOYMENT_NAME}")
-    print("-" * 50)
+    logger.info("Testing Azure OpenAI 'Hello World'...")
+    logger.info(f"Endpoint: {settings.AZURE_OPENAI_ENDPOINT}")
+    logger.info(f"Deployment: {settings.AZURE_OPENAI_DEPLOYMENT_NAME}")
 
     try:
         client = create_openai_client()
+        logger.debug("Azure OpenAI client created successfully")
         
         messages = [
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": "Hello! Can you respond with 'Hello World' and tell me what you are?"}
         ]
         
-        print("📤 Sending message...")
-        print(f"> User: {messages[1]['content']}")
+        logger.info("Sending message to Azure OpenAI...")
+        logger.debug(f"User message: {messages[1]['content']}")
         
         response = client.chat.completions.create(
             model=settings.AZURE_OPENAI_DEPLOYMENT_NAME,
@@ -52,23 +58,24 @@ def run_hello_world_test():
         
         assistant_message = response.choices[0].message.content
         
-        print("\n📥 Response received!")
-        print(f"> Assistant: {assistant_message}")
-        print("\n✅ Azure OpenAI test completed successfully!")
+        logger.info("Response received from Azure OpenAI")
+        logger.info(f"Assistant response: {assistant_message}")
+        logger.info("Azure OpenAI test completed successfully!")
         
     except ValueError as e:
-        print(f"❌ Configuration Error: {str(e)}")
+        logger.error(f"Configuration Error: {str(e)}")
         
     except Exception as e:
-        print(f"❌ Error calling Azure OpenAI: {str(e)}")
+        logger.error(f"Error calling Azure OpenAI: {str(e)}", exc_info=True)
 
 
 if __name__ == "__main__":
-    print("🧪 Azure OpenAI Chat Client - Day 6 Implementation")
-    print("=" * 60)
-    print("This script tests Azure OpenAI connectivity and basic chat functionality.")
-    print("Make sure your .env file contains the required Azure OpenAI settings.")
-    print("=" * 60)
+    logger.info("=" * 60)
+    logger.info("Azure OpenAI Chat Client - Day 6 Implementation")
+    logger.info("=" * 60)
+    logger.info("This script tests Azure OpenAI connectivity and basic chat functionality.")
+    logger.info("Make sure your .env file contains the required Azure OpenAI settings.")
+    logger.info("=" * 60)
     
     # Run the basic hello world test
     run_hello_world_test()

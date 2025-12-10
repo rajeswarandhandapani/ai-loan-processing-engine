@@ -6,10 +6,14 @@ This tool analyzes user messages to detect:
 - Named entities (loan amounts, business types, dates, etc.)
 """
 
+import logging
 from langchain_core.tools import tool
 from azure.ai.textanalytics import TextAnalyticsClient
 from azure.core.credentials import AzureKeyCredential
 from app.config import settings
+from app.logging_config import get_logger
+
+logger = get_logger(__name__)
 
 
 def get_language_client() -> TextAnalyticsClient:
@@ -42,13 +46,17 @@ def analyze_user_sentiment(text: str) -> dict:
     Returns:
         A dictionary containing sentiment analysis results
     """
+    logger.info(f"Analyzing sentiment for text: {text[:100]}...")
     try:
         client = get_language_client()
+        logger.debug("Azure Language client initialized")
         
         # Analyze sentiment
         response = client.analyze_sentiment(documents=[text])[0]
+        logger.debug(f"Sentiment analysis completed")
         
         if response.is_error:
+            logger.error(f"Sentiment analysis error: {response.error.message}")
             return {"error": f"Analysis failed: {response.error.message}"}
         
         # Extract confidence scores
@@ -71,11 +79,14 @@ def analyze_user_sentiment(text: str) -> dict:
                 "sentiment": sentence.sentiment
             })
         
+        logger.info(f"Sentiment analysis successful: {response.sentiment}")
         return result
         
     except ValueError as e:
+        logger.error(f"Configuration error in sentiment analysis: {str(e)}")
         return {"error": str(e)}
     except Exception as e:
+        logger.error(f"Sentiment analysis failed: {str(e)}", exc_info=True)
         return {"error": f"Sentiment analysis failed: {str(e)}"}
 
 
@@ -98,13 +109,17 @@ def extract_entities(text: str) -> dict:
     Returns:
         A dictionary containing extracted entities grouped by category
     """
+    logger.info(f"Extracting entities from text: {text[:100]}...")
     try:
         client = get_language_client()
+        logger.debug("Azure Language client initialized")
         
         # Recognize entities
         response = client.recognize_entities(documents=[text])[0]
+        logger.debug("Entity extraction completed")
         
         if response.is_error:
+            logger.error(f"Entity extraction error: {response.error.message}")
             return {"error": f"Entity extraction failed: {response.error.message}"}
         
         # Group entities by category
@@ -121,14 +136,17 @@ def extract_entities(text: str) -> dict:
                 "confidence": round(entity.confidence_score, 2)
             })
         
+        logger.info(f"Entity extraction successful: found {len(response.entities)} entities")
         return {
             "entities": entities_by_category,
             "entity_count": len(response.entities)
         }
         
     except ValueError as e:
+        logger.error(f"Configuration error in entity extraction: {str(e)}")
         return {"error": str(e)}
     except Exception as e:
+        logger.error(f"Entity extraction failed: {str(e)}", exc_info=True)
         return {"error": f"Entity extraction failed: {str(e)}"}
 
 
@@ -149,8 +167,10 @@ def analyze_text_comprehensive(text: str) -> dict:
     Returns:
         A dictionary containing both sentiment and entity analysis
     """
+    logger.info(f"Performing comprehensive text analysis: {text[:100]}...")
     try:
         client = get_language_client()
+        logger.debug("Azure Language client initialized")
         
         # Analyze sentiment
         sentiment_response = client.analyze_sentiment(documents=[text])[0]
@@ -204,9 +224,12 @@ def analyze_text_comprehensive(text: str) -> dict:
         
         result["summary"] = "; ".join(summary_parts) if summary_parts else "No significant findings"
         
+        logger.info(f"Comprehensive analysis successful - Sentiment: {result.get('sentiment', {}).get('overall', 'N/A')}, Entities: {result.get('entity_count', 0)}")
         return result
         
     except ValueError as e:
+        logger.error(f"Configuration error in comprehensive analysis: {str(e)}")
         return {"error": str(e)}
     except Exception as e:
+        logger.error(f"Comprehensive analysis failed: {str(e)}", exc_info=True)
         return {"error": f"Comprehensive analysis failed: {str(e)}"}

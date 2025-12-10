@@ -12,6 +12,7 @@ Usage:
     python scripts/index_lending_policy.py
 """
 
+import logging
 import os
 import sys
 from pathlib import Path
@@ -38,6 +39,11 @@ from azure.ai.documentintelligence import DocumentIntelligenceClient
 from openai import AzureOpenAI
 
 from app.config import settings
+from app.logging_config import setup_logging, get_logger
+
+# Initialize logging
+setup_logging()
+logger = get_logger(__name__)
 
 # Constants
 BACKEND_DIR = Path(__file__).resolve().parent.parent
@@ -79,7 +85,7 @@ class LendingPolicyIndexer:
                 credential=AzureKeyCredential(settings.AZURE_DOCUMENT_INTELLIGENCE_KEY)
             )
         
-        print("✓ Indexer initialized successfully")
+        logger.info("Indexer initialized successfully")
     
     def extract_text_from_pdf(self, pdf_path: Path) -> str:
         """Extract text from a PDF file using Azure Document Intelligence.
@@ -91,14 +97,14 @@ class LendingPolicyIndexer:
             Extracted text content
         """
         if not self.doc_intelligence_client:
-            print("⚠️  Document Intelligence not configured, using fallback sample text")
+            logger.warning("Document Intelligence not configured, using fallback sample text")
             return self.create_sample_policy_text()
         
         if not pdf_path.exists():
-            print(f"⚠️  PDF file not found at {pdf_path}, using fallback sample text")
+            logger.warning(f"PDF file not found at {pdf_path}, using fallback sample text")
             return self.create_sample_policy_text()
         
-        print(f"\n📄 Extracting text from PDF: {pdf_path.name}")
+        logger.info(f"Extracting text from PDF: {pdf_path.name}")
         
         with open(pdf_path, "rb") as f:
             poller = self.doc_intelligence_client.begin_analyze_document(
@@ -116,13 +122,13 @@ class LendingPolicyIndexer:
                     extracted_text.append(line.content)
         
         full_text = "\n".join(extracted_text)
-        print(f"✓ Extracted {len(full_text)} characters from {len(result.pages)} pages")
+        logger.info(f"Extracted {len(full_text)} characters from {len(result.pages)} pages")
         
         return full_text
     
     def create_index(self) -> None:
         """Create the Azure AI Search index with vector search capabilities."""
-        print(f"\n📋 Creating index: {self.index_name}")
+        logger.info(f"Creating index: {self.index_name}")
         
         # Define the index schema
         fields = [
@@ -186,7 +192,7 @@ class LendingPolicyIndexer:
         )
         
         result = index_client.create_or_update_index(index)
-        print(f"✓ Index '{result.name}' created successfully")
+        logger.info(f"Index '{result.name}' created successfully")
     
     def generate_embedding(self, text: str) -> List[float]:
         """Generate embeddings for text using Azure OpenAI.
@@ -204,7 +210,7 @@ class LendingPolicyIndexer:
             )
             return response.data[0].embedding
         except Exception as e:
-            print(f"⚠️  Error generating embedding: {e}")
+            logger.warning(f"Error generating embedding: {e}")
             # Return a zero vector as fallback
             return [0.0] * 1536
     
@@ -390,18 +396,18 @@ class LendingPolicyIndexer:
         Args:
             policy_text: The full text of the lending policy
         """
-        print("\n📄 Processing lending policy document...")
+        logger.info("Processing lending policy document...")
         
         # Chunk the text
         chunks = self.chunk_text(policy_text)
-        print(f"✓ Created {len(chunks)} chunks from policy document")
+        logger.info(f"Created {len(chunks)} chunks from policy document")
         
         # Prepare documents for indexing
         documents = []
         
-        print("\n🔄 Generating embeddings for each chunk...")
+        logger.info("Generating embeddings for each chunk...")
         for i, chunk in enumerate(chunks):
-            print(f"  Processing chunk {i+1}/{len(chunks)}...", end="\r")
+            logger.debug(f"Processing chunk {i+1}/{len(chunks)}...")
             
             # Generate embedding
             embedding = self.generate_embedding(chunk)
@@ -419,10 +425,10 @@ class LendingPolicyIndexer:
             # Small delay to avoid rate limiting
             time.sleep(0.5)
         
-        print(f"\n✓ Generated embeddings for all {len(chunks)} chunks")
+        logger.info(f"Generated embeddings for all {len(chunks)} chunks")
         
         # Upload documents to index
-        print(f"\n📤 Uploading documents to index '{self.index_name}'...")
+        logger.info(f"Uploading documents to index '{self.index_name}'...")
         search_client = SearchClient(
             endpoint=self.search_endpoint,
             index_name=self.index_name,
@@ -433,7 +439,7 @@ class LendingPolicyIndexer:
         
         # Check results
         succeeded = sum(1 for r in result if r.succeeded)
-        print(f"✓ Successfully uploaded {succeeded}/{len(documents)} documents")
+        logger.info(f"Successfully uploaded {succeeded}/{len(documents)} documents")
     
     def test_search(self, query: str = "What is the minimum credit score required?") -> None:
         """Test the search functionality.
@@ -441,7 +447,7 @@ class LendingPolicyIndexer:
         Args:
             query: Search query to test
         """
-        print(f"\n🔍 Testing search with query: '{query}'")
+        logger.info(f"Testing search with query: '{query}'")
         
         # Generate query embedding
         query_embedding = self.generate_embedding(query)
@@ -467,19 +473,16 @@ class LendingPolicyIndexer:
             select=["title", "content", "chunk_id"]
         )
         
-        print("\n📊 Search Results:")
-        print("-" * 80)
+        logger.info("Search Results:")
         for i, result in enumerate(results, 1):
-            print(f"\nResult {i} (Chunk {result['chunk_id']}):")
-            print(f"Content: {result['content'][:200]}...")
-            print("-" * 80)
+            logger.info(f"Result {i} (Chunk {result['chunk_id']}): {result['content'][:200]}...")
 
 
 def main():
     """Main execution function."""
-    print("=" * 80)
-    print("Azure AI Search - Lending Policy Indexer")
-    print("=" * 80)
+    logger.info("=" * 80)
+    logger.info("Azure AI Search - Lending Policy Indexer")
+    logger.info("=" * 80)
     
     try:
         # Initialize indexer
@@ -492,7 +495,7 @@ def main():
         if SAMPLE_POLICY_PDF.exists():
             policy_text = indexer.extract_text_from_pdf(SAMPLE_POLICY_PDF)
         else:
-            print(f"⚠️  PDF not found at {SAMPLE_POLICY_PDF}, using sample text")
+            logger.warning(f"PDF not found at {SAMPLE_POLICY_PDF}, using sample text")
             policy_text = indexer.create_sample_policy_text()
         
         # Index the document
@@ -502,15 +505,15 @@ def main():
         indexer.test_search("What is the minimum credit score required?")
         indexer.test_search("What documents are needed for a loan application?")
         
-        print("\n" + "=" * 80)
-        print("✅ Indexing completed successfully!")
-        print("=" * 80)
-        print(f"\nIndex name: {indexer.index_name}")
-        print(f"Search endpoint: {indexer.search_endpoint}")
-        print("\nYou can now use this index for RAG-based queries in your application.")
+        logger.info("=" * 80)
+        logger.info("Indexing completed successfully!")
+        logger.info("=" * 80)
+        logger.info(f"Index name: {indexer.index_name}")
+        logger.info(f"Search endpoint: {indexer.search_endpoint}")
+        logger.info("You can now use this index for RAG-based queries in your application.")
         
     except Exception as e:
-        print(f"\n❌ Error: {e}")
+        logger.error(f"Error: {e}")
         import traceback
         traceback.print_exc()
         sys.exit(1)

@@ -1,10 +1,9 @@
-import logging
 from fastapi import APIRouter, HTTPException
 from app.services.agent_service import AgentService
 from app.models.chat_models import ChatRequest, ChatResponse
+from app.logging_config import get_logger
 
-# Configure logging
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 router = APIRouter(prefix="/chat", tags=["Chat"])
 agent_service = AgentService()

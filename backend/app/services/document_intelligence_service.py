@@ -1,15 +1,19 @@
+import logging
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 from azure.ai.documentintelligence import DocumentIntelligenceClient
 from azure.core.credentials import AzureKeyCredential
 
 from app.config import settings
+from app.logging_config import get_logger
 from app.models.document_intelligence_models import (
     DocumentAnalysisResponse,
     DocumentPage,
     DocumentTable,
     DocumentField,
 )
+
+logger = get_logger(__name__)
 
 
 class DocumentIntelligenceService:
@@ -46,18 +50,25 @@ class DocumentIntelligenceService:
         """
         model_id = self.MODEL_MAP.get(document_type, document_type)
 
-        print(f"Analyzing document: {file_path}")
-        print(f"Using model: {model_id}")
+        logger.info(f"Analyzing document: {file_path}")
+        logger.debug(f"Using model: {model_id}")
 
-        with open(file_path, "rb") as f:
-            poller = self.client.begin_analyze_document(
-                model_id=model_id,
-                body=f,
-                content_type="application/octet-stream",
-            )
+        try:
+            with open(file_path, "rb") as f:
+                logger.debug(f"Opened file: {file_path}")
+                poller = self.client.begin_analyze_document(
+                    model_id=model_id,
+                    body=f,
+                    content_type="application/octet-stream",
+                )
 
-        result = poller.result()
-        return self._extract_result(result, document_type, model_id)
+            logger.debug("Waiting for document analysis to complete...")
+            result = poller.result()
+            logger.info(f"Document analysis completed successfully for {file_path}")
+            return self._extract_result(result, document_type, model_id)
+        except Exception as e:
+            logger.error(f"Error analyzing document {file_path}: {str(e)}", exc_info=True)
+            raise
 
     def _extract_result(
         self,

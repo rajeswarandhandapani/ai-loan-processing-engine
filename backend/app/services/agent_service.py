@@ -1,7 +1,9 @@
+import logging
 from langchain_openai import AzureChatOpenAI
 from langgraph.checkpoint.memory import InMemorySaver
 from langchain.agents import create_agent
 from app.config import settings
+from app.logging_config import get_logger
 from app.tools import (
     analyze_financial_document,
     search_lending_policy,
@@ -10,26 +12,36 @@ from app.tools import (
     analyze_text_comprehensive
 )
 
+logger = get_logger(__name__)
+
+
 class AgentService:
     """Service class for managing AI agent interactions and loan processing."""
     
     def __init__(self):
+        logger.info("Initializing AgentService...")
+        
         # Set up LangSmith tracing environment variables
         import os
         if settings.LANGSMITH_TRACING:
+            logger.debug("LangSmith tracing enabled")
             os.environ["LANGSMITH_TRACING"] = "true"
             os.environ["LANGCHAIN_TRACING_V2"] = "true"
             os.environ["LANGCHAIN_API_KEY"] = settings.LANGSMITH_API_KEY or ""
             os.environ["LANGCHAIN_PROJECT"] = settings.LANGSMITH_PROJECT or ""
             os.environ["LANGCHAIN_ENDPOINT"] = settings.LANGSMITH_ENDPOINT or ""
+        else:
+            logger.debug("LangSmith tracing disabled")
 
         # Initialize the LLM
+        logger.debug(f"Initializing Azure OpenAI LLM with deployment: {settings.AZURE_OPENAI_DEPLOYMENT_NAME}")
         self.llm = AzureChatOpenAI(
             azure_endpoint=settings.AZURE_OPENAI_ENDPOINT,
             api_key=settings.AZURE_OPENAI_API_KEY,
             azure_deployment=settings.AZURE_OPENAI_DEPLOYMENT_NAME,
             api_version=settings.AZURE_OPENAI_API_VERSION
         )
+        logger.debug("Azure OpenAI LLM initialized successfully")
 
         # Define tools
         self.tools = [
@@ -87,23 +99,35 @@ RESPONSE GUIDELINES:
 """
 
         # Initialize the checkpointer
+        logger.debug("Initializing in-memory checkpointer for session state")
         self.checkpointer = InMemorySaver()
 
         # Create the agent
+        logger.debug(f"Creating agent with {len(self.tools)} tools")
         self.agent = create_agent(
             model=self.llm,
             system_prompt=self.system_prompt,
             tools=self.tools,
             checkpointer=self.checkpointer
         )
+        logger.info("AgentService initialized successfully")
 
 
     async def chat(self, message: str, session_id: str) -> str:
         """Process a chat message using the AI agent."""
+        logger.info(f"Processing chat message for session: {session_id}")
+        logger.debug(f"Message content: {message[:100]}...")
         
-        response = self.agent.invoke(
-            {"messages": [{"role": "user", "content": message}]},
-            {"configurable": {"thread_id": session_id}}
-        )
-        
-        return response["messages"][-1].content
+        try:
+            response = self.agent.invoke(
+                {"messages": [{"role": "user", "content": message}]},
+                {"configurable": {"thread_id": session_id}}
+            )
+            
+            agent_response = response["messages"][-1].content
+            logger.debug(f"Agent response generated (length: {len(agent_response)} chars)")
+            logger.info(f"Chat message processed successfully for session: {session_id}")
+            return agent_response
+        except Exception as e:
+            logger.error(f"Error processing chat message for session {session_id}: {str(e)}", exc_info=True)
+            raise
