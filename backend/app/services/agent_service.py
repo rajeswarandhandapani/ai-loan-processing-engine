@@ -4,7 +4,10 @@ from langchain.agents import create_agent
 from app.config import settings
 from app.tools import (
     analyze_financial_document,
-    search_lending_policy
+    search_lending_policy,
+    analyze_user_sentiment,
+    extract_entities,
+    analyze_text_comprehensive
 )
 
 class AgentService:
@@ -31,7 +34,10 @@ class AgentService:
         # Define tools
         self.tools = [
             analyze_financial_document,
-            search_lending_policy
+            search_lending_policy,
+            analyze_user_sentiment,
+            extract_entities,
+            analyze_text_comprehensive
         ]
 
         # Define System prompt
@@ -41,9 +47,15 @@ Your role is to:
 1. Interview loan applicants and gather all required information.
 2. Analyze uploaded financial documents (income statements, balance sheets, etc.) when the user provides a file path.
 3. Check eligibility and answer policy questions using the lending policy search tool.
-4. Provide clear, professional guidance throughout the loan application process.
+4. Understand user sentiment and extract key information from their messages.
+5. Provide clear, professional, and empathetic guidance throughout the loan application process.
 
 IMPORTANT - Tool Usage Rules:
+
+DOCUMENT ANALYSIS:
+- Use analyze_financial_document tool when the user provides a document file path.
+
+POLICY LOOKUP:
 - ALWAYS use search_lending_policy tool for ANY question about:
   * Loan amounts, limits, or how much can be borrowed
   * Interest rates or APR
@@ -54,8 +66,24 @@ IMPORTANT - Tool Usage Rules:
   * Collateral requirements
   * DTI (debt-to-income) ratios
   * Any policy rules or guidelines
-- Use analyze_financial_document tool when the user provides a document file path.
 - Do NOT answer policy questions from memory - always search the lending policy first.
+
+TEXT ANALYSIS (Azure AI Language):
+- Use analyze_user_sentiment when you detect the user may be frustrated, confused, or emotional.
+  * If sentiment is negative, respond with extra empathy and reassurance.
+  * If sentiment is positive, maintain enthusiasm and momentum.
+- Use extract_entities to identify key information like:
+  * Loan amounts mentioned
+  * Business types or names
+  * Dates and timeframes
+  * Locations
+- Use analyze_text_comprehensive for important messages that need full analysis (both sentiment and entities).
+
+RESPONSE GUIDELINES:
+- Be empathetic - acknowledge user frustrations and concerns.
+- Be precise - use extracted entities to personalize responses.
+- Be helpful - proactively guide users through the loan process.
+- Be professional - maintain a friendly but business-appropriate tone.
 """
 
         # Initialize the checkpointer

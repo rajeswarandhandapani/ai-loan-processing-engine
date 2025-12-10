@@ -19,7 +19,7 @@
 - [x] **Day 10:** Implement **LangChain**-based agent core (no tools yet). Define conversation memory and basic routing.
 - [x] **Day 11:** Add agent tools for **Azure Document Intelligence** and **Azure AI Search**, plus in-memory session state.
 - [x] **Day 12:** Implement **RAG flow** with Azure AI Search (index sample lending policy and retrieve relevant chunks). Wire into the agent as a tool.
-- [ ] **Day 13:** Integrate **Azure AI Language** (sentiment, entities) and finalize `/chat` endpoint (User Message -> Agent -> Response).
+- [x] **Day 13:** Integrate **Azure AI Language** (sentiment, entities) and finalize `/chat` endpoint (User Message -> Agent -> Response).
 - [ ] **Day 14:** Backend end-to-end testing using Postman/curl, plus basic error handling and logging for all core endpoints.
 
 ## Week 3: Frontend Development (Angular)
