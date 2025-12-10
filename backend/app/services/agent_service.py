@@ -11,6 +11,14 @@ class AgentService:
     """Service class for managing AI agent interactions and loan processing."""
     
     def __init__(self):
+        # Set up LangSmith tracing environment variables
+        import os
+        if settings.LANGSMITH_TRACING:
+            os.environ["LANGSMITH_TRACING"] = "true"
+            os.environ["LANGCHAIN_TRACING_V2"] = "true"
+            os.environ["LANGCHAIN_API_KEY"] = settings.LANGSMITH_API_KEY or ""
+            os.environ["LANGCHAIN_PROJECT"] = settings.LANGSMITH_PROJECT or ""
+            os.environ["LANGCHAIN_ENDPOINT"] = settings.LANGSMITH_ENDPOINT or ""
 
         # Initialize the LLM
         self.llm = AzureChatOpenAI(

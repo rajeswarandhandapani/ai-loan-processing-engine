@@ -34,6 +34,13 @@ class Settings(BaseSettings):
     AZURE_LANGUAGE_ENDPOINT: str | None = None
     AZURE_LANGUAGE_KEY: str | None = None
 
+    # Langsmith
+    LANGSMITH_TRACING: bool = True
+    LANGSMITH_ENDPOINT: str | None = None
+    LANGSMITH_API_KEY: str | None = None
+    LANGSMITH_PROJECT: str | None = None
+
+
     # Application settings
     app_name: str = "AI Loan Processing Engine"
     debug: bool = False
