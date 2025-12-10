@@ -38,17 +38,22 @@ def search_lending_policy(query: str) -> Dict[str, Any]:
     """
     Search the company's lending policy documents for relevant information.
 
-    Use this tool when you need to:
-    - Check eligibility criteria
-    - Find policy rules and limits (DTI rations, credit scores, loan amounts)
-    - Verify compliance requirements
-    - Answer questions about lending guidelines
+    ALWAYS use this tool when the user asks about:
+    - Loan amounts: minimum, maximum, or how much they can borrow
+    - Interest rates or APR
+    - Credit score requirements
+    - Eligibility criteria or requirements
+    - Required documents for loan application
+    - Repayment terms and loan duration
+    - Collateral requirements
+    - DTI (debt-to-income) ratio limits
+    - Any lending policy rules or guidelines
     
     Args:
-        query: Natural language question about the lending policy
+        query: Natural language question about the lending policy (e.g., "maximum loan amount", "credit score requirement")
         
     Returns:
-        Search results as a dictionary
+        Search results containing relevant policy sections
     """
     try:
 
@@ -70,7 +75,7 @@ def search_lending_policy(query: str) -> Dict[str, Any]:
         results = search_client.search(
             search_text=None,
             vector_queries=[vector_query],
-            select=["title, content, score"]
+            select=["title", "content"]
         )
         
         # Convert iterator to list and get count properly
@@ -79,7 +84,7 @@ def search_lending_policy(query: str) -> Dict[str, Any]:
             results_list.append({
                 "content": result["content"],
                 "title": result["title"],
-                "score": result["score"]
+                "score": result.get("@search.score", 0.0)
             })
         
         print(f"Search results: {results_list}")
