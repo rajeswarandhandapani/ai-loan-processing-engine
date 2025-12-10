@@ -29,11 +29,41 @@ document_service = DocumentIntelligenceService()
 # Supported file extensions
 ALLOWED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg", ".tiff", ".bmp"}
 
+# File size limits (in bytes)
+MAX_FILE_SIZE = 10 * 1024 * 1024  # 10MB
+MAX_PDF_SIZE = 15 * 1024 * 1024   # 15MB for PDFs
+MAX_IMAGE_SIZE = 5 * 1024 * 1024  # 5MB for images
+
 
 def validate_file_extension(filename: str) -> bool:
     """Validate that the file has an allowed extension."""
     ext = Path(filename).suffix.lower()
     return ext in ALLOWED_EXTENSIONS
+
+
+def validate_file_size(filename: str, file_size: int) -> tuple[bool, str]:
+    """Validate that the file size is within allowed limits.
+    
+    Args:
+        filename: Name of the file being uploaded
+        file_size: Size of the file in bytes
+        
+    Returns:
+        Tuple of (is_valid, error_message)
+    """
+    ext = Path(filename).suffix.lower()
+    
+    if ext == ".pdf":
+        if file_size > MAX_PDF_SIZE:
+            return False, f"PDF file size ({file_size/1024/1024:.1f}MB) exceeds maximum allowed size ({MAX_PDF_SIZE/1024/1024}MB)"
+    elif ext in {".png", ".jpg", ".jpeg", ".tiff", ".bmp"}:
+        if file_size > MAX_IMAGE_SIZE:
+            return False, f"Image file size ({file_size/1024/1024:.1f}MB) exceeds maximum allowed size ({MAX_IMAGE_SIZE/1024/1024}MB)"
+    
+    if file_size > MAX_FILE_SIZE:
+        return False, f"File size ({file_size/1024/1024:.1f}MB) exceeds maximum allowed size ({MAX_FILE_SIZE/1024/1024}MB)"
+    
+    return True, ""
 
 
 @router.post(
@@ -61,12 +91,33 @@ async def upload_document(
     """
     logger.info(f"Document upload request received - File: {file.filename}, Type: {document_type.value}")
     
+    # Validate file exists and has filename
+    if not file.filename:
+        logger.warning("Upload attempt with no filename")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Filename is required"
+        )
+    
     # Validate file extension
-    if not file.filename or not validate_file_extension(file.filename):
+    if not validate_file_extension(file.filename):
         logger.warning(f"Invalid file type uploaded: {file.filename}")
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=f"Invalid file type. Allowed types: {', '.join(ALLOWED_EXTENSIONS)}",
+        )
+    
+    # Read file content to check size
+    content = await file.read()
+    file_size = len(content)
+    
+    # Validate file size
+    is_valid_size, size_error = validate_file_size(file.filename, file_size)
+    if not is_valid_size:
+        logger.warning(f"File size validation failed: {size_error}")
+        raise HTTPException(
+            status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+            detail=size_error
         )
 
     # Create temporary file to store upload
@@ -75,7 +126,6 @@ async def upload_document(
         # Save uploaded file to temporary location
         suffix = Path(file.filename).suffix
         with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as temp_file:
-            content = await file.read()
             temp_file.write(content)
             temp_file_path = Path(temp_file.name)
         

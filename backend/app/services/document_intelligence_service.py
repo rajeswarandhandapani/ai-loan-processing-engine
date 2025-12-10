@@ -1,8 +1,11 @@
 import logging
+import time
+import pathlib
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 from azure.ai.documentintelligence import DocumentIntelligenceClient
 from azure.core.credentials import AzureKeyCredential
+from azure.core.exceptions import AzureError, ServiceResponseError, HttpResponseError
 
 from app.config import settings
 from app.logging_config import get_logger
@@ -28,9 +31,15 @@ class DocumentIntelligenceService:
     }
 
     def __init__(self):
+        # Configure retry policy for Azure Document Intelligence
+        # Retry up to 3 times with exponential backoff starting at 2 seconds
+        # Total timeout of 120 seconds for document analysis (OCR is slow)
         self.client = DocumentIntelligenceClient(
             endpoint=settings.AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT,
             credential=AzureKeyCredential(settings.AZURE_DOCUMENT_INTELLIGENCE_KEY),
+            retry_total=3,
+            retry_backoff_factor=2,
+            retry_mode="exponential",
         )
 
     async def analyze_document(
@@ -47,8 +56,14 @@ class DocumentIntelligenceService:
             
         Returns:
             DocumentAnalysisResponse with extracted content
+            
+        Raises:
+            AzureError: For Azure service-specific errors including rate limits
+            ServiceResponseError: For network/service connectivity issues
+            Exception: For other unexpected errors
         """
         model_id = self.MODEL_MAP.get(document_type, document_type)
+        start_time = time.time()
 
         logger.info(f"Analyzing document: {file_path}")
         logger.debug(f"Using model: {model_id}")
@@ -56,18 +71,46 @@ class DocumentIntelligenceService:
         try:
             with open(file_path, "rb") as f:
                 logger.debug(f"Opened file: {file_path}")
+                
+                # Track the Azure API call with timing
+                api_start = time.time()
                 poller = self.client.begin_analyze_document(
                     model_id=model_id,
                     body=f,
                     content_type="application/octet-stream",
                 )
+                api_call_time = time.time() - api_start
+                logger.info(f"Azure Document Intelligence API call initiated in {api_call_time:.2f}s")
 
             logger.debug("Waiting for document analysis to complete...")
+            wait_start = time.time()
             result = poller.result()
-            logger.info(f"Document analysis completed successfully for {file_path}")
+            wait_time = time.time() - wait_start
+            
+            total_time = time.time() - start_time
+            logger.info(f"Document analysis completed successfully for {pathlib.Path(file_path).name} "
+                       f"(API: {api_call_time:.2f}s, Processing: {wait_time:.2f}s, Total: {total_time:.2f}s)")
+            
             return self._extract_result(result, document_type, model_id)
+            
+        except HttpResponseError as e:
+            if e.status_code == 429:
+                logger.warning(f"Rate limit exceeded for Document Intelligence: {e.message}")
+                raise AzureError(f"Service rate limit exceeded. Please try again later. {e.message}")
+            elif e.status_code == 408:
+                logger.warning(f"Request timeout for Document Intelligence: {e.message}")
+                raise AzureError(f"Request timed out. The document may be too large or complex. {e.message}")
+            else:
+                logger.error(f"HTTP error {e.status_code} from Document Intelligence: {e.message}")
+                raise AzureError(f"Document Intelligence service error: {e.message}")
+                
+        except ServiceResponseError as e:
+            logger.error(f"Network/service connectivity error: {str(e)}")
+            raise ServiceResponseError(f"Unable to connect to Document Intelligence service: {str(e)}")
+            
         except Exception as e:
-            logger.error(f"Error analyzing document {file_path}: {str(e)}", exc_info=True)
+            total_time = time.time() - start_time
+            logger.error(f"Unexpected error analyzing document {file_path} after {total_time:.2f}s: {str(e)}", exc_info=True)
             raise
 
     def _extract_result(
