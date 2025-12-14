@@ -25,13 +25,13 @@
 ## Week 3: Frontend Development (Angular)
 **Goal:** Build a clean, professional UI for the loan applicant.
 
-- [ ] **Day 15:** Initialize Angular project (`ng new`). Install Bootstrap (`npm install bootstrap`).
+- [ ] **Day 15:** Initialize Angular project (`ng new`). Install Bootstrap CSS only (`npm install bootstrap bootstrap-icons`).
 - [ ] **Day 16:** Create Layout (Header, Footer, Sidebar). Create `LoanApplicationComponent`.
-- [ ] **Day 17:** Build **File Upload Component**. Integrate with `/upload` API. Show progress bar.
-- [ ] **Day 18:** Build **Chat Component**. Display user vs. agent messages bubbles.
-- [ ] **Day 19:** Integrate `/chat` API. Handle loading states (typing indicators).
+- [ ] **Day 17:** Build **File Upload Component**. Integrate with `/upload` API. Show progress bar using Angular animations.
+- [ ] **Day 18:** Build **Chat Component**. Display user vs. agent messages bubbles. Use Angular for scroll behavior and typing indicators.
+- [ ] **Day 19:** Integrate `/chat` API. Handle loading states (typing indicators) with Angular reactive programming.
 - [ ] **Day 20:** Add "Dashboard View": Visualize extracted data (e.g., Revenue Chart) using a simple chart library.
-- [ ] **Day 21:** UI polish & buffer: Fix small frontend bugs, refine responsive layout, add error handling (toasts), and apply final gradient styling to match the portfolio.
+- [ ] **Day 21:** UI polish & buffer: Fix small frontend bugs, refine responsive layout, add error handling (Angular toast notifications), and apply final gradient styling to match the portfolio.
 
 ## Week 4: Integration & Polish
 **Goal:** Connect the pieces, fix bugs, and prepare for portfolio showcase.

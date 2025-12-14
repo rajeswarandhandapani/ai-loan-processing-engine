@@ -47,12 +47,13 @@ graph TD
 
 ### 1. Frontend (Client Layer)
 - **Framework:** Angular 17+
-- **Styling:** Bootstrap 5
+- **Styling:** Bootstrap 5 CSS Only (No JavaScript Components)
 - **Key Features:**
-  - Interactive Chat Interface for the loan interview.
-  - File Upload Component with progress tracking.
+  - Interactive Chat Interface for the loan interview (using Angular for interactivity).
+  - File Upload Component with progress tracking (Angular-based).
   - Dashboard displaying application status and extracted data.
   - Responsive design for desktop and tablet.
+  - Custom Angular components for modals, dropdowns, and other UI interactions.
 
 ### 2. Backend (API Layer)
 - **Framework:** Python FastAPI
