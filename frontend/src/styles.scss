@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Import Bootstrap 5 CSS using modern @use syntax
+@use "bootstrap" as *;
+
+// Import Bootstrap Icons
+@use "bootstrap-icons/font/bootstrap-icons.css";
+
+// Custom global styles
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+// Custom utility classes
+.gradient-bg {
+  background: var(--primary-gradient);
+  color: white;
+}
+
+.card-shadow {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
