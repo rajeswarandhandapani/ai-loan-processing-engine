@@ -66,12 +66,7 @@
       <div class="step-content">
         <h3>Chat with Assistant</h3>
         <p>Ask questions about your application, get clarification, and receive instant feedback.</p>
-        <div class="chat-preview">
-          <div class="placeholder-box">
-            <i class="bi bi-chat-dots"></i>
-            <p>Chat interface will appear here</p>
-          </div>
-        </div>
+        <app-chat (messageSent)="onChatMessageSent($event)"></app-chat>
       </div>
     </div>
   </div>

@@ -1,0 +1,121 @@
+<div class="chat-container">
+  <!-- Chat Header -->
+  <div class="chat-header">
+    <div class="header-info">
+      <i class="bi bi-robot"></i>
+      <div class="header-text">
+        <h5>AI Loan Assistant</h5>
+        <span class="status-indicator">
+          @if (isLoading) {
+            <span class="status-dot typing"></span>
+            Typing...
+          } @else {
+            <span class="status-dot online"></span>
+            Online
+          }
+        </span>
+      </div>
+    </div>
+    @if (messages.length > 0) {
+      <button 
+        class="btn btn-sm btn-outline-secondary clear-btn"
+        (click)="clearChat()"
+        title="Clear conversation">
+        <i class="bi bi-trash3"></i>
+      </button>
+    }
+  </div>
+
+  <!-- Messages Area -->
+  <div class="messages-area">
+    <!-- Welcome message when no messages -->
+    @if (messages.length === 0) {
+      <div class="welcome-message">
+        <div class="welcome-icon">
+          <i class="bi bi-chat-heart"></i>
+        </div>
+        <h4>Welcome to AI Loan Assistant</h4>
+        <p>I'm here to help you with your loan application. You can ask me about:</p>
+        <ul>
+          <li><i class="bi bi-file-earmark-text"></i> Your uploaded documents</li>
+          <li><i class="bi bi-bank"></i> Loan eligibility and requirements</li>
+          <li><i class="bi bi-calculator"></i> Financial calculations</li>
+          <li><i class="bi bi-question-circle"></i> Application process questions</li>
+        </ul>
+        <p class="start-hint">Type a message below to get started!</p>
+      </div>
+    }
+
+    <!-- Message Bubbles -->
+    @for (message of messages; track message.id) {
+      <div 
+        class="message-wrapper"
+        [class.user]="message.role === 'user'"
+        [class.assistant]="message.role === 'assistant'"
+        @messageAnimation>
+        
+        <!-- Avatar -->
+        <div class="message-avatar">
+          @if (message.role === 'assistant') {
+            <i class="bi bi-robot"></i>
+          } @else {
+            <i class="bi bi-person"></i>
+          }
+        </div>
+        
+        <!-- Message Bubble -->
+        <div class="message-bubble">
+          <div class="message-content">{{ message.content }}</div>
+          <div class="message-time">{{ formatTime(message.timestamp) }}</div>
+        </div>
+      </div>
+    }
+
+    <!-- Typing Indicator -->
+    @if (isLoading) {
+      <div class="message-wrapper assistant" @messageAnimation>
+        <div class="message-avatar">
+          <i class="bi bi-robot"></i>
+        </div>
+        <div class="message-bubble typing-bubble">
+          <div class="typing-indicator">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    }
+
+    <!-- Scroll Anchor -->
+    <div #messagesEnd></div>
+  </div>
+
+  <!-- Input Area -->
+  <div class="input-area">
+    <div class="input-wrapper">
+      <input 
+        type="text"
+        class="message-input"
+        [(ngModel)]="inputMessage"
+        (keydown)="onKeyDown($event)"
+        placeholder="Type your message..."
+        [disabled]="isLoading"
+        autocomplete="off">
+      <button 
+        class="send-button"
+        (click)="sendMessage()"
+        [disabled]="isLoading || !inputMessage.trim()"
+        title="Send message">
+        @if (isLoading) {
+          <span class="spinner-border spinner-border-sm"></span>
+        } @else {
+          <i class="bi bi-send-fill"></i>
+        }
+      </button>
+    </div>
+    <div class="input-hint">
+      Press <kbd>Enter</kbd> to send
+    </div>
+  </div>
+</div>
