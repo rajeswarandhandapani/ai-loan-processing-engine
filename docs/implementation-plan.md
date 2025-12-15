@@ -26,7 +26,7 @@
 **Goal:** Build a clean, professional UI for the loan applicant.
 
 - [x] **Day 15:** Initialize Angular project (`ng new`). Install Bootstrap CSS only (`npm install bootstrap bootstrap-icons`).
-- [ ] **Day 16:** Create Layout (Header, Footer, Sidebar). Create `LoanApplicationComponent`.
+- [x] **Day 16:** Create Layout (Header, Footer, Sidebar). Create `LoanApplicationComponent`.
 - [ ] **Day 17:** Build **File Upload Component**. Integrate with `/upload` API. Show progress bar using Angular animations.
 - [ ] **Day 18:** Build **Chat Component**. Display user vs. agent messages bubbles. Use Angular for scroll behavior and typing indicators.
 - [ ] **Day 19:** Integrate `/chat` API. Handle loading states (typing indicators) with Angular reactive programming.
