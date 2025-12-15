@@ -1,0 +1,125 @@
+.sidebar {
+  width: 250px;
+  min-height: calc(100vh - 56px);
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+  transition: width 0.3s ease;
+  position: relative;
+  
+  &.collapsed {
+    width: 60px;
+  }
+}
+
+.toggle-btn {
+  position: absolute;
+  right: -12px;
+  top: 20px;
+  z-index: 10;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: #f8f9fa;
+    transform: scale(1.1);
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.25);
+  }
+}
+
+.sidebar-nav {
+  padding: 1rem 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  color: #495057;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  
+  &:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    color: #667eea;
+  }
+  
+  &.active {
+    background: var(--primary-gradient);
+    color: white;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: white;
+      opacity: 0.8;
+    }
+  }
+  
+  i {
+    font-size: 1.25rem;
+    min-width: 24px;
+    text-align: center;
+  }
+  
+  .nav-label {
+    margin-left: 0.75rem;
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+}
+
+// When sidebar is collapsed
+.sidebar.collapsed {
+  .nav-item {
+    justify-content: center;
+    
+    .nav-label {
+      opacity: 0;
+      width: 0;
+      overflow: hidden;
+    }
+  }
+  
+  .toggle-btn {
+    right: -12px;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 56px;
+    z-index: 1000;
+    height: calc(100vh - 56px);
+    
+    &.collapsed {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .toggle-btn {
+    right: 10px;
+    top: 10px;
+  }
+}
