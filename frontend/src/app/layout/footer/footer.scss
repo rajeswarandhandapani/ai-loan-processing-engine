@@ -1,0 +1,30 @@
+.footer {
+  background: white;
+  padding: 1rem;
+  border-top: 1px solid #dee2e6;
+  margin-top: auto; // Push footer to bottom when using flexbox layout
+  
+  a {
+    text-decoration: none;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: #667eea !important;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 767.98px) {
+  .footer {
+    text-align: center;
+    
+    .col-md-6 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .text-md-end {
+      text-align: center !important;
+    }
+  }
+}
