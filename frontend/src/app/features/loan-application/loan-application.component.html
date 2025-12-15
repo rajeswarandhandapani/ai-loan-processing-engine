@@ -10,11 +10,10 @@
       <div class="step-content">
         <h3>Upload Documents</h3>
         <p>Upload your financial documents including bank statements, tax returns, and business records.</p>
-        <div class="upload-area">
-          <i class="bi bi-cloud-upload"></i>
-          <p>Drag and drop files here or click to browse</p>
-          <button class="btn btn-primary">Select Files</button>
-        </div>
+        <app-file-upload
+          (uploadComplete)="onUploadComplete($event)"
+          (allUploadsComplete)="onAllUploadsComplete($event)">
+        </app-file-upload>
       </div>
     </div>
 
@@ -24,10 +23,40 @@
         <h3>Review Extracted Data</h3>
         <p>Our AI will extract and organize your financial information. Review and confirm the details.</p>
         <div class="data-preview">
-          <div class="placeholder-box">
-            <i class="bi bi-file-text"></i>
-            <p>Extracted data will appear here</p>
-          </div>
+          @if (uploadedDocuments.length === 0) {
+            <div class="placeholder-box">
+              <i class="bi bi-file-text"></i>
+              <p>Extracted data will appear here</p>
+            </div>
+          } @else {
+            <div class="extracted-data">
+              @for (doc of uploadedDocuments; track doc.filename) {
+                <div class="extracted-item">
+                  <div class="extracted-header">
+                    <i class="bi bi-file-earmark-check"></i>
+                    <strong>{{ doc.filename }}</strong>
+                  </div>
+                  @if (doc.analysis) {
+                    <div class="extracted-details">
+                      @if (doc.analysis.page_count) {
+                        <span class="badge bg-secondary">{{ doc.analysis.page_count }} pages</span>
+                      }
+                      @if (doc.analysis.key_value_pairs) {
+                        <div class="key-values mt-2">
+                          @for (item of doc.analysis.key_value_pairs | keyvalue; track item.key) {
+                            <div class="kv-item">
+                              <span class="kv-key">{{ item.key }}:</span>
+                              <span class="kv-value">{{ item.value }}</span>
+                            </div>
+                          }
+                        </div>
+                      }
+                    </div>
+                  }
+                </div>
+              }
+            </div>
+          }
         </div>
       </div>
     </div>

@@ -1,0 +1,125 @@
+<div class="file-upload-container">
+  <!-- Drop Zone: The main area for drag-and-drop or click-to-browse -->
+  <div 
+    class="drop-zone"
+    [class.drag-over]="isDragOver"
+    (dragover)="onDragOver($event)"
+    (dragleave)="onDragLeave($event)"
+    (drop)="onDrop($event)"
+    (click)="fileInput.click()">
+    
+    <i class="bi bi-cloud-arrow-up"></i>
+    <h4>Drag & Drop Files Here</h4>
+    <p>or click to browse</p>
+    <p class="file-types">Supported: PDF, PNG, JPG, JPEG, TIFF, BMP (Max 15MB)</p>
+    
+    <!-- Hidden file input triggered by clicking the drop zone -->
+    <input 
+      #fileInput
+      type="file"
+      multiple
+      accept=".pdf,.png,.jpg,.jpeg,.tiff,.bmp"
+      (change)="onFileSelect($event)"
+      hidden>
+  </div>
+
+  <!-- File List: Shows all files in the upload queue -->
+  @if (uploadFiles.length > 0) {
+    <div class="file-list">
+      <h5>
+        <i class="bi bi-files"></i>
+        Uploaded Files ({{ uploadFiles.length }})
+      </h5>
+      
+      @for (uploadFile of uploadFiles; track uploadFile.file.name; let i = $index) {
+        <div class="file-item" @fadeSlideIn>
+          <!-- File Icon -->
+          <div class="file-icon">
+            <i class="bi" [ngClass]="getFileIcon(uploadFile.file.name)"></i>
+          </div>
+          
+          <!-- File Info -->
+          <div class="file-info">
+            <div class="file-name">{{ uploadFile.file.name }}</div>
+            <div class="file-size">{{ formatFileSize(uploadFile.file.size) }}</div>
+            
+            <!-- Progress Bar (shown during upload) -->
+            @if (uploadFile.status === 'uploading' || uploadFile.status === 'pending') {
+              <div class="progress-container">
+                <div class="progress">
+                  <div 
+                    class="progress-bar"
+                    [style.width.%]="uploadFile.progress"
+                    role="progressbar"
+                    [attr.aria-valuenow]="uploadFile.progress"
+                    aria-valuemin="0"
+                    aria-valuemax="100">
+                  </div>
+                </div>
+                <span class="progress-text">{{ uploadFile.progress }}%</span>
+              </div>
+            }
+            
+            <!-- Error Message -->
+            @if (uploadFile.status === 'error' && uploadFile.error) {
+              <div class="error-message">
+                <i class="bi bi-exclamation-circle"></i>
+                {{ uploadFile.error }}
+              </div>
+            }
+            
+            <!-- Success Message with extracted info preview -->
+            @if (uploadFile.status === 'complete' && uploadFile.response?.success) {
+              <div class="success-message">
+                <i class="bi bi-check-circle"></i>
+                Document analyzed successfully
+                @if (uploadFile.response!.analysis?.page_count; as pageCount) {
+                  <span class="page-count">({{ pageCount }} pages)</span>
+                }
+              </div>
+            }
+          </div>
+          
+          <!-- Status Icon / Actions -->
+          <div class="file-actions">
+            @switch (uploadFile.status) {
+              @case ('uploading') {
+                <div class="spinner-border spinner-border-sm text-primary" role="status">
+                  <span class="visually-hidden">Uploading...</span>
+                </div>
+              }
+              @case ('complete') {
+                @if (uploadFile.response?.success) {
+                  <i class="bi bi-check-circle-fill text-success"></i>
+                } @else {
+                  <i class="bi bi-x-circle-fill text-danger"></i>
+                }
+              }
+              @case ('error') {
+                <button 
+                  class="btn btn-sm btn-outline-primary"
+                  (click)="retryUpload(uploadFile); $event.stopPropagation()"
+                  title="Retry upload">
+                  <i class="bi bi-arrow-clockwise"></i>
+                </button>
+              }
+              @case ('pending') {
+                <div class="spinner-border spinner-border-sm text-secondary" role="status">
+                  <span class="visually-hidden">Waiting...</span>
+                </div>
+              }
+            }
+            
+            <!-- Remove button (always visible) -->
+            <button 
+              class="btn btn-sm btn-link text-muted remove-btn"
+              (click)="removeFile(i); $event.stopPropagation()"
+              title="Remove file">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>
