@@ -19,7 +19,7 @@ export class SidebarComponent {
   
   navItems: NavItem[] = [
     { icon: 'bi-house-door', label: 'Home', route: '/' },
-    { icon: 'bi-file-earmark-text', label: 'Apply for Loan', route: '/apply' },
+    { icon: 'bi-file-earmark-text', label: 'Loan Application', route: '/loan-application' },
     { icon: 'bi-upload', label: 'Upload Documents', route: '/upload' },
     { icon: 'bi-chat-dots', label: 'AI Assistant', route: '/chat' },
     { icon: 'bi-graph-up', label: 'Dashboard', route: '/dashboard' }
