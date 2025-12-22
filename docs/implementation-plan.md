@@ -31,7 +31,7 @@
 - [x] **Day 18:** Build **Chat Component**. Display user vs. agent messages bubbles. Use Angular for scroll behavior and typing indicators.
 - [x] **Day 19:** Integrate `/chat` API. Handle loading states (typing indicators) with Angular reactive programming.
 - [x] **Day 20:** Add "Dashboard View": Visualize extracted data (e.g., Revenue Chart) using a simple chart library.
-- [ ] **Day 21:** UI polish & buffer: Fix small frontend bugs, refine responsive layout, add error handling (Angular toast notifications), and apply final gradient styling to match the portfolio.
+- [x] **Day 21:** UI polish & buffer: Complete redesign to minimal single-page layout. Removed unnecessary components (sidebar, footer, dashboard with charts). Created clean two-column layout with file upload + chat interface.
 
 ## Week 4: Integration & Polish
 **Goal:** Connect the pieces, fix bugs, and prepare for portfolio showcase.
