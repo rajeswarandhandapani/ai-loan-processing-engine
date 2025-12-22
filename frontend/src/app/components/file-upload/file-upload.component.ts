@@ -159,13 +159,47 @@ export class FileUploadComponent {
   }
 
   /**
+   * Auto-detect document type based on filename patterns.
+   * Maps common filename patterns to backend document types.
+   */
+  private getDocumentType(filename: string): string {
+    const lower = filename.toLowerCase();
+    
+    // Bank statements
+    if (lower.includes('bank') || lower.includes('statement')) {
+      return 'bank_statement';
+    }
+    
+    // Invoices
+    if (lower.includes('invoice')) {
+      return 'invoice';
+    }
+    
+    // Receipts
+    if (lower.includes('receipt')) {
+      return 'receipt';
+    }
+    
+    // W-2 tax forms
+    if (lower.includes('w2') || lower.includes('w-2') || lower.includes('tax')) {
+      return 'tax_w2';
+    }
+    
+    // Default to layout for general documents
+    return 'prebuilt-layout';
+  }
+
+  /**
    * Upload a single file to the backend.
    * Updates the UploadFile object with progress and response.
    */
   private uploadFile(uploadFile: UploadFile): void {
     uploadFile.status = 'uploading';
+    
+    // Auto-detect document type from filename
+    const documentType = this.getDocumentType(uploadFile.file.name);
 
-    this.apiService.uploadDocument(uploadFile.file).subscribe({
+    this.apiService.uploadDocument(uploadFile.file, documentType).subscribe({
       next: (progress: UploadProgress) => {
         uploadFile.progress = progress.progress;
 
