@@ -17,12 +17,52 @@ It acts as a virtual loan officer that:
 4.  **Decides** on pre-qualification using **Azure OpenAI (GPT-4)**.
 
 ## 🏗 Architecture
-The system is built using a microservices approach:
-- **Frontend:** Angular 17 + Bootstrap 5 (User-facing portal).
-- **Backend:** Python FastAPI (Orchestration API).
-- **AI Core:** LangChain agent coordinating Azure Cognitive Services.
 
-*(See [docs/architecture.md](docs/architecture.md) for the detailed diagram)*
+The system is built using a microservices approach:
+
+```mermaid
+flowchart TB
+    subgraph Client["🖥️ Client Layer"]
+        Web["Angular 21 Web App<br/>Bootstrap 5"]
+    end
+
+    subgraph API["⚡ API Layer"]
+        FastAPI["FastAPI Backend<br/>Python 3.11+"]
+    end
+
+    subgraph AI["🤖 AI Orchestration"]
+        Agent["LangChain Agent"]
+    end
+
+    subgraph Azure["☁️ Azure AI Services"]
+        DI["📄 Document Intelligence<br/>PDF Extraction"]
+        Lang["💬 AI Language<br/>Entity & Sentiment"]
+        Search["🔍 AI Search<br/>RAG Policy Lookup"]
+        OpenAI["🧠 Azure OpenAI<br/>GPT-4o Reasoning"]
+    end
+
+    subgraph Data["💾 Data Layer"]
+        Storage["Blob Storage"]
+        DB["SQLite / Cosmos DB"]
+    end
+
+    Web -->|HTTP/REST| FastAPI
+    FastAPI -->|Orchestrate| Agent
+    Agent -->|Extract| DI
+    Agent -->|Analyze| Lang
+    Agent -->|Query| Search
+    Agent -->|Synthesize| OpenAI
+    FastAPI -->|Store Files| Storage
+    FastAPI -->|Persist State| DB
+
+    style Client fill:#e3f2fd,stroke:#1976d2
+    style API fill:#e8f5e9,stroke:#388e3c
+    style AI fill:#fff3e0,stroke:#f57c00
+    style Azure fill:#fce4ec,stroke:#c2185b
+    style Data fill:#f3e5f5,stroke:#7b1fa2
+```
+
+> 📖 *See [docs/architecture.md](docs/architecture.md) for detailed component descriptions*
 
 ## 🛠 Tech Stack
 - **Cloud:** Microsoft Azure
@@ -44,14 +84,76 @@ ai-loan-processing-engine/
 ```
 
 ## 🚦 Getting Started
-1.  **Prerequisites:**
-    - Azure Subscription (Free Tier works).
-    - Python 3.11+
-    - Node.js 18+
-2.  **Setup:**
-    - Follow the [Azure Manual Setup Guide](docs/azure-manual-setup.md) to provision resources.
-    - Clone the repo.
-    - Configure `.env` in the `backend` folder.
+
+### Prerequisites
+- Azure Subscription (Free Tier works)
+- Python 3.11+
+- Node.js 18+
+- npm 9+
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/rajeswarandhandapani/ai-loan-processing-engine.git
+cd ai-loan-processing-engine
+```
+
+### 🔧 Backend Setup
+
+```bash
+# Navigate to backend directory
+cd backend
+
+# Create virtual environment
+python -m venv .venv
+
+# Activate virtual environment
+source .venv/bin/activate        # Linux/Mac
+# .venv\Scripts\activate         # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Configure environment variables
+cp .env.example .env
+# Edit .env with your Azure credentials
+
+# Start the backend server
+uvicorn app.main:app --reload --port 8000
+```
+
+> 🌐 Backend API will be available at: `http://localhost:8000`  
+> 📚 API Docs (Swagger): `http://localhost:8000/docs`
+
+### 🎨 Frontend Setup
+
+```bash
+# Navigate to frontend directory (from project root)
+cd frontend
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
+```
+
+> 🌐 Frontend will be available at: `http://localhost:4200`
+
+### 🚀 Quick Start (Both Services)
+
+```bash
+# Terminal 1 - Backend
+cd backend && source .venv/bin/activate && uvicorn app.main:app --reload --port 8000
+
+# Terminal 2 - Frontend
+cd frontend && npm start
+```
+
+### Azure Configuration
+
+Follow the [Azure Manual Setup Guide](docs/azure-manual-setup.md) to provision required Azure resources and configure your `.env` file.
 
 ## 📅 Development Plan
 This project is being built over 4 weeks. See the [Implementation Plan](docs/implementation-plan.md) for details.
