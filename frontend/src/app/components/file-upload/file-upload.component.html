@@ -1,19 +1,20 @@
-<div class="file-upload-container">
-  <!-- Drop Zone: The main area for drag-and-drop or click-to-browse -->
+<div class="w-100">
+  <!-- Drop Zone -->
   <div 
-    class="drop-zone"
-    [class.drag-over]="isDragOver"
+    class="drop-zone border border-2 border-dashed rounded-3 p-4 text-center bg-light"
+    [class.border-primary]="isDragOver"
+    [class.bg-primary-subtle]="isDragOver"
+    role="button"
     (dragover)="onDragOver($event)"
     (dragleave)="onDragLeave($event)"
     (drop)="onDrop($event)"
     (click)="fileInput.click()">
     
-    <i class="bi bi-cloud-arrow-up"></i>
-    <h4>Drag & Drop Files Here</h4>
-    <p>or click to browse</p>
-    <p class="file-types">Supported: PDF, PNG, JPG, JPEG, TIFF, BMP (Max 15MB)</p>
+    <i class="bi bi-cloud-arrow-up display-4 text-primary d-block mb-2"></i>
+    <h6 class="fw-semibold text-dark">Drag & Drop Files Here</h6>
+    <p class="text-muted mb-1">or click to browse</p>
+    <small class="text-secondary">Supported: PDF, PNG, JPG, JPEG, TIFF, BMP (Max 15MB)</small>
     
-    <!-- Hidden file input triggered by clicking the drop zone -->
     <input 
       #fileInput
       type="file"
@@ -23,65 +24,62 @@
       hidden>
   </div>
 
-  <!-- File List: Shows all files in the upload queue -->
+  <!-- File List -->
   @if (uploadFiles.length > 0) {
-    <div class="file-list">
-      <h5>
-        <i class="bi bi-files"></i>
+    <div class="mt-3">
+      <h6 class="fw-semibold text-dark d-flex align-items-center gap-2 mb-3">
+        <i class="bi bi-files text-primary"></i>
         Uploaded Files ({{ uploadFiles.length }})
-      </h5>
+      </h6>
       
       @for (uploadFile of uploadFiles; track uploadFile.file.name; let i = $index) {
-        <div class="file-item" @fadeSlideIn>
+        <div class="d-flex align-items-start gap-3 p-3 bg-white border rounded mb-2" @fadeSlideIn>
           <!-- File Icon -->
-          <div class="file-icon">
-            <i class="bi" [ngClass]="getFileIcon(uploadFile.file.name)"></i>
+          <div class="file-icon bg-primary rounded d-flex align-items-center justify-content-center flex-shrink-0">
+            <i class="bi text-white" [ngClass]="getFileIcon(uploadFile.file.name)"></i>
           </div>
           
           <!-- File Info -->
-          <div class="file-info">
-            <div class="file-name">{{ uploadFile.file.name }}</div>
-            <div class="file-size">{{ formatFileSize(uploadFile.file.size) }}</div>
+          <div class="flex-grow-1 min-width-0">
+            <div class="fw-medium text-dark text-truncate">{{ uploadFile.file.name }}</div>
+            <small class="text-muted">{{ formatFileSize(uploadFile.file.size) }}</small>
             
-            <!-- Progress Bar (shown during upload) -->
+            <!-- Progress Bar -->
             @if (uploadFile.status === 'uploading' || uploadFile.status === 'pending') {
-              <div class="progress-container">
-                <div class="progress">
+              <div class="d-flex align-items-center gap-2 mt-2">
+                <div class="progress flex-grow-1" style="height: 6px;">
                   <div 
-                    class="progress-bar"
+                    class="progress-bar progress-bar-striped progress-bar-animated"
                     [style.width.%]="uploadFile.progress"
-                    role="progressbar"
-                    [attr.aria-valuenow]="uploadFile.progress"
-                    aria-valuemin="0"
-                    aria-valuemax="100">
+                    role="progressbar">
                   </div>
                 </div>
-                <span class="progress-text">{{ uploadFile.progress }}%</span>
+                <small class="text-primary fw-semibold">{{ uploadFile.progress }}%</small>
               </div>
             }
             
             <!-- Error Message -->
             @if (uploadFile.status === 'error' && uploadFile.error) {
-              <div class="error-message">
+              <div class="d-flex align-items-center gap-1 text-danger small mt-1">
                 <i class="bi bi-exclamation-circle"></i>
                 {{ uploadFile.error }}
               </div>
             }
             
-            <!-- Success Message with extracted info preview -->
+            <!-- Success Message -->
             @if (uploadFile.status === 'complete' && uploadFile.response?.success) {
-              <div class="success-message">
+              <div class="d-flex align-items-center gap-1 text-success small mt-1">
                 <i class="bi bi-check-circle"></i>
                 Document analyzed successfully
                 @if (uploadFile.response!.analysis?.page_count; as pageCount) {
-                  <span class="page-count">({{ pageCount }} pages)</span>
+                  <span class="text-muted">({{ pageCount }} pages)</span>
                 }
               </div>
             }
           </div>
           
           <!-- Status Icon / Actions -->
-          <div class="file-actions">
+          <div class="d-flex align-items-center gap-2 flex-shrink-0">
             @switch (uploadFile.status) {
               @case ('uploading') {
                 <div class="spinner-border spinner-border-sm text-primary" role="status">
@@ -90,9 +88,9 @@
               }
               @case ('complete') {
                 @if (uploadFile.response?.success) {
-                  <i class="bi bi-check-circle-fill text-success"></i>
+                  <i class="bi bi-check-circle-fill text-success fs-5"></i>
                 } @else {
-                  <i class="bi bi-x-circle-fill text-danger"></i>
+                  <i class="bi bi-x-circle-fill text-danger fs-5"></i>
                 }
               }
               @case ('error') {
@@ -110,9 +108,8 @@
               }
             }
             
-            <!-- Remove button (always visible) -->
             <button 
-              class="btn btn-sm btn-link text-muted remove-btn"
+              class="btn btn-sm btn-link text-muted p-0"
               (click)="removeFile(i); $event.stopPropagation()"
               title="Remove file">
               <i class="bi bi-x-lg"></i>

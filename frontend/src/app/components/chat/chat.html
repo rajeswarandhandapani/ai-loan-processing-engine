@@ -1,24 +1,24 @@
-<div class="chat-container">
+<div class="chat-container d-flex flex-column h-100 bg-white rounded overflow-hidden">
   <!-- Chat Header -->
-  <div class="chat-header">
-    <div class="header-info">
-      <i class="bi bi-robot"></i>
-      <div class="header-text">
-        <h5>AI Loan Assistant</h5>
-        <span class="status-indicator">
+  <div class="chat-header d-flex align-items-center justify-content-between p-3 bg-primary text-white">
+    <div class="d-flex align-items-center gap-2">
+      <i class="bi bi-robot fs-4"></i>
+      <div>
+        <h6 class="mb-0 fw-semibold">AI Loan Assistant</h6>
+        <small class="d-flex align-items-center gap-1 opacity-75">
           @if (isLoading) {
-            <span class="status-dot typing"></span>
+            <span class="status-dot bg-warning"></span>
             Typing...
           } @else {
-            <span class="status-dot online"></span>
+            <span class="status-dot bg-success"></span>
             Online
           }
-        </span>
+        </small>
       </div>
     </div>
     @if (messages.length > 0) {
       <button 
-        class="btn btn-sm btn-outline-secondary clear-btn"
+        class="btn btn-sm btn-outline-light"
         (click)="clearChat()"
         title="Clear conversation">
         <i class="bi bi-trash3"></i>
@@ -27,61 +27,70 @@
   </div>
 
   <!-- Messages Area -->
-  <div class="messages-area">
+  <div class="messages-area flex-grow-1 overflow-auto p-3 bg-light">
     <!-- Welcome message when no messages -->
     @if (messages.length === 0) {
-      <div class="welcome-message">
-        <div class="welcome-icon">
-          <i class="bi bi-chat-heart"></i>
+      <div class="text-center py-4 text-secondary">
+        <div class="welcome-icon bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 64px; height: 64px;">
+          <i class="bi bi-chat-heart fs-3 text-white"></i>
         </div>
-        <h4>Welcome to AI Loan Assistant</h4>
-        <p>I'm here to help you with your loan application. You can ask me about:</p>
-        <ul>
-          <li><i class="bi bi-file-earmark-text"></i> Your uploaded documents</li>
-          <li><i class="bi bi-bank"></i> Loan eligibility and requirements</li>
-          <li><i class="bi bi-calculator"></i> Financial calculations</li>
-          <li><i class="bi bi-question-circle"></i> Application process questions</li>
+        <h5 class="text-dark fw-semibold">Welcome to AI Loan Assistant</h5>
+        <p class="small">I'm here to help you with your loan application. You can ask me about:</p>
+        <ul class="list-unstyled text-start d-inline-block small">
+          <li class="py-1 d-flex align-items-center gap-2"><i class="bi bi-file-earmark-text text-primary"></i> Your uploaded documents</li>
+          <li class="py-1 d-flex align-items-center gap-2"><i class="bi bi-bank text-primary"></i> Loan eligibility and requirements</li>
+          <li class="py-1 d-flex align-items-center gap-2"><i class="bi bi-calculator text-primary"></i> Financial calculations</li>
+          <li class="py-1 d-flex align-items-center gap-2"><i class="bi bi-question-circle text-primary"></i> Application process questions</li>
         </ul>
-        <p class="start-hint">Type a message below to get started!</p>
+        <p class="small text-muted fst-italic mt-3">Type a message below to get started!</p>
       </div>
     }
 
     <!-- Message Bubbles -->
     @for (message of messages; track message.id) {
       <div 
-        class="message-wrapper"
-        [class.user]="message.role === 'user'"
-        [class.assistant]="message.role === 'assistant'"
+        class="d-flex gap-2 mb-3"
+        [class.flex-row-reverse]="message.role === 'user'"
         @messageAnimation>
         
         <!-- Avatar -->
-        <div class="message-avatar">
+        <div class="message-avatar rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+             [class.bg-primary]="message.role === 'user'"
+             [class.bg-secondary]="message.role === 'assistant'">
           @if (message.role === 'assistant') {
-            <i class="bi bi-robot"></i>
+            <i class="bi bi-robot text-white small"></i>
           } @else {
-            <i class="bi bi-person"></i>
+            <i class="bi bi-person text-white small"></i>
           }
         </div>
         
         <!-- Message Bubble -->
-        <div class="message-bubble">
-          <div class="message-content">{{ message.content }}</div>
-          <div class="message-time">{{ formatTime(message.timestamp) }}</div>
+        <div class="message-bubble rounded-3 p-2 px-3" style="max-width: 75%;"
+             [class.bg-primary]="message.role === 'user'"
+             [class.text-white]="message.role === 'user'"
+             [class.bg-white]="message.role === 'assistant'"
+             [class.border]="message.role === 'assistant'">
+          <div class="small">{{ message.content }}</div>
+          <div class="text-end mt-1" style="font-size: 0.7rem;"
+               [class.opacity-75]="message.role === 'user'"
+               [class.text-muted]="message.role === 'assistant'">
+            {{ formatTime(message.timestamp) }}
+          </div>
         </div>
       </div>
     }
 
     <!-- Typing Indicator -->
     @if (isLoading) {
-      <div class="message-wrapper assistant" @messageAnimation>
-        <div class="message-avatar">
-          <i class="bi bi-robot"></i>
+      <div class="d-flex gap-2 mb-3" @messageAnimation>
+        <div class="message-avatar rounded-circle bg-secondary d-flex align-items-center justify-content-center flex-shrink-0">
+          <i class="bi bi-robot text-white small"></i>
         </div>
-        <div class="message-bubble typing-bubble">
-          <div class="typing-indicator">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="bg-white border rounded-3 p-3">
+          <div class="typing-indicator d-flex gap-1">
+            <span class="bg-primary rounded-circle"></span>
+            <span class="bg-primary rounded-circle"></span>
+            <span class="bg-primary rounded-circle"></span>
           </div>
         </div>
       </div>
@@ -92,18 +101,19 @@
   </div>
 
   <!-- Input Area -->
-  <div class="input-area">
-    <div class="input-wrapper">
+  <div class="p-3 bg-white border-top">
+    <div class="input-group">
       <input 
         type="text"
-        class="message-input"
+        class="form-control rounded-pill border-end-0"
         [(ngModel)]="inputMessage"
         (keydown)="onKeyDown($event)"
         placeholder="Type your message..."
         [disabled]="isLoading"
         autocomplete="off">
       <button 
-        class="send-button"
+        class="btn btn-primary rounded-pill ms-2 d-flex align-items-center justify-content-center"
+        style="width: 44px; height: 44px;"
         (click)="sendMessage()"
         [disabled]="isLoading || !inputMessage.trim()"
         title="Send message">
@@ -114,8 +124,8 @@
         }
       </button>
     </div>
-    <div class="input-hint">
-      Press <kbd>Enter</kbd> to send
+    <div class="text-center small text-muted mt-2">
+      Press <kbd class="bg-light border rounded px-1">Enter</kbd> to send
     </div>
   </div>
 </div>
