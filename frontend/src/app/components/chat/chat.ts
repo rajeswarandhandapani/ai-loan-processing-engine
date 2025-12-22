@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, AfterViewChecked, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewChecked, Output, EventEmitter, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { trigger, transition, style, animate } from '@angular/animations';
@@ -157,7 +157,10 @@ export class ChatComponent implements AfterViewChecked, OnDestroy {
    *   this.chatService = chatService;
    * }
    */
-  constructor(private chatService: ChatService) {}
+  constructor(
+    private chatService: ChatService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   /**
    * ========================================================================
@@ -240,8 +243,15 @@ export class ChatComponent implements AfterViewChecked, OnDestroy {
   sendMessage(): void {
     const messageText = this.inputMessage.trim();
     
+    console.log('sendMessage called with:', messageText);
+    console.log('isLoading:', this.isLoading);
+    console.log('sessionId:', this.sessionId);
+    
     // Guard clause: Don't send empty messages or when already loading
-    if (!messageText || this.isLoading) return;
+    if (!messageText || this.isLoading) {
+      console.log('Message blocked - empty or loading');
+      return;
+    }
 
     // Clear any previous error messages
     this.errorMessage = null;
@@ -265,8 +275,9 @@ export class ChatComponent implements AfterViewChecked, OnDestroy {
     this.inputMessage = '';  // Clear input field
     this.shouldScroll = true;  // Trigger auto-scroll
     
-    // Show typing indicator
+    // Show typing indicator (will be managed by service)
     this.isLoading = true;
+    console.log('Set isLoading to true before API call');
 
     /**
      * ======================================================================
@@ -302,8 +313,16 @@ export class ChatComponent implements AfterViewChecked, OnDestroy {
           
           // Add to messages array (Angular detects change and updates UI)
           this.messages.push(assistantMessage);
+          console.log('Messages array after push:', this.messages);
+          console.log('Total messages:', this.messages.length);
+          console.log('Setting isLoading to false');
           this.isLoading = false;  // Hide typing indicator
+          console.log('isLoading is now:', this.isLoading);
           this.shouldScroll = true;  // Scroll to new message
+          
+          // Force Angular to detect changes
+          this.cdr.detectChanges();
+          console.log('Change detection triggered');
         },
         
         /**

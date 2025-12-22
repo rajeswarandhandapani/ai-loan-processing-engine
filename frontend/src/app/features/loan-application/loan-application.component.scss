@@ -42,8 +42,8 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   width: 100%;
   min-height: 450px;
-  max-height: 600px;
-  overflow: hidden;
+  max-height: 650px;
+  overflow: visible;
 
   &:hover {
     transform: translateY(-4px);

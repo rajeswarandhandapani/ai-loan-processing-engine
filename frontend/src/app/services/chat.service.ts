@@ -145,6 +145,10 @@ export class ChatService {
       message: message.trim(),
       session_id: sessionId
     };
+    
+    console.log('ChatService.sendMessage called');
+    console.log('Payload:', payload);
+    console.log('URL:', `${this.baseUrl}/chat/`);
 
     /**
      * ======================================================================
@@ -175,22 +179,15 @@ export class ChatService {
      * 5. map() - Transform the emitted value
      *    - Not used here, but common for data transformation
      */
-    return this.http.post<ChatResponse>(`${this.baseUrl}/chat`, payload).pipe(
-      // Before request starts: set loading to true
-      tap(() => this.loadingSubject.next(true)),
-      
+    return this.http.post<ChatResponse>(`${this.baseUrl}/chat/`, payload).pipe(
       // Cancel if no response after 30 seconds
       timeout(30000),
       
       // Retry once if request fails (network issues)
       retry(1),
       
-      // After response arrives: set loading to false
-      tap(() => this.loadingSubject.next(false)),
-      
       // Handle errors gracefully
       catchError((error: HttpErrorResponse) => {
-        this.loadingSubject.next(false);
         return this.handleError(error);
       })
     );
