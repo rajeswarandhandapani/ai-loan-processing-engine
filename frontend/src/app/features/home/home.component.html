@@ -1,0 +1,67 @@
+<div class="home-container">
+  <div class="content-grid">
+    <!-- Left Column: File Upload & Extracted Data -->
+    <div class="upload-section">
+      <div class="section-card">
+        <div class="section-header">
+          <i class="bi bi-cloud-upload"></i>
+          <h3>Upload Documents</h3>
+        </div>
+        <p class="section-description">
+          Upload financial documents (bank statements, tax returns, invoices) for AI analysis
+        </p>
+        <app-file-upload
+          (uploadComplete)="onUploadComplete($event)">
+        </app-file-upload>
+      </div>
+
+      <!-- Extracted Data Display -->
+      @if (uploadedDocuments().length > 0) {
+        <div class="section-card mt-3">
+          <div class="section-header">
+            <i class="bi bi-file-earmark-check"></i>
+            <h3>Extracted Data</h3>
+          </div>
+          <div class="extracted-list">
+            @for (doc of uploadedDocuments(); track doc.filename) {
+              <div class="extracted-item">
+                <div class="doc-name">
+                  <i class="bi bi-file-pdf"></i>
+                  {{ doc.filename }}
+                </div>
+                @if (doc.analysis) {
+                  <div class="doc-details">
+                    @if (doc.analysis.page_count) {
+                      <span class="badge bg-secondary">{{ doc.analysis.page_count }} pages</span>
+                    }
+                    @if (doc.analysis.key_value_pairs) {
+                      <div class="key-values">
+                        @for (item of doc.analysis.key_value_pairs | keyvalue; track item.key) {
+                          <div class="kv-row">
+                            <span class="kv-key">{{ item.key }}:</span>
+                            <span class="kv-value">{{ item.value }}</span>
+                          </div>
+                        }
+                      </div>
+                    }
+                  </div>
+                }
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Right Column: Chat Interface -->
+    <div class="chat-section">
+      <div class="section-card chat-card">
+        <div class="section-header">
+          <i class="bi bi-chat-dots"></i>
+          <h3>AI Loan Assistant</h3>
+        </div>
+        <app-chat (messageSent)="onChatMessageSent($event)"></app-chat>
+      </div>
+    </div>
+  </div>
+</div>

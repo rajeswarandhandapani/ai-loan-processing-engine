@@ -2,12 +2,10 @@
 .chat-container {
   display: flex;
   flex-direction: column;
-  height: 450px;
-  border: 1px solid #e9ecef;
-  border-radius: 12px;
+  height: 100%;
+  border-radius: 8px;
   overflow: hidden;
   background: white;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 // Chat Header
