@@ -1,0 +1,704 @@
+{
+  "document_type": "invoice",
+  "model_id": "prebuilt-invoice",
+  "content": "ACME TECH SOLUTIONS LLC\nINVOICE\n456 Innovation Drive\nAustin, TX 78701\nInvoice #: INV-2024-001\nPhone: (512) 555-0123\nEmail: billing@acmetechsolutions.com\nDate: November 15, 2024\nEIN: 84-1234567\nBILL TO:\nSHIP TO:\nTechCorp Inc.\nTechCorp Inc. - Main Office\n789 Corporate Boulevard\n789 Corporate Boulevard\nSan Francisco, CA 94102\nSan Francisco, CA 94102\nAttn: Accounts Payable\nAttn: IT Department\nEmail: ap@techcorp.com\nInvoice Date:\nNovember 15, 2024\nPayment Terms:\nNet 30\nDue Date:\nDecember 15, 2024\nPO Number:\nPO-TC-2024-0892\nProject:\nCloud Migration Phase 2\nContract #:\nMSA-2024-0045\nItem\nDescription\nQty\nUnit\nPrice\nAmount\nCONS-001\nSenior Cloud Architect - Consulting Services\n$175.00/\n(40 hrs)\n40\nhr\n$7,000.00\nCONS-002\nDevOps Engineer - Implementation Services\n$150.00/\n(60 hrs)\n60\nhr\n$9,000.00\nCONS-003\nProject Manager - Coordination & Oversight\n$125.00/\n(20 hrs)\n20\nhr\n$2,500.00\nLIC-001\nEnterprise Software License - Annual\nSubscription\n1\n$5,000.00\n$5,000.00\nMISC-001\nTravel Expenses - On-site Implementation (2\ntrips)\n1\n$1,500.00\n$1,500.00\nSubtotal:\n$25,000.00\nTax (0%):\n$0.00\nDiscount:\n$0.00\nTOTAL DUE:\n$25,000.00\nPayment Instructions:\nPlease remit payment to:\nBank: First National Business Bank\nAccount Name: Acme Tech Solutions LLC\nAccount Number: **** 4521\nRouting Number: 021000021\nReference: INV-2024-001\nFor questions regarding this invoice, please contact billing@acmetechsolutions.com\nThank you for your business!\nAcme Tech Solutions LLC | 456 Innovation Drive, Austin, TX 78701 | www.acmetechsolutions.com",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "ACME TECH SOLUTIONS LLC",
+        "INVOICE",
+        "456 Innovation Drive",
+        "Austin, TX 78701",
+        "Invoice #: INV-2024-001",
+        "Phone: (512) 555-0123",
+        "Email: billing@acmetechsolutions.com",
+        "Date: November 15, 2024",
+        "EIN: 84-1234567",
+        "BILL TO:",
+        "SHIP TO:",
+        "TechCorp Inc.",
+        "TechCorp Inc. - Main Office",
+        "789 Corporate Boulevard",
+        "789 Corporate Boulevard",
+        "San Francisco, CA 94102",
+        "San Francisco, CA 94102",
+        "Attn: Accounts Payable",
+        "Attn: IT Department",
+        "Email: ap@techcorp.com",
+        "Invoice Date:",
+        "November 15, 2024",
+        "Payment Terms:",
+        "Net 30",
+        "Due Date:",
+        "December 15, 2024",
+        "PO Number:",
+        "PO-TC-2024-0892",
+        "Project:",
+        "Cloud Migration Phase 2",
+        "Contract #:",
+        "MSA-2024-0045",
+        "Item",
+        "Description",
+        "Qty",
+        "Unit",
+        "Price",
+        "Amount",
+        "CONS-001",
+        "Senior Cloud Architect - Consulting Services",
+        "$175.00/",
+        "(40 hrs)",
+        "40",
+        "hr",
+        "$7,000.00",
+        "CONS-002",
+        "DevOps Engineer - Implementation Services",
+        "$150.00/",
+        "(60 hrs)",
+        "60",
+        "hr",
+        "$9,000.00",
+        "CONS-003",
+        "Project Manager - Coordination & Oversight",
+        "$125.00/",
+        "(20 hrs)",
+        "20",
+        "hr",
+        "$2,500.00",
+        "LIC-001",
+        "Enterprise Software License - Annual",
+        "Subscription",
+        "1",
+        "$5,000.00",
+        "$5,000.00",
+        "MISC-001",
+        "Travel Expenses - On-site Implementation (2",
+        "trips)",
+        "1",
+        "$1,500.00",
+        "$1,500.00",
+        "Subtotal:",
+        "$25,000.00",
+        "Tax (0%):",
+        "$0.00",
+        "Discount:",
+        "$0.00",
+        "TOTAL DUE:",
+        "$25,000.00"
+      ],
+      "words_count": 158
+    },
+    {
+      "page_number": 2,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "Payment Instructions:",
+        "Please remit payment to:",
+        "Bank: First National Business Bank",
+        "Account Name: Acme Tech Solutions LLC",
+        "Account Number: **** 4521",
+        "Routing Number: 021000021",
+        "Reference: INV-2024-001",
+        "For questions regarding this invoice, please contact billing@acmetechsolutions.com",
+        "Thank you for your business!",
+        "Acme Tech Solutions LLC | 456 Innovation Drive, Austin, TX 78701 | www.acmetechsolutions.com"
+      ],
+      "words_count": 52
+    }
+  ],
+  "tables": [
+    {
+      "row_count": 3,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Invoice Date:",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "November 15, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Due Date:",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "December 15, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Project:",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "Cloud Migration Phase 2",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 3,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Payment Terms:",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Net 30",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "PO Number:",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "PO-TC-2024-0892",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Contract #:",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "MSA-2024-0045",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 6,
+      "column_count": 5,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Item",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Description",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "Qty",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 3,
+          "content": "Unit\nPrice",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 4,
+          "content": "Amount",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "CONS-001",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "Senior Cloud Architect - Consulting Services\n(40 hrs)",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "40",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 3,
+          "content": "$175.00/\nhr",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 4,
+          "content": "$7,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "CONS-002",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "DevOps Engineer - Implementation Services\n(60 hrs)",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 2,
+          "content": "60",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 3,
+          "content": "$150.00/\nhr",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 4,
+          "content": "$9,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "CONS-003",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "Project Manager - Coordination & Oversight\n(20 hrs)",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 2,
+          "content": "20",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 3,
+          "content": "$125.00/\nhr",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 4,
+          "content": "$2,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "LIC-001",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "Enterprise Software License - Annual\nSubscription",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 2,
+          "content": "1",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 3,
+          "content": "$5,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 4,
+          "content": "$5,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "MISC-001",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "Travel Expenses - On-site Implementation (2\ntrips)",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 2,
+          "content": "1",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 3,
+          "content": "$1,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 4,
+          "content": "$1,500.00",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 4,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Subtotal:",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "$25,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Tax (0%):",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "$0.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Discount:",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "$0.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "TOTAL DUE:",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$25,000.00",
+          "kind": null
+        }
+      ]
+    }
+  ],
+  "fields": {
+    "AmountDue": {
+      "name": "AmountDue",
+      "value": null,
+      "confidence": 0.428,
+      "value_type": "currency"
+    },
+    "BillingAddress": {
+      "name": "BillingAddress",
+      "value": null,
+      "confidence": 0.886,
+      "value_type": "address"
+    },
+    "BillingAddressRecipient": {
+      "name": "BillingAddressRecipient",
+      "value": "TechCorp Inc.\nAttn: Accounts Payable",
+      "confidence": 0.748,
+      "value_type": "string"
+    },
+    "BillingEmail": {
+      "name": "BillingEmail",
+      "value": "ap@techcorp.com",
+      "confidence": 0.341,
+      "value_type": "string"
+    },
+    "CustomerName": {
+      "name": "CustomerName",
+      "value": "TechCorp Inc.\nAttn: Accounts Payable",
+      "confidence": 0.748,
+      "value_type": "string"
+    },
+    "DueDate": {
+      "name": "DueDate",
+      "value": null,
+      "confidence": 0.926,
+      "value_type": "date"
+    },
+    "InvoiceDate": {
+      "name": "InvoiceDate",
+      "value": null,
+      "confidence": 0.925,
+      "value_type": "date"
+    },
+    "InvoiceId": {
+      "name": "InvoiceId",
+      "value": "INV-2024-001",
+      "confidence": 0.97,
+      "value_type": "string"
+    },
+    "InvoiceTotal": {
+      "name": "InvoiceTotal",
+      "value": null,
+      "confidence": 0.428,
+      "value_type": "currency"
+    },
+    "Items": {
+      "name": "Items",
+      "value": null,
+      "confidence": null,
+      "value_type": "array"
+    },
+    "PaymentTerm": {
+      "name": "PaymentTerm",
+      "value": "Net 30",
+      "confidence": 0.937,
+      "value_type": "string"
+    },
+    "PurchaseOrder": {
+      "name": "PurchaseOrder",
+      "value": "PO-TC-2024-0892",
+      "confidence": 0.966,
+      "value_type": "string"
+    },
+    "ShippingAddress": {
+      "name": "ShippingAddress",
+      "value": null,
+      "confidence": 0.885,
+      "value_type": "address"
+    },
+    "ShippingAddressRecipient": {
+      "name": "ShippingAddressRecipient",
+      "value": "TechCorp Inc. - Main Office\nAttn: IT Department",
+      "confidence": 0.868,
+      "value_type": "string"
+    },
+    "SubTotal": {
+      "name": "SubTotal",
+      "value": null,
+      "confidence": 0.968,
+      "value_type": "currency"
+    },
+    "TotalDiscount": {
+      "name": "TotalDiscount",
+      "value": null,
+      "confidence": 0.416,
+      "value_type": "currency"
+    },
+    "TotalTax": {
+      "name": "TotalTax",
+      "value": null,
+      "confidence": 0.937,
+      "value_type": "currency"
+    },
+    "VendorAddress": {
+      "name": "VendorAddress",
+      "value": null,
+      "confidence": 0.888,
+      "value_type": "address"
+    },
+    "VendorAddressRecipient": {
+      "name": "VendorAddressRecipient",
+      "value": "Acme Tech Solutions LLC",
+      "confidence": 0.916,
+      "value_type": "string"
+    },
+    "VendorEmail": {
+      "name": "VendorEmail",
+      "value": "billing@acmetechsolutions.com",
+      "confidence": 0.417,
+      "value_type": "string"
+    },
+    "VendorName": {
+      "name": "VendorName",
+      "value": "ACME TECH SOLUTIONS LLC",
+      "confidence": 0.89,
+      "value_type": "string"
+    },
+    "VendorPhoneNumber": {
+      "name": "VendorPhoneNumber",
+      "value": null,
+      "confidence": 0.922,
+      "value_type": "phoneNumber"
+    },
+    "CustomerId": {
+      "name": "CustomerId",
+      "value": "**** 4521",
+      "confidence": 0.667,
+      "value_type": "string"
+    }
+  },
+  "documents": [
+    {
+      "doc_type": "invoice",
+      "confidence": 1.0,
+      "fields": {
+        "AmountDue": {
+          "value": null,
+          "confidence": 0.428,
+          "value_type": "currency"
+        },
+        "BillingAddress": {
+          "value": null,
+          "confidence": 0.886,
+          "value_type": "address"
+        },
+        "BillingAddressRecipient": {
+          "value": "TechCorp Inc.\nAttn: Accounts Payable",
+          "confidence": 0.748,
+          "value_type": "string"
+        },
+        "BillingEmail": {
+          "value": "ap@techcorp.com",
+          "confidence": 0.341,
+          "value_type": "string"
+        },
+        "CustomerName": {
+          "value": "TechCorp Inc.\nAttn: Accounts Payable",
+          "confidence": 0.748,
+          "value_type": "string"
+        },
+        "DueDate": {
+          "value": null,
+          "confidence": 0.926,
+          "value_type": "date"
+        },
+        "InvoiceDate": {
+          "value": null,
+          "confidence": 0.925,
+          "value_type": "date"
+        },
+        "InvoiceId": {
+          "value": "INV-2024-001",
+          "confidence": 0.97,
+          "value_type": "string"
+        },
+        "InvoiceTotal": {
+          "value": null,
+          "confidence": 0.428,
+          "value_type": "currency"
+        },
+        "Items": {
+          "value": null,
+          "confidence": null,
+          "value_type": "array"
+        },
+        "PaymentTerm": {
+          "value": "Net 30",
+          "confidence": 0.937,
+          "value_type": "string"
+        },
+        "PurchaseOrder": {
+          "value": "PO-TC-2024-0892",
+          "confidence": 0.966,
+          "value_type": "string"
+        },
+        "ShippingAddress": {
+          "value": null,
+          "confidence": 0.885,
+          "value_type": "address"
+        },
+        "ShippingAddressRecipient": {
+          "value": "TechCorp Inc. - Main Office\nAttn: IT Department",
+          "confidence": 0.868,
+          "value_type": "string"
+        },
+        "SubTotal": {
+          "value": null,
+          "confidence": 0.968,
+          "value_type": "currency"
+        },
+        "TotalDiscount": {
+          "value": null,
+          "confidence": 0.416,
+          "value_type": "currency"
+        },
+        "TotalTax": {
+          "value": null,
+          "confidence": 0.937,
+          "value_type": "currency"
+        },
+        "VendorAddress": {
+          "value": null,
+          "confidence": 0.888,
+          "value_type": "address"
+        },
+        "VendorAddressRecipient": {
+          "value": "Acme Tech Solutions LLC",
+          "confidence": 0.916,
+          "value_type": "string"
+        },
+        "VendorEmail": {
+          "value": "billing@acmetechsolutions.com",
+          "confidence": 0.417,
+          "value_type": "string"
+        },
+        "VendorName": {
+          "value": "ACME TECH SOLUTIONS LLC",
+          "confidence": 0.89,
+          "value_type": "string"
+        },
+        "VendorPhoneNumber": {
+          "value": null,
+          "confidence": 0.922,
+          "value_type": "phoneNumber"
+        },
+        "CustomerId": {
+          "value": "**** 4521",
+          "confidence": 0.667,
+          "value_type": "string"
+        }
+      }
+    }
+  ],
+  "raw_response": null
+}

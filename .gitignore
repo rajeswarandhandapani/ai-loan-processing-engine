@@ -31,7 +31,7 @@ env.bak/
 .coverage
 .coverage.*
 htmlcov/
-.cache/
+/.cache/
 
 # Backend-specific (FastAPI app)
 backend/__pycache__/
@@ -39,7 +39,6 @@ backend/.pytest_cache/
 backend/.mypy_cache/
 backend/.coverage
 backend/htmlcov/
-backend/.cache/
 backend/venv/
 backend/.venv/
 
