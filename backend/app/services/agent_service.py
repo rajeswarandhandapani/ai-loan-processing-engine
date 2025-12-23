@@ -5,12 +5,13 @@ from langchain.agents import create_agent
 from app.config import settings
 from app.logging_config import get_logger
 from app.tools import (
-    analyze_financial_document,
     search_lending_policy,
     analyze_user_sentiment,
     extract_entities,
-    analyze_text_comprehensive
+    analyze_text_comprehensive,
+    get_analyzed_financial_documents_from_session
 )
+from app.tools.session_document_tool import current_session_id
 
 logger = get_logger(__name__)
 
@@ -45,11 +46,11 @@ class AgentService:
 
         # Define tools
         self.tools = [
-            analyze_financial_document,
             search_lending_policy,
             analyze_user_sentiment,
             extract_entities,
-            analyze_text_comprehensive
+            analyze_text_comprehensive,
+            get_analyzed_financial_documents_from_session
         ]
 
         # Define System prompt
@@ -57,15 +58,22 @@ class AgentService:
 
 Your role is to:
 1. Interview loan applicants and gather all required information.
-2. Analyze uploaded financial documents (income statements, balance sheets, etc.) when the user provides a file path.
+2. Access and analyze financial documents that users have uploaded through the UI.
 3. Check eligibility and answer policy questions using the lending policy search tool.
 4. Understand user sentiment and extract key information from their messages.
 5. Provide clear, professional, and empathetic guidance throughout the loan application process.
 
 IMPORTANT - Tool Usage Rules:
 
-DOCUMENT ANALYSIS:
-- Use analyze_financial_document tool when the user provides a document file path.
+FINANCIAL DOCUMENTS:
+- ALWAYS use get_analyzed_financial_documents_from_session tool when the user:
+  * Mentions uploading a document
+  * Asks about their bank statement, invoice, receipt, or tax form
+  * Wants to know their balance, transactions, or any document details
+  * References "my document" or "the file I uploaded"
+- Documents are automatically analyzed when uploaded - you get the FULL extracted data
+- The tool returns: extracted fields, tables (transactions), and complete content
+- Reference specific data (account holder, bank name, balances, transactions) in your responses
 
 POLICY LOOKUP:
 - ALWAYS use search_lending_policy tool for ANY question about:
@@ -129,8 +137,8 @@ RESPONSE GUIDELINES:
         message_lower = message.lower()
         likely_tools = []
         
-        if any(keyword in message_lower for keyword in ["document", "file", "upload", "analyze", "pdf", "statement"]):
-            likely_tools.append("analyze_financial_document")
+        if any(keyword in message_lower for keyword in ["document", "file", "upload", "pdf", "statement", "invoice", "receipt", "balance", "transaction"]):
+            likely_tools.append("get_analyzed_financial_documents_from_session")
         if any(keyword in message_lower for keyword in ["policy", "requirement", "credit score", "interest rate", "loan amount", "eligible"]):
             likely_tools.append("search_lending_policy")
         if any(keyword in message_lower for keyword in ["frustrated", "confused", "worried", "happy", "excited"]):
@@ -142,11 +150,14 @@ RESPONSE GUIDELINES:
             logger.info(f"Predicted tool usage for session {session_id}: {', '.join(likely_tools)}")
         
         try:
+            # Set session context for tools that need it
+            current_session_id.set(session_id)
+            
             # Track agent invocation
             invoke_start = time.time()
             logger.debug(f"Invoking agent for session {session_id}")
             
-            response = self.agent.invoke(
+            response = await self.agent.ainvoke(
                 {"messages": [{"role": "user", "content": message}]},
                 {"configurable": {"thread_id": session_id}}
             )
@@ -159,8 +170,8 @@ RESPONSE GUIDELINES:
             
             # Check which tools were actually used by analyzing the response
             tools_used = []
-            if "document" in agent_response.lower() or "analysis" in agent_response.lower():
-                tools_used.append("analyze_financial_document")
+            if any(kw in agent_response.lower() for kw in ["document", "statement", "uploaded", "bank", "invoice"]):
+                tools_used.append("get_analyzed_financial_documents_from_session")
             if "policy" in agent_response.lower() or "according to" in agent_response.lower():
                 tools_used.append("search_lending_policy")
             if "sentiment" in agent_response.lower() or "feeling" in agent_response.lower():

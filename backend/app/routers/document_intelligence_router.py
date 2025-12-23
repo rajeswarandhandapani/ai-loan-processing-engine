@@ -18,6 +18,7 @@ from app.models.document_intelligence_models import (
     DocumentAnalysisResponse,
 )
 from app.services.document_intelligence_service import DocumentIntelligenceService
+from app.services.session_document_store import get_session_document_store
 from app.logging_config import get_logger
 
 logger = get_logger(__name__)
@@ -78,6 +79,10 @@ async def upload_document(
         default=DocumentType.LAYOUT,
         description="Type of document to analyze",
     ),
+    session_id: Optional[str] = Query(
+        default=None,
+        description="Session ID to associate this document with a chat session",
+    ),
 ) -> DocumentUploadResponse:
     """
     Upload a document and analyze it using Azure Document Intelligence.
@@ -85,11 +90,12 @@ async def upload_document(
     Args:
         file: The document file to upload (PDF, PNG, JPG, JPEG, TIFF, BMP)
         document_type: The type of document for specialized extraction
+        session_id: Optional session ID to link this document to a chat session
         
     Returns:
         DocumentUploadResponse with analysis results
     """
-    logger.info(f"Document upload request received - File: {file.filename}, Type: {document_type.value}")
+    logger.info(f"Document upload request received - File: {file.filename}, Type: {document_type.value}, Session: {session_id or 'None'}")
     
     # Validate file exists and has filename
     if not file.filename:
@@ -139,6 +145,22 @@ async def upload_document(
         )
 
         logger.info(f"Document analysis completed successfully for: {file.filename}")
+        
+        # Store document in session store if session_id provided
+        if session_id:
+            try:
+                session_store = get_session_document_store()
+                session_store.add_document(
+                    session_id=session_id,
+                    filename=file.filename,
+                    document_type=document_type.value,
+                    analysis=analysis_result.model_dump()
+                )
+                logger.info(f"Document stored in session {session_id}")
+            except Exception as e:
+                logger.error(f"Failed to store document in session: {str(e)}", exc_info=True)
+                # Don't fail the upload if session storage fails
+        
         return DocumentUploadResponse(
             success=True,
             message="Document analyzed successfully",

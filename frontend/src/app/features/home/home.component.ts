@@ -23,6 +23,12 @@ interface UploadedDocument {
 })
 export class HomeComponent {
   uploadedDocuments = signal<UploadedDocument[]>([]);
+  currentSessionId: string = '';
+
+  onSessionIdChanged(sessionId: string): void {
+    this.currentSessionId = sessionId;
+    console.log('Session ID updated:', sessionId);
+  }
 
   onUploadComplete(result: any): void {
     if (result.success) {

@@ -44,15 +44,22 @@ export class ApiService {
    * 
    * @param file - The file to upload
    * @param documentType - Type of document (e.g., 'prebuilt-layout', 'prebuilt-invoice')
+   * @param sessionId - Optional session ID to link document to chat session
    * @returns Observable that emits progress updates and final response
    */
-  uploadDocument(file: File, documentType: string = 'prebuilt-layout'): Observable<UploadProgress> {
+  uploadDocument(file: File, documentType: string = 'prebuilt-layout', sessionId?: string): Observable<UploadProgress> {
     const formData = new FormData();
     formData.append('file', file, file.name);
 
+    // Build URL with query parameters
+    let url = `${this.baseUrl}/documents/upload?document_type=${documentType}`;
+    if (sessionId) {
+      url += `&session_id=${sessionId}`;
+    }
+
     const request = new HttpRequest(
       'POST',
-      `${this.baseUrl}/documents/upload?document_type=${documentType}`,
+      url,
       formData,
       {
         reportProgress: true

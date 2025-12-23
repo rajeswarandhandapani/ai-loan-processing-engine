@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ApiService, DocumentUploadResponse, UploadProgress } from '../../services/api.service';
@@ -39,6 +39,9 @@ export interface UploadFile {
   ]
 })
 export class FileUploadComponent {
+  // Session ID from chat component to link uploads to conversation
+  @Input() sessionId: string = '';
+
   // Event emitted when a file upload completes successfully
   @Output() uploadComplete = new EventEmitter<DocumentUploadResponse>();
   
@@ -199,7 +202,7 @@ export class FileUploadComponent {
     // Auto-detect document type from filename
     const documentType = this.getDocumentType(uploadFile.file.name);
 
-    this.apiService.uploadDocument(uploadFile.file, documentType).subscribe({
+    this.apiService.uploadDocument(uploadFile.file, documentType, this.sessionId).subscribe({
       next: (progress: UploadProgress) => {
         uploadFile.progress = progress.progress;
 

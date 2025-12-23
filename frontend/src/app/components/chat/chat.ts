@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, AfterViewChecked, Output, EventEmitter, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewChecked, Output, EventEmitter, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { trigger, transition, style, animate } from '@angular/animations';
@@ -80,7 +80,7 @@ export interface ChatMessage {
  * - This causes memory leaks (app gets slower over time)
  * - Always unsubscribe in ngOnDestroy()!
  */
-export class ChatComponent implements AfterViewChecked, OnDestroy {
+export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
   /**
    * ========================================================================
    * TECHNICAL CONCEPT #5: ViewChild Decorator
@@ -106,6 +106,7 @@ export class ChatComponent implements AfterViewChecked, OnDestroy {
    * This enables component communication: child -> parent
    */
   @Output() messageSent = new EventEmitter<ChatMessage>();
+  @Output() sessionIdChanged = new EventEmitter<string>();
 
   // Array of all messages in the conversation
   messages: ChatMessage[] = [];
@@ -161,6 +162,11 @@ export class ChatComponent implements AfterViewChecked, OnDestroy {
     private chatService: ChatService,
     private cdr: ChangeDetectorRef
   ) {}
+
+  ngOnInit(): void {
+    // Emit the session ID to parent component on initialization
+    this.sessionIdChanged.emit(this.sessionId);
+  }
 
   /**
    * ========================================================================
@@ -478,6 +484,7 @@ export class ChatComponent implements AfterViewChecked, OnDestroy {
     this.errorMessage = null;             // Clear errors
     this.isLoading = false;               // Reset loading state
     console.log('Chat cleared, new session:', this.sessionId);
+    this.sessionIdChanged.emit(this.sessionId); // Notify parent of new session
   }
   
   /**
