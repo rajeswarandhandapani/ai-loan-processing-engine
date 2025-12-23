@@ -13,6 +13,9 @@
 
 .messages-area {
   scroll-behavior: smooth;
+  max-height: calc(100vh - 300px);
+  min-height: 400px;
+  overflow-y: auto;
 
   &::-webkit-scrollbar {
     width: 6px;
