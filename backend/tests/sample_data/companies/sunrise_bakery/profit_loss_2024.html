@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Profit & Loss Statement - Sunrise Bakery Co LLC</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; font-size: 11px; }
+        .header { text-align: center; border-bottom: 2px solid #8b4513; padding-bottom: 20px; margin-bottom: 30px; }
+        .company-name { font-size: 24px; font-weight: bold; color: #8b4513; }
+        .report-title { font-size: 18px; color: #666; margin-top: 10px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 8px 12px; text-align: right; }
+        th:first-child, td:first-child { text-align: left; }
+        th { background: #8b4513; color: white; }
+        tr:nth-child(even) { background: #f8f8f8; }
+        tr.section-header { background: #deb887; font-weight: bold; }
+        tr.subtotal { border-top: 2px solid #666; font-weight: bold; }
+        tr.grand-total { background: #8b4513; color: white; font-weight: bold; font-size: 13px; }
+        .positive { color: green; }
+        .negative { color: red; }
+        .notes { margin-top: 40px; padding: 20px; background: #fff8dc; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="company-name">🌅 SUNRISE BAKERY CO LLC</div>
+        <div class="report-title">Profit and Loss Statement</div>
+        <div>For the Fiscal Year Ending December 31, 2024 (Projected)</div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Account</th>
+            <th>FY 2024 (Projected)</th>
+            <th>FY 2023 (Actual)</th>
+            <th>Change (%)</th>
+        </tr>
+        
+        <tr class="section-header">
+            <td colspan="4">REVENUE</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Retail Sales (In-Store)</td>
+            <td>$312,000.00</td>
+            <td>$285,000.00</td>
+            <td class="positive">9.5%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Wholesale (Grocery Stores)</td>
+            <td>$186,000.00</td>
+            <td>$156,000.00</td>
+            <td class="positive">19.2%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Catering & Events</td>
+            <td>$142,000.00</td>
+            <td>$98,000.00</td>
+            <td class="positive">44.9%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Online Orders</td>
+            <td>$28,000.00</td>
+            <td>$15,000.00</td>
+            <td class="positive">86.7%</td>
+        </tr>
+        <tr class="subtotal">
+            <td>TOTAL REVENUE</td>
+            <td>$668,000.00</td>
+            <td>$554,000.00</td>
+            <td class="positive">20.6%</td>
+        </tr>
+
+        <tr class="section-header">
+            <td colspan="4">COST OF GOODS SOLD</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Ingredients & Raw Materials</td>
+            <td>$167,000.00</td>
+            <td>$138,500.00</td>
+            <td>20.6%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Packaging</td>
+            <td>$26,720.00</td>
+            <td>$22,160.00</td>
+            <td>20.6%</td>
+        </tr>
+        <tr class="subtotal">
+            <td>TOTAL COGS</td>
+            <td>$193,720.00</td>
+            <td>$160,660.00</td>
+            <td>20.6%</td>
+        </tr>
+
+        <tr class="subtotal" style="background: #d4edda;">
+            <td>GROSS PROFIT</td>
+            <td>$474,280.00</td>
+            <td>$393,340.00</td>
+            <td class="positive">20.6%</td>
+        </tr>
+        <tr>
+            <td><em>Gross Profit Margin</em></td>
+            <td><em>71.0%</em></td>
+            <td><em>71.0%</em></td>
+            <td></td>
+        </tr>
+
+        <tr class="section-header">
+            <td colspan="4">OPERATING EXPENSES</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Salaries & Wages (12 employees)</td>
+            <td>$298,000.00</td>
+            <td>$265,000.00</td>
+            <td>12.5%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Rent</td>
+            <td>$66,000.00</td>
+            <td>$60,000.00</td>
+            <td>10.0%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Utilities</td>
+            <td>$22,200.00</td>
+            <td>$19,800.00</td>
+            <td>12.1%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Equipment Lease</td>
+            <td>$14,400.00</td>
+            <td>$14,400.00</td>
+            <td>0.0%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Insurance</td>
+            <td>$11,760.00</td>
+            <td>$10,800.00</td>
+            <td>8.9%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Marketing</td>
+            <td>$8,000.00</td>
+            <td>$6,000.00</td>
+            <td>33.3%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Repairs & Maintenance</td>
+            <td>$6,000.00</td>
+            <td>$8,500.00</td>
+            <td class="positive">-29.4%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Professional Services</td>
+            <td>$4,800.00</td>
+            <td>$4,200.00</td>
+            <td>14.3%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Miscellaneous</td>
+            <td>$3,500.00</td>
+            <td>$3,000.00</td>
+            <td>16.7%</td>
+        </tr>
+        <tr class="subtotal">
+            <td>TOTAL OPERATING EXPENSES</td>
+            <td>$434,660.00</td>
+            <td>$391,700.00</td>
+            <td>11.0%</td>
+        </tr>
+
+        <tr class="subtotal" style="background: #cce5ff;">
+            <td>OPERATING INCOME (EBIT)</td>
+            <td>$39,620.00</td>
+            <td>$1,640.00</td>
+            <td class="positive">2,316%</td>
+        </tr>
+
+        <tr class="section-header">
+            <td colspan="4">OTHER EXPENSES</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Interest Expense (Existing Loan)</td>
+            <td>($18,400.00)</td>
+            <td>($19,800.00)</td>
+            <td class="positive">7.1%</td>
+        </tr>
+
+        <tr class="subtotal">
+            <td>INCOME BEFORE TAXES</td>
+            <td>$21,220.00</td>
+            <td>($18,160.00)</td>
+            <td class="positive">N/A</td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Income Tax Expense (Est. 22%)</td>
+            <td>($4,668.00)</td>
+            <td>$0.00</td>
+            <td></td>
+        </tr>
+
+        <tr class="grand-total">
+            <td>NET INCOME</td>
+            <td>$16,552.00</td>
+            <td>($18,160.00)</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <td><em>Net Profit Margin</em></td>
+            <td><em>2.5%</em></td>
+            <td><em>-3.3%</em></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div class="notes">
+        <h3>Notes</h3>
+        <ul>
+            <li><strong>Turnaround:</strong> Business turned profitable in 2024 after a challenging 2023.</li>
+            <li><strong>Growth Driver:</strong> Catering revenue up 45% due to new corporate contracts.</li>
+            <li><strong>Existing Debt:</strong> SBA loan balance ~$85,000 at 7.5% APR, monthly payment $2,200.</li>
+            <li><strong>Loan Purpose:</strong> Seeking $75,000 for second location expansion in Louisville, CO.</li>
+            <li><strong>Concern:</strong> Thin margins (2.5% net). DTI ratio borderline at ~38%.</li>
+        </ul>
+        <p><strong>Prepared by:</strong> Rodriguez Bookkeeping Services | <strong>Date:</strong> December 1, 2024</p>
+    </div>
+</body>
+</html>

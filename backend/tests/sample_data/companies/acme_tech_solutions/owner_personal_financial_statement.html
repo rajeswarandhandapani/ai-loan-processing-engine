@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Financial Statement - Michael Chen</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; font-size: 11px; }
+        .form { max-width: 800px; margin: auto; }
+        .header { text-align: center; border-bottom: 2px solid #000; padding-bottom: 15px; margin-bottom: 20px; }
+        .title { font-size: 20px; font-weight: bold; }
+        .subtitle { font-size: 12px; color: #666; }
+        .section { margin: 20px 0; }
+        .section-title { font-weight: bold; background: #003366; color: white; padding: 8px; margin-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 6px 10px; border: 1px solid #ddd; text-align: left; }
+        th { background: #f0f0f0; }
+        .amount { text-align: right; font-family: 'Courier New', monospace; }
+        .total-row { background: #ffffcc; font-weight: bold; }
+        .net-worth { background: #d4edda; font-weight: bold; font-size: 14px; }
+        .signature { margin-top: 40px; display: flex; justify-content: space-between; }
+        .sig-line { border-top: 1px solid #000; width: 250px; padding-top: 5px; text-align: center; }
+        .notice { font-size: 9px; color: #666; margin-top: 30px; padding: 10px; background: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <div class="header">
+            <div class="title">PERSONAL FINANCIAL STATEMENT</div>
+            <div class="subtitle">SBA Form 413 (Simplified Version)</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">PERSONAL INFORMATION</div>
+            <table>
+                <tr>
+                    <td><strong>Name:</strong></td>
+                    <td>Michael Chen</td>
+                    <td><strong>SSN:</strong></td>
+                    <td>***-**-4521</td>
+                </tr>
+                <tr>
+                    <td><strong>Address:</strong></td>
+                    <td>1842 Lakewood Drive, Austin, TX 78703</td>
+                    <td><strong>Phone:</strong></td>
+                    <td>(512) 555-0198</td>
+                </tr>
+                <tr>
+                    <td><strong>Business Name:</strong></td>
+                    <td>Acme Tech Solutions LLC</td>
+                    <td><strong>Ownership %:</strong></td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <td><strong>Date of Birth:</strong></td>
+                    <td>June 15, 1985</td>
+                    <td><strong>As of Date:</strong></td>
+                    <td>November 30, 2024</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">ASSETS</div>
+            <table>
+                <tr>
+                    <th>Description</th>
+                    <th class="amount">Value</th>
+                </tr>
+                <tr>
+                    <td>Cash in Banks (Checking/Savings)</td>
+                    <td class="amount">$45,000.00</td>
+                </tr>
+                <tr>
+                    <td>Retirement Accounts (401k, IRA)</td>
+                    <td class="amount">$185,000.00</td>
+                </tr>
+                <tr>
+                    <td>Stocks & Bonds (Non-retirement)</td>
+                    <td class="amount">$72,000.00</td>
+                </tr>
+                <tr>
+                    <td>Real Estate - Primary Residence (1842 Lakewood Dr)</td>
+                    <td class="amount">$650,000.00</td>
+                </tr>
+                <tr>
+                    <td>Automobiles (2022 Tesla Model Y, 2020 Honda Accord)</td>
+                    <td class="amount">$65,000.00</td>
+                </tr>
+                <tr>
+                    <td>Business Ownership - Acme Tech Solutions LLC (100%)</td>
+                    <td class="amount">$89,780.00</td>
+                </tr>
+                <tr>
+                    <td>Life Insurance (Cash Surrender Value)</td>
+                    <td class="amount">$25,000.00</td>
+                </tr>
+                <tr>
+                    <td>Other Assets</td>
+                    <td class="amount">$15,000.00</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>TOTAL ASSETS</strong></td>
+                    <td class="amount"><strong>$1,146,780.00</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">LIABILITIES</div>
+            <table>
+                <tr>
+                    <th>Description</th>
+                    <th>Creditor</th>
+                    <th class="amount">Monthly Payment</th>
+                    <th class="amount">Balance Owed</th>
+                </tr>
+                <tr>
+                    <td>Mortgage - Primary Residence</td>
+                    <td>Wells Fargo</td>
+                    <td class="amount">$2,850.00</td>
+                    <td class="amount">$420,000.00</td>
+                </tr>
+                <tr>
+                    <td>Auto Loan - Tesla Model Y</td>
+                    <td>Tesla Finance</td>
+                    <td class="amount">$650.00</td>
+                    <td class="amount">$28,000.00</td>
+                </tr>
+                <tr>
+                    <td>Credit Card - Chase Sapphire</td>
+                    <td>Chase Bank</td>
+                    <td class="amount">$500.00</td>
+                    <td class="amount">$4,200.00</td>
+                </tr>
+                <tr>
+                    <td>Credit Card - Amex Business</td>
+                    <td>American Express</td>
+                    <td class="amount">$800.00</td>
+                    <td class="amount">$8,500.00</td>
+                </tr>
+                <tr>
+                    <td>Student Loans</td>
+                    <td>Nelnet</td>
+                    <td class="amount">$0.00</td>
+                    <td class="amount">$0.00 (Paid Off)</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="3"><strong>TOTAL LIABILITIES</strong></td>
+                    <td class="amount"><strong>$460,700.00</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <table>
+                <tr class="net-worth">
+                    <td>NET WORTH (Total Assets - Total Liabilities)</td>
+                    <td class="amount">$686,080.00</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">ANNUAL INCOME</div>
+            <table>
+                <tr>
+                    <th>Source</th>
+                    <th class="amount">Annual Amount</th>
+                </tr>
+                <tr>
+                    <td>Salary/Distributions from Acme Tech Solutions LLC</td>
+                    <td class="amount">$180,000.00</td>
+                </tr>
+                <tr>
+                    <td>Spouse Income (Sarah Chen - Marketing Manager)</td>
+                    <td class="amount">$95,000.00</td>
+                </tr>
+                <tr>
+                    <td>Investment Income (Dividends/Interest)</td>
+                    <td class="amount">$8,500.00</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>TOTAL ANNUAL INCOME</strong></td>
+                    <td class="amount"><strong>$283,500.00</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">CONTINGENT LIABILITIES</div>
+            <table>
+                <tr>
+                    <td>Personal Guarantees on Business Debt</td>
+                    <td class="amount">$125,000.00 (First National Bank Business Loan)</td>
+                </tr>
+                <tr>
+                    <td>Co-signer Obligations</td>
+                    <td class="amount">None</td>
+                </tr>
+                <tr>
+                    <td>Pending Lawsuits</td>
+                    <td class="amount">None</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="signature">
+            <div>
+                <div class="sig-line">Michael Chen</div>
+                <div style="text-align: center;">Signature</div>
+            </div>
+            <div>
+                <div class="sig-line">November 30, 2024</div>
+                <div style="text-align: center;">Date</div>
+            </div>
+        </div>
+
+        <div class="notice">
+            <strong>Certification:</strong> I certify that the information provided in this Personal Financial Statement is true and complete to the best of my knowledge. I understand that this statement is being provided to obtain credit and that any misrepresentation may result in civil or criminal penalties.
+        </div>
+    </div>
+</body>
+</html>

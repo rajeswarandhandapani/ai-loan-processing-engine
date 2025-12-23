@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Report Summary - Michael Chen</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; font-size: 11px; }
+        .report { max-width: 800px; margin: auto; }
+        .header { background: #1a4480; color: white; padding: 20px; text-align: center; }
+        .header h1 { margin: 0; font-size: 24px; }
+        .header .subtitle { font-size: 12px; opacity: 0.8; }
+        .score-section { display: flex; justify-content: center; padding: 30px; background: #f5f5f5; }
+        .score-box { text-align: center; padding: 20px 40px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .score { font-size: 72px; font-weight: bold; color: #2e7d32; }
+        .score-label { font-size: 14px; color: #666; }
+        .score-range { font-size: 12px; color: #999; margin-top: 5px; }
+        .rating { display: inline-block; padding: 5px 15px; background: #2e7d32; color: white; border-radius: 20px; margin-top: 10px; }
+        .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .section-title { font-weight: bold; font-size: 14px; color: #1a4480; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 2px solid #1a4480; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 8px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: #f5f5f5; }
+        .good { color: #2e7d32; }
+        .warning { color: #f57c00; }
+        .bad { color: #c62828; }
+        .meter { height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden; }
+        .meter-fill { height: 100%; background: #2e7d32; }
+        .footer { margin-top: 30px; font-size: 10px; color: #666; text-align: center; padding: 15px; background: #f5f5f5; }
+    </style>
+</head>
+<body>
+    <div class="report">
+        <div class="header">
+            <h1>CREDIT REPORT SUMMARY</h1>
+            <div class="subtitle">Experian | TransUnion | Equifax Combined Report</div>
+        </div>
+
+        <div class="score-section">
+            <div class="score-box">
+                <div class="score">762</div>
+                <div class="score-label">FICO® Score 8</div>
+                <div class="score-range">Score Range: 300 - 850</div>
+                <div class="rating">EXCELLENT</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">CONSUMER INFORMATION</div>
+            <table>
+                <tr>
+                    <td><strong>Name:</strong></td>
+                    <td>MICHAEL CHEN</td>
+                    <td><strong>Report Date:</strong></td>
+                    <td>November 28, 2024</td>
+                </tr>
+                <tr>
+                    <td><strong>SSN:</strong></td>
+                    <td>***-**-4521</td>
+                    <td><strong>Date of Birth:</strong></td>
+                    <td>June 15, 1985</td>
+                </tr>
+                <tr>
+                    <td><strong>Current Address:</strong></td>
+                    <td colspan="3">1842 Lakewood Drive, Austin, TX 78703 (Since 2019)</td>
+                </tr>
+                <tr>
+                    <td><strong>Employer:</strong></td>
+                    <td colspan="3">Acme Tech Solutions LLC (Self-Employed, Since 2021)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">SCORE FACTORS</div>
+            <table>
+                <tr>
+                    <th>Factor</th>
+                    <th>Impact</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Payment History (35%)</td>
+                    <td>
+                        <div class="meter"><div class="meter-fill" style="width: 100%;"></div></div>
+                    </td>
+                    <td class="good">Excellent - No late payments</td>
+                </tr>
+                <tr>
+                    <td>Credit Utilization (30%)</td>
+                    <td>
+                        <div class="meter"><div class="meter-fill" style="width: 85%;"></div></div>
+                    </td>
+                    <td class="good">Good - 12% utilization</td>
+                </tr>
+                <tr>
+                    <td>Length of Credit History (15%)</td>
+                    <td>
+                        <div class="meter"><div class="meter-fill" style="width: 90%;"></div></div>
+                    </td>
+                    <td class="good">Excellent - 14 years average</td>
+                </tr>
+                <tr>
+                    <td>Credit Mix (10%)</td>
+                    <td>
+                        <div class="meter"><div class="meter-fill" style="width: 80%;"></div></div>
+                    </td>
+                    <td class="good">Good - Diverse accounts</td>
+                </tr>
+                <tr>
+                    <td>New Credit (10%)</td>
+                    <td>
+                        <div class="meter"><div class="meter-fill" style="width: 75%;"></div></div>
+                    </td>
+                    <td class="good">Good - 1 inquiry in 12 months</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">ACCOUNT SUMMARY</div>
+            <table>
+                <tr>
+                    <th>Account Type</th>
+                    <th>Open</th>
+                    <th>Closed</th>
+                    <th>Total Balance</th>
+                    <th>Credit Limit</th>
+                </tr>
+                <tr>
+                    <td>Revolving (Credit Cards)</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>$12,700</td>
+                    <td>$105,000</td>
+                </tr>
+                <tr>
+                    <td>Mortgage</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>$420,000</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>Auto Loans</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>$28,000</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>Student Loans</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>$0</td>
+                    <td>N/A</td>
+                </tr>
+                <tr style="background: #f5f5f5; font-weight: bold;">
+                    <td>TOTAL</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>$460,700</td>
+                    <td>-</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">PAYMENT HISTORY</div>
+            <table>
+                <tr>
+                    <th>Status</th>
+                    <th>Count</th>
+                </tr>
+                <tr>
+                    <td class="good">✓ On-Time Payments (Last 24 months)</td>
+                    <td>144 / 144</td>
+                </tr>
+                <tr>
+                    <td>30 Days Late</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>60 Days Late</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>90+ Days Late</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td class="good">Collections</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td class="good">Bankruptcies</td>
+                    <td>0</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">PUBLIC RECORDS</div>
+            <table>
+                <tr>
+                    <td class="good">✓ No bankruptcies on file</td>
+                </tr>
+                <tr>
+                    <td class="good">✓ No tax liens on file</td>
+                </tr>
+                <tr>
+                    <td class="good">✓ No civil judgments on file</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">RECENT INQUIRIES (Last 12 Months)</div>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Creditor</th>
+                    <th>Type</th>
+                </tr>
+                <tr>
+                    <td>March 15, 2024</td>
+                    <td>First National Business Bank</td>
+                    <td>Business Loan</td>
+                </tr>
+            </table>
+            <p style="color: #666; font-size: 10px; margin-top: 10px;">* Only 1 hard inquiry in the last 12 months. This has minimal impact on your score.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Report ID:</strong> EXP-2024-1128-MC4521 | <strong>Generated:</strong> November 28, 2024</p>
+            <p>This credit report summary is provided for loan application purposes. Full credit report available upon request.</p>
+            <p>© 2024 Credit Bureau Services. Consumer rights under FCRA apply.</p>
+        </div>
+    </div>
+</body>
+</html>

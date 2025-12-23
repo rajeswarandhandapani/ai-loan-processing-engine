@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice #INV-2024-002 - Acme Tech Solutions</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; font-size: 11px; }
+        .header { display: flex; justify-content: space-between; border-bottom: 3px solid #2c5aa0; padding-bottom: 20px; }
+        .company-info { }
+        .company-name { font-size: 24px; font-weight: bold; color: #2c5aa0; }
+        .company-details { color: #666; margin-top: 5px; font-size: 10px; }
+        .invoice-title { text-align: right; }
+        .invoice-title h1 { color: #2c5aa0; margin: 0; font-size: 32px; }
+        .invoice-number { font-size: 14px; color: #333; margin-top: 5px; }
+        .addresses { display: flex; justify-content: space-between; margin: 30px 0; }
+        .address-box { width: 45%; }
+        .address-box h3 { color: #2c5aa0; margin: 0 0 10px 0; font-size: 12px; text-transform: uppercase; }
+        .invoice-details { background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        .invoice-details table { width: 100%; }
+        .invoice-details td { padding: 5px 10px; }
+        .invoice-details td:first-child { font-weight: bold; color: #666; }
+        .items-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .items-table th { background: #2c5aa0; color: white; padding: 12px; text-align: left; }
+        .items-table td { padding: 12px; border-bottom: 1px solid #eee; }
+        .items-table tr:nth-child(even) { background: #f8f9fa; }
+        .text-right { text-align: right; }
+        .totals { margin-left: auto; width: 300px; margin-top: 20px; }
+        .totals table { width: 100%; }
+        .totals td { padding: 8px; }
+        .totals tr:last-child { background: #2c5aa0; color: white; font-weight: bold; font-size: 14px; }
+        .notes { background: #fff3cd; padding: 15px; border-radius: 5px; margin: 30px 0; }
+        .notes h4 { margin: 0 0 10px 0; color: #856404; }
+        .footer { margin-top: 40px; text-align: center; color: #666; font-size: 10px; border-top: 1px solid #ddd; padding-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="company-info">
+            <div class="company-name">ACME TECH SOLUTIONS LLC</div>
+            <div class="company-details">
+                456 Innovation Drive<br>
+                Austin, TX 78701<br>
+                Phone: (512) 555-0123<br>
+                Email: billing@acmetechsolutions.com<br>
+                EIN: 84-1234567
+            </div>
+        </div>
+        <div class="invoice-title">
+            <h1>INVOICE</h1>
+            <div class="invoice-number">
+                <strong>Invoice #:</strong> INV-2024-002<br>
+                <strong>Date:</strong> November 25, 2024
+            </div>
+        </div>
+    </div>
+
+    <div class="addresses">
+        <div class="address-box">
+            <h3>Bill To:</h3>
+            <strong>Global Retail Co.</strong><br>
+            1500 Commerce Street<br>
+            Dallas, TX 75201<br>
+            Attn: Finance Department<br>
+            Email: finance@globalretail.com
+        </div>
+        <div class="address-box">
+            <h3>Ship To:</h3>
+            <strong>Global Retail Co. - HQ</strong><br>
+            1500 Commerce Street<br>
+            Dallas, TX 75201<br>
+            Attn: Technology Services
+        </div>
+    </div>
+
+    <div class="invoice-details">
+        <table>
+            <tr>
+                <td>Invoice Date:</td>
+                <td>November 25, 2024</td>
+                <td>Payment Terms:</td>
+                <td>Net 30</td>
+            </tr>
+            <tr>
+                <td>Due Date:</td>
+                <td>December 25, 2024</td>
+                <td>PO Number:</td>
+                <td>PO-GR-2024-1156</td>
+            </tr>
+            <tr>
+                <td>Project:</td>
+                <td>E-Commerce Platform Enhancement</td>
+                <td>Contract #:</td>
+                <td>SOW-2024-0078</td>
+            </tr>
+        </table>
+    </div>
+
+    <table class="items-table">
+        <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Unit Price</th>
+            <th class="text-right">Amount</th>
+        </tr>
+        <tr>
+            <td>DEV-001</td>
+            <td>Full Stack Developer - Frontend Development (80 hrs)</td>
+            <td>80</td>
+            <td>$140.00/hr</td>
+            <td class="text-right">$11,200.00</td>
+        </tr>
+        <tr>
+            <td>DEV-002</td>
+            <td>Full Stack Developer - Backend API Development (100 hrs)</td>
+            <td>100</td>
+            <td>$140.00/hr</td>
+            <td class="text-right">$14,000.00</td>
+        </tr>
+        <tr>
+            <td>QA-001</td>
+            <td>QA Engineer - Testing & Quality Assurance (40 hrs)</td>
+            <td>40</td>
+            <td>$110.00/hr</td>
+            <td class="text-right">$4,400.00</td>
+        </tr>
+        <tr>
+            <td>CONS-004</td>
+            <td>Technical Lead - Architecture Review (30 hrs)</td>
+            <td>30</td>
+            <td>$175.00/hr</td>
+            <td class="text-right">$5,250.00</td>
+        </tr>
+        <tr>
+            <td>INFRA-001</td>
+            <td>Cloud Infrastructure Setup - AWS Configuration</td>
+            <td>1</td>
+            <td>$7,650.00</td>
+            <td class="text-right">$7,650.00</td>
+        </tr>
+    </table>
+
+    <div class="totals">
+        <table>
+            <tr>
+                <td>Subtotal:</td>
+                <td class="text-right">$42,500.00</td>
+            </tr>
+            <tr>
+                <td>Tax (0%):</td>
+                <td class="text-right">$0.00</td>
+            </tr>
+            <tr>
+                <td>Discount:</td>
+                <td class="text-right">$0.00</td>
+            </tr>
+            <tr>
+                <td>TOTAL DUE:</td>
+                <td class="text-right">$42,500.00</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="notes">
+        <h4>Payment Instructions:</h4>
+        <p>Please remit payment to:</p>
+        <p>
+            <strong>Bank:</strong> First National Business Bank<br>
+            <strong>Account Name:</strong> Acme Tech Solutions LLC<br>
+            <strong>Account Number:</strong> ****4521<br>
+            <strong>Routing Number:</strong> 021000021<br>
+            <strong>Reference:</strong> INV-2024-002
+        </p>
+        <p>For questions regarding this invoice, please contact billing@acmetechsolutions.com</p>
+    </div>
+
+    <div class="footer">
+        <p>Thank you for your business!</p>
+        <p>Acme Tech Solutions LLC | 456 Innovation Drive, Austin, TX 78701 | www.acmetechsolutions.com</p>
+    </div>
+</body>
+</html>

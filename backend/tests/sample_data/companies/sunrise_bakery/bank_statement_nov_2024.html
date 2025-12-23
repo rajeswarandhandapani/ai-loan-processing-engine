@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Business Bank Statement - Sunrise Bakery Co</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; font-size: 11px; }
+        .header { border-bottom: 2px solid #8b4513; padding-bottom: 20px; margin-bottom: 20px; }
+        .bank-name { font-size: 24px; font-weight: bold; color: #8b4513; }
+        .account-info { display: flex; justify-content: space-between; margin: 20px 0; }
+        .account-box { background: #fff8dc; padding: 15px; border-radius: 5px; width: 45%; }
+        .account-box h3 { margin: 0 0 10px 0; color: #8b4513; }
+        .summary-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .summary-table th, .summary-table td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
+        .summary-table th { background: #8b4513; color: white; }
+        .transaction-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .transaction-table th, .transaction-table td { padding: 8px; text-align: left; border-bottom: 1px solid #eee; font-size: 10px; }
+        .transaction-table th { background: #f0f0f0; font-weight: bold; }
+        .credit { color: green; }
+        .debit { color: red; }
+        .highlight { background: #ffffd0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="bank-name">🏦 Colorado Community Bank</div>
+        <div>1200 Main Street, Boulder, CO 80302</div>
+    </div>
+
+    <div class="account-info">
+        <div class="account-box">
+            <h3>Account Holder</h3>
+            <strong>SUNRISE BAKERY CO LLC</strong><br>
+            782 Pearl Street<br>
+            Boulder, CO 80302<br>
+            EIN: 84-7823456
+        </div>
+        <div class="account-box">
+            <h3>Account Details</h3>
+            <strong>Business Checking Account</strong><br>
+            Account Number: ****8934<br>
+            Statement Period: November 1 - November 30, 2024
+        </div>
+    </div>
+
+    <h2>Account Summary</h2>
+    <table class="summary-table">
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+        <tr>
+            <td>Beginning Balance (Nov 1, 2024)</td>
+            <td>$18,450.00</td>
+        </tr>
+        <tr>
+            <td>Total Deposits and Credits</td>
+            <td class="credit">+$52,800.00</td>
+        </tr>
+        <tr>
+            <td>Total Withdrawals and Debits</td>
+            <td class="debit">-$48,920.00</td>
+        </tr>
+        <tr class="highlight">
+            <td><strong>Ending Balance (Nov 30, 2024)</strong></td>
+            <td><strong>$22,330.00</strong></td>
+        </tr>
+        <tr>
+            <td>Average Daily Balance</td>
+            <td>$19,850.00</td>
+        </tr>
+    </table>
+
+    <h2>Transaction Details</h2>
+    <table class="transaction-table">
+        <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Withdrawals</th>
+            <th>Deposits</th>
+            <th>Balance</th>
+        </tr>
+        <tr>
+            <td>11/01</td>
+            <td>Beginning Balance</td>
+            <td></td>
+            <td></td>
+            <td>$18,450.00</td>
+        </tr>
+        <tr>
+            <td>11/02</td>
+            <td>DAILY SALES DEPOSIT - POS TERMINAL</td>
+            <td></td>
+            <td class="credit">$2,850.00</td>
+            <td>$21,300.00</td>
+        </tr>
+        <tr>
+            <td>11/04</td>
+            <td>WHOLESALE - WHOLE FOODS BOULDER</td>
+            <td></td>
+            <td class="credit">$4,200.00</td>
+            <td>$25,500.00</td>
+        </tr>
+        <tr>
+            <td>11/05</td>
+            <td>ACH DEBIT - SYSCO FOOD SERVICES</td>
+            <td class="debit">$8,500.00</td>
+            <td></td>
+            <td>$17,000.00</td>
+        </tr>
+        <tr>
+            <td>11/07</td>
+            <td>ACH DEBIT - PAYROLL - GUSTO</td>
+            <td class="debit">$12,400.00</td>
+            <td></td>
+            <td>$4,600.00</td>
+        </tr>
+        <tr>
+            <td>11/08</td>
+            <td>DAILY SALES DEPOSIT - POS TERMINAL</td>
+            <td></td>
+            <td class="credit">$3,150.00</td>
+            <td>$7,750.00</td>
+        </tr>
+        <tr>
+            <td>11/09</td>
+            <td>DAILY SALES DEPOSIT - POS TERMINAL</td>
+            <td></td>
+            <td class="credit">$4,800.00</td>
+            <td>$12,550.00</td>
+        </tr>
+        <tr>
+            <td>11/10</td>
+            <td>CHECK #2045 - RENT - BOULDER COMMERCIAL</td>
+            <td class="debit">$5,500.00</td>
+            <td></td>
+            <td>$7,050.00</td>
+        </tr>
+        <tr>
+            <td>11/12</td>
+            <td>WHOLESALE - LUCKY'S MARKET</td>
+            <td></td>
+            <td class="credit">$3,800.00</td>
+            <td>$10,850.00</td>
+        </tr>
+        <tr>
+            <td>11/14</td>
+            <td>DAILY SALES DEPOSIT - POS TERMINAL</td>
+            <td></td>
+            <td class="credit">$5,200.00</td>
+            <td>$16,050.00</td>
+        </tr>
+        <tr>
+            <td>11/15</td>
+            <td>ACH DEBIT - UTILITIES - XCEL ENERGY</td>
+            <td class="debit">$1,850.00</td>
+            <td></td>
+            <td>$14,200.00</td>
+        </tr>
+        <tr>
+            <td>11/18</td>
+            <td>CATERING - BOULDER VALLEY SCHOOL DIST</td>
+            <td></td>
+            <td class="credit">$6,500.00</td>
+            <td>$20,700.00</td>
+        </tr>
+        <tr>
+            <td>11/20</td>
+            <td>ACH DEBIT - EQUIPMENT LEASE - HOBART</td>
+            <td class="debit">$1,200.00</td>
+            <td></td>
+            <td>$19,500.00</td>
+        </tr>
+        <tr>
+            <td>11/21</td>
+            <td>ACH DEBIT - PAYROLL - GUSTO</td>
+            <td class="debit">$12,400.00</td>
+            <td></td>
+            <td>$7,100.00</td>
+        </tr>
+        <tr>
+            <td>11/22</td>
+            <td>DAILY SALES DEPOSIT - POS TERMINAL</td>
+            <td></td>
+            <td class="credit">$8,500.00</td>
+            <td>$15,600.00</td>
+        </tr>
+        <tr>
+            <td>11/25</td>
+            <td>WHOLESALE - KING SOOPERS</td>
+            <td></td>
+            <td class="credit">$5,800.00</td>
+            <td>$21,400.00</td>
+        </tr>
+        <tr>
+            <td>11/26</td>
+            <td>ACH DEBIT - INSURANCE - STATE FARM</td>
+            <td class="debit">$980.00</td>
+            <td></td>
+            <td>$20,420.00</td>
+        </tr>
+        <tr>
+            <td>11/27</td>
+            <td>CATERING - CU BOULDER EVENT</td>
+            <td></td>
+            <td class="credit">$8,000.00</td>
+            <td>$28,420.00</td>
+        </tr>
+        <tr>
+            <td>11/28</td>
+            <td>ACH DEBIT - LOAN PAYMENT - COLORADO COMMUNITY BANK</td>
+            <td class="debit">$2,200.00</td>
+            <td></td>
+            <td>$26,220.00</td>
+        </tr>
+        <tr>
+            <td>11/29</td>
+            <td>ACH DEBIT - SUPPLIES - RESTAURANT DEPOT</td>
+            <td class="debit">$3,890.00</td>
+            <td></td>
+            <td>$22,330.00</td>
+        </tr>
+        <tr class="highlight">
+            <td>11/30</td>
+            <td><strong>Ending Balance</strong></td>
+            <td></td>
+            <td></td>
+            <td><strong>$22,330.00</strong></td>
+        </tr>
+    </table>
+
+    <h2>Monthly Summary</h2>
+    <table class="summary-table">
+        <tr>
+            <th>Category</th>
+            <th>Total Amount</th>
+        </tr>
+        <tr>
+            <td>Retail Sales (POS)</td>
+            <td class="credit">$24,500.00</td>
+        </tr>
+        <tr>
+            <td>Wholesale Revenue</td>
+            <td class="credit">$13,800.00</td>
+        </tr>
+        <tr>
+            <td>Catering Revenue</td>
+            <td class="credit">$14,500.00</td>
+        </tr>
+        <tr>
+            <td>Payroll</td>
+            <td class="debit">$24,800.00</td>
+        </tr>
+        <tr>
+            <td>Supplies & Inventory</td>
+            <td class="debit">$12,390.00</td>
+        </tr>
+        <tr>
+            <td>Rent & Utilities</td>
+            <td class="debit">$7,350.00</td>
+        </tr>
+    </table>
+</body>
+</html>

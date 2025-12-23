@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Profit & Loss Statement - Nexus Digital Solutions Inc</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; font-size: 11px; }
+        .header { text-align: center; border-bottom: 2px solid #4a148c; padding-bottom: 20px; margin-bottom: 30px; }
+        .company-name { font-size: 24px; font-weight: bold; color: #4a148c; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 8px 12px; text-align: right; }
+        th:first-child, td:first-child { text-align: left; }
+        th { background: #4a148c; color: white; }
+        tr:nth-child(even) { background: #f8f8f8; }
+        tr.section-header { background: #e1bee7; font-weight: bold; }
+        tr.subtotal { border-top: 2px solid #666; font-weight: bold; }
+        tr.grand-total { background: #4a148c; color: white; font-weight: bold; font-size: 13px; }
+        .positive { color: green; }
+        .negative { color: red; }
+        .warning-box { background: #ffebee; padding: 20px; border-radius: 5px; margin: 20px 0; border-left: 4px solid #c62828; }
+        .notes { margin-top: 40px; padding: 20px; background: #f3e5f5; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="company-name">🚀 NEXUS DIGITAL SOLUTIONS INC</div>
+        <div>Profit and Loss Statement</div>
+        <div>April 8, 2024 - November 30, 2024 (8 months since inception)</div>
+    </div>
+
+    <div class="warning-box">
+        <strong>⚠️ STARTUP STATUS:</strong> This company has been operating for only 8 months. 
+        Financial data reflects partial year only. No prior year comparison available.
+    </div>
+
+    <table>
+        <tr>
+            <th>Account</th>
+            <th>YTD 2024 (8 months)</th>
+            <th>Annualized Projection</th>
+        </tr>
+        
+        <tr class="section-header">
+            <td colspan="3">REVENUE</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;SaaS Subscription Revenue</td>
+            <td>$58,400.00</td>
+            <td>$87,600.00</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Enterprise Pilot Programs</td>
+            <td>$12,000.00</td>
+            <td>$18,000.00</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Consulting Services</td>
+            <td>$8,500.00</td>
+            <td>$12,750.00</td>
+        </tr>
+        <tr class="subtotal">
+            <td>TOTAL REVENUE</td>
+            <td>$78,900.00</td>
+            <td class="negative">$118,350.00 (Below $100K minimum)</td>
+        </tr>
+
+        <tr class="section-header">
+            <td colspan="3">COST OF GOODS SOLD</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Cloud Infrastructure (AWS/Vercel)</td>
+            <td>$38,400.00</td>
+            <td>$57,600.00</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Third-party APIs (OpenAI, etc.)</td>
+            <td>$18,500.00</td>
+            <td>$27,750.00</td>
+        </tr>
+        <tr class="subtotal">
+            <td>TOTAL COGS</td>
+            <td>$56,900.00</td>
+            <td>$85,350.00</td>
+        </tr>
+
+        <tr class="subtotal" style="background: #ffcdd2;">
+            <td>GROSS PROFIT</td>
+            <td>$22,000.00</td>
+            <td>$33,000.00</td>
+        </tr>
+        <tr>
+            <td><em>Gross Profit Margin</em></td>
+            <td><em>27.9%</em></td>
+            <td class="negative"><em>(Very low for SaaS)</em></td>
+        </tr>
+
+        <tr class="section-header">
+            <td colspan="3">OPERATING EXPENSES</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Salaries (Founder + 1 Engineer)</td>
+            <td>$96,000.00</td>
+            <td>$144,000.00</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Contractor/Freelance</td>
+            <td>$12,000.00</td>
+            <td>$18,000.00</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Office/Coworking Space</td>
+            <td>$14,400.00</td>
+            <td>$21,600.00</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Software Subscriptions</td>
+            <td>$6,400.00</td>
+            <td>$9,600.00</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Marketing & Advertising</td>
+            <td>$15,200.00</td>
+            <td>$22,800.00</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Legal & Professional</td>
+            <td>$8,500.00</td>
+            <td>$12,750.00</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Insurance</td>
+            <td>$2,400.00</td>
+            <td>$3,600.00</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Travel & Conferences</td>
+            <td>$4,800.00</td>
+            <td>$7,200.00</td>
+        </tr>
+        <tr class="subtotal">
+            <td>TOTAL OPERATING EXPENSES</td>
+            <td>$159,700.00</td>
+            <td>$239,550.00</td>
+        </tr>
+
+        <tr class="grand-total" style="background: #c62828;">
+            <td>NET LOSS</td>
+            <td>($137,700.00)</td>
+            <td>($206,550.00)</td>
+        </tr>
+        <tr>
+            <td><em>Burn Rate (Monthly)</em></td>
+            <td colspan="2" class="negative"><em>~$17,200/month</em></td>
+        </tr>
+    </table>
+
+    <div class="notes">
+        <h3>Critical Issues for Loan Eligibility</h3>
+        <ul>
+            <li><strong>❌ Time in Business:</strong> Only 8 months (minimum required: 2 years)</li>
+            <li><strong>❌ Annual Revenue:</strong> $78,900 YTD / ~$118K annualized (minimum required: $100K) - BORDERLINE</li>
+            <li><strong>❌ Profitability:</strong> Operating at significant loss (-$137,700)</li>
+            <li><strong>❌ Cash Flow:</strong> Negative monthly cash flow, requires founder injections</li>
+            <li><strong>❌ Cash Reserves:</strong> Only ~$6,000 in bank (runway: <2 weeks without funding)</li>
+        </ul>
+
+        <h3>Loan Request</h3>
+        <p>Seeking $100,000 for product development and sales team expansion.</p>
+        
+        <h3>Mitigating Factors</h3>
+        <ul>
+            <li>Founder has strong tech background (ex-Google engineer)</li>
+            <li>Growing MRR: $3,200 → $7,300 over 6 months (128% growth)</li>
+            <li>2 enterprise pilots in progress</li>
+            <li>Founder willing to provide personal guarantee</li>
+        </ul>
+    </div>
+</body>
+</html>

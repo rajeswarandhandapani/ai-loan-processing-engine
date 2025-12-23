@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Credit Report Summary - Maria Rodriguez</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; font-size: 11px; }
+        .report { max-width: 800px; margin: auto; }
+        .header { background: #8b4513; color: white; padding: 20px; text-align: center; }
+        .score-section { display: flex; justify-content: center; padding: 30px; background: #fff8dc; }
+        .score-box { text-align: center; padding: 20px 40px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .score { font-size: 72px; font-weight: bold; color: #f57c00; }
+        .score-label { font-size: 14px; color: #666; }
+        .rating { display: inline-block; padding: 5px 15px; background: #f57c00; color: white; border-radius: 20px; margin-top: 10px; }
+        .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .section-title { font-weight: bold; font-size: 14px; color: #8b4513; margin-bottom: 10px; border-bottom: 2px solid #8b4513; padding-bottom: 5px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 8px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: #f5f5f5; }
+        .good { color: #2e7d32; }
+        .warning { color: #f57c00; }
+        .meter { height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden; }
+        .meter-fill { height: 100%; }
+    </style>
+</head>
+<body>
+    <div class="report">
+        <div class="header">
+            <h1>CREDIT REPORT SUMMARY</h1>
+            <div>Experian | TransUnion | Equifax</div>
+        </div>
+
+        <div class="score-section">
+            <div class="score-box">
+                <div class="score">698</div>
+                <div class="score-label">FICO® Score 8</div>
+                <div class="rating">GOOD</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">CONSUMER INFORMATION</div>
+            <table>
+                <tr>
+                    <td><strong>Name:</strong></td>
+                    <td>MARIA ELENA RODRIGUEZ</td>
+                    <td><strong>Report Date:</strong></td>
+                    <td>November 28, 2024</td>
+                </tr>
+                <tr>
+                    <td><strong>SSN:</strong></td>
+                    <td>***-**-7823</td>
+                    <td><strong>Date of Birth:</strong></td>
+                    <td>April 22, 1982</td>
+                </tr>
+                <tr>
+                    <td><strong>Address:</strong></td>
+                    <td colspan="3">2847 Mapleton Avenue, Boulder, CO 80304</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">SCORE FACTORS</div>
+            <table>
+                <tr>
+                    <th>Factor</th>
+                    <th>Impact</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>Payment History (35%)</td>
+                    <td><div class="meter"><div class="meter-fill" style="width: 85%; background: #4caf50;"></div></div></td>
+                    <td class="good">Good - 1 late payment (30 days) in 2022</td>
+                </tr>
+                <tr>
+                    <td>Credit Utilization (30%)</td>
+                    <td><div class="meter"><div class="meter-fill" style="width: 60%; background: #f57c00;"></div></div></td>
+                    <td class="warning">Fair - 38% utilization</td>
+                </tr>
+                <tr>
+                    <td>Length of Credit History (15%)</td>
+                    <td><div class="meter"><div class="meter-fill" style="width: 75%; background: #4caf50;"></div></div></td>
+                    <td class="good">Good - 11 years average</td>
+                </tr>
+                <tr>
+                    <td>Credit Mix (10%)</td>
+                    <td><div class="meter"><div class="meter-fill" style="width: 70%; background: #4caf50;"></div></div></td>
+                    <td class="good">Good - Diverse accounts</td>
+                </tr>
+                <tr>
+                    <td>New Credit (10%)</td>
+                    <td><div class="meter"><div class="meter-fill" style="width: 65%; background: #f57c00;"></div></div></td>
+                    <td class="warning">Fair - 3 inquiries in 12 months</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">ACCOUNT SUMMARY</div>
+            <table>
+                <tr>
+                    <th>Account Type</th>
+                    <th>Open</th>
+                    <th>Total Balance</th>
+                    <th>Credit Limit</th>
+                </tr>
+                <tr>
+                    <td>Revolving (Credit Cards)</td>
+                    <td>3</td>
+                    <td>$15,200</td>
+                    <td>$40,000</td>
+                </tr>
+                <tr>
+                    <td>Mortgage</td>
+                    <td>1</td>
+                    <td>$285,000</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>Auto Loans</td>
+                    <td>1</td>
+                    <td>$18,500</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td>Business Loans (Personal Guarantee)</td>
+                    <td>1</td>
+                    <td>$85,000</td>
+                    <td>N/A</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">PAYMENT HISTORY</div>
+            <table>
+                <tr>
+                    <td class="good">✓ On-Time Payments (Last 24 months)</td>
+                    <td>141 / 144</td>
+                </tr>
+                <tr>
+                    <td class="warning">30 Days Late</td>
+                    <td>1 (August 2022 - Chase Card)</td>
+                </tr>
+                <tr>
+                    <td>60+ Days Late</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td class="good">Collections</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td class="good">Bankruptcies</td>
+                    <td>0</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">PUBLIC RECORDS</div>
+            <table>
+                <tr><td class="good">✓ No bankruptcies</td></tr>
+                <tr><td class="good">✓ No tax liens</td></tr>
+                <tr><td class="good">✓ No judgments</td></tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

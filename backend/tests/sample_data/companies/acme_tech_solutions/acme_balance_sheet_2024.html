@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Balance Sheet - Acme Tech Solutions LLC</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; font-size: 11px; }
+        .header { text-align: center; border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
+        .company-name { font-size: 24px; font-weight: bold; }
+        .report-title { font-size: 18px; color: #666; margin-top: 10px; }
+        .period { font-size: 14px; color: #888; margin-top: 5px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 8px 12px; text-align: right; }
+        th:first-child, td:first-child { text-align: left; }
+        th { background: #333; color: white; }
+        tr:nth-child(even) { background: #f8f8f8; }
+        tr.section-header { background: #e0e0e0; font-weight: bold; }
+        tr.subtotal { border-top: 2px solid #666; font-weight: bold; }
+        tr.grand-total { background: #333; color: white; font-weight: bold; font-size: 13px; }
+        .indent { padding-left: 30px !important; }
+        .notes { margin-top: 40px; padding: 20px; background: #f9f9f9; border-radius: 5px; }
+        .footer { margin-top: 30px; text-align: center; font-size: 10px; color: #666; }
+        .two-column { display: flex; gap: 40px; }
+        .column { flex: 1; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="company-name">ACME TECH SOLUTIONS LLC</div>
+        <div class="report-title">Balance Sheet</div>
+        <div class="period">As of November 30, 2024</div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Account</th>
+            <th>Nov 30, 2024</th>
+            <th>Dec 31, 2023</th>
+        </tr>
+        
+        <!-- ASSETS -->
+        <tr class="section-header">
+            <td colspan="3">ASSETS</td>
+        </tr>
+        
+        <tr class="section-header" style="background: #f0f0f0;">
+            <td>Current Assets</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="indent">Cash and Cash Equivalents</td>
+            <td>$83,280.25</td>
+            <td>$45,230.50</td>
+        </tr>
+        <tr>
+            <td class="indent">Accounts Receivable</td>
+            <td>$127,500.00</td>
+            <td>$95,000.00</td>
+        </tr>
+        <tr>
+            <td class="indent">Prepaid Expenses</td>
+            <td>$12,000.00</td>
+            <td>$10,000.00</td>
+        </tr>
+        <tr>
+            <td class="indent">Other Current Assets</td>
+            <td>$5,000.00</td>
+            <td>$4,500.00</td>
+        </tr>
+        <tr class="subtotal">
+            <td>Total Current Assets</td>
+            <td>$227,780.25</td>
+            <td>$154,730.50</td>
+        </tr>
+
+        <tr class="section-header" style="background: #f0f0f0;">
+            <td>Fixed Assets</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="indent">Computer Equipment</td>
+            <td>$45,000.00</td>
+            <td>$30,000.00</td>
+        </tr>
+        <tr>
+            <td class="indent">Office Furniture</td>
+            <td>$15,000.00</td>
+            <td>$15,000.00</td>
+        </tr>
+        <tr>
+            <td class="indent">Software & Licenses</td>
+            <td>$20,000.00</td>
+            <td>$15,000.00</td>
+        </tr>
+        <tr>
+            <td class="indent">Less: Accumulated Depreciation</td>
+            <td>($27,000.00)</td>
+            <td>($12,000.00)</td>
+        </tr>
+        <tr class="subtotal">
+            <td>Total Fixed Assets (Net)</td>
+            <td>$53,000.00</td>
+            <td>$48,000.00</td>
+        </tr>
+
+        <tr class="section-header" style="background: #f0f0f0;">
+            <td>Other Assets</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="indent">Security Deposits</td>
+            <td>$6,000.00</td>
+            <td>$6,000.00</td>
+        </tr>
+        <tr class="subtotal">
+            <td>Total Other Assets</td>
+            <td>$6,000.00</td>
+            <td>$6,000.00</td>
+        </tr>
+
+        <tr class="grand-total">
+            <td>TOTAL ASSETS</td>
+            <td>$286,780.25</td>
+            <td>$208,730.50</td>
+        </tr>
+
+        <!-- LIABILITIES -->
+        <tr><td colspan="3" style="height: 20px;"></td></tr>
+        <tr class="section-header">
+            <td colspan="3">LIABILITIES</td>
+        </tr>
+        
+        <tr class="section-header" style="background: #f0f0f0;">
+            <td>Current Liabilities</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="indent">Accounts Payable</td>
+            <td>$23,500.00</td>
+            <td>$18,000.00</td>
+        </tr>
+        <tr>
+            <td class="indent">Accrued Expenses</td>
+            <td>$15,000.00</td>
+            <td>$12,000.00</td>
+        </tr>
+        <tr>
+            <td class="indent">Payroll Liabilities</td>
+            <td>$8,500.00</td>
+            <td>$7,200.00</td>
+        </tr>
+        <tr>
+            <td class="indent">Current Portion of Long-term Debt</td>
+            <td>$18,000.00</td>
+            <td>$18,000.00</td>
+        </tr>
+        <tr>
+            <td class="indent">Deferred Revenue</td>
+            <td>$25,000.00</td>
+            <td>$20,000.00</td>
+        </tr>
+        <tr class="subtotal">
+            <td>Total Current Liabilities</td>
+            <td>$90,000.00</td>
+            <td>$75,200.00</td>
+        </tr>
+
+        <tr class="section-header" style="background: #f0f0f0;">
+            <td>Long-term Liabilities</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="indent">Business Loan (First National Bank)</td>
+            <td>$107,000.00</td>
+            <td>$125,000.00</td>
+        </tr>
+        <tr class="subtotal">
+            <td>Total Long-term Liabilities</td>
+            <td>$107,000.00</td>
+            <td>$125,000.00</td>
+        </tr>
+
+        <tr class="subtotal" style="background: #f8d7da;">
+            <td>TOTAL LIABILITIES</td>
+            <td>$197,000.00</td>
+            <td>$200,200.00</td>
+        </tr>
+
+        <!-- EQUITY -->
+        <tr><td colspan="3" style="height: 20px;"></td></tr>
+        <tr class="section-header">
+            <td colspan="3">STOCKHOLDERS' EQUITY</td>
+        </tr>
+        <tr>
+            <td class="indent">Member's Capital</td>
+            <td>$50,000.00</td>
+            <td>$50,000.00</td>
+        </tr>
+        <tr>
+            <td class="indent">Retained Earnings (Prior Years)</td>
+            <td>($41,469.50)</td>
+            <td>($159,069.50)</td>
+        </tr>
+        <tr>
+            <td class="indent">Current Year Net Income</td>
+            <td>$81,249.75</td>
+            <td>$117,600.00</td>
+        </tr>
+        <tr class="subtotal" style="background: #d4edda;">
+            <td>TOTAL EQUITY</td>
+            <td>$89,780.25</td>
+            <td>$8,530.50</td>
+        </tr>
+
+        <tr class="grand-total">
+            <td>TOTAL LIABILITIES & EQUITY</td>
+            <td>$286,780.25</td>
+            <td>$208,730.50</td>
+        </tr>
+    </table>
+
+    <div class="notes">
+        <h3>Key Financial Ratios</h3>
+        <table style="width: 50%;">
+            <tr>
+                <td><strong>Current Ratio</strong></td>
+                <td>2.53 : 1</td>
+                <td>(Target: > 1.5)</td>
+            </tr>
+            <tr>
+                <td><strong>Quick Ratio</strong></td>
+                <td>2.34 : 1</td>
+                <td>(Target: > 1.0)</td>
+            </tr>
+            <tr>
+                <td><strong>Debt-to-Equity Ratio</strong></td>
+                <td>2.19 : 1</td>
+                <td>(Target: < 3.0)</td>
+            </tr>
+            <tr>
+                <td><strong>Working Capital</strong></td>
+                <td>$137,780.25</td>
+                <td>(Positive)</td>
+            </tr>
+        </table>
+        
+        <h3>Notes</h3>
+        <ul>
+            <li><strong>Business Loan:</strong> Original amount $150,000 at 8% APR, 5-year term. Monthly payment: $1,500. Remaining balance: $125,000 (current portion: $18,000).</li>
+            <li><strong>Accounts Receivable:</strong> All receivables are current (< 30 days). No bad debt allowance required.</li>
+            <li><strong>Equipment:</strong> New Dell servers purchased in November 2024 for $15,000.</li>
+        </ul>
+        <p><strong>Prepared by:</strong> Sarah Chen, CFO | <strong>Date:</strong> December 1, 2024</p>
+    </div>
+
+    <div class="footer">
+        <p>Acme Tech Solutions LLC | 456 Innovation Drive, Austin, TX 78701 | EIN: 84-1234567</p>
+    </div>
+</body>
+</html>
