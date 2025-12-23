@@ -98,7 +98,7 @@ class DocumentIntelligenceService:
             wait_time = time.time() - wait_start
             
             total_time = time.time() - start_time
-            logger.info(f"Document analysis completed successfully for {pathlib.Path(file_path).name} "
+            logger.info(f"Document analysis completed successfully for {Path(file_path).name} "
                        f"(API: {api_call_time:.2f}s, Processing: {wait_time:.2f}s, Total: {total_time:.2f}s)")
             
             response = self._extract_result(result, document_type, model_id)
