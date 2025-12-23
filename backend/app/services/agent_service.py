@@ -1,5 +1,7 @@
 import logging
+from langchain.chat_models import BaseChatModel
 from langchain_openai import AzureChatOpenAI
+from langchain_anthropic import ChatAnthropic
 from langgraph.checkpoint.memory import InMemorySaver
 from langchain.agents import create_agent
 from app.config import settings
@@ -14,6 +16,26 @@ from app.tools import (
 from app.tools.session_document_tool import current_session_id
 
 logger = get_logger(__name__)
+
+
+def _create_llm() -> BaseChatModel:
+    """Create the LLM based on cofigured provider."""
+    provider = settings.LLM_PROVIDER
+    
+    if provider == "anthropic":
+        logger.info(f"Initializing Anthropic Claude With Model: {settings.ANTHROPIC_MODEL}")
+        return ChatAnthropic(
+            api_key=settings.ANTHROPIC_API_KEY,
+            model=settings.ANTHROPIC_MODEL
+        )
+    else:
+        logger.info(f"Initializing Azure OpenAI LLM with deployment: {settings.AZURE_OPENAI_DEPLOYMENT_NAME}")
+        return AzureChatOpenAI(
+            azure_endpoint=settings.AZURE_OPENAI_ENDPOINT,
+            api_key=settings.AZURE_OPENAI_API_KEY,
+            azure_deployment=settings.AZURE_OPENAI_DEPLOYMENT_NAME,
+            api_version=settings.AZURE_OPENAI_API_VERSION,
+        )
 
 
 class AgentService:
@@ -34,15 +56,9 @@ class AgentService:
         else:
             logger.debug("LangSmith tracing disabled")
 
-        # Initialize the LLM
-        logger.debug(f"Initializing Azure OpenAI LLM with deployment: {settings.AZURE_OPENAI_DEPLOYMENT_NAME}")
-        self.llm = AzureChatOpenAI(
-            azure_endpoint=settings.AZURE_OPENAI_ENDPOINT,
-            api_key=settings.AZURE_OPENAI_API_KEY,
-            azure_deployment=settings.AZURE_OPENAI_DEPLOYMENT_NAME,
-            api_version=settings.AZURE_OPENAI_API_VERSION
-        )
-        logger.debug("Azure OpenAI LLM initialized successfully")
+        
+        # Create LLM
+        self.llm = _create_llm()
 
         # Define tools
         self.tools = [
@@ -67,7 +83,8 @@ YOUR ROLE:
 GREETING/INITIAL CONTACT:
 - When a user first says hello or expresses interest, DO NOT immediately dump document data
 - Start with a warm greeting and ask about their loan needs (amount, purpose)
-- Only reference documents AFTER the user asks about eligibility or you need specific data
+- ONLY reference documents AFTER the user asks about eligibility or you need specific data
+- ALWAYS ask about loan amount BEFORE mentioning any document requirements
 
 WHEN TO CHECK DOCUMENTS:
 - Call get_analyzed_financial_documents_from_session when:
@@ -153,6 +170,12 @@ I just need your credit score to finalize the rate. What's your approximate scor
 
 BAD (Pre-qualification):
 "You appear to possibly be eligible pending review of additional documentation including tax returns, bank statements, articles of incorporation, personal financial statements, collateral details..."
+
+=== CRITICAL REMINDERS ===
+- ALWAYS ask about loan amount FIRST in initial greeting
+- NEVER mention documents until user asks about eligibility
+- Keep responses concise and actionable
+- Use markdown formatting for readability
 """
 
         # Initialize the checkpointer

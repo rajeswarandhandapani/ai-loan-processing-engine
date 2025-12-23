@@ -19,6 +19,8 @@ class Settings(BaseSettings):
     AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT: str  | None = None
     AZURE_DOCUMENT_INTELLIGENCE_KEY: str | None = None
 
+    LLM_PROVIDER: str | None = None
+
     # Azure OpenAI
     AZURE_OPENAI_ENDPOINT: str | None = None
     AZURE_OPENAI_API_KEY: str | None = None
@@ -33,6 +35,10 @@ class Settings(BaseSettings):
     # Optional: Azure AI Language
     AZURE_LANGUAGE_ENDPOINT: str | None = None
     AZURE_LANGUAGE_KEY: str | None = None
+
+    # Anthropic
+    ANTHROPIC_API_KEY: str | None = None
+    ANTHROPIC_MODEL: str | None = None
 
     # Langsmith
     LANGSMITH_TRACING: bool = True
