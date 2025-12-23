@@ -44,3 +44,66 @@
     opacity: 1;
   }
 }
+
+// Markdown content styling
+.markdown-content {
+  ::ng-deep {
+    p {
+      margin-bottom: 0.5rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    strong {
+      font-weight: 600;
+    }
+    
+    em {
+      font-style: italic;
+    }
+    
+    ul, ol {
+      margin: 0.5rem 0;
+      padding-left: 1.5rem;
+      
+      li {
+        margin-bottom: 0.25rem;
+      }
+    }
+    
+    code {
+      background-color: rgba(0, 0, 0, 0.05);
+      padding: 0.125rem 0.25rem;
+      border-radius: 0.25rem;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+    
+    pre {
+      background-color: rgba(0, 0, 0, 0.05);
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      overflow-x: auto;
+      
+      code {
+        background-color: transparent;
+        padding: 0;
+      }
+    }
+  }
+}
+
+// Override for user messages (white text on primary background)
+.bg-primary .markdown-content {
+  ::ng-deep {
+    code {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    pre {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+}

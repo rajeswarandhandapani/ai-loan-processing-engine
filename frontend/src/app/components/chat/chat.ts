@@ -2,8 +2,10 @@ import { Component, ElementRef, ViewChild, AfterViewChecked, Output, EventEmitte
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ChatService } from '../../services/chat.service';
 import { Subscription } from 'rxjs';
+import { marked } from 'marked';
 
 /**
  * ============================================================================
@@ -160,8 +162,15 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
    */
   constructor(
     private chatService: ChatService,
-    private cdr: ChangeDetectorRef
-  ) {}
+    private cdr: ChangeDetectorRef,
+    private sanitizer: DomSanitizer
+  ) {
+    // Configure marked for safe HTML rendering
+    marked.setOptions({
+      breaks: true, // Convert \n to <br>
+      gfm: true     // GitHub Flavored Markdown
+    });
+  }
 
   ngOnInit(): void {
     // Emit the session ID to parent component on initialization
@@ -495,6 +504,22 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
    */
   hasMessages(): boolean {
     return this.messages.length > 0;
+  }
+
+  /**
+   * ========================================================================
+   * Utility: Render markdown content as safe HTML
+   * ========================================================================
+   * Converts markdown formatting to HTML for display in chat bubbles
+   */
+  renderMarkdown(content: string): SafeHtml {
+    try {
+      const html = marked.parse(content) as string;
+      return this.sanitizer.bypassSecurityTrustHtml(html);
+    } catch (error) {
+      console.error('Error rendering markdown:', error);
+      return content; // Fallback to plain text
+    }
   }
   
   /**

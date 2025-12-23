@@ -70,7 +70,7 @@
              [class.text-white]="message.role === 'user'"
              [class.bg-white]="message.role === 'assistant'"
              [class.border]="message.role === 'assistant'">
-          <div class="small">{{ message.content }}</div>
+          <div class="small markdown-content" [innerHTML]="renderMarkdown(message.content)"></div>
           <div class="text-end mt-1" style="font-size: 0.7rem;"
                [class.opacity-75]="message.role === 'user'"
                [class.text-muted]="message.role === 'assistant'">
