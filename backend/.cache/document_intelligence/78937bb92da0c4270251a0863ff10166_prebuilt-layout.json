@@ -1,0 +1,1211 @@
+{
+  "document_type": "prebuilt-layout",
+  "model_id": "prebuilt-layout",
+  "content": "ACME TECH SOLUTIONS LLC Inventory Collateral Schedule As of December 15, 2024\nBusiness Type Note: Acme Tech Solutions LLC is primarily a software development and IT consulting company. As such, the company maintains limited physical inventory consisting primarily of software licenses, spare IT components, and office supplies. The inventory listed below represents items that can be offered as supplementary collateral.\nInventory Collateral Summary\nTotal Inventory Categories: 3\nTotal Inventory at Cost:\n$28,750.00\nTotal Collateral Value (70% of cost): $20,125.00\nInventory Turnover:\n4.2x annually\nSoftware Licenses & Subscriptions (Transferable)\nItem #\nDescription\nVendor\nLicense Type\nQty/ Seats\nExpiration\nCost Basis\nCollateral Value\nINV-001\nMicrosoft 365 E5\nMicrosoft\nAnnual Enterprise\n10 seats\nDec 2025\n$4,560.00\n$3,192.00\nINV-002\nAdobe Creative Cloud\nAdobe\nAnnual Team\n5 seats\nMar 2025\n$3,600.00\n$2,520.00\nINV-003\nJetBrains All Products\nJetBrains\nAnnual Business\n8 seats\nJun 2025\n$5,592.00\n$3,914.40\nINV-004\nGitHub Enterprise\nGitHub/ Microsoft\nAnnual\n10 seats\nJan 2025\n$2,520.00\n$1,764.00\nINV-005\nFigma Organization\nFigma\nAnnual\n5 seats\nApr 2025\n$900.00\n$630.00\nSubtotal - Software Licenses\n$17,172.00\n$12,020.40\nSpare IT Components & Hardware\nItem #\nDescription\nManufacturer\nPart Number\nQuantity\nUnit Cost\nTotal Cost\nCollate Value\nINV-006\nSamsung\nM393A8G40AB2\n4\n$450.00\n$1,800.00\n$1,260\nServer RAM (64GB DDR5)\nINV-007\nNVMe SSD (2TB)\nSamsung\nPM9A3\n6\n$280.00\n$1,680.00\n$1,176.\nINV-008\nNetwork Cables (Cat6a)\nMonoprice\nCAT6A-50FT\n50\n$15.00\n$750.00\n$525.0\nINV-009\nUSB-C Docking Stations\nCalDigit\nTS4\n3\n$380.00\n$1,140.00\n$798.0\nINV-010\nExternal Monitors (27\" 4K)\nDell\nU2723QE\n4\n$620.00\n$2,480.00\n$1,736.\nINV-011\nUPS Battery Backup\nAPC\nSMT1500RM2U\n2\n$650.00\n$1,300.00\n$910.0\nSubtotal - IT Components\n$9,150.00\n$6,405\nOffice Supplies & Consumables\nItem #\nDescription\nVendor\nQuantity\nUnit Cost\nTotal Cost\nCollateral Value\nINV-012\nPrinter Toner (HP LaserJet)\nHP\n12 cartridges\n$85.00\n$1,020.00\n$714.00\nINV-013\nCopy Paper (Case)\nHammermill\n20 cases\n$48.00\n$960.00\n$672.00\nINV-014\nOffice Supply Assortment\nVarious\nLot\n$448.00\n$448.00\n$313.60\nSubtotal - Office Supplies\n$2,428.00\n$1,699.60\nTOTAL INVENTORY VALUE $28,750.00 $20,125.00\nInventory Valuation Notes\n\u00b7 Valuation Method: Lower of Cost or Market (LCM) using FIFO method. \u00b7 Collateral Advance Rate: 70% of cost basis applied for collateral valuation.\n\u00b7 Software Licenses: Only transferable enterprise licenses included; SaaS subscriptions excluded.\n. Physical Count: Last inventory count performed December 10, 2024.\n. Storage Location: All inventory stored at 456 Innovation Drive, Suite 200, Austin, TX 78701.\n. Insurance: Inventory covered under Hartford Business Policy #BOP-456789.\nInventory Management\nInventory\nQuickBooks Enterprise\nManagement System:",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "ACME TECH SOLUTIONS LLC",
+        "Inventory Collateral Schedule",
+        "As of December 15, 2024",
+        "Business Type Note: Acme Tech Solutions LLC is primarily a software development and IT",
+        "consulting company. As such, the company maintains limited physical inventory consisting",
+        "primarily of software licenses, spare IT components, and office supplies. The inventory listed",
+        "below represents items that can be offered as supplementary collateral.",
+        "Inventory Collateral Summary",
+        "Total Inventory Categories:",
+        "3",
+        "Total Inventory at Cost:",
+        "$28,750.00",
+        "Total Collateral Value (70% of cost):",
+        "$20,125.00",
+        "Inventory Turnover:",
+        "4.2x annually",
+        "Software Licenses & Subscriptions (Transferable)",
+        "Item #",
+        "Description",
+        "Vendor",
+        "License",
+        "Type",
+        "Qty/",
+        "Seats",
+        "Expiration",
+        "Cost Basis",
+        "Collateral",
+        "Value",
+        "INV-001",
+        "Microsoft",
+        "365 E5",
+        "Microsoft",
+        "Annual",
+        "Enterprise",
+        "10",
+        "seats",
+        "Dec 2025",
+        "$4,560.00",
+        "$3,192.00",
+        "INV-002",
+        "Adobe",
+        "Creative",
+        "Cloud",
+        "Adobe",
+        "Annual",
+        "Team",
+        "5",
+        "seats",
+        "Mar 2025",
+        "$3,600.00",
+        "$2,520.00",
+        "INV-003",
+        "JetBrains All",
+        "Products",
+        "JetBrains",
+        "Annual",
+        "Business",
+        "8",
+        "seats",
+        "Jun 2025",
+        "$5,592.00",
+        "$3,914.40",
+        "INV-004",
+        "GitHub",
+        "Enterprise",
+        "GitHub/",
+        "Microsoft",
+        "Annual",
+        "10",
+        "seats",
+        "Jan 2025",
+        "$2,520.00",
+        "$1,764.00",
+        "INV-005",
+        "Figma",
+        "Organization",
+        "Figma",
+        "Annual",
+        "5",
+        "seats",
+        "Apr 2025",
+        "$900.00",
+        "$630.00",
+        "Subtotal - Software Licenses",
+        "$17,172.00",
+        "$12,020.40",
+        "Spare IT Components & Hardware",
+        "Item #",
+        "Description",
+        "Manufacturer",
+        "Part Number",
+        "Quantity",
+        "Unit",
+        "Cost",
+        "Total Cost",
+        "Collate",
+        "Value",
+        "INV-006",
+        "Samsung",
+        "M393A8G40AB2",
+        "4",
+        "$450.00",
+        "$1,800.00",
+        "$1,260"
+      ],
+      "words_count": 194
+    },
+    {
+      "page_number": 2,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "Server RAM",
+        "(64GB",
+        "DDR5)",
+        "INV-007",
+        "NVMe SSD",
+        "(2TB)",
+        "Samsung",
+        "PM9A3",
+        "6",
+        "$280.00",
+        "$1,680.00",
+        "$1,176.",
+        "INV-008",
+        "Network",
+        "Cables",
+        "(Cat6a)",
+        "Monoprice",
+        "CAT6A-50FT",
+        "50",
+        "$15.00",
+        "$750.00",
+        "$525.0",
+        "INV-009",
+        "USB-C",
+        "Docking",
+        "Stations",
+        "CalDigit",
+        "TS4",
+        "3",
+        "$380.00",
+        "$1,140.00",
+        "$798.0",
+        "INV-010",
+        "External",
+        "Monitors",
+        "(27\" 4K)",
+        "Dell",
+        "U2723QE",
+        "4",
+        "$620.00",
+        "$2,480.00",
+        "$1,736.",
+        "INV-011",
+        "UPS Battery",
+        "Backup",
+        "APC",
+        "SMT1500RM2U",
+        "2",
+        "$650.00",
+        "$1,300.00",
+        "$910.0",
+        "Subtotal - IT Components",
+        "$9,150.00",
+        "$6,405",
+        "Office Supplies & Consumables",
+        "Item #",
+        "Description",
+        "Vendor",
+        "Quantity",
+        "Unit",
+        "Cost",
+        "Total Cost",
+        "Collateral",
+        "Value",
+        "INV-012",
+        "Printer Toner",
+        "(HP",
+        "LaserJet)",
+        "HP",
+        "12",
+        "cartridges",
+        "$85.00",
+        "$1,020.00",
+        "$714.00",
+        "INV-013",
+        "Copy Paper",
+        "(Case)",
+        "Hammermill",
+        "20 cases",
+        "$48.00",
+        "$960.00",
+        "$672.00",
+        "INV-014",
+        "Office",
+        "Supply",
+        "Assortment",
+        "Various",
+        "Lot",
+        "$448.00",
+        "$448.00",
+        "$313.60",
+        "Subtotal - Office Supplies",
+        "$2,428.00",
+        "$1,699.60",
+        "TOTAL INVENTORY VALUE",
+        "$28,750.00",
+        "$20,125.00",
+        "Inventory Valuation Notes",
+        "\u00b7 Valuation Method: Lower of Cost or Market (LCM) using FIFO method.",
+        "\u00b7 Collateral Advance Rate: 70% of cost basis applied for collateral valuation.",
+        "\u00b7 Software Licenses: Only transferable enterprise licenses included; SaaS",
+        "subscriptions excluded.",
+        ". Physical Count: Last inventory count performed December 10, 2024.",
+        ". Storage Location: All inventory stored at 456 Innovation Drive, Suite 200, Austin, TX",
+        "78701.",
+        ". Insurance: Inventory covered under Hartford Business Policy #BOP-456789.",
+        "Inventory Management",
+        "Inventory",
+        "QuickBooks",
+        "Enterprise",
+        "Management System:"
+      ],
+      "words_count": 196
+    }
+  ],
+  "tables": [
+    {
+      "row_count": 7,
+      "column_count": 8,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Item #",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Description",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "Vendor",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 3,
+          "content": "License Type",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 4,
+          "content": "Qty/ Seats",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 5,
+          "content": "Expiration",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 6,
+          "content": "Cost Basis",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 7,
+          "content": "Collateral Value",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "INV-001",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "Microsoft 365 E5",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "Microsoft",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 3,
+          "content": "Annual Enterprise",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 4,
+          "content": "10 seats",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 5,
+          "content": "Dec 2025",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 6,
+          "content": "$4,560.00",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 7,
+          "content": "$3,192.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "INV-002",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "Adobe Creative Cloud",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 2,
+          "content": "Adobe",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 3,
+          "content": "Annual Team",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 4,
+          "content": "5 seats",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 5,
+          "content": "Mar 2025",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 6,
+          "content": "$3,600.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 7,
+          "content": "$2,520.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "INV-003",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "JetBrains All Products",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 2,
+          "content": "JetBrains",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 3,
+          "content": "Annual Business",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 4,
+          "content": "8 seats",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 5,
+          "content": "Jun 2025",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 6,
+          "content": "$5,592.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 7,
+          "content": "$3,914.40",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "INV-004",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "GitHub Enterprise",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 2,
+          "content": "GitHub/ Microsoft",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 3,
+          "content": "Annual",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 4,
+          "content": "10 seats",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 5,
+          "content": "Jan 2025",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 6,
+          "content": "$2,520.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 7,
+          "content": "$1,764.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "INV-005",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "Figma Organization",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 2,
+          "content": "Figma",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 3,
+          "content": "Annual",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 4,
+          "content": "5 seats",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 5,
+          "content": "Apr 2025",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 6,
+          "content": "$900.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 7,
+          "content": "$630.00",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 0,
+          "content": "Subtotal - Software Licenses",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 4,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 5,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 6,
+          "content": "$17,172.00",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 7,
+          "content": "$12,020.40",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 2,
+      "column_count": 8,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Item #",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Description",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "Manufacturer",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 3,
+          "content": "Part Number",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 4,
+          "content": "Quantity",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 5,
+          "content": "Unit Cost",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 6,
+          "content": "Total Cost",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 7,
+          "content": "Collate Value",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "INV-006",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "Samsung",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 3,
+          "content": "M393A8G40AB2",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 4,
+          "content": "4",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 5,
+          "content": "$450.00",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 6,
+          "content": "$1,800.00",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 7,
+          "content": "$1,260",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 7,
+      "column_count": 8,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Server RAM (64GB DDR5)",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 3,
+          "content": "",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 4,
+          "content": "",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 5,
+          "content": "",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 6,
+          "content": "",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 7,
+          "content": "",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "INV-007",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "NVMe SSD (2TB)",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "Samsung",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 3,
+          "content": "PM9A3",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 4,
+          "content": "6",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 5,
+          "content": "$280.00",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 6,
+          "content": "$1,680.00",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 7,
+          "content": "$1,176.",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "INV-008",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "Network Cables (Cat6a)",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 2,
+          "content": "Monoprice",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 3,
+          "content": "CAT6A-50FT",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 4,
+          "content": "50",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 5,
+          "content": "$15.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 6,
+          "content": "$750.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 7,
+          "content": "$525.0",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "INV-009",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "USB-C Docking Stations",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 2,
+          "content": "CalDigit",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 3,
+          "content": "TS4",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 4,
+          "content": "3",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 5,
+          "content": "$380.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 6,
+          "content": "$1,140.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 7,
+          "content": "$798.0",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "INV-010",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "External Monitors (27\" 4K)",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 2,
+          "content": "Dell",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 3,
+          "content": "U2723QE",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 4,
+          "content": "4",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 5,
+          "content": "$620.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 6,
+          "content": "$2,480.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 7,
+          "content": "$1,736.",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "INV-011",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "UPS Battery Backup",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 2,
+          "content": "APC",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 3,
+          "content": "SMT1500RM2U",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 4,
+          "content": "2",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 5,
+          "content": "$650.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 6,
+          "content": "$1,300.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 7,
+          "content": "$910.0",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 0,
+          "content": "Subtotal - IT Components",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 4,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 5,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 6,
+          "content": "$9,150.00",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 7,
+          "content": "$6,405",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 5,
+      "column_count": 7,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Item #",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Description",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "Vendor",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 3,
+          "content": "Quantity",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 4,
+          "content": "Unit Cost",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 5,
+          "content": "Total Cost",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 6,
+          "content": "Collateral Value",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "INV-012",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "Printer Toner (HP LaserJet)",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "HP",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 3,
+          "content": "12 cartridges",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 4,
+          "content": "$85.00",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 5,
+          "content": "$1,020.00",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 6,
+          "content": "$714.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "INV-013",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "Copy Paper (Case)",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 2,
+          "content": "Hammermill",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 3,
+          "content": "20 cases",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 4,
+          "content": "$48.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 5,
+          "content": "$960.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 6,
+          "content": "$672.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "INV-014",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "Office Supply Assortment",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 2,
+          "content": "Various",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 3,
+          "content": "Lot",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 4,
+          "content": "$448.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 5,
+          "content": "$448.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 6,
+          "content": "$313.60",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Subtotal - Office Supplies",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 5,
+          "content": "$2,428.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 6,
+          "content": "$1,699.60",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 2,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Inventory",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "QuickBooks Enterprise",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Management System:",
+          "kind": "columnHeader"
+        }
+      ]
+    }
+  ],
+  "fields": {},
+  "documents": [],
+  "raw_response": null
+}

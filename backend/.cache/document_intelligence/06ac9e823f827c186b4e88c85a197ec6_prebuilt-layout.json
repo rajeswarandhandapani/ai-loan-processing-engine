@@ -1,0 +1,518 @@
+{
+  "document_type": "prebuilt-layout",
+  "model_id": "prebuilt-layout",
+  "content": "ACME TECH SOLUTIONS LLC Real Estate Collateral Documentation Prepared for Loan Application - December 2024\nCollateral Summary\nTotal Properties Offered:\n1\nTotal Appraised Value:\n$425,000.00\nTotal Equity Available:\n$185,000.00\nLoan-to-Value Ratio:\n56.5%\nProperty #1: Commercial Office Space\nProperty Address:\n456 Innovation Drive, Suite 200\nAustin, TX 78701\nProperty Type:\nCommercial Office Condominium\nSquare Footage:\n2,800 sq ft\nYear Built:\n2018\nOwnership Type:\nFee Simple - Owned by Acme Tech Solutions\nLLC\nDate Acquired:\nMarch 15, 2021\nPurchase Price:\n$380,000.00\nCurrent Appraised Value:\n$425,000.00\nEncumbrances & Liens\nLien Type\nLender\nOriginal Amount\nCurrent Balance\nMonthly Payment\nMaturity Date\nFirst Mortgage\nFirst National Bank\n$304,000.00\n$240,000.00\n$2,150.00\nMarch 2051\nProperty Details\nItem\nDetails\nLegal Description\nLot 15, Block 3, Innovation Park Subdivision, Travis County, Texas\nParcel/Tax ID\n01-2345-0678-0015\nZoning\nC-2 (Commercial Office)\nAnnual Property Taxes\n$8,925.00\nInsurance Coverage\n$500,000 (State Farm Commercial Policy #CF-789456)\nHOA/Condo Fees\n$450.00/month (includes common area maintenance)\nAppraisal Information\nItem\nDetails\nAppraisal Date\nNovember 15, 2024\nAppraiser\nJohnson & Associates Commercial Appraisers\nAppraiser License #\nTX-1370456\nAppraised Value\n$425,000.00\nAppraisal Method\nSales Comparison & Income Approach\nEquity Calculation\nDescription\nAmount\nCurrent Appraised Value\n$425,000.00\nLess: First Mortgage Balance\n($240,000.00)\nLess: Other Liens\n$0.00\nAvailable Equity\n$185,000.00\nNote: Property is currently used as the primary business location for Acme Tech Solutions LLC. Owner is willing to provide a second lien position on this property as collateral for the requested business expansion loan.\nRequired Documentation Attached\n\u00b7 Copy of Deed (recorded March 20, 2021)\n\u00b7 Current Title Insurance Policy\n\u00b7 Property Appraisal Report (dated November 15, 2024)\n. Current Property Tax Statement\n\u00b7 Proof of Insurance\n. First Mortgage Statement (showing current balance)",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "ACME TECH SOLUTIONS LLC",
+        "Real Estate Collateral Documentation",
+        "Prepared for Loan Application - December 2024",
+        "Collateral Summary",
+        "Total Properties Offered:",
+        "1",
+        "Total Appraised Value:",
+        "$425,000.00",
+        "Total Equity Available:",
+        "$185,000.00",
+        "Loan-to-Value Ratio:",
+        "56.5%",
+        "Property #1: Commercial Office Space",
+        "Property Address:",
+        "456 Innovation Drive, Suite 200",
+        "Austin, TX 78701",
+        "Property Type:",
+        "Commercial Office Condominium",
+        "Square Footage:",
+        "2,800 sq ft",
+        "Year Built:",
+        "2018",
+        "Ownership Type:",
+        "Fee Simple - Owned by Acme Tech Solutions",
+        "LLC",
+        "Date Acquired:",
+        "March 15, 2021",
+        "Purchase Price:",
+        "$380,000.00",
+        "Current Appraised Value:",
+        "$425,000.00",
+        "Encumbrances & Liens",
+        "Lien",
+        "Type",
+        "Lender",
+        "Original",
+        "Amount",
+        "Current",
+        "Balance",
+        "Monthly",
+        "Payment",
+        "Maturity",
+        "Date",
+        "First",
+        "Mortgage",
+        "First",
+        "National",
+        "Bank",
+        "$304,000.00",
+        "$240,000.00",
+        "$2,150.00",
+        "March",
+        "2051",
+        "Property Details",
+        "Item",
+        "Details",
+        "Legal Description",
+        "Lot 15, Block 3, Innovation Park Subdivision, Travis County,",
+        "Texas"
+      ],
+      "words_count": 123
+    },
+    {
+      "page_number": 2,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "Parcel/Tax ID",
+        "01-2345-0678-0015",
+        "Zoning",
+        "C-2 (Commercial Office)",
+        "Annual Property",
+        "Taxes",
+        "$8,925.00",
+        "Insurance Coverage",
+        "$500,000 (State Farm Commercial Policy #CF-789456)",
+        "HOA/Condo Fees",
+        "$450.00/month (includes common area maintenance)",
+        "Appraisal Information",
+        "Item",
+        "Details",
+        "Appraisal Date",
+        "November 15, 2024",
+        "Appraiser",
+        "Johnson & Associates Commercial Appraisers",
+        "Appraiser License #",
+        "TX-1370456",
+        "Appraised Value",
+        "$425,000.00",
+        "Appraisal Method",
+        "Sales Comparison & Income Approach",
+        "Equity Calculation",
+        "Description",
+        "Amount",
+        "Current Appraised Value",
+        "$425,000.00",
+        "Less: First Mortgage Balance",
+        "($240,000.00)",
+        "Less: Other Liens",
+        "$0.00",
+        "Available Equity",
+        "$185,000.00",
+        "Note: Property is currently used as the primary business location for Acme Tech Solutions LLC.",
+        "Owner is willing to provide a second lien position on this property as collateral for the",
+        "requested business expansion loan.",
+        "Required Documentation Attached",
+        "\u00b7 Copy of Deed (recorded March 20, 2021)",
+        "\u00b7 Current Title Insurance Policy",
+        "\u00b7 Property Appraisal Report (dated November 15, 2024)",
+        ". Current Property Tax Statement",
+        "\u00b7 Proof of Insurance",
+        ". First Mortgage Statement (showing current balance)"
+      ],
+      "words_count": 150
+    }
+  ],
+  "tables": [
+    {
+      "row_count": 5,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Collateral Summary",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Total Properties Offered:",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "1",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Total Appraised Value:",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "$425,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Total Equity Available:",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$185,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Loan-to-Value Ratio:",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "56.5%",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 2,
+      "column_count": 6,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Lien Type",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Lender",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "Original Amount",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 3,
+          "content": "Current Balance",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 4,
+          "content": "Monthly Payment",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 5,
+          "content": "Maturity Date",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "First Mortgage",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "First National Bank",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "$304,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 3,
+          "content": "$240,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 4,
+          "content": "$2,150.00",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 5,
+          "content": "March 2051",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 2,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Item",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Details",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Legal Description",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "Lot 15, Block 3, Innovation Park Subdivision, Travis County, Texas",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 5,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Parcel/Tax ID",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "01-2345-0678-0015",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Zoning",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "C-2 (Commercial Office)",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Annual Property Taxes",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "$8,925.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Insurance Coverage",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$500,000 (State Farm Commercial Policy #CF-789456)",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "HOA/Condo Fees",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "$450.00/month (includes common area maintenance)",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 6,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Item",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Details",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Appraisal Date",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "November 15, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Appraiser",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "Johnson & Associates Commercial Appraisers",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Appraiser License #",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "TX-1370456",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Appraised Value",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "$425,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "Appraisal Method",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "Sales Comparison & Income Approach",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 5,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Description",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Amount",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Current Appraised Value",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "$425,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Less: First Mortgage Balance",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "($240,000.00)",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Less: Other Liens",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$0.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Available Equity",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "$185,000.00",
+          "kind": null
+        }
+      ]
+    }
+  ],
+  "fields": {},
+  "documents": [],
+  "raw_response": null
+}
