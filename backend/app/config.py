@@ -45,6 +45,10 @@ class Settings(BaseSettings):
     app_name: str = "AI Loan Processing Engine"
     debug: bool = False
 
+    # Document Intelligence Cache
+    DOCUMENT_CACHE_ENABLED: bool = True
+    DOCUMENT_CACHE_DIR: str = ".cache/document_intelligence"
+
     model_config = SettingsConfigDict(
         env_file=os.path.join(BACKEND_DIR, ".env"),
         env_file_encoding="utf-8",

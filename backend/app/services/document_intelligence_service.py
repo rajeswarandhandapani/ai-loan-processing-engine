@@ -15,6 +15,7 @@ from app.models.document_intelligence_models import (
     DocumentTable,
     DocumentField,
 )
+from app.utils.document_cache import DocumentCache
 
 logger = get_logger(__name__)
 
@@ -41,6 +42,9 @@ class DocumentIntelligenceService:
             retry_backoff_factor=2,
             retry_mode="exponential",
         )
+        
+        # Initialize cache
+        self.cache = DocumentCache()
 
     async def analyze_document(
         self,
@@ -67,6 +71,14 @@ class DocumentIntelligenceService:
 
         logger.info(f"Analyzing document: {file_path}")
         logger.debug(f"Using model: {model_id}")
+        
+        # Check cache first
+        cache_key = self.cache.get_cache_key(file_path, document_type)
+        cached_result = self.cache.load(cache_key, DocumentAnalysisResponse)
+        if cached_result:
+            return cached_result
+        
+        logger.info(f"Cache MISS: Calling Azure Document Intelligence API...")
 
         try:
             with open(file_path, "rb") as f:
@@ -91,7 +103,12 @@ class DocumentIntelligenceService:
             logger.info(f"Document analysis completed successfully for {pathlib.Path(file_path).name} "
                        f"(API: {api_call_time:.2f}s, Processing: {wait_time:.2f}s, Total: {total_time:.2f}s)")
             
-            return self._extract_result(result, document_type, model_id)
+            response = self._extract_result(result, document_type, model_id)
+            
+            # Save to cache
+            self.cache.save(cache_key, response)
+            
+            return response
             
         except HttpResponseError as e:
             if e.status_code == 429:
