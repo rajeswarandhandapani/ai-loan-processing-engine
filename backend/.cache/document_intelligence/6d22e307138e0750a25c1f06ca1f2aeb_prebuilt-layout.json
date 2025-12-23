@@ -1,0 +1,631 @@
+{
+  "document_type": "prebuilt-layout",
+  "model_id": "prebuilt-layout",
+  "content": ":unselected: SUNRISE BAKERY CO LLC Balance Sheet As of November 30, 2024\nAccount\nNov 30, 2024\nASSETS\nCurrent Assets\nCash and Cash Equivalents\n$22,330.00\nAccounts Receivable (Wholesale)\n$18,500.00\nInventory (Ingredients & Supplies)\n$8,200.00\nPrepaid Expenses\n$3,500.00\nTotal Current Assets\n$52,530.00\nFixed Assets\nBakery Equipment (Ovens, Mixers)\n$85,000.00\nLeasehold Improvements\n$45,000.00\nFurniture & Fixtures\n$12,000.00\nDelivery Vehicle\n$28,000.00\nLess: Accumulated Depreciation\n($42,000.00)\nTotal Fixed Assets (Net)\n$128,000.00\nTOTAL ASSETS\n$180,530.00\nLIABILITIES\nCurrent Liabilities\nAccounts Payable (Suppliers)\n$12,400.00\nAccrued Wages\n$6,200.00\nCurrent Portion of Long-term Debt\n$18,000.00\nCredit Card Balance\n$8,500.00\nTotal Current Liabilities\n$45,100.00\nLong-term Liabilities\nSBA Loan (Colorado Community Bank)\n$67,000.00\nEquipment Financing\n$22,000.00\nTotal Long-term Liabilities\n$89,000.00\nTOTAL LIABILITIES\n$134,100.00\nOWNER'S EQUITY\nOwner's Capital (Maria Rodriguez)\n$75,000.00\nRetained Earnings (Prior Years)\n($45,122.00)\nCurrent Year Net Income\n$16,552.00\nTOTAL EQUITY\n$46,430.00\nTOTAL LIABILITIES & EQUITY\n$180,530.00\nCurrent Ratio\n1.16 : 1\n(Target: > 1.5) \u26a0\nQuick Ratio\n0.91 : 1\n(Target: > 1.0) \u26a0\nDebt-to-Equity Ratio\n2.89 : 1\n(Target: < 3.0) \u26a0\nWorking Capital\n$7,430.00\n(Positive) :selected:\nKey Financial Ratios\nNotes\n\u00b7 Liquidity: Current ratio below target but improving. Cash reserves are tight.\n. Debt Load: Total debt $134,100 with existing loan payments of $2,200/month.\n\u00b7 Collateral: Bakery equipment ($85K) and delivery vehicle ($28K) available.",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "SUNRISE BAKERY CO LLC",
+        "Balance Sheet",
+        "As of November 30, 2024",
+        "Account",
+        "Nov 30, 2024",
+        "ASSETS",
+        "Current Assets",
+        "Cash and Cash Equivalents",
+        "$22,330.00",
+        "Accounts Receivable (Wholesale)",
+        "$18,500.00",
+        "Inventory (Ingredients & Supplies)",
+        "$8,200.00",
+        "Prepaid Expenses",
+        "$3,500.00",
+        "Total Current Assets",
+        "$52,530.00",
+        "Fixed Assets",
+        "Bakery Equipment (Ovens, Mixers)",
+        "$85,000.00",
+        "Leasehold Improvements",
+        "$45,000.00",
+        "Furniture & Fixtures",
+        "$12,000.00",
+        "Delivery Vehicle",
+        "$28,000.00",
+        "Less: Accumulated Depreciation",
+        "($42,000.00)",
+        "Total Fixed Assets (Net)",
+        "$128,000.00",
+        "TOTAL ASSETS",
+        "$180,530.00",
+        "LIABILITIES",
+        "Current Liabilities",
+        "Accounts Payable (Suppliers)",
+        "$12,400.00",
+        "Accrued Wages",
+        "$6,200.00",
+        "Current Portion of Long-term Debt",
+        "$18,000.00",
+        "Credit Card Balance",
+        "$8,500.00",
+        "Total Current Liabilities",
+        "$45,100.00",
+        "Long-term Liabilities",
+        "SBA Loan (Colorado Community Bank)",
+        "$67,000.00",
+        "Equipment Financing",
+        "$22,000.00",
+        "Total Long-term Liabilities",
+        "$89,000.00"
+      ],
+      "words_count": 107
+    },
+    {
+      "page_number": 2,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "TOTAL LIABILITIES",
+        "$134,100.00",
+        "OWNER'S EQUITY",
+        "Owner's Capital (Maria Rodriguez)",
+        "$75,000.00",
+        "Retained Earnings (Prior Years)",
+        "($45,122.00)",
+        "Current Year Net Income",
+        "$16,552.00",
+        "TOTAL EQUITY",
+        "$46,430.00",
+        "TOTAL LIABILITIES & EQUITY",
+        "$180,530.00",
+        "Current Ratio",
+        "1.16 : 1",
+        "(Target: > 1.5)",
+        "\u26a0",
+        "Quick Ratio",
+        "0.91 : 1",
+        "(Target: > 1.0)",
+        "\u26a0",
+        "Debt-to-Equity",
+        "Ratio",
+        "2.89 : 1",
+        "(Target: < 3.0)",
+        "\u26a0",
+        "Working Capital",
+        "$7,430.00",
+        "(Positive)",
+        "Key Financial Ratios",
+        "Notes",
+        "\u00b7 Liquidity: Current ratio below target but improving. Cash reserves are tight.",
+        ". Debt Load: Total debt $134,100 with existing loan payments of $2,200/month.",
+        "\u00b7 Collateral: Bakery equipment ($85K) and delivery vehicle ($28K) available."
+      ],
+      "words_count": 97
+    }
+  ],
+  "tables": [
+    {
+      "row_count": 16,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Account",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Nov 30, 2024",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "ASSETS",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Current Assets",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Cash and Cash Equivalents",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$22,330.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Accounts Receivable (Wholesale)",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "$18,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "Inventory (Ingredients & Supplies)",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "$8,200.00",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 0,
+          "content": "Prepaid Expenses",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 1,
+          "content": "$3,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 0,
+          "content": "Total Current Assets",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 1,
+          "content": "$52,530.00",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 0,
+          "content": "Fixed Assets",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 0,
+          "content": "Bakery Equipment (Ovens, Mixers)",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 1,
+          "content": "$85,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 0,
+          "content": "Leasehold Improvements",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 1,
+          "content": "$45,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 11,
+          "column_index": 0,
+          "content": "Furniture & Fixtures",
+          "kind": null
+        },
+        {
+          "row_index": 11,
+          "column_index": 1,
+          "content": "$12,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 12,
+          "column_index": 0,
+          "content": "Delivery Vehicle",
+          "kind": null
+        },
+        {
+          "row_index": 12,
+          "column_index": 1,
+          "content": "$28,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 13,
+          "column_index": 0,
+          "content": "Less: Accumulated Depreciation",
+          "kind": null
+        },
+        {
+          "row_index": 13,
+          "column_index": 1,
+          "content": "($42,000.00)",
+          "kind": null
+        },
+        {
+          "row_index": 14,
+          "column_index": 0,
+          "content": "Total Fixed Assets (Net)",
+          "kind": null
+        },
+        {
+          "row_index": 14,
+          "column_index": 1,
+          "content": "$128,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 15,
+          "column_index": 0,
+          "content": "TOTAL ASSETS",
+          "kind": null
+        },
+        {
+          "row_index": 15,
+          "column_index": 1,
+          "content": "$180,530.00",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 11,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "LIABILITIES",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Current Liabilities",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Accounts Payable (Suppliers)",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "$12,400.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Accrued Wages",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$6,200.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Current Portion of Long-term Debt",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "$18,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "Credit Card Balance",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "$8,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 0,
+          "content": "Total Current Liabilities",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 1,
+          "content": "$45,100.00",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 0,
+          "content": "Long-term Liabilities",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 0,
+          "content": "SBA Loan (Colorado Community Bank)",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 1,
+          "content": "$67,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 0,
+          "content": "Equipment Financing",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 1,
+          "content": "$22,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 0,
+          "content": "Total Long-term Liabilities",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 1,
+          "content": "$89,000.00",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 8,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "TOTAL LIABILITIES",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "$134,100.00",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "OWNER'S EQUITY",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Owner's Capital (Maria Rodriguez)",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$75,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Retained Earnings (Prior Years)",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "($45,122.00)",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "Current Year Net Income",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "$16,552.00",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 0,
+          "content": "TOTAL EQUITY",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 1,
+          "content": "$46,430.00",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 0,
+          "content": "TOTAL LIABILITIES & EQUITY",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 1,
+          "content": "$180,530.00",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 4,
+      "column_count": 3,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Current Ratio",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "1.16 : 1",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "(Target: > 1.5) \u26a0",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Quick Ratio",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "0.91 : 1",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "(Target: > 1.0) \u26a0",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Debt-to-Equity Ratio",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "2.89 : 1",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 2,
+          "content": "(Target: < 3.0) \u26a0",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Working Capital",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$7,430.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 2,
+          "content": "(Positive) :selected:",
+          "kind": null
+        }
+      ]
+    }
+  ],
+  "fields": {},
+  "documents": [],
+  "raw_response": null
+}

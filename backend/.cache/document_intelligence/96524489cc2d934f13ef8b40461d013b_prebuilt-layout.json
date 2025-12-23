@@ -1,0 +1,151 @@
+{
+  "document_type": "prebuilt-layout",
+  "model_id": "prebuilt-layout",
+  "content": ":unselected:\nSTATE OF COLORADO Office of the Secretary of State\nCERTIFICATE OF ORGANIZATION\nLimited Liability Company\nSUNRISE BAKERY CO LLC\nJena Griswold Secretary of State\nDate Issued September 12, 2019\nFile Number:\n2019-1847562\nDate of Formation:\nSeptember 12, 2019\nRegistered Agent:\nMaria Rodriguez\nRegistered Office:\n782 Pearl Street, Boulder, CO 80302\nFederal EIN:\n84-7823456\nNAICS Code:\n311811 - Retail Bakeries\nManagement:\nMember-Managed\nPurpose:\nArtisan bakery, cafe operations, and wholesale baked goods",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "STATE OF COLORADO",
+        "Office of the Secretary of State",
+        "CERTIFICATE OF",
+        "ORGANIZATION",
+        "Limited Liability Company",
+        "SUNRISE BAKERY CO LLC",
+        "Jena Griswold",
+        "Secretary of State",
+        "Date Issued",
+        "September 12, 2019",
+        "File Number:",
+        "2019-1847562",
+        "Date of Formation:",
+        "September 12, 2019",
+        "Registered Agent:",
+        "Maria Rodriguez",
+        "Registered Office:",
+        "782 Pearl Street, Boulder, CO",
+        "80302",
+        "Federal EIN:",
+        "84-7823456",
+        "NAICS Code:",
+        "311811 - Retail Bakeries",
+        "Management:",
+        "Member-Managed",
+        "Purpose:",
+        "Artisan bakery, cafe operations,",
+        "and wholesale baked goods"
+      ],
+      "words_count": 70
+    }
+  ],
+  "tables": [
+    {
+      "row_count": 8,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "File Number:",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "2019-1847562",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Date of Formation:",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "September 12, 2019",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Registered Agent:",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "Maria Rodriguez",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Registered Office:",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "782 Pearl Street, Boulder, CO 80302",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Federal EIN:",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "84-7823456",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "NAICS Code:",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "311811 - Retail Bakeries",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 0,
+          "content": "Management:",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 1,
+          "content": "Member-Managed",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 0,
+          "content": "Purpose:",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 1,
+          "content": "Artisan bakery, cafe operations, and wholesale baked goods",
+          "kind": null
+        }
+      ]
+    }
+  ],
+  "fields": {},
+  "documents": [],
+  "raw_response": null
+}

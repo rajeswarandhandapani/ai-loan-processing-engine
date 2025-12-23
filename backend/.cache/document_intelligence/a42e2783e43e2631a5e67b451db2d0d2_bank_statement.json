@@ -1,0 +1,243 @@
+{
+  "document_type": "bank_statement",
+  "model_id": "prebuilt-bankStatement.us",
+  "content": "Colorado Community Bank 1200 Main Street, Boulder, CO 80302\nAccount Holder SUNRISE BAKERY CO LLC 782 Pearl Street Boulder, CO 80302 EIN: 84-7823456\nAccount Details\nBusiness Checking Account\nAccount Number: **** 8934\nStatement Period: November 1 - November 30, 2024\nAccount Summary\nDescription\nAmount\nBeginning Balance (Nov 1, 2024)\n$18,450.00\nTotal Deposits and Credits\n+$52,800.00\nTotal Withdrawals and Debits\n-$48,920.00\nEnding Balance (Nov 30, 2024)\n$22,330.00\nAverage Daily Balance\n$19,850.00\nTransaction Details\nDate\nDescription\nWithdrawals\nDeposits\nBalance\n11/01\nBeginning Balance\n$18,450.00\n11/02\nDAILY SALES DEPOSIT - POS TERMINAL\n$2,850.00\n$21,300.00\n11/04\nWHOLESALE - WHOLE FOODS BOULDER\n$4,200.00\n$25,500.00\n11/05\nACH DEBIT - SYSCO FOOD SERVICES\n$8,500.00\n$17,000.00\n11/07\nACH DEBIT - PAYROLL - GUSTO\n$12,400.00\n$4,600.00\n11/08\nDAILY SALES DEPOSIT - POS TERMINAL\n$3,150.00\n$7,750.00\n11/09\nDAILY SALES DEPOSIT - POS TERMINAL\n$4,800.00\n$12,550.00\n11/10\nCHECK #2045 - RENT - BOULDER COMMERCIAL\n$5,500.00\n$7,050.00\n11/12\nWHOLESALE - LUCKY'S MARKET\n$3,800.00\n$10,850.00\n11/14\nDAILY SALES DEPOSIT - POS TERMINAL\n$5,200.00\n$16,050.00\n11/15\nACH DEBIT - UTILITIES - XCEL ENERGY\n$1,850.00\n$14,200.00\n11/18\nCATERING - BOULDER VALLEY SCHOOL DIST\n$6,500.00\n$20,700.00\n11/20\nACH DEBIT - EQUIPMENT LEASE - HOBART\n$1,200.00\n$19,500.00\n11/21\nACH DEBIT - PAYROLL - GUSTO\n$12,400.00\n$7,100.00\n11/22\nDAILY SALES DEPOSIT - POS TERMINAL\n$8,500.00\n$15,600.00\n11/25\nWHOLESALE - KING SOOPERS\n$5,800.00\n$21,400.00\n11/26\nACH DEBIT - INSURANCE - STATE FARM\n$980.00\n$20,420.00\n11/27\nCATERING - CU BOULDER EVENT\n$8,000.00\n$28,420.00\n11/28\nACH DEBIT - LOAN PAYMENT - COLORADO COMMUNITY BANK\n$2,200.00\n$26,220.00\n11/29\nACH DEBIT - SUPPLIES - RESTAURANT DEPOT\n$3,890.00\n$22,330.00\n11/30\nEnding Balance\n$22,330.00\nMonthly Summary\nCategory\nTotal Amount\nRetail Sales (POS)\n$24,500.00\nWholesale Revenue\n$13,800.00\nCatering Revenue\n$14,500.00\nPayroll\n$24,800.00\nSupplies & Inventory\n$12,390.00\nRent & Utilities\n$7,350.00",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "Colorado Community Bank",
+        "1200 Main Street, Boulder, CO 80302",
+        "Account Holder",
+        "SUNRISE BAKERY CO LLC",
+        "782 Pearl Street",
+        "Boulder, CO 80302",
+        "EIN: 84-7823456",
+        "Account Details",
+        "Business Checking Account",
+        "Account Number: **** 8934",
+        "Statement Period: November 1 - November",
+        "30, 2024",
+        "Account Summary",
+        "Description",
+        "Amount",
+        "Beginning Balance (Nov 1, 2024)",
+        "$18,450.00",
+        "Total Deposits and Credits",
+        "+$52,800.00",
+        "Total Withdrawals and Debits",
+        "-$48,920.00",
+        "Ending Balance (Nov 30, 2024)",
+        "$22,330.00",
+        "Average Daily Balance",
+        "$19,850.00",
+        "Transaction Details",
+        "Date",
+        "Description",
+        "Withdrawals",
+        "Deposits",
+        "Balance",
+        "11/01",
+        "Beginning Balance",
+        "$18,450.00",
+        "11/02",
+        "DAILY SALES DEPOSIT - POS TERMINAL",
+        "$2,850.00",
+        "$21,300.00",
+        "11/04",
+        "WHOLESALE - WHOLE FOODS BOULDER",
+        "$4,200.00",
+        "$25,500.00",
+        "11/05",
+        "ACH DEBIT - SYSCO FOOD SERVICES",
+        "$8,500.00",
+        "$17,000.00",
+        "11/07",
+        "ACH DEBIT - PAYROLL - GUSTO",
+        "$12,400.00",
+        "$4,600.00",
+        "11/08",
+        "DAILY SALES DEPOSIT - POS TERMINAL",
+        "$3,150.00",
+        "$7,750.00",
+        "11/09",
+        "DAILY SALES DEPOSIT - POS TERMINAL",
+        "$4,800.00",
+        "$12,550.00",
+        "11/10",
+        "CHECK #2045 - RENT - BOULDER COMMERCIAL",
+        "$5,500.00",
+        "$7,050.00",
+        "11/12",
+        "WHOLESALE - LUCKY'S MARKET",
+        "$3,800.00",
+        "$10,850.00",
+        "11/14",
+        "DAILY SALES DEPOSIT - POS TERMINAL",
+        "$5,200.00",
+        "$16,050.00",
+        "11/15",
+        "ACH DEBIT - UTILITIES - XCEL ENERGY",
+        "$1,850.00",
+        "$14,200.00",
+        "11/18",
+        "CATERING - BOULDER VALLEY SCHOOL DIST",
+        "$6,500.00",
+        "$20,700.00",
+        "11/20",
+        "ACH DEBIT - EQUIPMENT LEASE - HOBART",
+        "$1,200.00",
+        "$19,500.00"
+      ],
+      "words_count": 189
+    },
+    {
+      "page_number": 2,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "11/21",
+        "ACH DEBIT - PAYROLL - GUSTO",
+        "$12,400.00",
+        "$7,100.00",
+        "11/22",
+        "DAILY SALES DEPOSIT - POS TERMINAL",
+        "$8,500.00",
+        "$15,600.00",
+        "11/25",
+        "WHOLESALE - KING SOOPERS",
+        "$5,800.00",
+        "$21,400.00",
+        "11/26",
+        "ACH DEBIT - INSURANCE - STATE FARM",
+        "$980.00",
+        "$20,420.00",
+        "11/27",
+        "CATERING - CU BOULDER EVENT",
+        "$8,000.00",
+        "$28,420.00",
+        "11/28",
+        "ACH DEBIT - LOAN PAYMENT - COLORADO",
+        "COMMUNITY BANK",
+        "$2,200.00",
+        "$26,220.00",
+        "11/29",
+        "ACH DEBIT - SUPPLIES - RESTAURANT DEPOT",
+        "$3,890.00",
+        "$22,330.00",
+        "11/30",
+        "Ending Balance",
+        "$22,330.00",
+        "Monthly Summary",
+        "Category",
+        "Total Amount",
+        "Retail Sales (POS)",
+        "$24,500.00",
+        "Wholesale Revenue",
+        "$13,800.00",
+        "Catering Revenue",
+        "$14,500.00",
+        "Payroll",
+        "$24,800.00",
+        "Supplies & Inventory",
+        "$12,390.00",
+        "Rent & Utilities",
+        "$7,350.00"
+      ],
+      "words_count": 94
+    }
+  ],
+  "tables": [],
+  "fields": {
+    "AccountHolderAddress": {
+      "name": "AccountHolderAddress",
+      "value": null,
+      "confidence": 0.904,
+      "value_type": "address"
+    },
+    "AccountHolderName": {
+      "name": "AccountHolderName",
+      "value": "SUNRISE BAKERY CO LLC",
+      "confidence": 0.911,
+      "value_type": "string"
+    },
+    "Accounts": {
+      "name": "Accounts",
+      "value": null,
+      "confidence": null,
+      "value_type": "array"
+    },
+    "BankAddress": {
+      "name": "BankAddress",
+      "value": null,
+      "confidence": 0.791,
+      "value_type": "address"
+    },
+    "BankName": {
+      "name": "BankName",
+      "value": "Colorado Community Bank",
+      "confidence": 0.75,
+      "value_type": "string"
+    },
+    "StatementEndDate": {
+      "name": "StatementEndDate",
+      "value": null,
+      "confidence": 0.932,
+      "value_type": "date"
+    },
+    "StatementStartDate": {
+      "name": "StatementStartDate",
+      "value": null,
+      "confidence": 0.955,
+      "value_type": "date"
+    }
+  },
+  "documents": [
+    {
+      "doc_type": "bankStatement.us",
+      "confidence": 1.0,
+      "fields": {
+        "AccountHolderAddress": {
+          "value": null,
+          "confidence": 0.904,
+          "value_type": "address"
+        },
+        "AccountHolderName": {
+          "value": "SUNRISE BAKERY CO LLC",
+          "confidence": 0.911,
+          "value_type": "string"
+        },
+        "Accounts": {
+          "value": null,
+          "confidence": null,
+          "value_type": "array"
+        },
+        "BankAddress": {
+          "value": null,
+          "confidence": 0.791,
+          "value_type": "address"
+        },
+        "BankName": {
+          "value": "Colorado Community Bank",
+          "confidence": 0.75,
+          "value_type": "string"
+        },
+        "StatementEndDate": {
+          "value": null,
+          "confidence": 0.932,
+          "value_type": "date"
+        },
+        "StatementStartDate": {
+          "value": null,
+          "confidence": 0.955,
+          "value_type": "date"
+        }
+      }
+    }
+  ],
+  "raw_response": null
+}
