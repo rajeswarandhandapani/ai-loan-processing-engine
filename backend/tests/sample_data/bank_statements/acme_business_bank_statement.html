@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Business Bank Statement - Acme Tech Solutions</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; font-size: 11px; }
+        .header { border-bottom: 2px solid #003366; padding-bottom: 20px; margin-bottom: 20px; }
+        .bank-name { font-size: 24px; font-weight: bold; color: #003366; }
+        .bank-address { color: #666; margin-top: 5px; }
+        .account-info { display: flex; justify-content: space-between; margin: 20px 0; }
+        .account-box { background: #f5f5f5; padding: 15px; border-radius: 5px; width: 45%; }
+        .account-box h3 { margin: 0 0 10px 0; color: #003366; }
+        .summary-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .summary-table th, .summary-table td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
+        .summary-table th { background: #003366; color: white; }
+        .transaction-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .transaction-table th, .transaction-table td { padding: 8px; text-align: left; border-bottom: 1px solid #eee; font-size: 10px; }
+        .transaction-table th { background: #f0f0f0; font-weight: bold; }
+        .credit { color: green; }
+        .debit { color: red; }
+        .balance { font-weight: bold; }
+        .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 9px; color: #666; }
+        .highlight { background: #ffffd0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="bank-name">🏦 First National Business Bank</div>
+        <div class="bank-address">1234 Financial District, Suite 500, New York, NY 10005</div>
+        <div class="bank-address">Customer Service: 1-800-555-BANK | www.fnbb.com</div>
+    </div>
+
+    <div class="account-info">
+        <div class="account-box">
+            <h3>Account Holder</h3>
+            <strong>ACME TECH SOLUTIONS LLC</strong><br>
+            456 Innovation Drive<br>
+            Austin, TX 78701<br>
+            EIN: 84-1234567
+        </div>
+        <div class="account-box">
+            <h3>Account Details</h3>
+            <strong>Business Checking Account</strong><br>
+            Account Number: ****4521<br>
+            Statement Period: November 1 - November 30, 2024<br>
+            Page 1 of 1
+        </div>
+    </div>
+
+    <h2>Account Summary</h2>
+    <table class="summary-table">
+        <tr>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+        <tr>
+            <td>Beginning Balance (Nov 1, 2024)</td>
+            <td>$45,230.50</td>
+        </tr>
+        <tr>
+            <td>Total Deposits and Credits</td>
+            <td class="credit">+$127,500.00</td>
+        </tr>
+        <tr>
+            <td>Total Withdrawals and Debits</td>
+            <td class="debit">-$89,450.25</td>
+        </tr>
+        <tr class="highlight">
+            <td><strong>Ending Balance (Nov 30, 2024)</strong></td>
+            <td class="balance">$83,280.25</td>
+        </tr>
+        <tr>
+            <td>Average Daily Balance</td>
+            <td>$62,455.38</td>
+        </tr>
+    </table>
+
+    <h2>Transaction Details</h2>
+    <table class="transaction-table">
+        <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Withdrawals</th>
+            <th>Deposits</th>
+            <th>Balance</th>
+        </tr>
+        <tr>
+            <td>11/01</td>
+            <td>Beginning Balance</td>
+            <td></td>
+            <td></td>
+            <td>$45,230.50</td>
+        </tr>
+        <tr>
+            <td>11/04</td>
+            <td>ACH DEPOSIT - CUSTOMER PAYMENT - TECHCORP INC</td>
+            <td></td>
+            <td class="credit">$25,000.00</td>
+            <td>$70,230.50</td>
+        </tr>
+        <tr>
+            <td>11/05</td>
+            <td>WIRE TRANSFER OUT - VENDOR PAYMENT - AWS SERVICES</td>
+            <td class="debit">$8,500.00</td>
+            <td></td>
+            <td>$61,730.50</td>
+        </tr>
+        <tr>
+            <td>11/07</td>
+            <td>ACH DEBIT - PAYROLL - ADP PAYROLL SERVICES</td>
+            <td class="debit">$32,450.00</td>
+            <td></td>
+            <td>$29,280.50</td>
+        </tr>
+        <tr>
+            <td>11/08</td>
+            <td>CHECK #1045 - OFFICE RENT - AUSTIN COMMERCIAL PROP</td>
+            <td class="debit">$4,500.00</td>
+            <td></td>
+            <td>$24,780.50</td>
+        </tr>
+        <tr>
+            <td>11/11</td>
+            <td>ACH DEPOSIT - CUSTOMER PAYMENT - GLOBAL RETAIL CO</td>
+            <td></td>
+            <td class="credit">$42,500.00</td>
+            <td>$67,280.50</td>
+        </tr>
+        <tr>
+            <td>11/12</td>
+            <td>DEBIT CARD - OFFICE SUPPLIES - STAPLES #4521</td>
+            <td class="debit">$450.25</td>
+            <td></td>
+            <td>$66,830.25</td>
+        </tr>
+        <tr>
+            <td>11/15</td>
+            <td>ACH DEBIT - INSURANCE - BUSINESS SHIELD INS</td>
+            <td class="debit">$1,250.00</td>
+            <td></td>
+            <td>$65,580.25</td>
+        </tr>
+        <tr>
+            <td>11/18</td>
+            <td>WIRE TRANSFER IN - CUSTOMER PAYMENT - ENTERPRISE SOLUTIONS</td>
+            <td></td>
+            <td class="credit">$35,000.00</td>
+            <td>$100,580.25</td>
+        </tr>
+        <tr>
+            <td>11/20</td>
+            <td>ACH DEBIT - UTILITIES - AUSTIN ENERGY</td>
+            <td class="debit">$850.00</td>
+            <td></td>
+            <td>$99,730.25</td>
+        </tr>
+        <tr>
+            <td>11/21</td>
+            <td>WIRE TRANSFER OUT - EQUIPMENT PURCHASE - DELL TECHNOLOGIES</td>
+            <td class="debit">$15,000.00</td>
+            <td></td>
+            <td>$84,730.25</td>
+        </tr>
+        <tr>
+            <td>11/22</td>
+            <td>ACH DEBIT - PAYROLL - ADP PAYROLL SERVICES</td>
+            <td class="debit">$22,450.00</td>
+            <td></td>
+            <td>$62,280.25</td>
+        </tr>
+        <tr>
+            <td>11/25</td>
+            <td>ACH DEPOSIT - CUSTOMER PAYMENT - STARTUP VENTURES LLC</td>
+            <td></td>
+            <td class="credit">$25,000.00</td>
+            <td>$87,280.25</td>
+        </tr>
+        <tr>
+            <td>11/27</td>
+            <td>DEBIT CARD - SOFTWARE SUBSCRIPTION - SALESFORCE</td>
+            <td class="debit">$2,500.00</td>
+            <td></td>
+            <td>$84,780.25</td>
+        </tr>
+        <tr>
+            <td>11/28</td>
+            <td>ACH DEBIT - LOAN PAYMENT - FIRST NATIONAL BUSINESS BANK</td>
+            <td class="debit">$1,500.00</td>
+            <td></td>
+            <td>$83,280.25</td>
+        </tr>
+        <tr class="highlight">
+            <td>11/30</td>
+            <td><strong>Ending Balance</strong></td>
+            <td></td>
+            <td></td>
+            <td class="balance">$83,280.25</td>
+        </tr>
+    </table>
+
+    <h2>Monthly Summary</h2>
+    <table class="summary-table">
+        <tr>
+            <th>Category</th>
+            <th>Count</th>
+            <th>Total Amount</th>
+        </tr>
+        <tr>
+            <td>Customer Payments (Revenue)</td>
+            <td>4</td>
+            <td class="credit">$127,500.00</td>
+        </tr>
+        <tr>
+            <td>Payroll</td>
+            <td>2</td>
+            <td class="debit">$54,900.00</td>
+        </tr>
+        <tr>
+            <td>Vendor Payments</td>
+            <td>2</td>
+            <td class="debit">$23,500.00</td>
+        </tr>
+        <tr>
+            <td>Operating Expenses</td>
+            <td>5</td>
+            <td class="debit">$11,050.25</td>
+        </tr>
+    </table>
+
+    <div class="footer">
+        <p><strong>Important Information:</strong> Please review this statement carefully. Report any discrepancies within 60 days. 
+        This statement is provided for informational purposes. First National Business Bank | Member FDIC | Equal Housing Lender</p>
+        <p>Statement generated on December 1, 2024</p>
+    </div>
+</body>
+</html>

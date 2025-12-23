@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Receipt - Office Supplies Purchase</title>
+    <style>
+        body { font-family: 'Courier New', monospace; margin: 40px; font-size: 12px; max-width: 400px; }
+        .receipt { border: 2px dashed #333; padding: 20px; }
+        .header { text-align: center; border-bottom: 1px dashed #333; padding-bottom: 15px; margin-bottom: 15px; }
+        .store-name { font-size: 18px; font-weight: bold; }
+        .store-info { font-size: 10px; color: #666; }
+        .items { margin: 15px 0; }
+        .item { display: flex; justify-content: space-between; margin: 5px 0; }
+        .totals { border-top: 1px dashed #333; padding-top: 10px; margin-top: 10px; }
+        .total-line { display: flex; justify-content: space-between; margin: 3px 0; }
+        .grand-total { font-weight: bold; font-size: 14px; border-top: 2px solid #333; padding-top: 5px; margin-top: 5px; }
+        .footer { text-align: center; margin-top: 20px; font-size: 10px; color: #666; }
+        .barcode { text-align: center; margin-top: 15px; font-family: 'Libre Barcode 39', cursive; font-size: 40px; }
+    </style>
+</head>
+<body>
+    <div class="receipt">
+        <div class="header">
+            <div class="store-name">STAPLES</div>
+            <div class="store-info">
+                Store #4521<br>
+                2100 Tech Center Drive<br>
+                Austin, TX 78758<br>
+                (512) 555-7890<br>
+                www.staples.com
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 15px;">
+            <strong>SALE</strong><br>
+            11/12/2024 2:34 PM<br>
+            Trans #: 4521-2024-112345<br>
+            Cashier: MARIA S.
+        </div>
+
+        <div class="items">
+            <div class="item">
+                <span>HP Paper 8.5x11 (5pk)</span>
+                <span>$45.99</span>
+            </div>
+            <div class="item">
+                <span>Pilot G2 Pens Blue 12pk</span>
+                <span>$15.99</span>
+            </div>
+            <div class="item">
+                <span>Post-it Notes 3x3 12pk</span>
+                <span>$24.99</span>
+            </div>
+            <div class="item">
+                <span>Sharpie Markers Asst 24pk</span>
+                <span>$18.99</span>
+            </div>
+            <div class="item">
+                <span>Staples Folders Letter 100pk</span>
+                <span>$29.99</span>
+            </div>
+            <div class="item">
+                <span>Brother TN-760 Toner Black</span>
+                <span>$89.99</span>
+            </div>
+            <div class="item">
+                <span>USB-C Hub 7-in-1</span>
+                <span>$49.99</span>
+            </div>
+            <div class="item">
+                <span>Wireless Mouse Logitech</span>
+                <span>$34.99</span>
+            </div>
+            <div class="item">
+                <span>Desk Organizer Set</span>
+                <span>$42.99</span>
+            </div>
+            <div class="item">
+                <span>Staples Rewards Discount</span>
+                <span>-$35.40</span>
+            </div>
+        </div>
+
+        <div class="totals">
+            <div class="total-line">
+                <span>Subtotal (9 items):</span>
+                <span>$318.51</span>
+            </div>
+            <div class="total-line">
+                <span>Tax (8.25%):</span>
+                <span>$26.28</span>
+            </div>
+            <div class="total-line">
+                <span>Rewards Discount:</span>
+                <span>-$35.40</span>
+            </div>
+            <div class="total-line grand-total">
+                <span>TOTAL:</span>
+                <span>$309.39</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 15px;">
+            <div class="total-line">
+                <span>Payment: VISA ****4521</span>
+                <span>$309.39</span>
+            </div>
+            <div class="total-line">
+                <span>Auth Code:</span>
+                <span>847291</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 15px; padding: 10px; background: #f0f0f0; text-align: center;">
+            <strong>BUSINESS ACCOUNT</strong><br>
+            Acme Tech Solutions LLC<br>
+            Account #: BUS-84521-ACME
+        </div>
+
+        <div class="footer">
+            <p>*** CUSTOMER COPY ***</p>
+            <p>Thank you for shopping at Staples!</p>
+            <p>Return Policy: 14 days with receipt</p>
+            <p>Survey: staples.com/survey</p>
+            <p>Win $500! Code: 4521112345</p>
+        </div>
+
+        <div class="barcode">
+            *4521112345*
+        </div>
+    </div>
+</body>
+</html>

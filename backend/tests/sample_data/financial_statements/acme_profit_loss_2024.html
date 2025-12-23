@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Profit & Loss Statement - Acme Tech Solutions LLC</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; font-size: 11px; }
+        .header { text-align: center; border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
+        .company-name { font-size: 24px; font-weight: bold; }
+        .report-title { font-size: 18px; color: #666; margin-top: 10px; }
+        .period { font-size: 14px; color: #888; margin-top: 5px; }
+        .section { margin: 20px 0; }
+        .section-title { font-size: 14px; font-weight: bold; background: #f0f0f0; padding: 10px; margin-bottom: 10px; }
+        .line-item { display: flex; justify-content: space-between; padding: 5px 20px; border-bottom: 1px solid #eee; }
+        .line-item.indent { padding-left: 40px; }
+        .line-item.total { font-weight: bold; background: #f8f8f8; border-top: 2px solid #333; }
+        .line-item.subtotal { font-weight: bold; border-top: 1px solid #999; }
+        .line-item.grand-total { font-weight: bold; font-size: 14px; background: #333; color: white; border: none; }
+        .positive { color: green; }
+        .negative { color: red; }
+        .notes { margin-top: 40px; padding: 20px; background: #f9f9f9; border-radius: 5px; }
+        .notes h3 { margin-top: 0; }
+        .footer { margin-top: 30px; text-align: center; font-size: 10px; color: #666; }
+        .comparison { display: flex; }
+        .comparison .amount { width: 120px; text-align: right; }
+        .comparison .label { flex: 1; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 8px 12px; text-align: right; }
+        th:first-child, td:first-child { text-align: left; }
+        th { background: #333; color: white; }
+        tr:nth-child(even) { background: #f8f8f8; }
+        tr.section-header { background: #e0e0e0; font-weight: bold; }
+        tr.subtotal { border-top: 2px solid #666; font-weight: bold; }
+        tr.grand-total { background: #333; color: white; font-weight: bold; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="company-name">ACME TECH SOLUTIONS LLC</div>
+        <div class="report-title">Profit and Loss Statement</div>
+        <div class="period">For the Fiscal Year Ending December 31, 2024 (Projected)</div>
+        <div class="period">Compared to Fiscal Year 2023 (Actual)</div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Account</th>
+            <th>FY 2024 (Projected)</th>
+            <th>FY 2023 (Actual)</th>
+            <th>Change ($)</th>
+            <th>Change (%)</th>
+        </tr>
+        
+        <!-- Revenue Section -->
+        <tr class="section-header">
+            <td colspan="5">REVENUE</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Consulting Services</td>
+            <td>$892,500.00</td>
+            <td>$745,000.00</td>
+            <td class="positive">$147,500.00</td>
+            <td class="positive">19.8%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Software Development</td>
+            <td>$456,000.00</td>
+            <td>$380,000.00</td>
+            <td class="positive">$76,000.00</td>
+            <td class="positive">20.0%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Managed Services (Recurring)</td>
+            <td>$168,000.00</td>
+            <td>$120,000.00</td>
+            <td class="positive">$48,000.00</td>
+            <td class="positive">40.0%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Training & Workshops</td>
+            <td>$33,500.00</td>
+            <td>$25,000.00</td>
+            <td class="positive">$8,500.00</td>
+            <td class="positive">34.0%</td>
+        </tr>
+        <tr class="subtotal">
+            <td>TOTAL REVENUE</td>
+            <td>$1,550,000.00</td>
+            <td>$1,270,000.00</td>
+            <td class="positive">$280,000.00</td>
+            <td class="positive">22.0%</td>
+        </tr>
+
+        <!-- Cost of Goods Sold -->
+        <tr class="section-header">
+            <td colspan="5">COST OF GOODS SOLD (COGS)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Direct Labor (Contractors)</td>
+            <td>$310,000.00</td>
+            <td>$254,000.00</td>
+            <td class="negative">$56,000.00</td>
+            <td>22.0%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Software Licenses (Resale)</td>
+            <td>$62,000.00</td>
+            <td>$50,800.00</td>
+            <td class="negative">$11,200.00</td>
+            <td>22.0%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Cloud Infrastructure Costs</td>
+            <td>$93,000.00</td>
+            <td>$76,200.00</td>
+            <td class="negative">$16,800.00</td>
+            <td>22.0%</td>
+        </tr>
+        <tr class="subtotal">
+            <td>TOTAL COGS</td>
+            <td>$465,000.00</td>
+            <td>$381,000.00</td>
+            <td class="negative">$84,000.00</td>
+            <td>22.0%</td>
+        </tr>
+
+        <tr class="subtotal" style="background: #d4edda;">
+            <td>GROSS PROFIT</td>
+            <td>$1,085,000.00</td>
+            <td>$889,000.00</td>
+            <td class="positive">$196,000.00</td>
+            <td class="positive">22.0%</td>
+        </tr>
+        <tr>
+            <td><em>Gross Profit Margin</em></td>
+            <td><em>70.0%</em></td>
+            <td><em>70.0%</em></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+        <!-- Operating Expenses -->
+        <tr class="section-header">
+            <td colspan="5">OPERATING EXPENSES</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Salaries & Wages (Full-time)</td>
+            <td>$480,000.00</td>
+            <td>$420,000.00</td>
+            <td class="negative">$60,000.00</td>
+            <td>14.3%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Employee Benefits</td>
+            <td>$72,000.00</td>
+            <td>$63,000.00</td>
+            <td class="negative">$9,000.00</td>
+            <td>14.3%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Payroll Taxes</td>
+            <td>$42,240.00</td>
+            <td>$36,960.00</td>
+            <td class="negative">$5,280.00</td>
+            <td>14.3%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Rent & Utilities</td>
+            <td>$66,000.00</td>
+            <td>$60,000.00</td>
+            <td class="negative">$6,000.00</td>
+            <td>10.0%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Software Subscriptions</td>
+            <td>$36,000.00</td>
+            <td>$30,000.00</td>
+            <td class="negative">$6,000.00</td>
+            <td>20.0%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Marketing & Advertising</td>
+            <td>$31,000.00</td>
+            <td>$25,400.00</td>
+            <td class="negative">$5,600.00</td>
+            <td>22.0%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Professional Services (Legal/Accounting)</td>
+            <td>$24,000.00</td>
+            <td>$20,000.00</td>
+            <td class="negative">$4,000.00</td>
+            <td>20.0%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Insurance</td>
+            <td>$18,000.00</td>
+            <td>$15,000.00</td>
+            <td class="negative">$3,000.00</td>
+            <td>20.0%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Travel & Entertainment</td>
+            <td>$24,000.00</td>
+            <td>$18,000.00</td>
+            <td class="negative">$6,000.00</td>
+            <td>33.3%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Office Supplies & Equipment</td>
+            <td>$12,000.00</td>
+            <td>$10,000.00</td>
+            <td class="negative">$2,000.00</td>
+            <td>20.0%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Depreciation</td>
+            <td>$15,000.00</td>
+            <td>$12,000.00</td>
+            <td class="negative">$3,000.00</td>
+            <td>25.0%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Miscellaneous</td>
+            <td>$9,760.00</td>
+            <td>$8,640.00</td>
+            <td class="negative">$1,120.00</td>
+            <td>13.0%</td>
+        </tr>
+        <tr class="subtotal">
+            <td>TOTAL OPERATING EXPENSES</td>
+            <td>$830,000.00</td>
+            <td>$719,000.00</td>
+            <td class="negative">$111,000.00</td>
+            <td>15.4%</td>
+        </tr>
+
+        <tr class="subtotal" style="background: #cce5ff;">
+            <td>OPERATING INCOME (EBIT)</td>
+            <td>$255,000.00</td>
+            <td>$170,000.00</td>
+            <td class="positive">$85,000.00</td>
+            <td class="positive">50.0%</td>
+        </tr>
+
+        <!-- Other Income/Expenses -->
+        <tr class="section-header">
+            <td colspan="5">OTHER INCOME / EXPENSES</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Interest Income</td>
+            <td>$2,500.00</td>
+            <td>$1,800.00</td>
+            <td class="positive">$700.00</td>
+            <td class="positive">38.9%</td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Interest Expense (Loan)</td>
+            <td>($12,500.00)</td>
+            <td>($15,000.00)</td>
+            <td class="positive">$2,500.00</td>
+            <td class="positive">16.7%</td>
+        </tr>
+        <tr class="subtotal">
+            <td>NET OTHER INCOME/EXPENSE</td>
+            <td>($10,000.00)</td>
+            <td>($13,200.00)</td>
+            <td class="positive">$3,200.00</td>
+            <td class="positive">24.2%</td>
+        </tr>
+
+        <tr class="subtotal">
+            <td>INCOME BEFORE TAXES</td>
+            <td>$245,000.00</td>
+            <td>$156,800.00</td>
+            <td class="positive">$88,200.00</td>
+            <td class="positive">56.3%</td>
+        </tr>
+
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;Income Tax Expense (Est. 25%)</td>
+            <td>($61,250.00)</td>
+            <td>($39,200.00)</td>
+            <td class="negative">$22,050.00</td>
+            <td>56.3%</td>
+        </tr>
+
+        <tr class="grand-total">
+            <td>NET INCOME</td>
+            <td>$183,750.00</td>
+            <td>$117,600.00</td>
+            <td>$66,150.00</td>
+            <td>56.3%</td>
+        </tr>
+        <tr>
+            <td><em>Net Profit Margin</em></td>
+            <td><em>11.9%</em></td>
+            <td><em>9.3%</em></td>
+            <td></td>
+            <td class="positive"><em>+2.6%</em></td>
+        </tr>
+    </table>
+
+    <div class="notes">
+        <h3>Notes & Assumptions</h3>
+        <ul>
+            <li><strong>Revenue Growth:</strong> 22% YoY growth driven by new enterprise clients and expanded managed services.</li>
+            <li><strong>Headcount:</strong> Increased from 6 to 8 full-time employees in 2024.</li>
+            <li><strong>Loan:</strong> Outstanding business loan balance of $125,000 at 8% APR, monthly payments of $1,500.</li>
+            <li><strong>Cash Position:</strong> Average monthly cash balance of $62,000+ with positive cash flow.</li>
+            <li><strong>Key Clients:</strong> TechCorp Inc., Global Retail Co., Enterprise Solutions, Startup Ventures LLC.</li>
+        </ul>
+        <p><strong>Prepared by:</strong> Sarah Chen, CFO | <strong>Date:</strong> December 1, 2024</p>
+    </div>
+
+    <div class="footer">
+        <p>Acme Tech Solutions LLC | 456 Innovation Drive, Austin, TX 78701 | EIN: 84-1234567</p>
+        <p>This financial statement is for internal use and loan application purposes.</p>
+    </div>
+</body>
+</html>
