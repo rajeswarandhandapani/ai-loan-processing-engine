@@ -1,0 +1,928 @@
+{
+  "document_type": "prebuilt-layout",
+  "model_id": "prebuilt-layout",
+  "content": "ACME TECH SOLUTIONS LLC\nBalance Sheet As of November 30, 2024\nAccount\nNov 30, 2024\nDec 31, 2023\nASSETS\nCurrent Assets\nCash and Cash Equivalents\n$83,280.25\n$45,230.50\nAccounts Receivable\n$127,500.00\n$95,000.00\nPrepaid Expenses\n$12,000.00\n$10,000.00\nOther Current Assets\n$5,000.00\n$4,500.00\nTotal Current Assets\n$227,780.25\n$154,730.50\nFixed Assets\nComputer Equipment\n$45,000.00\n$30,000.00\nOffice Furniture\n$15,000.00\n$15,000.00\nSoftware & Licenses\n$20,000.00\n$15,000.00\nLess: Accumulated Depreciation\n($27,000.00)\n($12,000.00)\nTotal Fixed Assets (Net)\n$53,000.00\n$48,000.00\nOther Assets\nSecurity Deposits\n$6,000.00\n$6,000.00\nTotal Other Assets\n$6,000.00\n$6,000.00\nTOTAL ASSETS\n$286,780.25\n$208,730.50\nLIABILITIES\nCurrent Liabilities\nAccounts Payable\n$23,500.00\n$18,000.00\nAccrued Expenses\n$15,000.00\n$12,000.00\nPayroll Liabilities\n$8,500.00\n$7,200.00\nCurrent Portion of Long-term Debt\n$18,000.00\n$18,000.00\nDeferred Revenue\n$25,000.00\n$20,000.00\nTotal Current Liabilities\n$90,000.00\n$75,200.00\nLong-term Liabilities\nBusiness Loan (First National Bank)\n$107,000.00\n$125,000.00\nTotal Long-term Liabilities\n$107,000.00\n$125,000.00\nTOTAL LIABILITIES\n$197,000.00\n$200,200.00\nSTOCKHOLDERS' EQUITY\nMember's Capital\n$50,000.00\n$50,000.00\nRetained Earnings (Prior Years)\n($41,469.50)\n($159,069.50)\nCurrent Year Net Income\n$81,249.75\n$117,600.00\nTOTAL EQUITY\n$89,780.25\n$8,530.50\nTOTAL LIABILITIES & EQUITY\n$286,780.25\n$208,730.50\nKey Financial Ratios\nCurrent Ratio\n2.53 : 1\n(Target: > 1.5)\nQuick Ratio\n2.34 : 1\n(Target: > 1.0)\nDebt-to- Equity Ratio\n2.19 : 1\n(Target: < 3.0)\nWorking Capital\n$137,780.25\n(Positive)\nNotes\n\u00b7 Business Loan: Original amount $150,000 at 8% APR, 5-year term. Monthly payment: $1,500. Remaining balance: $125,000 (current portion: $18,000).\n. Accounts Receivable: All receivables are current (< 30 days). No bad debt allowance required. \u00b7 Equipment: New Dell servers purchased in November 2024 for $15,000.\nPrepared by: Sarah Chen, CFO | Date: December 1, 2024\nAcme Tech Solutions LLC | 456 Innovation Drive, Austin, TX 78701 | EIN: 84-1234567",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "ACME TECH SOLUTIONS LLC",
+        "Balance Sheet",
+        "As of November 30, 2024",
+        "Account",
+        "Nov 30, 2024",
+        "Dec 31, 2023",
+        "ASSETS",
+        "Current Assets",
+        "Cash and Cash Equivalents",
+        "$83,280.25",
+        "$45,230.50",
+        "Accounts Receivable",
+        "$127,500.00",
+        "$95,000.00",
+        "Prepaid Expenses",
+        "$12,000.00",
+        "$10,000.00",
+        "Other Current Assets",
+        "$5,000.00",
+        "$4,500.00",
+        "Total Current Assets",
+        "$227,780.25",
+        "$154,730.50",
+        "Fixed Assets",
+        "Computer Equipment",
+        "$45,000.00",
+        "$30,000.00",
+        "Office Furniture",
+        "$15,000.00",
+        "$15,000.00",
+        "Software & Licenses",
+        "$20,000.00",
+        "$15,000.00",
+        "Less: Accumulated Depreciation",
+        "($27,000.00)",
+        "($12,000.00)",
+        "Total Fixed Assets (Net)",
+        "$53,000.00",
+        "$48,000.00",
+        "Other Assets",
+        "Security Deposits",
+        "$6,000.00",
+        "$6,000.00",
+        "Total Other Assets",
+        "$6,000.00",
+        "$6,000.00",
+        "TOTAL ASSETS",
+        "$286,780.25",
+        "$208,730.50",
+        "LIABILITIES",
+        "Current Liabilities",
+        "Accounts Payable",
+        "$23,500.00",
+        "$18,000.00",
+        "Accrued Expenses",
+        "$15,000.00",
+        "$12,000.00",
+        "Payroll Liabilities",
+        "$8,500.00",
+        "$7,200.00",
+        "Current Portion of Long-term Debt",
+        "$18,000.00",
+        "$18,000.00",
+        "Deferred Revenue",
+        "$25,000.00",
+        "$20,000.00",
+        "Total Current Liabilities",
+        "$90,000.00",
+        "$75,200.00"
+      ],
+      "words_count": 117
+    },
+    {
+      "page_number": 2,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "Long-term Liabilities",
+        "Business Loan (First National Bank)",
+        "$107,000.00",
+        "$125,000.00",
+        "Total Long-term Liabilities",
+        "$107,000.00",
+        "$125,000.00",
+        "TOTAL LIABILITIES",
+        "$197,000.00",
+        "$200,200.00",
+        "STOCKHOLDERS' EQUITY",
+        "Member's Capital",
+        "$50,000.00",
+        "$50,000.00",
+        "Retained Earnings (Prior Years)",
+        "($41,469.50)",
+        "($159,069.50)",
+        "Current Year Net Income",
+        "$81,249.75",
+        "$117,600.00",
+        "TOTAL EQUITY",
+        "$89,780.25",
+        "$8,530.50",
+        "TOTAL LIABILITIES & EQUITY",
+        "$286,780.25",
+        "$208,730.50",
+        "Key Financial Ratios",
+        "Current",
+        "Ratio",
+        "2.53 : 1",
+        "(Target: >",
+        "1.5)",
+        "Quick",
+        "Ratio",
+        "2.34 : 1",
+        "(Target: >",
+        "1.0)",
+        "Debt-to-",
+        "Equity",
+        "Ratio",
+        "2.19 : 1",
+        "(Target: <",
+        "3.0)",
+        "Working",
+        "Capital",
+        "$137,780.25",
+        "(Positive)",
+        "Notes",
+        "\u00b7 Business Loan: Original amount $150,000 at 8% APR, 5-year term. Monthly payment:",
+        "$1,500. Remaining balance: $125,000 (current portion: $18,000).",
+        ". Accounts Receivable: All receivables are current (< 30 days). No bad debt allowance",
+        "required.",
+        "\u00b7 Equipment: New Dell servers purchased in November 2024 for $15,000.",
+        "Prepared by: Sarah Chen, CFO | Date: December 1, 2024",
+        "Acme Tech Solutions LLC | 456 Innovation Drive, Austin, TX 78701 | EIN: 84-1234567"
+      ],
+      "words_count": 149
+    }
+  ],
+  "tables": [
+    {
+      "row_count": 27,
+      "column_count": 3,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Account",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Nov 30, 2024",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "Dec 31, 2023",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "ASSETS",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Current Assets",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 2,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Cash and Cash Equivalents",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$83,280.25",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 2,
+          "content": "$45,230.50",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Accounts Receivable",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "$127,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 2,
+          "content": "$95,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "Prepaid Expenses",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "$12,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 2,
+          "content": "$10,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 0,
+          "content": "Other Current Assets",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 1,
+          "content": "$5,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 2,
+          "content": "$4,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 0,
+          "content": "Total Current Assets",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 1,
+          "content": "$227,780.25",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 2,
+          "content": "$154,730.50",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 0,
+          "content": "Fixed Assets",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 2,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 0,
+          "content": "Computer Equipment",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 1,
+          "content": "$45,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 2,
+          "content": "$30,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 0,
+          "content": "Office Furniture",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 1,
+          "content": "$15,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 2,
+          "content": "$15,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 11,
+          "column_index": 0,
+          "content": "Software & Licenses",
+          "kind": null
+        },
+        {
+          "row_index": 11,
+          "column_index": 1,
+          "content": "$20,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 11,
+          "column_index": 2,
+          "content": "$15,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 12,
+          "column_index": 0,
+          "content": "Less: Accumulated Depreciation",
+          "kind": null
+        },
+        {
+          "row_index": 12,
+          "column_index": 1,
+          "content": "($27,000.00)",
+          "kind": null
+        },
+        {
+          "row_index": 12,
+          "column_index": 2,
+          "content": "($12,000.00)",
+          "kind": null
+        },
+        {
+          "row_index": 13,
+          "column_index": 0,
+          "content": "Total Fixed Assets (Net)",
+          "kind": null
+        },
+        {
+          "row_index": 13,
+          "column_index": 1,
+          "content": "$53,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 13,
+          "column_index": 2,
+          "content": "$48,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 14,
+          "column_index": 0,
+          "content": "Other Assets",
+          "kind": null
+        },
+        {
+          "row_index": 14,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 14,
+          "column_index": 2,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 15,
+          "column_index": 0,
+          "content": "Security Deposits",
+          "kind": null
+        },
+        {
+          "row_index": 15,
+          "column_index": 1,
+          "content": "$6,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 15,
+          "column_index": 2,
+          "content": "$6,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 16,
+          "column_index": 0,
+          "content": "Total Other Assets",
+          "kind": null
+        },
+        {
+          "row_index": 16,
+          "column_index": 1,
+          "content": "$6,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 16,
+          "column_index": 2,
+          "content": "$6,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 17,
+          "column_index": 0,
+          "content": "TOTAL ASSETS",
+          "kind": null
+        },
+        {
+          "row_index": 17,
+          "column_index": 1,
+          "content": "$286,780.25",
+          "kind": null
+        },
+        {
+          "row_index": 17,
+          "column_index": 2,
+          "content": "$208,730.50",
+          "kind": null
+        },
+        {
+          "row_index": 18,
+          "column_index": 0,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 18,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 18,
+          "column_index": 2,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 19,
+          "column_index": 0,
+          "content": "LIABILITIES",
+          "kind": null
+        },
+        {
+          "row_index": 19,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 19,
+          "column_index": 2,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 20,
+          "column_index": 0,
+          "content": "Current Liabilities",
+          "kind": null
+        },
+        {
+          "row_index": 20,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 20,
+          "column_index": 2,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 21,
+          "column_index": 0,
+          "content": "Accounts Payable",
+          "kind": null
+        },
+        {
+          "row_index": 21,
+          "column_index": 1,
+          "content": "$23,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 21,
+          "column_index": 2,
+          "content": "$18,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 22,
+          "column_index": 0,
+          "content": "Accrued Expenses",
+          "kind": null
+        },
+        {
+          "row_index": 22,
+          "column_index": 1,
+          "content": "$15,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 22,
+          "column_index": 2,
+          "content": "$12,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 23,
+          "column_index": 0,
+          "content": "Payroll Liabilities",
+          "kind": null
+        },
+        {
+          "row_index": 23,
+          "column_index": 1,
+          "content": "$8,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 23,
+          "column_index": 2,
+          "content": "$7,200.00",
+          "kind": null
+        },
+        {
+          "row_index": 24,
+          "column_index": 0,
+          "content": "Current Portion of Long-term Debt",
+          "kind": null
+        },
+        {
+          "row_index": 24,
+          "column_index": 1,
+          "content": "$18,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 24,
+          "column_index": 2,
+          "content": "$18,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 25,
+          "column_index": 0,
+          "content": "Deferred Revenue",
+          "kind": null
+        },
+        {
+          "row_index": 25,
+          "column_index": 1,
+          "content": "$25,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 25,
+          "column_index": 2,
+          "content": "$20,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 26,
+          "column_index": 0,
+          "content": "Total Current Liabilities",
+          "kind": null
+        },
+        {
+          "row_index": 26,
+          "column_index": 1,
+          "content": "$90,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 26,
+          "column_index": 2,
+          "content": "$75,200.00",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 11,
+      "column_count": 3,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Long-term Liabilities",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Business Loan (First National Bank)",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "$107,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "$125,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Total Long-term Liabilities",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "$107,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 2,
+          "content": "$125,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "TOTAL LIABILITIES",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$197,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 2,
+          "content": "$200,200.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 2,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "STOCKHOLDERS' EQUITY",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 2,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 0,
+          "content": "Member's Capital",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 1,
+          "content": "$50,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 2,
+          "content": "$50,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 0,
+          "content": "Retained Earnings (Prior Years)",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 1,
+          "content": "($41,469.50)",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 2,
+          "content": "($159,069.50)",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 0,
+          "content": "Current Year Net Income",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 1,
+          "content": "$81,249.75",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 2,
+          "content": "$117,600.00",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 0,
+          "content": "TOTAL EQUITY",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 1,
+          "content": "$89,780.25",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 2,
+          "content": "$8,530.50",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 0,
+          "content": "TOTAL LIABILITIES & EQUITY",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 1,
+          "content": "$286,780.25",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 2,
+          "content": "$208,730.50",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 4,
+      "column_count": 3,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Current Ratio",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "2.53 : 1",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "(Target: > 1.5)",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Quick Ratio",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "2.34 : 1",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "(Target: > 1.0)",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Debt-to- Equity Ratio",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "2.19 : 1",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 2,
+          "content": "(Target: < 3.0)",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Working Capital",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$137,780.25",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 2,
+          "content": "(Positive)",
+          "kind": null
+        }
+      ]
+    }
+  ],
+  "fields": {},
+  "documents": [],
+  "raw_response": null
+}

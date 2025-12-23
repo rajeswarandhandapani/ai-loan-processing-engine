@@ -1,0 +1,168 @@
+{
+  "document_type": "bank_statement",
+  "model_id": "prebuilt-bankStatement.us",
+  "content": "PERSONAL FINANCIAL STATEMENT SBA Form 413 (Simplified Version)\nPERSONAL INFORMATION\nName:\nMichael Chen\nSSN:\n******- 4521\nAddress:\n1842 Lakewood Drive, Austin, TX 78703\nPhone:\n(512) 555-0198\nBusiness Name:\nAcme Tech Solutions LLC\nOwnership %:\n100%\nDate of Birth:\nJune 15, 1985\nAs of Date:\nNovember 30, 2024\nASSETS\nDescription\nValue\nCash in Banks (Checking/Savings)\n$45,000.00\nRetirement Accounts (401k, IRA)\n$185,000.00\nStocks & Bonds (Non-retirement)\n$72,000.00\nReal Estate - Primary Residence (1842 Lakewood Dr)\n$650,000.00\nAutomobiles (2022 Tesla Model Y, 2020 Honda Accord)\n$65,000.00\nBusiness Ownership - Acme Tech Solutions LLC (100%)\n$89,780.00\nLife Insurance (Cash Surrender Value)\n$25,000.00\nOther Assets\n$15,000.00\nTOTAL ASSETS\n$1,146,780.00\nLIABILITIES\nDescription\nCreditor\nMonthly Payment\nBalance Owed\nMortgage - Primary Residence\nWells Fargo\n$2,850.00\n$420,000.00\nAuto Loan - Tesla Model Y\nTesla Finance\n$650.00\n$28,000.00\nCredit Card - Chase Sapphire\nChase Bank\n$500.00\n$4,200.00\nCredit Card - Amex Business\nAmerican Express\n$800.00\n$8,500.00\nStudent Loans\nNelnet\n$0.00\n$0.00 (Paid Off)\nTOTAL LIABILITIES\n$460,700.00\nNET WORTH (Total Assets - Total Liabilities)\n$686,080.00\nANNUAL INCOME\nSource\nAnnual Amount\nSalary/Distributions from Acme Tech Solutions LLC\n$180,000.00\nSpouse Income (Sarah Chen - Marketing Manager)\n$95,000.00\nInvestment Income (Dividends/Interest)\n$8,500.00\nTOTAL ANNUAL INCOME\n$283,500.00\nCONTINGENT LIABILITIES\nPersonal Guarantees on Business Debt\n$125,000.00 (First National Bank Business Loan)\nCo-signer Obligations\nNone\nPending Lawsuits\nNone\nMichael Chen Signature\nNovember 30, 2024\nDate\nCertification: I certify that the information provided in this Personal Financial Statement is true and complete to the best of my knowledge. I understand that this statement is being provided to obtain credit and that any misrepresentation may result in civil or criminal penalties.",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "PERSONAL FINANCIAL STATEMENT",
+        "SBA Form 413 (Simplified Version)",
+        "PERSONAL INFORMATION",
+        "Name:",
+        "Michael Chen",
+        "SSN:",
+        "******- 4521",
+        "Address:",
+        "1842 Lakewood Drive, Austin, TX",
+        "78703",
+        "Phone:",
+        "(512) 555-0198",
+        "Business",
+        "Name:",
+        "Acme Tech Solutions LLC",
+        "Ownership",
+        "%:",
+        "100%",
+        "Date of Birth:",
+        "June 15, 1985",
+        "As of Date:",
+        "November 30,",
+        "2024",
+        "ASSETS",
+        "Description",
+        "Value",
+        "Cash in Banks (Checking/Savings)",
+        "$45,000.00",
+        "Retirement Accounts (401k, IRA)",
+        "$185,000.00",
+        "Stocks & Bonds (Non-retirement)",
+        "$72,000.00",
+        "Real Estate - Primary Residence (1842 Lakewood Dr)",
+        "$650,000.00",
+        "Automobiles (2022 Tesla Model Y, 2020 Honda Accord)",
+        "$65,000.00",
+        "Business Ownership - Acme Tech Solutions LLC (100%)",
+        "$89,780.00",
+        "Life Insurance (Cash Surrender Value)",
+        "$25,000.00",
+        "Other Assets",
+        "$15,000.00",
+        "TOTAL ASSETS",
+        "$1,146,780.00",
+        "LIABILITIES",
+        "Description",
+        "Creditor",
+        "Monthly Payment",
+        "Balance Owed",
+        "Mortgage - Primary Residence",
+        "Wells Fargo",
+        "$2,850.00",
+        "$420,000.00",
+        "Auto Loan - Tesla Model Y",
+        "Tesla Finance",
+        "$650.00",
+        "$28,000.00",
+        "Credit Card - Chase Sapphire",
+        "Chase Bank",
+        "$500.00",
+        "$4,200.00",
+        "Credit Card - Amex Business",
+        "American Express",
+        "$800.00",
+        "$8,500.00",
+        "Student Loans",
+        "Nelnet",
+        "$0.00",
+        "$0.00 (Paid Off)",
+        "TOTAL LIABILITIES",
+        "$460,700.00",
+        "NET WORTH (Total Assets - Total Liabilities)",
+        "$686,080.00",
+        "ANNUAL INCOME"
+      ],
+      "words_count": 167
+    },
+    {
+      "page_number": 2,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "Source",
+        "Annual Amount",
+        "Salary/Distributions from Acme Tech Solutions LLC",
+        "$180,000.00",
+        "Spouse Income (Sarah Chen - Marketing Manager)",
+        "$95,000.00",
+        "Investment Income (Dividends/Interest)",
+        "$8,500.00",
+        "TOTAL ANNUAL INCOME",
+        "$283,500.00",
+        "CONTINGENT LIABILITIES",
+        "Personal Guarantees on Business Debt",
+        "$125,000.00 (First National Bank Business Loan)",
+        "Co-signer Obligations",
+        "None",
+        "Pending Lawsuits",
+        "None",
+        "Michael Chen",
+        "Signature",
+        "November 30, 2024",
+        "Date",
+        "Certification: I certify that the information provided in this Personal Financial Statement is true and complete to the best of",
+        "my knowledge. I understand that this statement is being provided to obtain credit and that any misrepresentation may",
+        "result in civil or criminal penalties."
+      ],
+      "words_count": 96
+    }
+  ],
+  "tables": [],
+  "fields": {
+    "AccountHolderAddress": {
+      "name": "AccountHolderAddress",
+      "value": null,
+      "confidence": 0.903,
+      "value_type": "address"
+    },
+    "AccountHolderName": {
+      "name": "AccountHolderName",
+      "value": "Michael Chen",
+      "confidence": 0.801,
+      "value_type": "string"
+    },
+    "StatementEndDate": {
+      "name": "StatementEndDate",
+      "value": null,
+      "confidence": 0.883,
+      "value_type": "date"
+    }
+  },
+  "documents": [
+    {
+      "doc_type": "bankStatement.us",
+      "confidence": 1.0,
+      "fields": {
+        "AccountHolderAddress": {
+          "value": null,
+          "confidence": 0.903,
+          "value_type": "address"
+        },
+        "AccountHolderName": {
+          "value": "Michael Chen",
+          "confidence": 0.801,
+          "value_type": "string"
+        },
+        "StatementEndDate": {
+          "value": null,
+          "confidence": 0.883,
+          "value_type": "date"
+        }
+      }
+    }
+  ],
+  "raw_response": null
+}

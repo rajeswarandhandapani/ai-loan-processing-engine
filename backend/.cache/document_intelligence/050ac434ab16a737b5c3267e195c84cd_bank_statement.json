@@ -1,0 +1,237 @@
+{
+  "document_type": "bank_statement",
+  "model_id": "prebuilt-bankStatement.us",
+  "content": "First National Business Bank\n1234 Financial District, Suite 500, New York, NY 10005 Customer Service: 1-800-555-BANK | www.fnbb.com\nAccount Holder ACME TECH SOLUTIONS LLC 456 Innovation Drive Austin, TX 78701 EIN: 84-1234567\nAccount Details\nBusiness Checking Account\nAccount Number: **** 4521\nStatement Period: November 1 - November 30, 2024\nPage 1 of 1\nAccount Summary\nDescription\nAmount\nBeginning Balance (Nov 1, 2024)\n$45,230.50\nTotal Deposits and Credits\n+$127,500.00\nTotal Withdrawals and Debits\n-$89,450.25\nEnding Balance (Nov 30, 2024)\n$83,280.25\nAverage Daily Balance\n$62,455.38\nTransaction Details\nDate\nDescription\nWithdrawals\nDeposits\nBalance\n11/01\nBeginning Balance\n$45,230.50\n11/04\nACH DEPOSIT - CUSTOMER PAYMENT - TECHCORP INC\n$25,000.00\n$70,230.50\n11/05\nWIRE TRANSFER OUT - VENDOR PAYMENT - AWS SERVICES\n$8,500.00\n$61,730.50\n11/07\nACH DEBIT - PAYROLL - ADP PAYROLL SERVICES\n$32,450.00\n$29,280.50\n11/08\nCHECK #1045 - OFFICE RENT - AUSTIN COMMERCIAL PROP\n$4,500.00\n$24,780.50\n11/11\nACH DEPOSIT - CUSTOMER PAYMENT - GLOBAL RETAIL CO\n$42,500.00\n$67,280.50\n11/12\nDEBIT CARD - OFFICE SUPPLIES - STAPLES #4521\n$450.25\n$66,830.25\n11/15\nACH DEBIT - INSURANCE - BUSINESS SHIELD INS\n$1,250.00\n$65,580.25\n11/18\nWIRE TRANSFER IN - CUSTOMER PAYMENT - ENTERPRISE SOLUTIONS\n$35,000.00\n$100,580.25\n11/20\nACH DEBIT - UTILITIES - AUSTIN ENERGY\n$850.00\n$99,730.25\n11/21\nWIRE TRANSFER OUT - EQUIPMENT PURCHASE - DELL TECHNOLOGIES\n$15,000.00\n$84,730.25\n11/22\nACH DEBIT - PAYROLL - ADP PAYROLL SERVICES\n$22,450.00\n$62,280.25\n11/25\nACH DEPOSIT - CUSTOMER PAYMENT - STARTUP VENTURES LLC\n$25,000.00\n$87,280.25\n11/27\nDEBIT CARD - SOFTWARE SUBSCRIPTION - SALESFORCE\n$2,500.00\n$84,780.25\n11/28\nACH DEBIT - LOAN PAYMENT - FIRST NATIONAL BUSINESS BANK\n$1,500.00\n$83,280.25\n11/30\nEnding Balance\n$83,280.25\nMonthly Summary\nCategory\nCount\nTotal Amount\nCustomer Payments (Revenue)\n4\n$127,500.00\nPayroll\n2\n$54,900.00\nVendor Payments\n2\n$23,500.00\nOperating Expenses\n5\n$11,050.25\nImportant Information: Please review this statement carefully. Report any discrepancies within 60 days. This statement is provided for informational purposes. First National Business Bank | Member FDIC | Equal Housing Lender Statement generated on December 1, 2024",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "First National Business Bank",
+        "1234 Financial District, Suite 500, New York, NY 10005",
+        "Customer Service: 1-800-555-BANK | www.fnbb.com",
+        "Account Holder",
+        "ACME TECH SOLUTIONS LLC",
+        "456 Innovation Drive",
+        "Austin, TX 78701",
+        "EIN: 84-1234567",
+        "Account Details",
+        "Business Checking Account",
+        "Account Number: **** 4521",
+        "Statement Period: November 1 - November",
+        "30, 2024",
+        "Page 1 of 1",
+        "Account Summary",
+        "Description",
+        "Amount",
+        "Beginning Balance (Nov 1, 2024)",
+        "$45,230.50",
+        "Total Deposits and Credits",
+        "+$127,500.00",
+        "Total Withdrawals and Debits",
+        "-$89,450.25",
+        "Ending Balance (Nov 30, 2024)",
+        "$83,280.25",
+        "Average Daily Balance",
+        "$62,455.38",
+        "Transaction Details",
+        "Date",
+        "Description",
+        "Withdrawals",
+        "Deposits",
+        "Balance",
+        "11/01",
+        "Beginning Balance",
+        "$45,230.50",
+        "11/04",
+        "ACH DEPOSIT - CUSTOMER PAYMENT - TECHCORP",
+        "INC",
+        "$25,000.00",
+        "$70,230.50",
+        "11/05",
+        "WIRE TRANSFER OUT - VENDOR PAYMENT - AWS",
+        "SERVICES",
+        "$8,500.00",
+        "$61,730.50",
+        "11/07",
+        "ACH DEBIT - PAYROLL - ADP PAYROLL SERVICES",
+        "$32,450.00",
+        "$29,280.50",
+        "11/08",
+        "CHECK #1045 - OFFICE RENT - AUSTIN",
+        "COMMERCIAL PROP",
+        "$4,500.00",
+        "$24,780.50",
+        "11/11",
+        "ACH DEPOSIT - CUSTOMER PAYMENT - GLOBAL",
+        "RETAIL CO",
+        "$42,500.00",
+        "$67,280.50",
+        "11/12",
+        "DEBIT CARD - OFFICE SUPPLIES - STAPLES #4521",
+        "$450.25",
+        "$66,830.25",
+        "11/15",
+        "ACH DEBIT - INSURANCE - BUSINESS SHIELD INS",
+        "$1,250.00",
+        "$65,580.25",
+        "11/18",
+        "WIRE TRANSFER IN - CUSTOMER PAYMENT -",
+        "ENTERPRISE SOLUTIONS",
+        "$35,000.00",
+        "$100,580.25",
+        "11/20",
+        "ACH DEBIT - UTILITIES - AUSTIN ENERGY",
+        "$850.00",
+        "$99,730.25"
+      ],
+      "words_count": 196
+    },
+    {
+      "page_number": 2,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "11/21",
+        "WIRE TRANSFER OUT - EQUIPMENT PURCHASE -",
+        "DELL TECHNOLOGIES",
+        "$15,000.00",
+        "$84,730.25",
+        "11/22",
+        "ACH DEBIT - PAYROLL - ADP PAYROLL SERVICES",
+        "$22,450.00",
+        "$62,280.25",
+        "11/25",
+        "ACH DEPOSIT - CUSTOMER PAYMENT - STARTUP",
+        "VENTURES LLC",
+        "$25,000.00",
+        "$87,280.25",
+        "11/27",
+        "DEBIT CARD - SOFTWARE SUBSCRIPTION -",
+        "SALESFORCE",
+        "$2,500.00",
+        "$84,780.25",
+        "11/28",
+        "ACH DEBIT - LOAN PAYMENT - FIRST NATIONAL",
+        "BUSINESS BANK",
+        "$1,500.00",
+        "$83,280.25",
+        "11/30",
+        "Ending Balance",
+        "$83,280.25",
+        "Monthly Summary",
+        "Category",
+        "Count",
+        "Total Amount",
+        "Customer Payments (Revenue)",
+        "4",
+        "$127,500.00",
+        "Payroll",
+        "2",
+        "$54,900.00",
+        "Vendor Payments",
+        "2",
+        "$23,500.00",
+        "Operating Expenses",
+        "5",
+        "$11,050.25",
+        "Important Information: Please review this statement carefully. Report any discrepancies within 60 days. This statement is",
+        "provided for informational purposes. First National Business Bank | Member FDIC | Equal Housing Lender",
+        "Statement generated on December 1, 2024"
+      ],
+      "words_count": 121
+    }
+  ],
+  "tables": [],
+  "fields": {
+    "AccountHolderAddress": {
+      "name": "AccountHolderAddress",
+      "value": null,
+      "confidence": 0.905,
+      "value_type": "address"
+    },
+    "AccountHolderName": {
+      "name": "AccountHolderName",
+      "value": "ACME TECH SOLUTIONS LLC",
+      "confidence": 0.869,
+      "value_type": "string"
+    },
+    "Accounts": {
+      "name": "Accounts",
+      "value": null,
+      "confidence": null,
+      "value_type": "array"
+    },
+    "BankAddress": {
+      "name": "BankAddress",
+      "value": null,
+      "confidence": 0.775,
+      "value_type": "address"
+    },
+    "BankName": {
+      "name": "BankName",
+      "value": "First National Business Bank",
+      "confidence": 0.757,
+      "value_type": "string"
+    },
+    "StatementEndDate": {
+      "name": "StatementEndDate",
+      "value": null,
+      "confidence": 0.931,
+      "value_type": "date"
+    },
+    "StatementStartDate": {
+      "name": "StatementStartDate",
+      "value": null,
+      "confidence": 0.952,
+      "value_type": "date"
+    }
+  },
+  "documents": [
+    {
+      "doc_type": "bankStatement.us",
+      "confidence": 1.0,
+      "fields": {
+        "AccountHolderAddress": {
+          "value": null,
+          "confidence": 0.905,
+          "value_type": "address"
+        },
+        "AccountHolderName": {
+          "value": "ACME TECH SOLUTIONS LLC",
+          "confidence": 0.869,
+          "value_type": "string"
+        },
+        "Accounts": {
+          "value": null,
+          "confidence": null,
+          "value_type": "array"
+        },
+        "BankAddress": {
+          "value": null,
+          "confidence": 0.775,
+          "value_type": "address"
+        },
+        "BankName": {
+          "value": "First National Business Bank",
+          "confidence": 0.757,
+          "value_type": "string"
+        },
+        "StatementEndDate": {
+          "value": null,
+          "confidence": 0.931,
+          "value_type": "date"
+        },
+        "StatementStartDate": {
+          "value": null,
+          "confidence": 0.952,
+          "value_type": "date"
+        }
+      }
+    }
+  ],
+  "raw_response": null
+}
