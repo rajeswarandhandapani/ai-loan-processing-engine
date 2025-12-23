@@ -1,6 +1,35 @@
-<div class="app-container">
+<div class="app-container d-flex flex-column min-vh-100">
   <app-header />
-  <main class="main-content">
+  <main class="main-content flex-grow-1">
     <router-outlet />
   </main>
+  <footer class="bg-dark text-white py-3 mt-auto">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-md-4 text-center text-md-start mb-2 mb-md-0">
+          <small class="text-white-50">
+            <i class="bi bi-mortarboard me-1"></i>Portfolio Project Demo
+          </small>
+        </div>
+        <div class="col-md-4 text-center mb-2 mb-md-0">
+          <small>
+            <i class="bi bi-boxes me-1"></i>Azure AI Foundry
+            <span class="mx-2">|</span>
+            <i class="bi bi-cpu me-1"></i>Azure OpenAI
+            <span class="mx-2">|</span>
+            <i class="bi bi-file-earmark-richtext me-1"></i>Document Intelligence
+            <span class="mx-2">|</span>
+            <i class="bi bi-search me-1"></i>AI Search
+            <span class="mx-2">|</span>
+            <i class="bi bi-emoji-smile me-1"></i>Sentiment Analysis
+          </small>
+        </div>
+        <div class="col-md-4 text-center text-md-end">
+          <small class="text-white-50">
+            Built with Angular + FastAPI + LangChain
+          </small>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>

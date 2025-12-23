@@ -1,28 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
 
-// Import Bootstrap 5 CSS using modern @use syntax
+// Import Bootstrap 5 CSS
 @use "bootstrap" as *;
 
 // Import Bootstrap Icons
 @use "bootstrap-icons/font/bootstrap-icons.css";
 
-// Custom global styles
-:root {
-  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+// Bootstrap 5 Theme - Teal (using CSS custom properties)
+:root,
+[data-bs-theme="light"] {
+  // Primary - Teal (modern fintech)
+  --bs-primary: #0d9488;
+  --bs-primary-rgb: 13, 148, 136;
+  
+  // Secondary - Slate
+  --bs-secondary: #64748b;
+  --bs-secondary-rgb: 100, 116, 139;
+  
+  // Success - Emerald
+  --bs-success: #10b981;
+  --bs-success-rgb: 16, 185, 129;
+  
+  // Info - Sky
+  --bs-info: #0ea5e9;
+  --bs-info-rgb: 14, 165, 233;
+  
+  // Warning - Amber
+  --bs-warning: #f59e0b;
+  --bs-warning-rgb: 245, 158, 11;
+  
+  // Danger - Red
+  --bs-danger: #ef4444;
+  --bs-danger-rgb: 239, 68, 68;
+  
+  // Link color
+  --bs-link-color: #0d9488;
+  --bs-link-hover-color: #0f766e;
 }
 
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
+}
+
+// Override btn-primary with teal
+.btn-primary {
+  --bs-btn-bg: #0d9488;
+  --bs-btn-border-color: #0d9488;
+  --bs-btn-hover-bg: #0f766e;
+  --bs-btn-hover-border-color: #0f766e;
+  --bs-btn-active-bg: #115e59;
+  --bs-btn-active-border-color: #115e59;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #0d9488;
+  --bs-btn-border-color: #0d9488;
+  --bs-btn-hover-bg: #0d9488;
+  --bs-btn-hover-border-color: #0d9488;
+  --bs-btn-active-bg: #0f766e;
+}
+
+.bg-primary {
+  background-color: #0d9488 !important;
+}
+
+.text-primary {
+  color: #0d9488 !important;
 }
 
 // Custom utility classes
 .gradient-bg {
-  background: var(--primary-gradient);
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
   color: white;
 }
 
 .card-shadow {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }

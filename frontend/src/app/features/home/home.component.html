@@ -1,6 +1,18 @@
 <div class="container-fluid py-4">
   <div class="row g-4">
-    <!-- Left Column: File Upload & Extracted Data -->
+    <!-- Left Column: Chat Interface -->
+    <div class="col-lg-6">
+      <div class="card shadow-sm chat-card">
+        <div class="card-body d-flex flex-column p-0">
+          <app-chat 
+            (messageSent)="onChatMessageSent($event)"
+            (sessionIdChanged)="onSessionIdChanged($event)">
+          </app-chat>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: File Upload & Extracted Data -->
     <div class="col-lg-6">
       <div class="card shadow-sm">
         <div class="card-body">
@@ -64,18 +76,6 @@
           </div>
         </div>
       }
-    </div>
-
-    <!-- Right Column: Chat Interface -->
-    <div class="col-lg-6">
-      <div class="card shadow-sm chat-card">
-        <div class="card-body d-flex flex-column p-0">
-          <app-chat 
-            (messageSent)="onChatMessageSent($event)"
-            (sessionIdChanged)="onSessionIdChanged($event)">
-          </app-chat>
-        </div>
-      </div>
     </div>
   </div>
 </div>
