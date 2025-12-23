@@ -1,5 +1,5 @@
 import logging
-from langchain.chat_models import BaseChatModel
+from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_openai import AzureChatOpenAI
 from langchain_anthropic import ChatAnthropic
 from langgraph.checkpoint.memory import InMemorySaver
@@ -19,14 +19,15 @@ logger = get_logger(__name__)
 
 
 def _create_llm() -> BaseChatModel:
-    """Create the LLM based on cofigured provider."""
+    """Create the LLM based on configured provider."""
     provider = settings.LLM_PROVIDER
     
     if provider == "anthropic":
-        logger.info(f"Initializing Anthropic Claude With Model: {settings.ANTHROPIC_MODEL}")
+        logger.info(f"Initializing Anthropic Claude with model: {settings.ANTHROPIC_MODEL}")
         return ChatAnthropic(
             api_key=settings.ANTHROPIC_API_KEY,
-            model=settings.ANTHROPIC_MODEL
+            model=settings.ANTHROPIC_MODEL,
+            max_tokens=2048
         )
     else:
         logger.info(f"Initializing Azure OpenAI LLM with deployment: {settings.AZURE_OPENAI_DEPLOYMENT_NAME}")
@@ -35,6 +36,7 @@ def _create_llm() -> BaseChatModel:
             api_key=settings.AZURE_OPENAI_API_KEY,
             azure_deployment=settings.AZURE_OPENAI_DEPLOYMENT_NAME,
             api_version=settings.AZURE_OPENAI_API_VERSION,
+            max_tokens=2048
         )
 
 
