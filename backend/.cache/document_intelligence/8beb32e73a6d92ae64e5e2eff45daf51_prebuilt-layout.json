@@ -1,0 +1,655 @@
+{
+  "document_type": "prebuilt-layout",
+  "model_id": "prebuilt-layout",
+  "content": "NEXUS DIGITAL SOLUTIONS INC\nBalance Sheet As of November 30, 2024\nA NEGATIVE EQUITY: Company has negative stockholders' equity due to accumulated operating losses.\nAccount\nNov 30, 2024\nASSETS\nCurrent Assets\nCash and Cash Equivalents\n$6,170.00\nAccounts Receivable\n$8,500.00\nPrepaid Expenses (SaaS subscriptions)\n$2,400.00\nTotal Current Assets\n$17,070.00\nFixed Assets\nComputer Equipment (MacBooks, monitors)\n$12,000.00\nOffice Furniture\n$3,000.00\nLess: Accumulated Depreciation\n($2,500.00)\nTotal Fixed Assets (Net)\n$12,500.00\nIntangible Assets\nSoftware Development Costs (Capitalized)\n$45,000.00\nDomain Names & Trademarks\n$2,500.00\nTotal Intangible Assets\n$47,500.00\nTOTAL ASSETS\n$77,070.00\nLIABILITIES\nCurrent Liabilities\nAccounts Payable\n$4,800.00\nAccrued Expenses\n$3,200.00\nCredit Card Balance (Founder's card)\n$18,500.00\nDeferred Revenue (Annual subscriptions)\n$12,000.00\nTotal Current Liabilities\n$38,500.00 :unselected:\nLong-term Liabilities\nConvertible Notes (Friends & Family)\n$75,000.00\nTotal Long-term Liabilities\n$75,000.00\nTOTAL LIABILITIES\n$113,500.00\nSTOCKHOLDERS' EQUITY\nCommon Stock (Founders)\n$100,000.00\nAdditional Paid-In Capital\n$1,270.00\nRetained Earnings (Accumulated Deficit)\n($137,700.00)\nTOTAL EQUITY\n($36,430.00)\nTOTAL LIABILITIES & EQUITY\n$77,070.00\nKey Financial Ratios - WARNING\nCurrent Ratio\n0.44 : 1\nx (Target: > :selected: 1.5)\nQuick Ratio\n0.38 : 1\nx (Target: > 1.0)\nDebt-to-Equity Ratio\nN/A (Negative equity)\nx INSOLVENT\nWorking Capital\n($21,430.00)\nx NEGATIVE\nCash Runway\n~10 days\nx CRITICAL :selected: :selected:",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "NEXUS DIGITAL SOLUTIONS INC",
+        "Balance Sheet",
+        "As of November 30, 2024",
+        "A NEGATIVE EQUITY: Company has negative stockholders' equity due to accumulated",
+        "operating losses.",
+        "Account",
+        "Nov 30, 2024",
+        "ASSETS",
+        "Current Assets",
+        "Cash and Cash Equivalents",
+        "$6,170.00",
+        "Accounts Receivable",
+        "$8,500.00",
+        "Prepaid Expenses (SaaS subscriptions)",
+        "$2,400.00",
+        "Total Current Assets",
+        "$17,070.00",
+        "Fixed Assets",
+        "Computer Equipment (MacBooks, monitors)",
+        "$12,000.00",
+        "Office Furniture",
+        "$3,000.00",
+        "Less: Accumulated Depreciation",
+        "($2,500.00)",
+        "Total Fixed Assets (Net)",
+        "$12,500.00",
+        "Intangible Assets",
+        "Software Development Costs (Capitalized)",
+        "$45,000.00",
+        "Domain Names & Trademarks",
+        "$2,500.00",
+        "Total Intangible Assets",
+        "$47,500.00",
+        "TOTAL ASSETS",
+        "$77,070.00",
+        "LIABILITIES",
+        "Current Liabilities",
+        "Accounts Payable",
+        "$4,800.00",
+        "Accrued Expenses",
+        "$3,200.00",
+        "Credit Card Balance (Founder's card)",
+        "$18,500.00",
+        "Deferred Revenue (Annual subscriptions)",
+        "$12,000.00",
+        "Total Current Liabilities",
+        "$38,500.00"
+      ],
+      "words_count": 110
+    },
+    {
+      "page_number": 2,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "Long-term Liabilities",
+        "Convertible Notes (Friends & Family)",
+        "$75,000.00",
+        "Total Long-term Liabilities",
+        "$75,000.00",
+        "TOTAL LIABILITIES",
+        "$113,500.00",
+        "STOCKHOLDERS' EQUITY",
+        "Common Stock (Founders)",
+        "$100,000.00",
+        "Additional Paid-In Capital",
+        "$1,270.00",
+        "Retained Earnings (Accumulated Deficit)",
+        "($137,700.00)",
+        "TOTAL EQUITY",
+        "($36,430.00)",
+        "TOTAL LIABILITIES & EQUITY",
+        "$77,070.00",
+        "Key Financial Ratios - WARNING",
+        "Current Ratio",
+        "0.44 : 1",
+        "x (Target: >",
+        "1.5)",
+        "Quick Ratio",
+        "0.38 : 1",
+        "x (Target: >",
+        "1.0)",
+        "Debt-to-Equity",
+        "Ratio",
+        "N/A (Negative",
+        "equity)",
+        "x INSOLVENT",
+        "Working Capital",
+        "($21,430.00)",
+        "x NEGATIVE",
+        "Cash Runway",
+        "~10 days",
+        "x CRITICAL"
+      ],
+      "words_count": 79
+    }
+  ],
+  "tables": [
+    {
+      "row_count": 25,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Account",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Nov 30, 2024",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "ASSETS",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Current Assets",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Cash and Cash Equivalents",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$6,170.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Accounts Receivable",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "$8,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "Prepaid Expenses (SaaS subscriptions)",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "$2,400.00",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 0,
+          "content": "Total Current Assets",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 1,
+          "content": "$17,070.00",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 0,
+          "content": "Fixed Assets",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 0,
+          "content": "Computer Equipment (MacBooks, monitors)",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 1,
+          "content": "$12,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 0,
+          "content": "Office Furniture",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 1,
+          "content": "$3,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 0,
+          "content": "Less: Accumulated Depreciation",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 1,
+          "content": "($2,500.00)",
+          "kind": null
+        },
+        {
+          "row_index": 11,
+          "column_index": 0,
+          "content": "Total Fixed Assets (Net)",
+          "kind": null
+        },
+        {
+          "row_index": 11,
+          "column_index": 1,
+          "content": "$12,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 12,
+          "column_index": 0,
+          "content": "Intangible Assets",
+          "kind": null
+        },
+        {
+          "row_index": 12,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 13,
+          "column_index": 0,
+          "content": "Software Development Costs (Capitalized)",
+          "kind": null
+        },
+        {
+          "row_index": 13,
+          "column_index": 1,
+          "content": "$45,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 14,
+          "column_index": 0,
+          "content": "Domain Names & Trademarks",
+          "kind": null
+        },
+        {
+          "row_index": 14,
+          "column_index": 1,
+          "content": "$2,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 15,
+          "column_index": 0,
+          "content": "Total Intangible Assets",
+          "kind": null
+        },
+        {
+          "row_index": 15,
+          "column_index": 1,
+          "content": "$47,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 16,
+          "column_index": 0,
+          "content": "TOTAL ASSETS",
+          "kind": null
+        },
+        {
+          "row_index": 16,
+          "column_index": 1,
+          "content": "$77,070.00",
+          "kind": null
+        },
+        {
+          "row_index": 17,
+          "column_index": 0,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 17,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 18,
+          "column_index": 0,
+          "content": "LIABILITIES",
+          "kind": null
+        },
+        {
+          "row_index": 18,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 19,
+          "column_index": 0,
+          "content": "Current Liabilities",
+          "kind": null
+        },
+        {
+          "row_index": 19,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 20,
+          "column_index": 0,
+          "content": "Accounts Payable",
+          "kind": null
+        },
+        {
+          "row_index": 20,
+          "column_index": 1,
+          "content": "$4,800.00",
+          "kind": null
+        },
+        {
+          "row_index": 21,
+          "column_index": 0,
+          "content": "Accrued Expenses",
+          "kind": null
+        },
+        {
+          "row_index": 21,
+          "column_index": 1,
+          "content": "$3,200.00",
+          "kind": null
+        },
+        {
+          "row_index": 22,
+          "column_index": 0,
+          "content": "Credit Card Balance (Founder's card)",
+          "kind": null
+        },
+        {
+          "row_index": 22,
+          "column_index": 1,
+          "content": "$18,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 23,
+          "column_index": 0,
+          "content": "Deferred Revenue (Annual subscriptions)",
+          "kind": null
+        },
+        {
+          "row_index": 23,
+          "column_index": 1,
+          "content": "$12,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 24,
+          "column_index": 0,
+          "content": "Total Current Liabilities",
+          "kind": null
+        },
+        {
+          "row_index": 24,
+          "column_index": 1,
+          "content": "$38,500.00",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 11,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Long-term Liabilities",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Convertible Notes (Friends & Family)",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "$75,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Total Long-term Liabilities",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "$75,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "TOTAL LIABILITIES",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$113,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "STOCKHOLDERS' EQUITY",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 0,
+          "content": "Common Stock (Founders)",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 1,
+          "content": "$100,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 0,
+          "content": "Additional Paid-In Capital",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 1,
+          "content": "$1,270.00",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 0,
+          "content": "Retained Earnings (Accumulated Deficit)",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 1,
+          "content": "($137,700.00)",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 0,
+          "content": "TOTAL EQUITY",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 1,
+          "content": "($36,430.00)",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 0,
+          "content": "TOTAL LIABILITIES & EQUITY",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 1,
+          "content": "$77,070.00",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 5,
+      "column_count": 3,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Current Ratio",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "0.44 : 1",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "x (Target: > :selected: 1.5)",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Quick Ratio",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "0.38 : 1",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "x (Target: > 1.0)",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Debt-to-Equity Ratio",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "N/A (Negative equity)",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 2,
+          "content": "x INSOLVENT",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Working Capital",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "($21,430.00)",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 2,
+          "content": "x NEGATIVE\n:selected:",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Cash Runway",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "~10 days",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 2,
+          "content": "x CRITICAL\n:selected:",
+          "kind": null
+        }
+      ]
+    }
+  ],
+  "fields": {},
+  "documents": [],
+  "raw_response": null
+}

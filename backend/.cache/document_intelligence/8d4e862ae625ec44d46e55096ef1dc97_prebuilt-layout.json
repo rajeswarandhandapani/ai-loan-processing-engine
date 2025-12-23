@@ -1,0 +1,164 @@
+{
+  "document_type": "prebuilt-layout",
+  "model_id": "prebuilt-layout",
+  "content": ":unselected:\nSTATE OF CALIFORNIA Office of the Secretary of State\nCERTIFICATE OF INCORPORATION\nCorporation\nNEXUS DIGITAL SOLUTIONS INC\nFile Number:\nC5123456\nDate of Formation:\nApril 8, 2024\nRegistered Agent:\nJason Park\nRegistered Office:\n1450 Tech Boulevard, Suite 200, San Jose, CA 95131\nFederal EIN:\n88-4567890\nNAICS Code:\n518210 - Data Processing & Hosting Services\nStock Authorized:\n10,000,000 shares common stock\nPurpose:\nAI-powered SaaS platform for small business automation\nA Note: This corporation was formed less than 12 months ago (April 8, 2024). Time in business: 8 months as of December 2024.\nShirley Weber Secretary of State\nDate Issued April 8, 2024",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "STATE OF CALIFORNIA",
+        "Office of the Secretary of State",
+        "CERTIFICATE OF",
+        "INCORPORATION",
+        "Corporation",
+        "NEXUS DIGITAL SOLUTIONS INC",
+        "File Number:",
+        "C5123456",
+        "Date of Formation:",
+        "April 8, 2024",
+        "Registered Agent:",
+        "Jason Park",
+        "Registered Office:",
+        "1450 Tech Boulevard, Suite 200,",
+        "San Jose, CA 95131",
+        "Federal EIN:",
+        "88-4567890",
+        "NAICS Code:",
+        "518210 - Data Processing &",
+        "Hosting Services",
+        "Stock Authorized:",
+        "10,000,000 shares common",
+        "stock",
+        "Purpose:",
+        "AI-powered SaaS platform for",
+        "small business automation",
+        "A Note: This corporation was formed less than 12 months ago (April 8, 2024). Time in",
+        "business: 8 months as of December 2024."
+      ],
+      "words_count": 90
+    },
+    {
+      "page_number": 2,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "Shirley Weber",
+        "Secretary of State",
+        "Date Issued",
+        "April 8, 2024"
+      ],
+      "words_count": 10
+    }
+  ],
+  "tables": [
+    {
+      "row_count": 8,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "File Number:",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "C5123456",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Date of Formation:",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "April 8, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Registered Agent:",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "Jason Park",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Registered Office:",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "1450 Tech Boulevard, Suite 200, San Jose, CA 95131",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Federal EIN:",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "88-4567890",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "NAICS Code:",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "518210 - Data Processing & Hosting Services",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 0,
+          "content": "Stock Authorized:",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 1,
+          "content": "10,000,000 shares common stock",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 0,
+          "content": "Purpose:",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 1,
+          "content": "AI-powered SaaS platform for small business automation",
+          "kind": null
+        }
+      ]
+    }
+  ],
+  "fields": {},
+  "documents": [],
+  "raw_response": null
+}

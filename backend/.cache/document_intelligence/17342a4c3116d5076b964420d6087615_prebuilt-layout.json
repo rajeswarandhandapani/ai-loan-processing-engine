@@ -1,0 +1,564 @@
+{
+  "document_type": "prebuilt-layout",
+  "model_id": "prebuilt-layout",
+  "content": "NEXUS DIGITAL SOLUTIONS INC\nProfit and Loss Statement April 8, 2024 - November 30, 2024 (8 months since inception)\nA STARTUP STATUS: This company has been operating for only 8 months. Financial data reflects partial year only. No prior year comparison available.\nAccount\nYTD 2024 (8 months)\nAnnualized Projection\nREVENUE\nSaaS Subscription Revenue\n$58,400.00\n$87,600.00\nEnterprise Pilot Programs\n$12,000.00\n$18,000.00\nConsulting Services\n$8,500.00\n$12,750.00\nTOTAL REVENUE\n$78,900.00\n$118,350.00 (Below $100K minimum)\nCOST OF GOODS SOLD\nVercel) Cloud Infrastructure (AWS/\n$38,400.00\n$57,600.00\nThird-party APIs (OpenAI, etc.)\n$18,500.00\n$27,750.00\nTOTAL COGS\n$56,900.00\n$85,350.00\nGROSS PROFIT\n$22,000.00\n$33,000.00\nGross Profit Margin\n27.9%\n(Very low for SaaS)\nOPERATING EXPENSES\nSalaries (Founder + 1 Engineer)\n$96,000.00\n$144,000.00\nContractor/Freelance\n$12,000.00\n$18,000.00\nOffice/Coworking Space\n$14,400.00\n$21,600.00\nSoftware Subscriptions\n$6,400.00\n$9,600.00\nMarketing & Advertising\n$15,200.00\n$22,800.00\nLegal & Professional\n$8,500.00\n$12,750.00\nInsurance\n$2,400.00\n$3,600.00\nTravel & Conferences\n$4,800.00\n$7,200.00\nTOTAL OPERATING EXPENSES\n$159,700.00\n$239,550.00 :unselected:\nNET LOSS\n($137,700.00)\n($206,550.00)\nBurn Rate (Monthly)\n~$17,200/month\nCritical Issues for Loan Eligibility\n. x Time in Business: Only 8 months (minimum required: 2 years)\n\u00b7 x Annual Revenue: $78,900 YTD / ~$118K annualized (minimum required: $100K) - BORDERLINE\n\u00b7 x Profitability: Operating at significant loss (-$137,700)\n\u00b7 x Cash Flow: Negative monthly cash flow, requires founder injections\n. x Cash Reserves: Only ~$6,000 in bank (runway: < 2 weeks without funding)\nLoan Request\nSeeking $100,000 for product development and sales team expansion.\nMitigating Factors\n\u00b7 Founder has strong tech background (ex-Google engineer)\n\u00b7 Growing MRR: $3,200 - $7,300 over 6 months (128% growth)\n\u00b7 2 enterprise pilots in progress\n\u00b7 Founder willing to provide personal guarantee :selected:",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "NEXUS DIGITAL SOLUTIONS INC",
+        "Profit and Loss Statement",
+        "April 8, 2024 - November 30, 2024 (8 months since inception)",
+        "A STARTUP STATUS: This company has been operating for only 8 months. Financial data",
+        "reflects partial year only. No prior year comparison available.",
+        "Account",
+        "YTD 2024 (8",
+        "months)",
+        "Annualized Projection",
+        "REVENUE",
+        "SaaS Subscription Revenue",
+        "$58,400.00",
+        "$87,600.00",
+        "Enterprise Pilot Programs",
+        "$12,000.00",
+        "$18,000.00",
+        "Consulting Services",
+        "$8,500.00",
+        "$12,750.00",
+        "TOTAL REVENUE",
+        "$78,900.00",
+        "$118,350.00 (Below $100K",
+        "minimum)",
+        "COST OF GOODS SOLD",
+        "Vercel)",
+        "Cloud Infrastructure (AWS/",
+        "$38,400.00",
+        "$57,600.00",
+        "Third-party APIs (OpenAI,",
+        "etc.)",
+        "$18,500.00",
+        "$27,750.00",
+        "TOTAL COGS",
+        "$56,900.00",
+        "$85,350.00",
+        "GROSS PROFIT",
+        "$22,000.00",
+        "$33,000.00",
+        "Gross Profit Margin",
+        "27.9%",
+        "(Very low for SaaS)",
+        "OPERATING EXPENSES",
+        "Salaries (Founder + 1",
+        "Engineer)",
+        "$96,000.00",
+        "$144,000.00",
+        "Contractor/Freelance",
+        "$12,000.00",
+        "$18,000.00",
+        "Office/Coworking Space",
+        "$14,400.00",
+        "$21,600.00",
+        "Software Subscriptions",
+        "$6,400.00",
+        "$9,600.00",
+        "Marketing & Advertising",
+        "$15,200.00",
+        "$22,800.00",
+        "Legal & Professional",
+        "$8,500.00",
+        "$12,750.00",
+        "Insurance",
+        "$2,400.00",
+        "$3,600.00",
+        "Travel & Conferences",
+        "$4,800.00",
+        "$7,200.00",
+        "TOTAL OPERATING",
+        "EXPENSES",
+        "$159,700.00",
+        "$239,550.00"
+      ],
+      "words_count": 146
+    },
+    {
+      "page_number": 2,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "NET LOSS",
+        "($137,700.00)",
+        "($206,550.00)",
+        "Burn Rate (Monthly)",
+        "~$17,200/month",
+        "Critical Issues for Loan Eligibility",
+        ". x Time in Business: Only 8 months (minimum required: 2 years)",
+        "\u00b7 x Annual Revenue: $78,900 YTD / ~$118K annualized (minimum required: $100K) -",
+        "BORDERLINE",
+        "\u00b7 x Profitability: Operating at significant loss (-$137,700)",
+        "\u00b7 x Cash Flow: Negative monthly cash flow, requires founder injections",
+        ". x Cash Reserves: Only ~$6,000 in bank (runway: < 2 weeks without funding)",
+        "Loan Request",
+        "Seeking $100,000 for product development and sales team expansion.",
+        "Mitigating Factors",
+        "\u00b7 Founder has strong tech background (ex-Google engineer)",
+        "\u00b7 Growing MRR: $3,200 - $7,300 over 6 months (128% growth)",
+        "\u00b7 2 enterprise pilots in progress",
+        "\u00b7 Founder willing to provide personal guarantee"
+      ],
+      "words_count": 117
+    }
+  ],
+  "tables": [
+    {
+      "row_count": 22,
+      "column_count": 3,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Account",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "YTD 2024 (8 months)",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "Annualized Projection",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "REVENUE",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "SaaS Subscription Revenue",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "$58,400.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 2,
+          "content": "$87,600.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Enterprise Pilot Programs",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$12,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 2,
+          "content": "$18,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Consulting Services",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "$8,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 2,
+          "content": "$12,750.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "TOTAL REVENUE",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "$78,900.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 2,
+          "content": "$118,350.00 (Below $100K minimum)",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 0,
+          "content": "COST OF GOODS SOLD",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 2,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 0,
+          "content": "Vercel) Cloud Infrastructure (AWS/",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 1,
+          "content": "$38,400.00",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 2,
+          "content": "$57,600.00",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 0,
+          "content": "Third-party APIs (OpenAI, etc.)",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 1,
+          "content": "$18,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 8,
+          "column_index": 2,
+          "content": "$27,750.00",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 0,
+          "content": "TOTAL COGS",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 1,
+          "content": "$56,900.00",
+          "kind": null
+        },
+        {
+          "row_index": 9,
+          "column_index": 2,
+          "content": "$85,350.00",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 0,
+          "content": "GROSS PROFIT",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 1,
+          "content": "$22,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 10,
+          "column_index": 2,
+          "content": "$33,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 11,
+          "column_index": 0,
+          "content": "Gross Profit Margin",
+          "kind": null
+        },
+        {
+          "row_index": 11,
+          "column_index": 1,
+          "content": "27.9%",
+          "kind": null
+        },
+        {
+          "row_index": 11,
+          "column_index": 2,
+          "content": "(Very low for SaaS)",
+          "kind": null
+        },
+        {
+          "row_index": 12,
+          "column_index": 0,
+          "content": "OPERATING EXPENSES",
+          "kind": null
+        },
+        {
+          "row_index": 12,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 12,
+          "column_index": 2,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 13,
+          "column_index": 0,
+          "content": "Salaries (Founder + 1 Engineer)",
+          "kind": null
+        },
+        {
+          "row_index": 13,
+          "column_index": 1,
+          "content": "$96,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 13,
+          "column_index": 2,
+          "content": "$144,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 14,
+          "column_index": 0,
+          "content": "Contractor/Freelance",
+          "kind": null
+        },
+        {
+          "row_index": 14,
+          "column_index": 1,
+          "content": "$12,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 14,
+          "column_index": 2,
+          "content": "$18,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 15,
+          "column_index": 0,
+          "content": "Office/Coworking Space",
+          "kind": null
+        },
+        {
+          "row_index": 15,
+          "column_index": 1,
+          "content": "$14,400.00",
+          "kind": null
+        },
+        {
+          "row_index": 15,
+          "column_index": 2,
+          "content": "$21,600.00",
+          "kind": null
+        },
+        {
+          "row_index": 16,
+          "column_index": 0,
+          "content": "Software Subscriptions",
+          "kind": null
+        },
+        {
+          "row_index": 16,
+          "column_index": 1,
+          "content": "$6,400.00",
+          "kind": null
+        },
+        {
+          "row_index": 16,
+          "column_index": 2,
+          "content": "$9,600.00",
+          "kind": null
+        },
+        {
+          "row_index": 17,
+          "column_index": 0,
+          "content": "Marketing & Advertising",
+          "kind": null
+        },
+        {
+          "row_index": 17,
+          "column_index": 1,
+          "content": "$15,200.00",
+          "kind": null
+        },
+        {
+          "row_index": 17,
+          "column_index": 2,
+          "content": "$22,800.00",
+          "kind": null
+        },
+        {
+          "row_index": 18,
+          "column_index": 0,
+          "content": "Legal & Professional",
+          "kind": null
+        },
+        {
+          "row_index": 18,
+          "column_index": 1,
+          "content": "$8,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 18,
+          "column_index": 2,
+          "content": "$12,750.00",
+          "kind": null
+        },
+        {
+          "row_index": 19,
+          "column_index": 0,
+          "content": "Insurance",
+          "kind": null
+        },
+        {
+          "row_index": 19,
+          "column_index": 1,
+          "content": "$2,400.00",
+          "kind": null
+        },
+        {
+          "row_index": 19,
+          "column_index": 2,
+          "content": "$3,600.00",
+          "kind": null
+        },
+        {
+          "row_index": 20,
+          "column_index": 0,
+          "content": "Travel & Conferences",
+          "kind": null
+        },
+        {
+          "row_index": 20,
+          "column_index": 1,
+          "content": "$4,800.00",
+          "kind": null
+        },
+        {
+          "row_index": 20,
+          "column_index": 2,
+          "content": "$7,200.00",
+          "kind": null
+        },
+        {
+          "row_index": 21,
+          "column_index": 0,
+          "content": "TOTAL OPERATING EXPENSES",
+          "kind": null
+        },
+        {
+          "row_index": 21,
+          "column_index": 1,
+          "content": "$159,700.00",
+          "kind": null
+        },
+        {
+          "row_index": 21,
+          "column_index": 2,
+          "content": "$239,550.00",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 2,
+      "column_count": 3,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "NET LOSS",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "($137,700.00)",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "($206,550.00)",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Burn Rate (Monthly)",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "~$17,200/month",
+          "kind": null
+        }
+      ]
+    }
+  ],
+  "fields": {},
+  "documents": [],
+  "raw_response": null
+}

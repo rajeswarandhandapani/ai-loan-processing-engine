@@ -1,0 +1,643 @@
+{
+  "document_type": "prebuilt-layout",
+  "model_id": "prebuilt-layout",
+  "content": "CREDIT REPORT SUMMARY Experian | TransUnion | Equifax\n745\nFICO\u00ae Score 8 VERY GOOD :selected: / Strong Personal Credit: Despite business challenges, founder maintains excellent personal credit history. This could support startup exception consideration with personal guarantee.\nCONSUMER INFORMATION\nName:\nJASON HYUN PARK\nReport Date:\nNovember 28, 2024\nSSN:\n***_** 8901\nDate of Birth:\nSeptember 3, 1991\nAddress:\n2145 Innovation Way, Apt 1204, San Jose, CA 95131\nEmployment:\nCEO, Nexus Digital Solutions Inc (Since April 2024) | Former: Google (2016-2024)\nSCORE FACTORS\nFactor\nImpact\nStatus\nPayment History (35%)\nExcellent - No late payments\nCredit Utilization (30%)\nFair - 28% utilization (increased recently)\nLength of Credit History (15%)\nGood - 8 years average\nCredit Mix (10%)\nGood - Diverse accounts\nNew Credit (10%)\nFair - 4 inquiries in 12 months :unselected:\nACCOUNT SUMMARY\nAccount Type\nOpen\nTotal Balance\nCredit Limit\nRevolving (Credit Cards)\n4\n$22,400\n$80,000\nAuto Loan (Tesla Model 3)\n1\n$28,500 :unselected: N/A\nStudent Loans\n1\n$45,000 :unselected: N/A\nPAYMENT HISTORY\n/ On-Time Payments (Last 24 months) :selected:\n96 / 96 (100%)\nLate Payments\n0\nCollections\n0\nBankruptcies\n0\nPUBLIC RECORDS\n/ No bankruptcies :selected:\n/ No tax liens :selected:\n! No judgments :selected:\nEMPLOYMENT & INCOME HISTORY\nPeriod :unselected: Employer\nPosition\nAnnual Income\nApr 2024 - :unselected: Nexus Digital Solutions Inc :unselected: CEO/Founder\n$60,000 (reduced)\nPresent\n2016 - Mar 2024\nGoogle LLC\nSenior Software Engineer\n$285,000\n* Income reduced significantly after leaving Google to start company\nASSETS (Self-Reported)\nPersonal Savings\n$35,000\nInvestment Accounts (Google RSUs vested)\n$180,000\n401(k) Balance\n$145,000",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "CREDIT REPORT SUMMARY",
+        "Experian | TransUnion | Equifax",
+        "745",
+        "FICO\u00ae Score 8",
+        "VERY GOOD",
+        "/ Strong Personal Credit: Despite business challenges, founder maintains excellent personal",
+        "credit history. This could support startup exception consideration with personal guarantee.",
+        "CONSUMER INFORMATION",
+        "Name:",
+        "JASON HYUN PARK",
+        "Report Date:",
+        "November 28, 2024",
+        "SSN:",
+        "***_**",
+        "8901",
+        "Date of Birth:",
+        "September 3, 1991",
+        "Address:",
+        "2145 Innovation Way, Apt 1204, San Jose, CA 95131",
+        "Employment:",
+        "CEO, Nexus Digital Solutions Inc (Since April 2024) | Former: Google",
+        "(2016-2024)",
+        "SCORE FACTORS",
+        "Factor",
+        "Impact",
+        "Status",
+        "Payment History (35%)",
+        "Excellent - No late payments",
+        "Credit Utilization (30%)",
+        "Fair - 28% utilization (increased recently)",
+        "Length of Credit History (15%)",
+        "Good - 8 years average",
+        "Credit Mix (10%)",
+        "Good - Diverse accounts",
+        "New Credit (10%)",
+        "Fair - 4 inquiries in 12 months"
+      ],
+      "words_count": 128
+    },
+    {
+      "page_number": 2,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "ACCOUNT SUMMARY",
+        "Account Type",
+        "Open",
+        "Total Balance",
+        "Credit Limit",
+        "Revolving (Credit Cards)",
+        "4",
+        "$22,400",
+        "$80,000",
+        "Auto Loan (Tesla Model 3)",
+        "1",
+        "$28,500",
+        "N/A",
+        "Student Loans",
+        "1",
+        "$45,000",
+        "N/A",
+        "PAYMENT HISTORY",
+        "/ On-Time Payments (Last 24 months)",
+        "96 / 96 (100%)",
+        "Late Payments",
+        "0",
+        "Collections",
+        "0",
+        "Bankruptcies",
+        "0",
+        "PUBLIC RECORDS",
+        "/ No bankruptcies",
+        "/ No tax liens",
+        "! No judgments",
+        "EMPLOYMENT & INCOME HISTORY",
+        "Period",
+        "Employer",
+        "Position",
+        "Annual Income",
+        "Apr 2024 -",
+        "Nexus Digital Solutions",
+        "Inc",
+        "CEO/Founder",
+        "$60,000",
+        "(reduced)",
+        "Present",
+        "2016 - Mar 2024",
+        "Google LLC",
+        "Senior Software",
+        "Engineer",
+        "$285,000",
+        "* Income reduced significantly after leaving Google to start company",
+        "ASSETS (Self-Reported)",
+        "Personal Savings",
+        "$35,000",
+        "Investment Accounts (Google RSUs vested)",
+        "$180,000",
+        "401(k) Balance",
+        "$145,000"
+      ],
+      "words_count": 113
+    }
+  ],
+  "tables": [
+    {
+      "row_count": 5,
+      "column_count": 4,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Name:",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "JASON HYUN PARK",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "Report Date:",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 3,
+          "content": "November 28, 2024",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "SSN:",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "***_** 8901",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "Date of Birth:",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 3,
+          "content": "September 3, 1991",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Address:",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "2145 Innovation Way, Apt 1204, San Jose, CA 95131",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Employment:",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "CEO, Nexus Digital Solutions Inc (Since April 2024) | Former: Google (2016-2024)",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 8,
+      "column_count": 3,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Factor",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "Impact",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "Status",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Payment History (35%)",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": ":unselected:",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 2,
+          "content": "Excellent - No late payments",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Credit Utilization (30%)",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 2,
+          "content": "Fair - 28% utilization (increased recently)",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Length of Credit History (15%)",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 2,
+          "content": "Good - 8 years average",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "Credit Mix (10%)",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 2,
+          "content": "Good - Diverse accounts",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 0,
+          "content": "New Credit (10%)",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 2,
+          "content": "Fair - 4 inquiries in 12 months",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 0,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 2,
+          "content": "",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 4,
+      "column_count": 4,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Account Type",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Open",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "Total Balance",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 3,
+          "content": "Credit Limit",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Revolving (Credit Cards)",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "4",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "$22,400",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 3,
+          "content": "$80,000",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Auto Loan (Tesla Model 3)",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "1",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 2,
+          "content": "$28,500",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 3,
+          "content": ":unselected: N/A",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Student Loans",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "1",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 2,
+          "content": "$45,000",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 3,
+          "content": ":unselected: N/A",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 5,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "/ On-Time Payments (Last 24 months) :selected:",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "96 / 96 (100%)",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Late Payments",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "0",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Collections",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "0",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Bankruptcies",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "0",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 4,
+      "column_count": 4,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Period",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": ":unselected: Employer",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "Position",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 3,
+          "content": "Annual Income",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Apr 2024 -",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": ":unselected: Nexus Digital Solutions Inc",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": ":unselected: CEO/Founder",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 3,
+          "content": "$60,000 (reduced)",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Present",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "2016 - Mar 2024",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "Google LLC",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 2,
+          "content": "Senior Software Engineer",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 3,
+          "content": "$285,000",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 3,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Personal Savings",
+          "kind": null
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "$35,000",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Investment Accounts (Google RSUs vested)",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "$180,000",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "401(k) Balance",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "$145,000",
+          "kind": null
+        }
+      ]
+    }
+  ],
+  "fields": {},
+  "documents": [],
+  "raw_response": null
+}

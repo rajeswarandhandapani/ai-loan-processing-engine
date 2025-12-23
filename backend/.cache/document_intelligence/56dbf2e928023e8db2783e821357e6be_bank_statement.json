@@ -1,0 +1,237 @@
+{
+  "document_type": "bank_statement",
+  "model_id": "prebuilt-bankStatement.us",
+  "content": "Silicon Valley Bank 3003 Tasman Drive, Santa Clara, CA 95054\nAccount Holder\nAccount Details\nNEXUS DIGITAL SOLUTIONS INC\nBusiness Checking Account\n1450 Tech Boulevard, Suite 200\nAccount Number: **** 2156\nSan Jose, CA 95131\nStatement Period: November 1 - November\nEIN: 88-4567890\n30, 2024 Account opened: April 15, 2024\nA Low Balance Alert: Account balance dropped below $5,000 minimum on 3 occasions this month.\nAccount Summary\nDescription\nAmount\nBeginning Balance (Nov 1, 2024)\n$12,450.00\nTotal Deposits and Credits\n+$18,500.00\nTotal Withdrawals and Debits\n-$24,780.00\nEnding Balance (Nov 30, 2024)\n$6,170.00\nAverage Daily Balance\n$8,340.00\nTransaction Details\nDate\nDescription\nWithdrawals\nDeposits\nBalance\n11/01\nBeginning Balance\n$12,450.00\n11/04\nSTRIPE PAYOUT - SUBSCRIPTION REVENUE\n$3,200.00\n$15,650.00\n11/05\nACH DEBIT - AWS CLOUD SERVICES\n$4,850.00\n$10,800.00\n11/07\nACH DEBIT - GUSTO PAYROLL (2 employees)\n$8,500.00\n$2,300.00 A\n11/08\nTRANSFER FROM FOUNDER - JASON PARK\n$5,000.00\n$7,300.00\n11/11\nSTRIPE PAYOUT - NEW CUSTOMER\n$1,500.00\n$8,800.00\n11/12\nDEBIT CARD - GOOGLE WORKSPACE\n$180.00\n$8,620.00\n11/14\nACH DEBIT - OPENAI API CREDITS\n$2,500.00\n$6,120.00\n11/15\nCHECK #101 - OFFICE RENT (COWORKING)\n$1,800.00\n$4,320.00 A\n11/18\nSTRIPE PAYOUT - SUBSCRIPTION REVENUE\n$4,800.00\n$9,120.00\n11/20\nDEBIT CARD - FIGMA SUBSCRIPTION\n$75.00\n$9,045.00\n11/21\nACH DEBIT - GUSTO PAYROLL\n$4,500.00\n$4,545.00 A\n11/22\nSTRIPE PAYOUT - ENTERPRISE PILOT\n$4,000.00\n$8,545.00\n11/25\nACH DEBIT - HUBSPOT CRM\n$450.00\n$8,095.00\n11/27\nDEBIT CARD - NOTION SUBSCRIPTION\n$96.00\n$7,999.00\n11/28\nACH DEBIT - VERCEL HOSTING\n$320.00\n$7,679.00\n11/29\nDEBIT CARD - LINKEDIN ADS\n$1,509.00\n$6,170.00\n11/30\nEnding Balance\n$6,170.00\nMonthly Summary\nCategory\nTotal Amount\nSubscription Revenue (Stripe)\n$13,500.00\nFounder Contribution\n$5,000.00\nPayroll (2 employees)\n$13,000.00\nCloud & Infrastructure\n$7,670.00\nSoftware Subscriptions\n$801.00\nMarketing\n$1,509.00\nRent\n$1,800.00\nNet Cash Flow\n-$6,280.00",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "Silicon Valley Bank",
+        "3003 Tasman Drive, Santa Clara, CA 95054",
+        "Account Holder",
+        "Account Details",
+        "NEXUS DIGITAL SOLUTIONS INC",
+        "Business Checking Account",
+        "1450 Tech Boulevard, Suite 200",
+        "Account Number: **** 2156",
+        "San Jose, CA 95131",
+        "Statement Period: November 1 - November",
+        "EIN: 88-4567890",
+        "30, 2024",
+        "Account opened: April 15, 2024",
+        "A Low Balance Alert: Account balance dropped below $5,000 minimum on 3 occasions this",
+        "month.",
+        "Account Summary",
+        "Description",
+        "Amount",
+        "Beginning Balance (Nov 1, 2024)",
+        "$12,450.00",
+        "Total Deposits and Credits",
+        "+$18,500.00",
+        "Total Withdrawals and Debits",
+        "-$24,780.00",
+        "Ending Balance (Nov 30, 2024)",
+        "$6,170.00",
+        "Average Daily Balance",
+        "$8,340.00",
+        "Transaction Details",
+        "Date",
+        "Description",
+        "Withdrawals",
+        "Deposits",
+        "Balance",
+        "11/01",
+        "Beginning Balance",
+        "$12,450.00",
+        "11/04",
+        "STRIPE PAYOUT - SUBSCRIPTION REVENUE",
+        "$3,200.00",
+        "$15,650.00",
+        "11/05",
+        "ACH DEBIT - AWS CLOUD SERVICES",
+        "$4,850.00",
+        "$10,800.00",
+        "11/07",
+        "ACH DEBIT - GUSTO PAYROLL (2 employees)",
+        "$8,500.00",
+        "$2,300.00 A",
+        "11/08",
+        "TRANSFER FROM FOUNDER - JASON PARK",
+        "$5,000.00",
+        "$7,300.00",
+        "11/11",
+        "STRIPE PAYOUT - NEW CUSTOMER",
+        "$1,500.00",
+        "$8,800.00",
+        "11/12",
+        "DEBIT CARD - GOOGLE WORKSPACE",
+        "$180.00",
+        "$8,620.00",
+        "11/14",
+        "ACH DEBIT - OPENAI API CREDITS",
+        "$2,500.00",
+        "$6,120.00",
+        "11/15",
+        "CHECK #101 - OFFICE RENT (COWORKING)",
+        "$1,800.00",
+        "$4,320.00 A",
+        "11/18",
+        "STRIPE PAYOUT - SUBSCRIPTION REVENUE",
+        "$4,800.00",
+        "$9,120.00"
+      ],
+      "words_count": 185
+    },
+    {
+      "page_number": 2,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "11/20",
+        "DEBIT CARD - FIGMA SUBSCRIPTION",
+        "$75.00",
+        "$9,045.00",
+        "11/21",
+        "ACH DEBIT - GUSTO PAYROLL",
+        "$4,500.00",
+        "$4,545.00 A",
+        "11/22",
+        "STRIPE PAYOUT - ENTERPRISE PILOT",
+        "$4,000.00",
+        "$8,545.00",
+        "11/25",
+        "ACH DEBIT - HUBSPOT CRM",
+        "$450.00",
+        "$8,095.00",
+        "11/27",
+        "DEBIT CARD - NOTION SUBSCRIPTION",
+        "$96.00",
+        "$7,999.00",
+        "11/28",
+        "ACH DEBIT - VERCEL HOSTING",
+        "$320.00",
+        "$7,679.00",
+        "11/29",
+        "DEBIT CARD - LINKEDIN ADS",
+        "$1,509.00",
+        "$6,170.00",
+        "11/30",
+        "Ending Balance",
+        "$6,170.00",
+        "Monthly Summary",
+        "Category",
+        "Total Amount",
+        "Subscription Revenue (Stripe)",
+        "$13,500.00",
+        "Founder Contribution",
+        "$5,000.00",
+        "Payroll (2 employees)",
+        "$13,000.00",
+        "Cloud & Infrastructure",
+        "$7,670.00",
+        "Software Subscriptions",
+        "$801.00",
+        "Marketing",
+        "$1,509.00",
+        "Rent",
+        "$1,800.00",
+        "Net Cash Flow",
+        "-$6,280.00"
+      ],
+      "words_count": 92
+    }
+  ],
+  "tables": [],
+  "fields": {
+    "AccountHolderAddress": {
+      "name": "AccountHolderAddress",
+      "value": null,
+      "confidence": 0.864,
+      "value_type": "address"
+    },
+    "AccountHolderName": {
+      "name": "AccountHolderName",
+      "value": "NEXUS DIGITAL SOLUTIONS INC",
+      "confidence": 0.879,
+      "value_type": "string"
+    },
+    "Accounts": {
+      "name": "Accounts",
+      "value": null,
+      "confidence": null,
+      "value_type": "array"
+    },
+    "BankAddress": {
+      "name": "BankAddress",
+      "value": null,
+      "confidence": 0.773,
+      "value_type": "address"
+    },
+    "BankName": {
+      "name": "BankName",
+      "value": "Silicon Valley Bank",
+      "confidence": 0.751,
+      "value_type": "string"
+    },
+    "StatementEndDate": {
+      "name": "StatementEndDate",
+      "value": null,
+      "confidence": 0.919,
+      "value_type": "date"
+    },
+    "StatementStartDate": {
+      "name": "StatementStartDate",
+      "value": null,
+      "confidence": 0.956,
+      "value_type": "date"
+    }
+  },
+  "documents": [
+    {
+      "doc_type": "bankStatement.us",
+      "confidence": 1.0,
+      "fields": {
+        "AccountHolderAddress": {
+          "value": null,
+          "confidence": 0.864,
+          "value_type": "address"
+        },
+        "AccountHolderName": {
+          "value": "NEXUS DIGITAL SOLUTIONS INC",
+          "confidence": 0.879,
+          "value_type": "string"
+        },
+        "Accounts": {
+          "value": null,
+          "confidence": null,
+          "value_type": "array"
+        },
+        "BankAddress": {
+          "value": null,
+          "confidence": 0.773,
+          "value_type": "address"
+        },
+        "BankName": {
+          "value": "Silicon Valley Bank",
+          "confidence": 0.751,
+          "value_type": "string"
+        },
+        "StatementEndDate": {
+          "value": null,
+          "confidence": 0.919,
+          "value_type": "date"
+        },
+        "StatementStartDate": {
+          "value": null,
+          "confidence": 0.956,
+          "value_type": "date"
+        }
+      }
+    }
+  ],
+  "raw_response": null
+}
