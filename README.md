@@ -16,58 +16,104 @@ It acts as a virtual loan officer that:
 3.  **Validates** eligibility against complex internal policies using **Azure AI Search** (RAG).
 4.  **Decides** on pre-qualification using **Azure OpenAI (GPT-4)**.
 
+## 📸 Screenshots
+
+### Main Interface
+![Main Interface](docs/screenshots/main-interface.png)
+*Two-column layout with AI Chat Assistant and Document Upload*
+
+### Document Analysis
+![Document Analysis](docs/screenshots/document-analysis.png)
+*Automatic extraction of financial data from uploaded documents*
+
+### Chat Conversation
+![Chat Conversation](docs/screenshots/chat-conversation.png)
+*Natural language conversation with the AI Loan Officer*
+
+> 📷 *To add screenshots: Take screenshots and save them in `docs/screenshots/`*
+
+## ✨ Key Features
+
+| Feature | Description | Azure Service |
+|---------|-------------|---------------|
+| **Document Intelligence** | Extract data from bank statements, invoices, receipts, tax forms | Azure Document Intelligence |
+| **AI Chat Assistant** | Natural language conversation with context awareness | Azure OpenAI + LangChain |
+| **Policy RAG Search** | Query lending policies using vector similarity search | Azure AI Search |
+| **Sentiment Analysis** | Detect user emotions for empathetic responses | Azure AI Language |
+| **Entity Extraction** | Identify loan amounts, business types, dates automatically | Azure AI Language |
+| **Session Management** | Maintain conversation context across multiple messages | LangGraph Memory |
+
+## 🎬 Demo Workflow
+
+1. **Upload Documents** - Drag & drop financial documents (PDF, images)
+2. **AI Extracts Data** - Document Intelligence parses and extracts key fields
+3. **Ask Questions** - Chat with the AI about your loan application
+4. **Get Answers** - AI references your documents and lending policies
+5. **Receive Decision** - Get pre-qualification assessment based on policies
+
 ## 🏗 Architecture
 
 The system is built using a microservices approach:
 
 ```mermaid
 flowchart TB
-    subgraph Client["🖥️ Client Layer"]
-        Web["Angular 21 Web App<br/>Bootstrap 5"]
+    subgraph Client["🖥️ Frontend - Angular 19"]
+        Upload["📤 Document Upload<br/>Drag & Drop"]
+        Chat["💬 Chat Interface<br/>Real-time Messaging"]
     end
 
-    subgraph API["⚡ API Layer"]
-        FastAPI["FastAPI Backend<br/>Python 3.11+"]
+    subgraph API["⚡ Backend - FastAPI"]
+        DocRouter["Document Router<br/>/api/v1/documents"]
+        ChatRouter["Chat Router<br/>/api/v1/chat"]
+        SessionStore["Session Store<br/>Document Context"]
     end
 
-    subgraph AI["🤖 AI Orchestration"]
-        Agent["LangChain Agent"]
+    subgraph Agent["🤖 LangChain Agent"]
+        LangGraph["LangGraph<br/>Conversation Memory"]
+        Tools["Agent Tools"]
+    end
+
+    subgraph Foundry["☁️ Azure AI Foundry"]
+        OpenAI["🧠 Azure OpenAI<br/>GPT-4o"]
+        Anthropic["🤖 Anthropic<br/>Claude"]
+        Embeddings["📊 Embeddings<br/>text-embedding-ada-002"]
     end
 
     subgraph Azure["☁️ Azure AI Services"]
-        DI["📄 Document Intelligence<br/>PDF Extraction"]
-        Lang["💬 AI Language<br/>Entity & Sentiment"]
-        Search["🔍 AI Search<br/>RAG Policy Lookup"]
-        OpenAI["🧠 Azure OpenAI<br/>GPT-4o Reasoning"]
+        DI["📄 Document Intelligence<br/>Bank Statements, Invoices"]
+        Lang["💬 AI Language<br/>Sentiment & Entities"]
+        Search["🔍 AI Search<br/>RAG Vector Search"]
     end
 
-    subgraph Data["💾 Data Layer"]
-        Storage["Blob Storage"]
-        DB["SQLite / Cosmos DB"]
-    end
+    Upload -->|POST /upload| DocRouter
+    Chat -->|POST /chat| ChatRouter
+    DocRouter -->|Analyze| DI
+    DocRouter -->|Store| SessionStore
+    ChatRouter -->|Invoke| LangGraph
+    LangGraph -->|Execute| Tools
+    Tools -->|"search_lending_policy"| Search
+    Tools -->|"get_documents"| SessionStore
+    Tools -->|"analyze_sentiment"| Lang
+    Tools -->|"extract_entities"| Lang
+    LangGraph -->|Generate Response| OpenAI
+    LangGraph -.->|Alternate LLM| Anthropic
+    Search -->|Vector Query| Embeddings
 
-    Web -->|HTTP/REST| FastAPI
-    FastAPI -->|Orchestrate| Agent
-    Agent -->|Extract| DI
-    Agent -->|Analyze| Lang
-    Agent -->|Query| Search
-    Agent -->|Synthesize| OpenAI
-    FastAPI -->|Store Files| Storage
-    FastAPI -->|Persist State| DB
-
-    style Client fill:#e3f2fd,stroke:#1976d2
+    style Client fill:#e0f2f1,stroke:#00897b
     style API fill:#e8f5e9,stroke:#388e3c
-    style AI fill:#fff3e0,stroke:#f57c00
+    style Agent fill:#fff3e0,stroke:#f57c00
+    style Foundry fill:#e3f2fd,stroke:#1976d2
     style Azure fill:#fce4ec,stroke:#c2185b
-    style Data fill:#f3e5f5,stroke:#7b1fa2
 ```
 
 > 📖 *See [docs/architecture.md](docs/architecture.md) for detailed component descriptions*
 
 ## 🛠 Tech Stack
 - **Cloud:** Microsoft Azure
-- **AI Services:**
+- **LLM Providers:**
   - **Azure OpenAI:** GPT-4o for reasoning and conversation.
+  - **Anthropic:** Claude as alternate LLM provider.
+- **AI Services:**
   - **Azure Document Intelligence:** Extracting data from Bank Statements/Invoices.
   - **Azure AI Search:** Vector-based knowledge retrieval for policy documents.
   - **Azure AI Language:** Sentiment analysis and entity extraction.

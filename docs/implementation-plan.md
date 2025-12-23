@@ -38,7 +38,7 @@
 
 - [x] **Day 22:** End-to-End testing: Run through the "Happy Path" (Upload -> Chat -> Approval).
 - [x] **Day 23:** Fix bugs found during testing. Improve Agent prompt engineering (system instructions).
-- [ ] **Day 24:** Add **README.md** with screenshots and setup instructions.
+- [x] **Day 24:** Add **README.md** with screenshots and setup instructions.
 - [ ] **Day 25:** Create a short **Demo Video** (OBS Studio / Loom).
 - [x] **Day 26:** Cleanup code (add comments, type hints, remove unused imports).
 - [ ] **Day 27:** Deploy Backend to Azure Container Apps or Render (production-like environment for demo).
