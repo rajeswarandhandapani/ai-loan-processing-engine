@@ -13,12 +13,12 @@ This guide provides step-by-step instructions to set up the necessary Azure reso
 
 1. **Search:** "Azure OpenAI" in the top search bar.
 2. **Create:** Click "Create".
-   - **Region:** `East US` or `Sweden Central` (regions with GPT-4 capacity).
+   - **Region:** `East US` or `Sweden Central` (regions with GPT-5 capacity).
    - **Name:** `oai-loan-engine-dev`.
    - **Pricing Tier:** Standard S0.
 3. **Deploy Models:**
    - Go to "Model deployments" -> "Manage deployments" (opens Azure OpenAI Studio).
-   - **Deploy:** `gpt-4o` or `gpt-35-turbo` (Name it: `gpt-4-deployment`).
+   - **Deploy:** `gpt-5` or `gpt-4o` (Name it: `gpt-5-deployment`).
    - **Deploy:** `text-embedding-ada-002` (Name it: `text-embedding-deployment`).
 4. **Get Keys:** Go back to the Azure Portal resource -> "Keys and Endpoint". Save `KEY 1` and `Endpoint`.
 
@@ -70,12 +70,12 @@ Once created, populate your backend `.env` file with these values:
 # Azure OpenAI
 AZURE_OPENAI_ENDPOINT="https://oai-loan-engine-dev.openai.azure.com/"
 AZURE_OPENAI_API_KEY="<YOUR_KEY>"
-AZURE_OPENAI_DEPLOYMENT_NAME="gpt-4-deployment"
+AZURE_OPENAI_DEPLOYMENT_NAME="gpt-5-deployment"
 AZURE_OPENAI_EMBEDDING_DEPLOYMENT="text-embedding-deployment"
 
 # Azure Document Intelligence
-AZURE_FORM_RECOGNIZER_ENDPOINT="https://doc-loan-engine-dev.cognitiveservices.azure.com/"
-AZURE_FORM_RECOGNIZER_KEY="<YOUR_KEY>"
+AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT="https://doc-loan-engine-dev.cognitiveservices.azure.com/"
+AZURE_DOCUMENT_INTELLIGENCE_KEY="<YOUR_KEY>"
 
 # Azure AI Search
 AZURE_SEARCH_SERVICE_ENDPOINT="https://search-loan-engine-dev.search.windows.net"

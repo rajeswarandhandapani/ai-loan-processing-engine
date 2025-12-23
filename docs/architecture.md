@@ -23,7 +23,7 @@ graph TD
         DI[Azure Document Intelligence]
         Lang[Azure AI Language]
         Search[Azure AI Search]
-        OpenAI[Azure OpenAI (GPT-4)]
+        OpenAI[Azure OpenAI (GPT-5) / Anthropic Claude]
     end
 
     subgraph "Data Layer"
@@ -46,7 +46,7 @@ graph TD
 ## Core Components
 
 ### 1. Frontend (Client Layer)
-- **Framework:** Angular 17+
+- **Framework:** Angular 21
 - **Styling:** Bootstrap 5 CSS Only (No JavaScript Components)
 - **Key Features:**
   - Interactive Chat Interface for the loan interview (using Angular for interactivity).
@@ -76,7 +76,7 @@ graph TD
 | **Azure Document Intelligence** | **Input:** PDF Bank Statements, Tax Forms, Invoices.<br>**Output:** JSON data (Revenue, Expenses, Dates).<br>**Model:** Pre-built Invoice/Receipt models + Layout model. |
 | **Azure AI Language** | **Input:** User chat messages.<br>**Output:** Entities (Loan Amount, Business Type), Sentiment (Frustration), PII Redaction. |
 | **Azure AI Search** | **Input:** Lending Policy PDF (indexed).<br>**Output:** Relevant policy sections (RAG Pattern).<br>**Features:** Keyword Search + Semantic Ranking. |
-| **Azure OpenAI** | **Input:** Context from all above.<br>**Output:** Natural language responses, decision logic, data summarization. |
+| **Azure OpenAI / Anthropic** | **Input:** Context from all above.<br>**Output:** Natural language responses, decision logic, data summarization.<br>**Models:** GPT-5 family (Azure OpenAI) or Claude (Anthropic). |
 
 ## Data Flow Scenarios
 
@@ -100,7 +100,7 @@ graph TD
 |-----------|------------|
 | **Language** | Python 3.11 |
 | **Backend** | FastAPI, Uvicorn |
-| **Frontend** | Angular, TypeScript, Bootstrap |
-| **AI SDKs** | `azure-ai-formrecognizer`, `azure-search-documents`, `azure-ai-textanalytics`, `openai`, `langchain` |
+| **Frontend** | Angular 21, TypeScript, Bootstrap |
+| **AI SDKs** | `azure-ai-formrecognizer`, `azure-search-documents`, `azure-ai-textanalytics`, `openai`, `langchain`, `langchain-anthropic` |
 | **Database** | SQLite (Dev) / Azure Cosmos DB (Prod) |
 | **Storage** | Local Filesystem (Dev) / Azure Blob Storage (Prod) |

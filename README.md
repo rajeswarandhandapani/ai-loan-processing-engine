@@ -5,7 +5,7 @@
 ![Status](https://img.shields.io/badge/Status-Development-blue)
 ![Azure](https://img.shields.io/badge/Azure-AI-0078D4)
 ![Python](https://img.shields.io/badge/Backend-FastAPI-green)
-![Angular](https://img.shields.io/badge/Frontend-Angular-red)
+![Angular](https://img.shields.io/badge/Frontend-Angular%2021-red)
 
 ## 🚀 Overview
 The **AI Loan Processing Engine** is a portfolio project demonstrating advanced cloud-native AI engineering skills (aligned with **Microsoft Certified: Azure AI Engineer Associate**).
@@ -14,7 +14,7 @@ It acts as a virtual loan officer that:
 1.  **Interviews** applicants via a natural language chat.
 2.  **Analyzes** uploaded financial documents (PDFs) using **Azure Document Intelligence**.
 3.  **Validates** eligibility against complex internal policies using **Azure AI Search** (RAG).
-4.  **Decides** on pre-qualification using **Azure OpenAI (GPT-4)**.
+4.  **Decides** on pre-qualification using **Azure OpenAI (GPT-5)** or **Anthropic Claude**.
 
 ## 📸 Screenshots
 
@@ -57,7 +57,7 @@ The system is built using a microservices approach:
 
 ```mermaid
 flowchart TB
-    subgraph Client["🖥️ Frontend - Angular 19"]
+    subgraph Client["🖥️ Frontend - Angular 21"]
         Upload["📤 Document Upload<br/>Drag & Drop"]
         Chat["💬 Chat Interface<br/>Real-time Messaging"]
     end
@@ -74,7 +74,7 @@ flowchart TB
     end
 
     subgraph Foundry["☁️ Azure AI Foundry"]
-        OpenAI["🧠 Azure OpenAI<br/>GPT-4o"]
+        OpenAI["🧠 Azure OpenAI<br/>GPT-5 Family"]
         Anthropic["🤖 Anthropic<br/>Claude"]
         Embeddings["📊 Embeddings<br/>text-embedding-ada-002"]
     end
@@ -111,14 +111,14 @@ flowchart TB
 ## 🛠 Tech Stack
 - **Cloud:** Microsoft Azure
 - **LLM Providers:**
-  - **Azure OpenAI:** GPT-4o for reasoning and conversation.
-  - **Anthropic:** Claude as alternate LLM provider.
+  - **Azure OpenAI:** GPT-5 family models for reasoning and conversation.
+  - **Anthropic:** Claude models as alternate LLM provider.
 - **AI Services:**
   - **Azure Document Intelligence:** Extracting data from Bank Statements/Invoices.
   - **Azure AI Search:** Vector-based knowledge retrieval for policy documents.
   - **Azure AI Language:** Sentiment analysis and entity extraction.
 - **Backend:** Python, FastAPI, Pydantic.
-- **Frontend:** Angular, TypeScript, RxJS.
+- **Frontend:** Angular 21, TypeScript, RxJS.
 
 ## 📂 Project Structure
 ```
