@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Equipment Collateral Schedule - Acme Tech Solutions LLC</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; font-size: 11px; }
+        .header { text-align: center; border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
+        .company-name { font-size: 24px; font-weight: bold; }
+        .report-title { font-size: 18px; color: #666; margin-top: 10px; }
+        .period { font-size: 14px; color: #888; margin-top: 5px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 8px 12px; text-align: left; border: 1px solid #ddd; }
+        th { background: #333; color: white; }
+        tr:nth-child(even) { background: #f8f8f8; }
+        .section-header { background: #e0e0e0; font-weight: bold; }
+        .subtotal { border-top: 2px solid #666; font-weight: bold; background: #f0f0f0; }
+        .grand-total { background: #333; color: white; font-weight: bold; font-size: 12px; }
+        .notes { margin-top: 40px; padding: 20px; background: #f9f9f9; border-radius: 5px; }
+        .footer { margin-top: 30px; text-align: center; font-size: 10px; color: #666; }
+        .summary-box { background: #e3f2fd; border: 2px solid #2196f3; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .value-highlight { font-size: 18px; color: #1565c0; font-weight: bold; }
+        .status-good { color: #2e7d32; font-weight: bold; }
+        .status-fair { color: #f57c00; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="company-name">ACME TECH SOLUTIONS LLC</div>
+        <div class="report-title">Equipment Collateral Schedule</div>
+        <div class="period">As of December 15, 2024</div>
+    </div>
+
+    <div class="summary-box">
+        <h3 style="margin-top: 0;">Equipment Collateral Summary</h3>
+        <table style="border: none; margin: 0;">
+            <tr style="background: transparent;">
+                <td style="border: none;"><strong>Total Equipment Items:</strong></td>
+                <td style="border: none;">18</td>
+            </tr>
+            <tr style="background: transparent;">
+                <td style="border: none;"><strong>Total Original Cost:</strong></td>
+                <td style="border: none;">$89,500.00</td>
+            </tr>
+            <tr style="background: transparent;">
+                <td style="border: none;"><strong>Total Current Fair Market Value:</strong></td>
+                <td style="border: none;" class="value-highlight">$62,750.00</td>
+            </tr>
+            <tr style="background: transparent;">
+                <td style="border: none;"><strong>Equipment Free of Liens:</strong></td>
+                <td style="border: none;">Yes - All equipment owned outright</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3>Computer & Server Equipment</h3>
+    <table>
+        <tr>
+            <th>Item #</th>
+            <th>Description</th>
+            <th>Make/Model</th>
+            <th>Serial Number</th>
+            <th>Date Acquired</th>
+            <th>Original Cost</th>
+            <th>Condition</th>
+            <th>FMV</th>
+        </tr>
+        <tr>
+            <td>EQ-001</td>
+            <td>Production Server</td>
+            <td>Dell PowerEdge R750</td>
+            <td>SRV-2024-78456</td>
+            <td>Nov 2024</td>
+            <td>$8,500.00</td>
+            <td class="status-good">Excellent</td>
+            <td>$8,000.00</td>
+        </tr>
+        <tr>
+            <td>EQ-002</td>
+            <td>Development Server</td>
+            <td>Dell PowerEdge R650</td>
+            <td>SRV-2024-78457</td>
+            <td>Nov 2024</td>
+            <td>$6,500.00</td>
+            <td class="status-good">Excellent</td>
+            <td>$6,000.00</td>
+        </tr>
+        <tr>
+            <td>EQ-003</td>
+            <td>Network Storage (NAS)</td>
+            <td>Synology RS3621xs+</td>
+            <td>NAS-2023-45123</td>
+            <td>Mar 2023</td>
+            <td>$5,200.00</td>
+            <td class="status-good">Good</td>
+            <td>$3,800.00</td>
+        </tr>
+        <tr>
+            <td>EQ-004</td>
+            <td>Backup Server</td>
+            <td>HP ProLiant DL380</td>
+            <td>SRV-2022-34567</td>
+            <td>Jun 2022</td>
+            <td>$4,800.00</td>
+            <td class="status-good">Good</td>
+            <td>$2,400.00</td>
+        </tr>
+        <tr>
+            <td>EQ-005</td>
+            <td>Network Switch (48-port)</td>
+            <td>Cisco Catalyst 9300</td>
+            <td>NET-2023-89012</td>
+            <td>Jan 2023</td>
+            <td>$3,200.00</td>
+            <td class="status-good">Good</td>
+            <td>$2,200.00</td>
+        </tr>
+        <tr>
+            <td>EQ-006</td>
+            <td>Firewall Appliance</td>
+            <td>Palo Alto PA-440</td>
+            <td>FW-2023-56789</td>
+            <td>Feb 2023</td>
+            <td>$2,800.00</td>
+            <td class="status-good">Good</td>
+            <td>$2,000.00</td>
+        </tr>
+        <tr class="subtotal">
+            <td colspan="5">Subtotal - Server & Network Equipment</td>
+            <td>$31,000.00</td>
+            <td></td>
+            <td>$24,400.00</td>
+        </tr>
+    </table>
+
+    <h3>Workstations & Laptops</h3>
+    <table>
+        <tr>
+            <th>Item #</th>
+            <th>Description</th>
+            <th>Make/Model</th>
+            <th>Serial Number</th>
+            <th>Date Acquired</th>
+            <th>Original Cost</th>
+            <th>Condition</th>
+            <th>FMV</th>
+        </tr>
+        <tr>
+            <td>EQ-007</td>
+            <td>Developer Workstation</td>
+            <td>Apple Mac Studio M2 Ultra</td>
+            <td>MAC-2024-11234</td>
+            <td>Feb 2024</td>
+            <td>$4,500.00</td>
+            <td class="status-good">Excellent</td>
+            <td>$4,000.00</td>
+        </tr>
+        <tr>
+            <td>EQ-008</td>
+            <td>Developer Workstation</td>
+            <td>Apple Mac Studio M2 Ultra</td>
+            <td>MAC-2024-11235</td>
+            <td>Feb 2024</td>
+            <td>$4,500.00</td>
+            <td class="status-good">Excellent</td>
+            <td>$4,000.00</td>
+        </tr>
+        <tr>
+            <td>EQ-009</td>
+            <td>Developer Laptop</td>
+            <td>MacBook Pro 16" M3 Max</td>
+            <td>MBP-2024-22345</td>
+            <td>Jan 2024</td>
+            <td>$3,800.00</td>
+            <td class="status-good">Excellent</td>
+            <td>$3,400.00</td>
+        </tr>
+        <tr>
+            <td>EQ-010</td>
+            <td>Developer Laptop</td>
+            <td>MacBook Pro 16" M3 Max</td>
+            <td>MBP-2024-22346</td>
+            <td>Jan 2024</td>
+            <td>$3,800.00</td>
+            <td class="status-good">Excellent</td>
+            <td>$3,400.00</td>
+        </tr>
+        <tr>
+            <td>EQ-011</td>
+            <td>Developer Laptop</td>
+            <td>MacBook Pro 14" M2 Pro</td>
+            <td>MBP-2023-33456</td>
+            <td>Mar 2023</td>
+            <td>$2,800.00</td>
+            <td class="status-good">Good</td>
+            <td>$2,000.00</td>
+        </tr>
+        <tr>
+            <td>EQ-012</td>
+            <td>Developer Laptop</td>
+            <td>MacBook Pro 14" M2 Pro</td>
+            <td>MBP-2023-33457</td>
+            <td>Mar 2023</td>
+            <td>$2,800.00</td>
+            <td class="status-good">Good</td>
+            <td>$2,000.00</td>
+        </tr>
+        <tr class="subtotal">
+            <td colspan="5">Subtotal - Workstations & Laptops</td>
+            <td>$22,200.00</td>
+            <td></td>
+            <td>$18,800.00</td>
+        </tr>
+    </table>
+
+    <h3>Office Furniture & Equipment</h3>
+    <table>
+        <tr>
+            <th>Item #</th>
+            <th>Description</th>
+            <th>Make/Model</th>
+            <th>Quantity</th>
+            <th>Date Acquired</th>
+            <th>Original Cost</th>
+            <th>Condition</th>
+            <th>FMV</th>
+        </tr>
+        <tr>
+            <td>EQ-013</td>
+            <td>Executive Desk Set</td>
+            <td>Herman Miller Canvas</td>
+            <td>2</td>
+            <td>Apr 2021</td>
+            <td>$4,500.00</td>
+            <td class="status-good">Good</td>
+            <td>$2,500.00</td>
+        </tr>
+        <tr>
+            <td>EQ-014</td>
+            <td>Ergonomic Chairs</td>
+            <td>Herman Miller Aeron</td>
+            <td>8</td>
+            <td>Apr 2021</td>
+            <td>$12,000.00</td>
+            <td class="status-good">Good</td>
+            <td>$6,400.00</td>
+        </tr>
+        <tr>
+            <td>EQ-015</td>
+            <td>Standing Desks</td>
+            <td>Uplift V2 Commercial</td>
+            <td>6</td>
+            <td>Jun 2022</td>
+            <td>$7,200.00</td>
+            <td class="status-good">Good</td>
+            <td>$4,200.00</td>
+        </tr>
+        <tr>
+            <td>EQ-016</td>
+            <td>Conference Table</td>
+            <td>Steelcase Convene</td>
+            <td>1</td>
+            <td>Apr 2021</td>
+            <td>$3,800.00</td>
+            <td class="status-good">Good</td>
+            <td>$2,000.00</td>
+        </tr>
+        <tr>
+            <td>EQ-017</td>
+            <td>Video Conferencing System</td>
+            <td>Poly Studio X70</td>
+            <td>1</td>
+            <td>Sep 2023</td>
+            <td>$5,500.00</td>
+            <td class="status-good">Excellent</td>
+            <td>$4,000.00</td>
+        </tr>
+        <tr>
+            <td>EQ-018</td>
+            <td>Large Format Display</td>
+            <td>Samsung 85" QLED</td>
+            <td>1</td>
+            <td>Sep 2023</td>
+            <td>$3,300.00</td>
+            <td class="status-good">Excellent</td>
+            <td>$2,450.00</td>
+        </tr>
+        <tr class="subtotal">
+            <td colspan="5">Subtotal - Office Furniture & Equipment</td>
+            <td>$36,300.00</td>
+            <td></td>
+            <td>$21,550.00</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr class="grand-total">
+            <td colspan="5">TOTAL EQUIPMENT VALUE</td>
+            <td>$89,500.00</td>
+            <td></td>
+            <td>$62,750.00</td>
+        </tr>
+    </table>
+
+    <div class="notes">
+        <h3>Equipment Valuation Notes</h3>
+        <ul>
+            <li><strong>Valuation Method:</strong> Fair Market Value based on current resale market conditions and equipment age/condition.</li>
+            <li><strong>Depreciation:</strong> Technology equipment depreciated at 30-40% annually; furniture at 15-20% annually.</li>
+            <li><strong>Condition Assessment:</strong> All equipment inspected and verified operational as of December 10, 2024.</li>
+            <li><strong>Liens:</strong> All equipment is owned free and clear with no existing liens or encumbrances.</li>
+            <li><strong>Insurance:</strong> All equipment covered under Hartford Business Policy #BOP-456789 with $150,000 equipment coverage.</li>
+        </ul>
+
+        <h3>Location of Equipment</h3>
+        <p>All equipment is located at the primary business address: 456 Innovation Drive, Suite 200, Austin, TX 78701</p>
+
+        <h3>Owner Certification</h3>
+        <p>I, Michael Chen, as Managing Member of Acme Tech Solutions LLC, hereby certify that the equipment listed above is owned by the company free and clear of any liens, and the values stated represent a good faith estimate of current fair market value.</p>
+        
+        <p><strong>Signature:</strong> _________________________ <strong>Date:</strong> December 15, 2024</p>
+        <p><strong>Printed Name:</strong> Michael Chen, Managing Member</p>
+    </div>
+
+    <div class="footer">
+        <p>Acme Tech Solutions LLC | 456 Innovation Drive, Austin, TX 78701 | EIN: 84-1234567</p>
+        <p>Document ID: COL-EQ-2024-001 | Generated: December 15, 2024</p>
+    </div>
+</body>
+</html>

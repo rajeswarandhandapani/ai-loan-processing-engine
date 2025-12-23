@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Accounts Receivable Aging Report - Acme Tech Solutions LLC</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; font-size: 11px; }
+        .header { text-align: center; border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
+        .company-name { font-size: 24px; font-weight: bold; }
+        .report-title { font-size: 18px; color: #666; margin-top: 10px; }
+        .period { font-size: 14px; color: #888; margin-top: 5px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 8px 12px; text-align: right; border: 1px solid #ddd; }
+        th:first-child, td:first-child { text-align: left; }
+        th { background: #333; color: white; }
+        tr:nth-child(even) { background: #f8f8f8; }
+        .subtotal { border-top: 2px solid #666; font-weight: bold; background: #f0f0f0; }
+        .grand-total { background: #333; color: white; font-weight: bold; font-size: 12px; }
+        .notes { margin-top: 40px; padding: 20px; background: #f9f9f9; border-radius: 5px; }
+        .footer { margin-top: 30px; text-align: center; font-size: 10px; color: #666; }
+        .summary-box { background: #e8f5e9; border: 2px solid #4caf50; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        .value-highlight { font-size: 18px; color: #2e7d32; font-weight: bold; }
+        .current { color: #2e7d32; }
+        .warning { color: #f57c00; }
+        .overdue { color: #d32f2f; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin: 20px 0; }
+        .metric-card { background: #f5f5f5; padding: 15px; border-radius: 8px; text-align: center; }
+        .metric-value { font-size: 24px; font-weight: bold; color: #333; }
+        .metric-label { font-size: 11px; color: #666; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="company-name">ACME TECH SOLUTIONS LLC</div>
+        <div class="report-title">Accounts Receivable Aging Report</div>
+        <div class="period">As of December 15, 2024</div>
+    </div>
+
+    <div class="summary-box">
+        <h3 style="margin-top: 0;">Accounts Receivable Collateral Summary</h3>
+        <table style="border: none; margin: 0;">
+            <tr style="background: transparent;">
+                <td style="border: none;"><strong>Total Accounts Receivable:</strong></td>
+                <td style="border: none;" class="value-highlight">$127,500.00</td>
+            </tr>
+            <tr style="background: transparent;">
+                <td style="border: none;"><strong>Eligible Receivables (Current + 1-30 days):</strong></td>
+                <td style="border: none;" class="value-highlight">$118,500.00</td>
+            </tr>
+            <tr style="background: transparent;">
+                <td style="border: none;"><strong>Collateral Value (80% advance rate):</strong></td>
+                <td style="border: none;" class="value-highlight">$94,800.00</td>
+            </tr>
+            <tr style="background: transparent;">
+                <td style="border: none;"><strong>Average Days Sales Outstanding:</strong></td>
+                <td style="border: none;">28 days</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="metric-value current">$95,000</div>
+            <div class="metric-label">Current (0-30 days)</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-value current">$23,500</div>
+            <div class="metric-label">31-60 Days</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-value warning">$7,500</div>
+            <div class="metric-label">61-90 Days</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-value overdue">$1,500</div>
+            <div class="metric-label">Over 90 Days</div>
+        </div>
+    </div>
+
+    <h3>Detailed Accounts Receivable Aging</h3>
+    <table>
+        <tr>
+            <th>Customer</th>
+            <th>Invoice #</th>
+            <th>Invoice Date</th>
+            <th>Due Date</th>
+            <th>Current</th>
+            <th>1-30 Days</th>
+            <th>31-60 Days</th>
+            <th>90+ Days</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td>TechCorp Industries</td>
+            <td>INV-2024-089</td>
+            <td>Dec 1, 2024</td>
+            <td>Dec 31, 2024</td>
+            <td>$28,500.00</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>$28,500.00</td>
+        </tr>
+        <tr>
+            <td>TechCorp Industries</td>
+            <td>INV-2024-082</td>
+            <td>Nov 15, 2024</td>
+            <td>Dec 15, 2024</td>
+            <td>$15,000.00</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>$15,000.00</td>
+        </tr>
+        <tr>
+            <td>Global Financial Services</td>
+            <td>INV-2024-085</td>
+            <td>Nov 20, 2024</td>
+            <td>Dec 20, 2024</td>
+            <td>$22,000.00</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>$22,000.00</td>
+        </tr>
+        <tr>
+            <td>Global Financial Services</td>
+            <td>INV-2024-078</td>
+            <td>Oct 25, 2024</td>
+            <td>Nov 24, 2024</td>
+            <td>-</td>
+            <td>$12,500.00</td>
+            <td>-</td>
+            <td>-</td>
+            <td>$12,500.00</td>
+        </tr>
+        <tr>
+            <td>MedTech Solutions Inc.</td>
+            <td>INV-2024-087</td>
+            <td>Nov 25, 2024</td>
+            <td>Jan 9, 2025</td>
+            <td>$18,500.00</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>$18,500.00</td>
+        </tr>
+        <tr>
+            <td>StartupXYZ LLC</td>
+            <td>INV-2024-080</td>
+            <td>Nov 5, 2024</td>
+            <td>Dec 5, 2024</td>
+            <td>-</td>
+            <td>$11,000.00</td>
+            <td>-</td>
+            <td>-</td>
+            <td>$11,000.00</td>
+        </tr>
+        <tr>
+            <td>Retail Solutions Co.</td>
+            <td>INV-2024-072</td>
+            <td>Oct 10, 2024</td>
+            <td>Nov 9, 2024</td>
+            <td>-</td>
+            <td>-</td>
+            <td>$7,500.00</td>
+            <td>-</td>
+            <td>$7,500.00</td>
+        </tr>
+        <tr>
+            <td>DataDriven Analytics</td>
+            <td>INV-2024-090</td>
+            <td>Dec 5, 2024</td>
+            <td>Jan 4, 2025</td>
+            <td>$11,000.00</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>$11,000.00</td>
+        </tr>
+        <tr>
+            <td>Legacy Systems Inc.</td>
+            <td>INV-2024-058</td>
+            <td>Aug 15, 2024</td>
+            <td>Sep 14, 2024</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>$1,500.00</td>
+            <td>$1,500.00</td>
+        </tr>
+        <tr class="grand-total">
+            <td colspan="4">TOTAL ACCOUNTS RECEIVABLE</td>
+            <td>$95,000.00</td>
+            <td>$23,500.00</td>
+            <td>$7,500.00</td>
+            <td>$1,500.00</td>
+            <td>$127,500.00</td>
+        </tr>
+    </table>
+
+    <h3>Collateral Eligibility Calculation</h3>
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Eligibility</th>
+            <th>Advance Rate</th>
+            <th>Collateral Value</th>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Current (0-30 days)</td>
+            <td>$95,000.00</td>
+            <td class="current">Eligible</td>
+            <td>80%</td>
+            <td>$76,000.00</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">1-30 Days Past Due</td>
+            <td>$23,500.00</td>
+            <td class="current">Eligible</td>
+            <td>80%</td>
+            <td>$18,800.00</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">31-60 Days Past Due</td>
+            <td>$7,500.00</td>
+            <td class="warning">Partially Eligible</td>
+            <td>50%</td>
+            <td>$3,750.00</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Over 90 Days Past Due</td>
+            <td>$1,500.00</td>
+            <td class="overdue">Ineligible</td>
+            <td>0%</td>
+            <td>$0.00</td>
+        </tr>
+        <tr class="grand-total">
+            <td style="text-align: left;">TOTAL COLLATERAL VALUE</td>
+            <td>$127,500.00</td>
+            <td></td>
+            <td></td>
+            <td>$98,550.00</td>
+        </tr>
+    </table>
+
+    <h3>Top Customer Concentration</h3>
+    <table>
+        <tr>
+            <th style="text-align: left;">Customer</th>
+            <th>Outstanding</th>
+            <th>% of AR</th>
+            <th>Credit Rating</th>
+            <th>Payment History</th>
+        </tr>
+        <tr>
+            <td style="text-align: left;">TechCorp Industries</td>
+            <td>$43,500.00</td>
+            <td>34.1%</td>
+            <td>A+</td>
+            <td>Excellent</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">Global Financial Services</td>
+            <td>$34,500.00</td>
+            <td>27.1%</td>
+            <td>A</td>
+            <td>Good</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">MedTech Solutions Inc.</td>
+            <td>$18,500.00</td>
+            <td>14.5%</td>
+            <td>A</td>
+            <td>Excellent</td>
+        </tr>
+        <tr>
+            <td style="text-align: left;">All Others</td>
+            <td>$31,000.00</td>
+            <td>24.3%</td>
+            <td>Various</td>
+            <td>Mixed</td>
+        </tr>
+    </table>
+
+    <div class="notes">
+        <h3>Accounts Receivable Notes</h3>
+        <ul>
+            <li><strong>Bad Debt Reserve:</strong> $2,500 (2% of total AR) - Legacy Systems Inc. invoice under collection.</li>
+            <li><strong>Concentration:</strong> Top 3 customers represent 75.7% of AR - all with strong credit ratings.</li>
+            <li><strong>Collection Policy:</strong> Net 30 terms standard; Net 45 for select enterprise clients.</li>
+            <li><strong>Verification:</strong> All receivables verified against customer purchase orders and contracts.</li>
+        </ul>
+
+        <h3>Owner Certification</h3>
+        <p>I, Michael Chen, as Managing Member of Acme Tech Solutions LLC, hereby certify that the accounts receivable listed above represent valid, undisputed amounts owed to the company, and I authorize the lender to verify these receivables directly with customers if required.</p>
+        
+        <p><strong>Signature:</strong> _________________________ <strong>Date:</strong> December 15, 2024</p>
+        <p><strong>Printed Name:</strong> Michael Chen, Managing Member</p>
+    </div>
+
+    <div class="footer">
+        <p>Acme Tech Solutions LLC | 456 Innovation Drive, Austin, TX 78701 | EIN: 84-1234567</p>
+        <p>Document ID: COL-AR-2024-001 | Generated: December 15, 2024</p>
+    </div>
+</body>
+</html>
