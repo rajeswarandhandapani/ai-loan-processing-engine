@@ -1,3 +1,9 @@
+"""
+Chat API router.
+
+Provides the /chat endpoint for AI agent conversations.
+"""
+
 from fastapi import APIRouter, HTTPException
 from app.services.agent_service import AgentService
 from app.models.chat_models import ChatRequest, ChatResponse

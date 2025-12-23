@@ -1,3 +1,9 @@
+"""
+AI Agent service for loan processing conversations.
+
+Manages the LangChain agent with tools for document analysis, policy search, and NLP.
+"""
+
 from pathlib import Path
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_openai import AzureChatOpenAI

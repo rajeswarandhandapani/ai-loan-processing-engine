@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     """Application settings loaded from environment variables."""
 
     # Azure Document Intelligence
-    AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT: str  | None = None
+    AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT: str | None = None
     AZURE_DOCUMENT_INTELLIGENCE_KEY: str | None = None
 
     LLM_PROVIDER: str | None = None
