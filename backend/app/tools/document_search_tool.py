@@ -4,7 +4,9 @@ from azure.search.documents.models import VectorizedQuery
 from langchain_core.tools import tool
 from azure.search.documents import SearchClient
 from azure.core.credentials import AzureKeyCredential
+from azure.core.exceptions import AzureError, HttpResponseError, ServiceRequestError
 from openai import AzureOpenAI
+from openai import APITimeoutError, APIConnectionError, RateLimitError
 from app.config import settings
 from app.logging_config import get_logger
 
@@ -20,6 +22,9 @@ def _generate_embedding(text: str) -> List[float]:
     
     Returns:
         A list of floating-point numbers representing the embedding
+        
+    Raises:
+        Exception: If embedding generation fails with descriptive error message
     """
     logger.debug(f"Generating embedding for text: {text[:100]}...")
     
@@ -27,7 +32,9 @@ def _generate_embedding(text: str) -> List[float]:
         openai_client = AzureOpenAI(
             azure_endpoint=settings.AZURE_OPENAI_ENDPOINT,
             api_key=settings.AZURE_OPENAI_API_KEY,
-            api_version=settings.AZURE_OPENAI_API_VERSION
+            api_version=settings.AZURE_OPENAI_API_VERSION,
+            timeout=30.0,  # 30 second timeout for embedding generation
+            max_retries=2
         )
         
         response = openai_client.embeddings.create(
@@ -37,9 +44,22 @@ def _generate_embedding(text: str) -> List[float]:
         
         logger.debug(f"Embedding generated successfully (dimension: {len(response.data[0].embedding)})")
         return response.data[0].embedding
+        
+    except APITimeoutError as e:
+        logger.error(f"Timeout generating embedding: {str(e)}")
+        raise Exception("Embedding generation timed out. Please try again.")
+        
+    except RateLimitError as e:
+        logger.warning(f"Rate limit hit for embeddings: {str(e)}")
+        raise Exception("Service is currently busy. Please wait a moment and try again.")
+        
+    except APIConnectionError as e:
+        logger.error(f"Connection error generating embedding: {str(e)}")
+        raise Exception("Unable to connect to Azure OpenAI service. Please check your connection.")
+        
     except Exception as e:
         logger.error(f"Error generating embedding: {str(e)}", exc_info=True)
-        raise
+        raise Exception(f"Failed to generate embedding: {str(e)}")
 
 
 @tool
@@ -67,6 +87,7 @@ def search_lending_policy(query: str) -> Dict[str, Any]:
     try:
         logger.info(f"Searching lending policy for query: {query}")
         
+        # Generate embedding with timeout and retry
         query_embedding = _generate_embedding(query)
 
         search_credential = AzureKeyCredential(settings.AZURE_SEARCH_KEY)
@@ -99,14 +120,42 @@ def search_lending_policy(query: str) -> Dict[str, Any]:
             })
         
         logger.info(f"Found {len(results_list)} search results for query: {query}")
-        logger.debug(f"Search results: {results_list}")
+        
+        if not results_list:
+            logger.warning(f"No results found for query: {query}")
+            return {
+                "results": [],
+                "total_count": 0,
+                "message": "No matching policy information found. Please rephrase your question or contact support."
+            }
+        
+        logger.debug(f"Top result score: {results_list[0]['score']:.4f}")
 
         return {
             "results": results_list,
             "total_count": len(results_list)
         }
+        
+    except HttpResponseError as e:
+        logger.error(f"Azure Search HTTP error: {str(e)}", exc_info=True)
+        return {
+            "error": "Unable to search lending policies at this time. Please try again.",
+            "results": [],
+            "total_count": 0
+        }
+        
+    except ServiceRequestError as e:
+        logger.error(f"Azure Search service error: {str(e)}", exc_info=True)
+        return {
+            "error": "Search service is temporarily unavailable. Please try again in a moment.",
+            "results": [],
+            "total_count": 0
+        }
+        
     except Exception as e:
         logger.error(f"Error searching lending policy: {str(e)}", exc_info=True)
         return {
-            "error": str(e)
+            "error": f"Search failed: {str(e)}",
+            "results": [],
+            "total_count": 0
         }

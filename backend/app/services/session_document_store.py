@@ -6,7 +6,7 @@ This allows the agent to access documents uploaded during a conversation.
 """
 
 from typing import Dict, List, Optional, Any
-from datetime import datetime
+from datetime import datetime, timedelta
 from dataclasses import dataclass, field
 from app.logging_config import get_logger
 
@@ -21,15 +21,26 @@ class SessionDocument:
     upload_timestamp: datetime
     analysis: Dict[str, Any]
     file_path: Optional[str] = None  # Optional: if we keep the file
+    
+    def is_expired(self, max_age_hours: int = 24) -> bool:
+        """Check if document has expired based on upload time."""
+        age = datetime.now() - self.upload_timestamp
+        return age > timedelta(hours=max_age_hours)
 
 
 class SessionDocumentStore:
-    """In-memory store for session documents."""
+    """In-memory store for session documents with automatic cleanup."""
+    
+    # Session expiration settings
+    SESSION_MAX_AGE_HOURS = None  # Sessions never expire (set to None to disable)
+    MAX_DOCUMENTS_PER_SESSION = 20  # Limit documents per session
     
     def __init__(self):
         # session_id -> list of SessionDocument
         self._store: Dict[str, List[SessionDocument]] = {}
-        logger.info("SessionDocumentStore initialized")
+        # Track last access time for sessions
+        self._last_access: Dict[str, datetime] = {}
+        logger.info("SessionDocumentStore initialized with automatic cleanup")
     
     def add_document(
         self,
@@ -39,9 +50,24 @@ class SessionDocumentStore:
         analysis: Dict[str, Any],
         file_path: Optional[str] = None
     ) -> None:
-        """Add a document to a session."""
+        """Add a document to a session with validation."""
+        # Validate session_id
+        if not session_id or not session_id.strip():
+            raise ValueError("Session ID cannot be empty")
+        
+        # Clean up expired sessions before adding
+        self._cleanup_expired_sessions()
+        
         if session_id not in self._store:
             self._store[session_id] = []
+            logger.debug(f"Created new session: {session_id}")
+        
+        # Check document limit per session
+        if len(self._store[session_id]) >= self.MAX_DOCUMENTS_PER_SESSION:
+            logger.warning(f"Session {session_id} has reached max documents ({self.MAX_DOCUMENTS_PER_SESSION})")
+            # Remove oldest document to make room
+            removed = self._store[session_id].pop(0)
+            logger.info(f"Removed oldest document '{removed.filename}' from session {session_id}")
         
         doc = SessionDocument(
             filename=filename,
@@ -52,10 +78,15 @@ class SessionDocumentStore:
         )
         
         self._store[session_id].append(doc)
+        self._last_access[session_id] = datetime.now()
         logger.info(f"Added document '{filename}' to session '{session_id}' (total: {len(self._store[session_id])})")
     
     def get_documents(self, session_id: str) -> List[SessionDocument]:
         """Get all documents for a session."""
+        # Update last access time
+        if session_id in self._store:
+            self._last_access[session_id] = datetime.now()
+        
         docs = self._store.get(session_id, [])
         logger.debug(f"Retrieved {len(docs)} documents for session '{session_id}'")
         return docs
@@ -77,6 +108,58 @@ class SessionDocumentStore:
     def get_session_count(self) -> int:
         """Get total number of active sessions."""
         return len(self._store)
+    
+    def _cleanup_expired_sessions(self) -> None:
+        """Remove expired sessions from the store."""
+        # Skip cleanup if expiration is disabled
+        if self.SESSION_MAX_AGE_HOURS is None:
+            return
+        
+        now = datetime.now()
+        expired_sessions = []
+        
+        for session_id, last_access in list(self._last_access.items()):
+            age = now - last_access
+            if age > timedelta(hours=self.SESSION_MAX_AGE_HOURS):
+                expired_sessions.append(session_id)
+        
+        for session_id in expired_sessions:
+            doc_count = len(self._store.get(session_id, []))
+            if session_id in self._store:
+                del self._store[session_id]
+            if session_id in self._last_access:
+                del self._last_access[session_id]
+            logger.info(f"Cleaned up expired session '{session_id}' ({doc_count} documents)")
+        
+        if expired_sessions:
+            logger.info(f"Cleaned up {len(expired_sessions)} expired sessions")
+    
+    def cleanup_all_expired(self) -> int:
+        """Manually trigger cleanup of all expired sessions. Returns count of cleaned sessions."""
+        initial_count = len(self._store)
+        self._cleanup_expired_sessions()
+        cleaned_count = initial_count - len(self._store)
+        return cleaned_count
+    
+    def get_session_info(self, session_id: str) -> Optional[Dict[str, Any]]:
+        """Get information about a session."""
+        if session_id not in self._store:
+            return None
+        
+        docs = self._store[session_id]
+        last_access = self._last_access.get(session_id)
+        
+        return {
+            "session_id": session_id,
+            "document_count": len(docs),
+            "last_access": last_access.isoformat() if last_access else None,
+            "age_hours": (datetime.now() - last_access).total_seconds() / 3600 if last_access else None,
+            "documents": [{
+                "filename": doc.filename,
+                "type": doc.document_type,
+                "uploaded": doc.upload_timestamp.isoformat()
+            } for doc in docs]
+        }
     
     def get_document_summary(self, session_id: str) -> str:
         """Get a human-readable summary of documents in a session."""
@@ -106,6 +189,15 @@ class SessionDocumentStore:
                 
                 if key_info:
                     summary_parts.append(f"   - {', '.join(key_info)}")
+        
+        # Add session age info
+        if session_id in self._last_access:
+            age = datetime.now() - self._last_access[session_id]
+            hours = age.total_seconds() / 3600
+            if hours < 1:
+                summary_parts.append(f"\nSession active for {int(age.total_seconds() / 60)} minutes")
+            else:
+                summary_parts.append(f"\nSession active for {hours:.1f} hours")
         
         return "\n".join(summary_parts)
 
