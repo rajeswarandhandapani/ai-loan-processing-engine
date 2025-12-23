@@ -4,7 +4,6 @@ Document Intelligence API router.
 Provides endpoints for document upload and analysis using Azure Document Intelligence.
 """
 
-import logging
 import tempfile
 import os
 from pathlib import Path

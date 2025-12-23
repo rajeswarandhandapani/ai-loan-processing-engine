@@ -6,7 +6,6 @@ This tool analyzes user messages to detect:
 - Named entities (loan amounts, business types, dates, etc.)
 """
 
-import logging
 from langchain_core.tools import tool
 from azure.ai.textanalytics import TextAnalyticsClient
 from azure.core.credentials import AzureKeyCredential

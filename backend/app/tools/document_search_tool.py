@@ -1,4 +1,3 @@
-import logging
 from typing import Dict, Any, List
 from azure.search.documents.models import VectorizedQuery
 from langchain_core.tools import tool

@@ -1,6 +1,4 @@
-import logging
 import time
-import pathlib
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 from azure.ai.documentintelligence import DocumentIntelligenceClient
