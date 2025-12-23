@@ -36,7 +36,7 @@
 ## Week 4: Integration & Polish
 **Goal:** Connect the pieces, fix bugs, and prepare for portfolio showcase.
 
-- [ ] **Day 22:** End-to-End testing: Run through the "Happy Path" (Upload -> Chat -> Approval).
+- [x] **Day 22:** End-to-End testing: Run through the "Happy Path" (Upload -> Chat -> Approval).
 - [ ] **Day 23:** Fix bugs found during testing. Improve Agent prompt engineering (system instructions).
 - [ ] **Day 24:** Add **README.md** with screenshots and setup instructions.
 - [ ] **Day 25:** Create a short **Demo Video** (OBS Studio / Loom).
