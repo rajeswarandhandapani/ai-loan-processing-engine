@@ -1,3 +1,17 @@
+/**
+ * ============================================================================
+ * Application Configuration
+ * ============================================================================
+ * Standalone Angular application configuration (Angular 15+ approach).
+ * 
+ * Key Concepts:
+ * - ApplicationConfig: Replaces the traditional AppModule
+ * - Providers: Services and features available throughout the app
+ * - Standalone Bootstrap: Modern way to configure Angular apps
+ * 
+ * This file is referenced in main.ts when bootstrapping the application.
+ */
+
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
@@ -5,11 +19,27 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 
 import { routes } from './app.routes';
 
+/**
+ * ============================================================================
+ * Provider Configuration
+ * ============================================================================
+ * Each provider adds functionality to the application:
+ * 
+ * - provideBrowserGlobalErrorListeners(): Global error handling
+ * - provideRouter(routes): Enable routing between pages
+ * - provideHttpClient(): Enable HTTP requests to backend API
+ * - provideAnimationsAsync(): Enable Angular animations (lazy loaded)
+ * 
+ * withInterceptorsFromDi(): Allows HTTP interceptors for:
+ * - Adding auth headers to requests
+ * - Handling errors globally
+ * - Logging requests/responses
+ */
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideRouter(routes),
-    provideHttpClient(withInterceptorsFromDi()),
-    provideAnimationsAsync()
+    provideBrowserGlobalErrorListeners(),  // Global error handling
+    provideRouter(routes),                  // Client-side routing
+    provideHttpClient(withInterceptorsFromDi()),  // HTTP client with interceptors
+    provideAnimationsAsync()                // Animations (lazy loaded)
   ]
 };

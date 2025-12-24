@@ -1,37 +1,94 @@
+/**
+ * ============================================================================
+ * API Service - Document Upload
+ * ============================================================================
+ * Angular service for communicating with the backend Document Intelligence API.
+ * 
+ * Key Concepts:
+ * - HttpClient: Angular's HTTP request library
+ * - Observable: Reactive data stream for async operations
+ * - Progress Tracking: Monitor upload progress in real-time
+ * - FormData: Browser API for multipart form uploads
+ * 
+ * This service handles:
+ * - Document uploads with progress tracking
+ * - Document type configuration
+ * - Error handling for network issues
+ */
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpEventType, HttpRequest } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 
+
+/**
+ * ============================================================================
+ * Upload Progress Interface
+ * ============================================================================
+ * Tracks the state of a file upload operation.
+ * Emitted multiple times during upload to show progress.
+ */
 export interface UploadProgress {
-  status: 'progress' | 'complete' | 'error';
-  progress: number;
-  response?: DocumentUploadResponse;
-  error?: string;
+  status: 'progress' | 'complete' | 'error';  // Current upload state
+  progress: number;                            // 0-100 percentage
+  response?: DocumentUploadResponse;           // Final response (when complete)
+  error?: string;                              // Error message (if failed)
 }
 
+
+/**
+ * ============================================================================
+ * Document Analysis Interface
+ * ============================================================================
+ * Structure of document analysis results from Azure Document Intelligence.
+ */
 export interface DocumentAnalysis {
-  page_count?: number;
-  content?: string;
-  tables?: any[];
-  key_value_pairs?: Record<string, string>;
-  entities?: any[];
+  page_count?: number;                    // Number of pages in document
+  content?: string;                       // Full text content (OCR result)
+  tables?: any[];                         // Extracted tables
+  key_value_pairs?: Record<string, string>;  // Key-value pairs found
+  entities?: any[];                       // Named entities extracted
 }
 
+
+/**
+ * ============================================================================
+ * Document Upload Response Interface
+ * ============================================================================
+ * Response structure from the backend /documents/upload endpoint.
+ */
 export interface DocumentUploadResponse {
-  success: boolean;
-  message: string;
-  filename: string;
-  document_type: string;
-  analysis?: DocumentAnalysis;
-  error?: string;
+  success: boolean;                       // Whether upload/analysis succeeded
+  message: string;                        // Human-readable status message
+  filename: string;                       // Original filename
+  document_type: string;                  // Document type used for analysis
+  analysis?: DocumentAnalysis;            // Analysis results (if successful)
+  error?: string;                         // Error message (if failed)
 }
 
+
+/**
+ * ============================================================================
+ * API Service Class
+ * ============================================================================
+ * @Injectable({ providedIn: 'root' }) makes this a singleton service:
+ * - One instance shared across the entire application
+ * - Automatically available without explicit provider registration
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+  /**
+   * Backend API base URL.
+   * In production, use environment.ts for configuration.
+   */
   private readonly baseUrl = 'http://localhost:8000/api/v1';
 
+  /**
+   * Constructor Dependency Injection.
+   * Angular automatically provides HttpClient instance.
+   */
   constructor(private http: HttpClient) {}
 
   /**

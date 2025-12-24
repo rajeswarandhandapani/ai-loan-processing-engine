@@ -1,7 +1,24 @@
 """
-Chat API router.
-
+============================================================================
+Chat API Router
+============================================================================
 Provides the /chat endpoint for AI agent conversations.
+
+Key Concepts:
+- APIRouter: FastAPI's way to organize related endpoints
+- Dependency Injection: AgentService is instantiated once and reused
+- Request Validation: Pydantic models validate input automatically
+- Error Handling: HTTPException for proper HTTP error responses
+
+Endpoints:
+- POST /api/v1/chat/ - Send message to AI agent
+- GET /api/v1/chat/health - Check chat service health
+
+The agent can:
+- Answer questions about loan policies (RAG with Azure AI Search)
+- Analyze uploaded financial documents (Document Intelligence)
+- Detect user sentiment and respond empathetically (Azure AI Language)
+- Extract key entities from user messages (NER)
 """
 
 from fastapi import APIRouter, HTTPException
@@ -11,9 +28,39 @@ from app.logging_config import get_logger
 
 logger = get_logger(__name__)
 
+# ============================================================================
+# Router Configuration
+# ============================================================================
+# prefix: All routes will be under /chat (e.g., /chat/, /chat/health)
+# tags: Groups endpoints in OpenAPI documentation
 router = APIRouter(prefix="/chat", tags=["Chat"])
+
+# ============================================================================
+# Service Initialization
+# ============================================================================
+# AgentService is a singleton - initialized once when the module loads.
+# This ensures the LLM and tools are ready when the first request arrives.
+# 
+# Note: In production, consider lazy initialization for faster startup.
 agent_service = AgentService()
 
+
+# ============================================================================
+# Chat Endpoint
+# ============================================================================
+# This is the main endpoint for AI conversations.
+# 
+# Request Flow:
+# 1. Validate request (Pydantic does this automatically)
+# 2. Log request for debugging
+# 3. Pass message to AgentService
+# 4. Agent decides which tools to use (if any)
+# 5. Return agent's response
+# 
+# response_model=ChatResponse tells FastAPI to:
+# - Validate response matches the schema
+# - Generate OpenAPI documentation
+# - Serialize Python objects to JSON
 
 @router.post("/", response_model=ChatResponse)
 async def chat(request: ChatRequest) -> ChatResponse:
@@ -39,7 +86,8 @@ async def chat(request: ChatRequest) -> ChatResponse:
     logger.debug(f"User message: {request.message[:100]}...")
     
     try:
-        # Validate input
+        # === Input Validation ===
+        # While Pydantic validates types, we also check for empty strings
         if not request.message or not request.message.strip():
             raise HTTPException(
                 status_code=400,
@@ -52,7 +100,12 @@ async def chat(request: ChatRequest) -> ChatResponse:
                 detail="Session ID is required"
             )
         
-        # Process the message through the agent
+        # === Agent Processing ===
+        # The agent uses LangGraph to:
+        # 1. Analyze the message
+        # 2. Decide if tools are needed
+        # 3. Execute tools (search, sentiment, etc.)
+        # 4. Generate a response
         response = await agent_service.chat(
             message=request.message.strip(),
             session_id=request.session_id.strip()
@@ -67,15 +120,28 @@ async def chat(request: ChatRequest) -> ChatResponse:
         )
         
     except HTTPException:
-        # Re-raise HTTP exceptions as-is
+        # Re-raise HTTP exceptions as-is (preserve status codes)
         raise
     except Exception as e:
+        # === Error Handling ===
+        # Log the full error for debugging, but return a generic message
+        # to avoid leaking internal details to clients
         logger.error(f"Chat processing failed - Session: {request.session_id}, Error: {str(e)}")
         raise HTTPException(
             status_code=500,
             detail=f"Failed to process chat message: {str(e)}"
         )
 
+
+# ============================================================================
+# Health Check Endpoint
+# ============================================================================
+# Simple endpoint for monitoring and load balancers.
+# 
+# In production, you might want to:
+# - Check LLM API connectivity
+# - Verify vector search is available
+# - Return response time metrics
 
 @router.get("/health")
 async def chat_health():

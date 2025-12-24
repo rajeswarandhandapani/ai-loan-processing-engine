@@ -1,3 +1,28 @@
+"""
+============================================================================
+Document Intelligence Service
+============================================================================
+Service for document processing using Azure AI Document Intelligence.
+
+Key Concepts:
+- OCR (Optical Character Recognition): Extract text from images/PDFs
+- Form Recognition: Extract structured data from forms
+- Table Extraction: Detect and parse tables in documents
+- Pre-built Models: Specialized models for common document types
+
+Supported Document Types:
+- Bank Statements: Extracts transactions, balances, account info
+- Invoices: Extracts line items, totals, vendor details
+- Receipts: Extracts merchant info, items, totals
+- W-2 Forms: Extracts tax information
+- Layout: General document structure extraction
+
+Performance Optimization:
+- Caching: Results cached to avoid re-processing same documents
+- Retry Logic: Automatic retry on transient failures
+- Timeout Handling: Graceful handling of slow requests
+"""
+
 import time
 from pathlib import Path
 from typing import List, Dict, Any, Optional
@@ -18,30 +43,47 @@ from app.utils.document_cache import DocumentCache
 logger = get_logger(__name__)
 
 
+# ============================================================================
+# Document Intelligence Service Class
+# ============================================================================
+# Main service for document processing. Handles:
+# - Document analysis via Azure API
+# - Result caching for performance
+# - Error handling with user-friendly messages
+
 class DocumentIntelligenceService:
     """Service for document intelligent processing using Azure Document Intelligence."""
 
+    # ========================================================================
+    # Model ID Mapping
+    # ========================================================================
+    # Maps user-friendly document types to Azure model IDs.
+    # Azure has pre-trained models for common document types.
     MODEL_MAP = {
-        "bank_statement": "prebuilt-bankStatement.us",
-        "invoice": "prebuilt-invoice",
-        "receipt": "prebuilt-receipt",
-        "tax_w2": "prebuilt-tax.us.w2",
-        "prebuilt-layout": "prebuilt-layout",
+        "bank_statement": "prebuilt-bankStatement.us",  # US bank statements
+        "invoice": "prebuilt-invoice",                  # Business invoices
+        "receipt": "prebuilt-receipt",                  # Purchase receipts
+        "tax_w2": "prebuilt-tax.us.w2",                 # US W-2 forms
+        "prebuilt-layout": "prebuilt-layout",          # General layout
     }
 
     def __init__(self):
-        # Configure retry policy for Azure Document Intelligence
-        # Retry up to 3 times with exponential backoff starting at 2 seconds
-        # Total timeout of 120 seconds for document analysis (OCR is slow)
+        # === Azure Client Configuration ===
+        # Configure retry policy for resilience:
+        # - retry_total: Maximum number of retry attempts
+        # - retry_backoff_factor: Exponential backoff multiplier
+        # - retry_mode: "exponential" = wait longer between each retry
         self.client = DocumentIntelligenceClient(
             endpoint=settings.AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT,
             credential=AzureKeyCredential(settings.AZURE_DOCUMENT_INTELLIGENCE_KEY),
-            retry_total=3,
-            retry_backoff_factor=2,
-            retry_mode="exponential",
+            retry_total=3,              # Retry up to 3 times
+            retry_backoff_factor=2,     # 2s, 4s, 8s delays
+            retry_mode="exponential",   # Exponential backoff
         )
         
-        # Initialize cache
+        # === Cache Initialization ===
+        # Cache analyzed documents to avoid re-processing
+        # Significantly reduces API costs and response time
         self.cache = DocumentCache()
 
     async def analyze_document(

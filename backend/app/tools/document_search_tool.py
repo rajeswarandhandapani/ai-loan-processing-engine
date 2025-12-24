@@ -1,3 +1,28 @@
+"""
+============================================================================
+Document Search Tool - Lending Policy RAG
+============================================================================
+LangChain tool for searching lending policy documents using Azure AI Search.
+
+Key Concepts:
+- RAG (Retrieval Augmented Generation): Ground LLM responses in real data
+- Vector Search: Find semantically similar content using embeddings
+- Embeddings: Numerical representations of text meaning
+- Azure AI Search: Microsoft's vector search service
+
+How it works:
+1. User asks about loan policies
+2. Query is converted to embedding vector
+3. Vector search finds similar policy sections
+4. Results are returned to the agent
+5. Agent uses results to answer accurately
+
+Benefits:
+- Accurate answers grounded in actual policies
+- No hallucination of policy details
+- Up-to-date information (just update the index)
+"""
+
 from typing import Dict, Any, List
 from azure.search.documents.models import VectorizedQuery
 from langchain_core.tools import tool
@@ -11,6 +36,17 @@ from app.logging_config import get_logger
 
 logger = get_logger(__name__)
 
+
+# ============================================================================
+# Embedding Generation
+# ============================================================================
+# Embeddings convert text to numerical vectors that capture meaning.
+# Similar texts have similar vectors (close in vector space).
+# 
+# Example:
+# - "loan application" -> [0.12, -0.34, 0.56, ...] (1536 dimensions)
+# - "credit request" -> [0.11, -0.33, 0.55, ...]  (similar vector!)
+# - "weather forecast" -> [-0.45, 0.22, -0.11, ...] (very different)
 
 def _generate_embedding(text: str) -> List[float]:
     """
@@ -28,14 +64,16 @@ def _generate_embedding(text: str) -> List[float]:
     logger.debug(f"Generating embedding for text: {text[:100]}...")
     
     try:
+        # Create Azure OpenAI client for embeddings
         openai_client = AzureOpenAI(
             azure_endpoint=settings.AZURE_OPENAI_ENDPOINT,
             api_key=settings.AZURE_OPENAI_API_KEY,
             api_version=settings.AZURE_OPENAI_API_VERSION,
-            timeout=30.0,  # 30 second timeout for embedding generation
-            max_retries=2
+            timeout=30.0,       # 30 second timeout
+            max_retries=2       # Retry on transient failures
         )
         
+        # Generate embedding using text-embedding model
         response = openai_client.embeddings.create(
             input=text,
             model=settings.AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME
@@ -44,6 +82,8 @@ def _generate_embedding(text: str) -> List[float]:
         logger.debug(f"Embedding generated successfully (dimension: {len(response.data[0].embedding)})")
         return response.data[0].embedding
         
+    # === Error Handling ===
+    # Provide user-friendly error messages for different failure modes
     except APITimeoutError as e:
         logger.error(f"Timeout generating embedding: {str(e)}")
         raise Exception("Embedding generation timed out. Please try again.")
@@ -60,6 +100,16 @@ def _generate_embedding(text: str) -> List[float]:
         logger.error(f"Error generating embedding: {str(e)}", exc_info=True)
         raise Exception(f"Failed to generate embedding: {str(e)}")
 
+
+# ============================================================================
+# Lending Policy Search Tool
+# ============================================================================
+# This is a LangChain tool that the agent can call to search policies.
+# 
+# The @tool decorator:
+# - Makes the function available to the agent
+# - Uses the docstring to tell the agent when to use it
+# - Handles serialization of inputs/outputs
 
 @tool
 def search_lending_policy(query: str) -> Dict[str, Any]:
@@ -86,27 +136,33 @@ def search_lending_policy(query: str) -> Dict[str, Any]:
     try:
         logger.info(f"Searching lending policy for query: {query}")
         
-        # Generate embedding with timeout and retry
+        # === Step 1: Generate Query Embedding ===
+        # Convert the user's question to a vector
         query_embedding = _generate_embedding(query)
 
+        # === Step 2: Connect to Azure AI Search ===
         search_credential = AzureKeyCredential(settings.AZURE_SEARCH_KEY)
         search_client = SearchClient(
             endpoint=settings.AZURE_SEARCH_ENDPOINT,
-            index_name="lending-policies",
+            index_name="lending-policies",  # Index containing policy documents
             credential=search_credential
         )
 
+        # === Step 3: Build Vector Query ===
+        # k_nearest_neighbors: Return top 5 most similar results
+        # fields: The field in the index containing document embeddings
         vector_query = VectorizedQuery(
             vector=query_embedding,
             k_nearest_neighbors=5,
             fields="content_vector"
         )
         
+        # === Step 4: Execute Search ===
         logger.debug("Executing vector search...")
         results = search_client.search(
-            search_text=None,
+            search_text=None,           # Using vector search only
             vector_queries=[vector_query],
-            select=["title", "content"]
+            select=["title", "content"] # Fields to return
         )
         
         # Convert iterator to list and get count properly

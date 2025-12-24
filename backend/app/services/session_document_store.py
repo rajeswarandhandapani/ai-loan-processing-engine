@@ -1,8 +1,27 @@
 """
-Session-based document storage service.
+============================================================================
+Session Document Storage Service
+============================================================================
+In-memory storage for documents uploaded during chat sessions.
 
-Maintains an in-memory store of uploaded documents linked to chat sessions.
-This allows the agent to access documents uploaded during a conversation.
+Key Concepts:
+- Session Isolation: Documents are scoped to individual conversations
+- In-Memory Storage: Fast access, but data lost on restart
+- Document Limit: Prevents memory exhaustion from large uploads
+
+How it works:
+1. User uploads document during chat
+2. Document analyzed and stored with session_id
+3. Agent tool retrieves documents for that session
+4. Agent can answer questions about uploaded docs
+
+Data Flow:
+  Upload -> Document Intelligence -> Session Store -> Agent Tool -> Response
+
+Production Considerations:
+- Use Redis or database for persistence
+- Implement TTL (time-to-live) for automatic cleanup
+- Add distributed storage for multi-server deployments
 """
 
 from typing import Dict, List, Optional, Any
@@ -13,14 +32,20 @@ from app.logging_config import get_logger
 logger = get_logger(__name__)
 
 
+# ============================================================================
+# Session Document Data Class
+# ============================================================================
+# Represents a single document stored in a session.
+# Uses @dataclass for automatic __init__, __repr__, etc.
+
 @dataclass
 class SessionDocument:
     """Represents a document uploaded in a session."""
-    filename: str
-    document_type: str
-    upload_timestamp: datetime
-    analysis: Dict[str, Any]
-    file_path: Optional[str] = None  # Optional: if we keep the file
+    filename: str                    # Original filename
+    document_type: str               # Type used for analysis
+    upload_timestamp: datetime       # When document was uploaded
+    analysis: Dict[str, Any]         # Extracted data from Document Intelligence
+    file_path: Optional[str] = None  # Physical file path (if retained)
     
     def is_expired(self, max_age_hours: int = 24) -> bool:
         """Check if document has expired based on upload time."""
@@ -28,18 +53,29 @@ class SessionDocument:
         return age > timedelta(hours=max_age_hours)
 
 
+# ============================================================================
+# Session Document Store Class
+# ============================================================================
+# In-memory storage with automatic cleanup and limits.
+# 
+# Thread Safety Note:
+# This implementation is NOT thread-safe. For production with multiple
+# workers, use Redis or a database with proper locking.
+
 class SessionDocumentStore:
     """In-memory store for session documents with automatic cleanup."""
     
-    # Session expiration settings
-    SESSION_MAX_AGE_HOURS = None  # Sessions never expire (set to None to disable)
-    MAX_DOCUMENTS_PER_SESSION = 20  # Limit documents per session
+    # === Configuration ===
+    SESSION_MAX_AGE_HOURS = None   # Sessions never expire (None = disabled)
+    MAX_DOCUMENTS_PER_SESSION = 20  # Prevent memory exhaustion
     
     def __init__(self):
-        # session_id -> list of SessionDocument
+        # Main storage: session_id -> list of documents
         self._store: Dict[str, List[SessionDocument]] = {}
-        # Track last access time for sessions
+        
+        # Track activity for cleanup: session_id -> last access time
         self._last_access: Dict[str, datetime] = {}
+        
         logger.info("SessionDocumentStore initialized with automatic cleanup")
     
     def add_document(

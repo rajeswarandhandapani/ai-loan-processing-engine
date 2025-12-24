@@ -9,7 +9,7 @@ import { marked } from 'marked';
 
 /**
  * ============================================================================
- * TECHNICAL CONCEPT #1: TypeScript Interfaces
+ * TypeScript Interfaces
  * ============================================================================
  * Interfaces define the structure of objects. They provide:
  * - Type safety: Catch errors at compile time
@@ -27,7 +27,7 @@ export interface ChatMessage {
 
 /**
  * ============================================================================
- * TECHNICAL CONCEPT #2: Angular Component Decorator
+ * Angular Component Decorator
  * ============================================================================
  * @Component() is a decorator that tells Angular this is a component.
  * 
@@ -48,7 +48,7 @@ export interface ChatMessage {
   animations: [
     /**
      * ======================================================================
-     * TECHNICAL CONCEPT #3: Angular Animations
+     * Angular Animations
      * ======================================================================
      * trigger() creates a named animation that can be used in templates
      * :enter is a special state when an element is added to the DOM
@@ -68,7 +68,7 @@ export interface ChatMessage {
 })
 /**
  * ============================================================================
- * TECHNICAL CONCEPT #4: Component Lifecycle & Interfaces
+ * Component Lifecycle & Interfaces
  * ============================================================================
  * 
  * AfterViewChecked: Called after Angular checks the component's view
@@ -85,7 +85,7 @@ export interface ChatMessage {
 export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #5: ViewChild Decorator
+   * ViewChild Decorator
    * ========================================================================
    * @ViewChild() gives us a reference to an element in the template.
    * 
@@ -98,7 +98,7 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
   
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #6: Output Decorator & EventEmitter
+   * Output Decorator & EventEmitter
    * ========================================================================
    * @Output() allows child components to emit events to parent components.
    * 
@@ -127,7 +127,7 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
   
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #7: RxJS Subscriptions
+   * RxJS Subscriptions
    * ========================================================================
    * Subscription represents an ongoing Observable subscription.
    * 
@@ -145,7 +145,7 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #8: Constructor Dependency Injection
+   * Constructor Dependency Injection
    * ========================================================================
    * Angular's DI system automatically provides the ChatService instance.
    * 
@@ -179,7 +179,7 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #9: UUID Generation
+   * UUID Generation
    * ========================================================================
    * Generates a RFC4122 version 4 compliant UUID.
    * 
@@ -203,7 +203,7 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #10: Angular Lifecycle Hooks
+   * Angular Lifecycle Hooks
    * ========================================================================
    * ngAfterViewChecked() is called after Angular checks the component's view.
    * 
@@ -225,7 +225,7 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
   
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #11: Cleanup with ngOnDestroy
+   * Cleanup with ngOnDestroy
    * ========================================================================
    * Called when the component is destroyed (user navigates away, etc.)
    * 
@@ -246,7 +246,7 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #12: Sending Messages with Real API Integration
+   * Sending Messages with Real API Integration
    * ========================================================================
    * This method:
    * 1. Validates input
@@ -296,7 +296,7 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
 
     /**
      * ======================================================================
-     * TECHNICAL CONCEPT #13: Observable Subscription
+     * Observable Subscription
      * ======================================================================
      * .subscribe() is how we "activate" an Observable.
      * 
@@ -370,7 +370,7 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
           
           /**
            * ============================================================
-           * TECHNICAL CONCEPT #14: User Feedback on Errors
+           * User Feedback on Errors
            * ============================================================
            * Always provide clear, actionable error messages:
            * ❌ Bad: "Error 500"
@@ -386,7 +386,7 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
     
     /**
      * ======================================================================
-     * TECHNICAL CONCEPT #15: Memory Management
+     * Memory Management
      * ======================================================================
      * Store the subscription so we can unsubscribe in ngOnDestroy().
      * This prevents memory leaks!
@@ -396,7 +396,7 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #16: Dismiss Error Messages
+   * Dismiss Error Messages
    * ========================================================================
    * Allow users to dismiss error messages for better UX.
    */
@@ -406,7 +406,7 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #17: Safe DOM Manipulation
+   * Safe DOM Manipulation
    * ========================================================================
    * Scroll the messages container to the bottom.
    * 
@@ -433,7 +433,7 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #18: Keyboard Event Handling
+   * Keyboard Event Handling
    * ========================================================================
    * Handle Enter key press in the input field.
    * 
@@ -453,7 +453,7 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #19: Date Formatting
+   * Date Formatting
    * ========================================================================
    * Format timestamp for display using browser's locale.
    * 
@@ -476,7 +476,7 @@ export class ChatComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #20: State Reset
+   * State Reset
    * ========================================================================
    * Clear the conversation and start fresh.
    * 

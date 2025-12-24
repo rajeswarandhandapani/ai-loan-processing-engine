@@ -1,19 +1,51 @@
+/**
+ * ============================================================================
+ * File Upload Component
+ * ============================================================================
+ * Drag-and-drop file upload with progress tracking and validation.
+ * 
+ * Key Concepts:
+ * - Drag & Drop API: Native browser API for file dragging
+ * - File Validation: Check type and size before upload
+ * - Progress Tracking: Real-time upload progress via HttpEvent
+ * - Queue Management: Handle multiple files simultaneously
+ * 
+ * Features:
+ * - Drag and drop or click to select files
+ * - Visual progress indicators
+ * - File type and size validation
+ * - Auto-detect document type from filename
+ * - Retry failed uploads
+ * - Session linking for chat integration
+ */
+
 import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ApiService, DocumentUploadResponse, UploadProgress } from '../../services/api.service';
 
+
 /**
- * Represents a file in our upload queue with its current status.
+ * ============================================================================
+ * Upload File Interface
+ * ============================================================================
+ * Tracks the state of each file in the upload queue.
+ * Updated throughout the upload lifecycle.
  */
 export interface UploadFile {
-  file: File;
-  progress: number;
-  status: 'pending' | 'uploading' | 'complete' | 'error';
-  response?: DocumentUploadResponse;
-  error?: string;
+  file: File;                    // The actual File object from browser
+  progress: number;              // Upload progress 0-100
+  status: 'pending' | 'uploading' | 'complete' | 'error';  // Current state
+  response?: DocumentUploadResponse;  // Server response (when complete)
+  error?: string;                     // Error message (if failed)
 }
 
+/**
+ * ============================================================================
+ * Component Decorator with Animations
+ * ============================================================================
+ * Animations defined here can be used in the template with [@animationName]
+ */
 @Component({
   selector: 'app-file-upload',
   standalone: true,
@@ -21,12 +53,21 @@ export interface UploadFile {
   templateUrl: './file-upload.component.html',
   styleUrl: './file-upload.component.scss',
   animations: [
-    // Animation for the progress bar - smoothly transitions width changes
+    /**
+     * Progress Bar Animation
+     * Smoothly transitions the width of progress bars.
+     * The {{ progress }} parameter is bound from the template.
+     */
     trigger('progressAnimation', [
       state('*', style({ width: '{{progress}}%' }), { params: { progress: 0 } }),
       transition('* => *', animate('300ms ease-out'))
     ]),
-    // Animation for file items appearing in the list
+    /**
+     * File Item Animation
+     * Fades and slides file items when added/removed from the list.
+     * :enter = when element is added to DOM
+     * :leave = when element is removed from DOM
+     */
     trigger('fadeSlideIn', [
       transition(':enter', [
         style({ opacity: 0, transform: 'translateY(-10px)' }),
@@ -39,42 +80,73 @@ export interface UploadFile {
   ]
 })
 export class FileUploadComponent {
-  // Session ID from chat component to link uploads to conversation
-  @Input() sessionId: string = '';
+  /**
+   * ========================================================================
+   * Input Properties
+   * ========================================================================
+   * @Input() allows parent components to pass data to this component.
+   * Usage: <app-file-upload [sessionId]="currentSessionId">
+   */
+  @Input() sessionId: string = '';  // Links uploads to chat session
 
-  // Event emitted when a file upload completes successfully
+  /**
+   * ========================================================================
+   * Output Events
+   * ========================================================================
+   * @Output() allows this component to emit events to parent components.
+   * Usage: <app-file-upload (uploadComplete)="handleUpload($event)">
+   */
   @Output() uploadComplete = new EventEmitter<DocumentUploadResponse>();
-  
-  // Event emitted when all files in queue are processed
   @Output() allUploadsComplete = new EventEmitter<DocumentUploadResponse[]>();
 
-  // List of files being uploaded
-  uploadFiles: UploadFile[] = [];
-  
-  // Is the user currently dragging a file over the drop zone?
-  isDragOver = false;
+  /**
+   * ========================================================================
+   * Component State
+   * ========================================================================
+   */
+  uploadFiles: UploadFile[] = [];  // Queue of files being processed
+  isDragOver = false;              // Visual feedback for drag state
 
-  // Allowed file extensions (must match backend)
+  /**
+   * ========================================================================
+   * Validation Configuration
+   * ========================================================================
+   * These limits must match the backend to avoid server-side rejections.
+   * Keep in sync with: backend/app/routers/document_intelligence_router.py
+   */
   private readonly allowedExtensions = ['.pdf', '.png', '.jpg', '.jpeg', '.tiff', '.bmp'];
-  
-  // Max file sizes in bytes (must match backend)
-  private readonly maxPdfSize = 15 * 1024 * 1024;  // 15MB
-  private readonly maxImageSize = 5 * 1024 * 1024; // 5MB
+  private readonly maxPdfSize = 15 * 1024 * 1024;   // 15MB for PDFs
+  private readonly maxImageSize = 5 * 1024 * 1024;  // 5MB for images
 
+  /**
+   * Constructor with Dependency Injection.
+   * ApiService is injected to handle HTTP uploads.
+   */
   constructor(private apiService: ApiService) {}
 
   /**
-   * Called when user drags files over the drop zone.
-   * We prevent default to allow dropping and show visual feedback.
+   * ========================================================================
+   * Drag & Drop Event Handlers
+   * ========================================================================
+   * Browser Drag & Drop API events:
+   * - dragover: Fired continuously while dragging over element
+   * - dragleave: Fired when drag leaves element
+   * - drop: Fired when file is dropped
+   * 
+   * preventDefault() is required for drop to work!
+   */
+
+  /**
+   * Handle dragover - show visual feedback and allow drop.
    */
   onDragOver(event: DragEvent): void {
-    event.preventDefault();
-    event.stopPropagation();
-    this.isDragOver = true;
+    event.preventDefault();     // Required for drop to work
+    event.stopPropagation();    // Don't bubble to parent elements
+    this.isDragOver = true;     // Show visual feedback
   }
 
   /**
-   * Called when user drags files away from the drop zone.
+   * Handle dragleave - remove visual feedback.
    */
   onDragLeave(event: DragEvent): void {
     event.preventDefault();
@@ -83,13 +155,14 @@ export class FileUploadComponent {
   }
 
   /**
-   * Called when user drops files onto the drop zone.
+   * Handle drop - process the dropped files.
    */
   onDrop(event: DragEvent): void {
     event.preventDefault();
     event.stopPropagation();
     this.isDragOver = false;
 
+    // dataTransfer contains the dropped files
     const files = event.dataTransfer?.files;
     if (files) {
       this.handleFiles(Array.from(files));
@@ -97,24 +170,32 @@ export class FileUploadComponent {
   }
 
   /**
-   * Called when user selects files via the file input.
+   * Handle file selection via traditional input[type="file"].
    */
   onFileSelect(event: Event): void {
     const input = event.target as HTMLInputElement;
     if (input.files) {
       this.handleFiles(Array.from(input.files));
-      input.value = ''; // Reset input so same file can be selected again
+      input.value = '';  // Reset so same file can be selected again
     }
   }
 
   /**
-   * Process selected files: validate and add to upload queue.
+   * ========================================================================
+   * File Processing
+   * ========================================================================
+   * Validate files and add them to the upload queue.
+   */
+
+  /**
+   * Process an array of files: validate and start uploads.
    */
   private handleFiles(files: File[]): void {
     for (const file of files) {
       const validation = this.validateFile(file);
       
       if (validation.valid) {
+        // Valid file - add to queue and start upload
         const uploadFile: UploadFile = {
           file,
           progress: 0,
@@ -123,7 +204,7 @@ export class FileUploadComponent {
         this.uploadFiles.push(uploadFile);
         this.uploadFile(uploadFile);
       } else {
-        // Add file with error status to show validation error
+        // Invalid file - add with error status for user feedback
         this.uploadFiles.push({
           file,
           progress: 0,
@@ -135,11 +216,14 @@ export class FileUploadComponent {
   }
 
   /**
-   * Validate a file before uploading.
-   * Checks: file extension and file size.
+   * ========================================================================
+   * File Validation
+   * ========================================================================
+   * Validate file type and size before uploading.
+   * Returns validation result with optional error message.
    */
   private validateFile(file: File): { valid: boolean; error?: string } {
-    // Check extension
+    // === Extension Check ===
     const extension = '.' + file.name.split('.').pop()?.toLowerCase();
     if (!this.allowedExtensions.includes(extension)) {
       return {
@@ -148,7 +232,8 @@ export class FileUploadComponent {
       };
     }
 
-    // Check size
+    // === Size Check ===
+    // PDFs get larger limit than images
     const maxSize = extension === '.pdf' ? this.maxPdfSize : this.maxImageSize;
     if (file.size > maxSize) {
       const maxSizeMB = maxSize / 1024 / 1024;
@@ -162,8 +247,18 @@ export class FileUploadComponent {
   }
 
   /**
-   * Auto-detect document type based on filename patterns.
-   * Maps common filename patterns to backend document types.
+   * ========================================================================
+   * Document Type Detection
+   * ========================================================================
+   * Automatically detect document type based on filename patterns.
+   * This helps users by auto-selecting the right analysis model.
+   * 
+   * Pattern matching is case-insensitive:
+   * - "bank_statement_2024.pdf" -> bank_statement
+   * - "Invoice-001.pdf" -> invoice
+   * - "receipt.jpg" -> receipt
+   * - "W2_2023.pdf" -> tax_w2
+   * - "document.pdf" -> prebuilt-layout (default)
    */
   private getDocumentType(filename: string): string {
     const lower = filename.toLowerCase();
@@ -188,13 +283,24 @@ export class FileUploadComponent {
       return 'tax_w2';
     }
     
-    // Default to layout for general documents
+    // Default: general layout analysis
     return 'prebuilt-layout';
   }
 
   /**
+   * ========================================================================
+   * Upload Execution
+   * ========================================================================
+   * Performs the actual HTTP upload with progress tracking.
+   */
+
+  /**
    * Upload a single file to the backend.
-   * Updates the UploadFile object with progress and response.
+   * 
+   * Observable subscription provides:
+   * - next: Called multiple times with progress updates
+   * - error: Called once if upload fails
+   * - complete: Called when Observable finishes (we don't use this)
    */
   private uploadFile(uploadFile: UploadFile): void {
     uploadFile.status = 'uploading';
@@ -203,13 +309,16 @@ export class FileUploadComponent {
     const documentType = this.getDocumentType(uploadFile.file.name);
 
     this.apiService.uploadDocument(uploadFile.file, documentType, this.sessionId).subscribe({
+      // === Progress Updates ===
       next: (progress: UploadProgress) => {
         uploadFile.progress = progress.progress;
 
+        // Check if upload completed
         if (progress.status === 'complete' && progress.response) {
           uploadFile.status = progress.response.success ? 'complete' : 'error';
           uploadFile.response = progress.response;
           
+          // Emit success event to parent
           if (progress.response.success) {
             this.uploadComplete.emit(progress.response);
           } else {
@@ -219,6 +328,7 @@ export class FileUploadComponent {
           this.checkAllUploadsComplete();
         }
       },
+      // === Error Handler ===
       error: (error) => {
         uploadFile.status = 'error';
         uploadFile.progress = 0;
@@ -229,11 +339,19 @@ export class FileUploadComponent {
   }
 
   /**
-   * Check if all uploads are complete and emit event.
+   * ========================================================================
+   * Queue Management
+   * ========================================================================
+   * Methods for managing the upload queue.
+   */
+
+  /**
+   * Check if all uploads are complete and emit batch event.
    */
   private checkAllUploadsComplete(): void {
     const allDone = this.uploadFiles.every(f => f.status === 'complete' || f.status === 'error');
     if (allDone && this.uploadFiles.length > 0) {
+      // Collect all successful responses
       const successfulResponses = this.uploadFiles
         .filter(f => f.status === 'complete' && f.response)
         .map(f => f.response!);
@@ -242,14 +360,14 @@ export class FileUploadComponent {
   }
 
   /**
-   * Remove a file from the upload list.
+   * Remove a file from the upload list (user dismissed it).
    */
   removeFile(index: number): void {
     this.uploadFiles.splice(index, 1);
   }
 
   /**
-   * Retry uploading a failed file.
+   * Retry a failed upload.
    */
   retryUpload(uploadFile: UploadFile): void {
     uploadFile.status = 'pending';
@@ -259,7 +377,14 @@ export class FileUploadComponent {
   }
 
   /**
-   * Format file size for display (e.g., "2.5 MB").
+   * ========================================================================
+   * Utility Methods - Display Formatting
+   * ========================================================================
+   */
+
+  /**
+   * Format file size for human-readable display.
+   * Examples: "512 B", "2.5 KB", "1.2 MB"
    */
   formatFileSize(bytes: number): string {
     if (bytes < 1024) return bytes + ' B';
@@ -268,7 +393,8 @@ export class FileUploadComponent {
   }
 
   /**
-   * Get icon class based on file extension.
+   * Get Bootstrap icon class based on file extension.
+   * Used in template for file type icons.
    */
   getFileIcon(filename: string): string {
     const ext = filename.split('.').pop()?.toLowerCase();

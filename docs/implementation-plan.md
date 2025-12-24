@@ -43,5 +43,5 @@
 - [x] **Day 26:** Cleanup code (add comments, type hints, remove unused imports).
 - [ ] **Day 27:** Deploy Backend to Azure Container Apps or Render (production-like environment for demo).
 - [ ] **Day 28:** Deploy Frontend to GitHub Pages or Azure Static Web Apps and connect it to the live backend.
-- [ ] **Day 29:** Final Portfolio Update: Add project link to your main website.
+- [x] **Day 29:** Final Portfolio Update: Add project link to your main website.
 - [ ] **Day 30:** Celebrate! Post on LinkedIn.

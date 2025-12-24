@@ -5,7 +5,7 @@ import { catchError, map, tap, delay, retry, timeout } from 'rxjs/operators';
 
 /**
  * ============================================================================
- * TECHNICAL CONCEPT #1: TypeScript Interfaces
+ * TypeScript Interfaces
  * ============================================================================
  * Interfaces define the "shape" of data. They provide type safety and 
  * autocomplete in your IDE. Think of them as contracts that objects must follow.
@@ -40,7 +40,7 @@ export interface ChatMessage {
 
 /**
  * ============================================================================
- * TECHNICAL CONCEPT #2: Angular Services & Dependency Injection
+ * Angular Services & Dependency Injection
  * ============================================================================
  * 
  * @Injectable({ providedIn: 'root' })
@@ -59,7 +59,7 @@ export interface ChatMessage {
 export class ChatService {
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #3: Environment Configuration
+   * Environment Configuration
    * ========================================================================
    * In production, you'd use environment.ts files:
    * - environment.ts (development)
@@ -71,7 +71,7 @@ export class ChatService {
 
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #4: RxJS BehaviorSubject
+   * RxJS BehaviorSubject
    * ========================================================================
    * 
    * BehaviorSubject is a special type of Observable that:
@@ -98,7 +98,7 @@ export class ChatService {
 
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #5: HttpClient Dependency Injection
+   * HttpClient Dependency Injection
    * ========================================================================
    * 
    * Constructor injection is Angular's way of requesting dependencies.
@@ -116,7 +116,7 @@ export class ChatService {
 
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #6: RxJS Observables & HTTP Requests
+   * RxJS Observables & HTTP Requests
    * ========================================================================
    * 
    * Observable<T> represents a stream of values over time.
@@ -136,7 +136,7 @@ export class ChatService {
   sendMessage(message: string, sessionId: string): Observable<ChatResponse> {
     /**
      * ======================================================================
-     * TECHNICAL CONCEPT #7: Request Payload Construction
+     * Request Payload Construction
      * ======================================================================
      * We create a typed object matching the backend's expected format.
      * TypeScript ensures we don't miss required fields or use wrong types.
@@ -152,7 +152,7 @@ export class ChatService {
 
     /**
      * ======================================================================
-     * TECHNICAL CONCEPT #8: RxJS Operators & Pipe
+     * RxJS Operators & Pipe
      * ======================================================================
      * 
      * .pipe() allows us to chain operators that transform the Observable.
@@ -195,7 +195,7 @@ export class ChatService {
 
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #9: HTTP Error Handling
+   * HTTP Error Handling
    * ========================================================================
    * 
    * HttpErrorResponse contains:
@@ -250,7 +250,7 @@ export class ChatService {
 
     /**
      * ======================================================================
-     * TECHNICAL CONCEPT #10: throwError
+     * throwError
      * ======================================================================
      * throwError() creates an Observable that immediately errors.
      * This allows the component to handle the error in its subscribe block.
@@ -260,7 +260,7 @@ export class ChatService {
 
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #11: Simulating Typing Delay (UX Enhancement)
+   * Simulating Typing Delay (UX Enhancement)
    * ========================================================================
    * 
    * This adds a realistic typing delay before showing the agent's response.
@@ -280,7 +280,7 @@ export class ChatService {
 
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #12: Health Check Endpoint
+   * Health Check Endpoint
    * ========================================================================
    * 
    * Good practice: Check if the service is available before using it.
@@ -297,7 +297,7 @@ export class ChatService {
 
   /**
    * ========================================================================
-   * TECHNICAL CONCEPT #13: Utility Methods
+   * Utility Methods
    * ========================================================================
    * Helper methods for common operations
    */
