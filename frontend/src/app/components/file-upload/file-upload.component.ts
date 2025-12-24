@@ -21,7 +21,6 @@
 
 import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { trigger, state, style, transition, animate } from '@angular/animations';
 import { ApiService, DocumentUploadResponse, UploadProgress } from '../../services/api.service';
 
 
@@ -42,42 +41,18 @@ export interface UploadFile {
 
 /**
  * ============================================================================
- * Component Decorator with Animations
+ * Component Decorator
  * ============================================================================
- * Animations defined here can be used in the template with [@animationName]
+ * Note: Animations are now handled via native CSS in the SCSS file.
+ * As of Angular v20.2, @angular/animations is deprecated.
+ * Use CSS transitions/animations with animate.enter and animate.leave instead.
  */
 @Component({
   selector: 'app-file-upload',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './file-upload.component.html',
-  styleUrl: './file-upload.component.scss',
-  animations: [
-    /**
-     * Progress Bar Animation
-     * Smoothly transitions the width of progress bars.
-     * The {{ progress }} parameter is bound from the template.
-     */
-    trigger('progressAnimation', [
-      state('*', style({ width: '{{progress}}%' }), { params: { progress: 0 } }),
-      transition('* => *', animate('300ms ease-out'))
-    ]),
-    /**
-     * File Item Animation
-     * Fades and slides file items when added/removed from the list.
-     * :enter = when element is added to DOM
-     * :leave = when element is removed from DOM
-     */
-    trigger('fadeSlideIn', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(-10px)' }),
-        animate('200ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
-      ]),
-      transition(':leave', [
-        animate('200ms ease-in', style({ opacity: 0, transform: 'translateY(-10px)' }))
-      ])
-    ])
-  ]
+  styleUrl: './file-upload.component.scss'
 })
 export class FileUploadComponent {
   /**

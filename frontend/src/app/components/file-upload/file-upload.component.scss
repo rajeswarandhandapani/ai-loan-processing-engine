@@ -1,4 +1,33 @@
-// Minimal custom styles - most styling now via Bootstrap utilities
+// ============================================================================
+// Native CSS Animations (Angular v20.2+)
+// ============================================================================
+// Replaces deprecated @angular/animations with native CSS transitions.
+// These animations work with Angular's animate.enter and animate.leave.
+
+// File item fade-in animation
+.file-item {
+  animation: fadeSlideIn 200ms ease-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Progress bar smooth transition
+.progress-bar {
+  transition: width 300ms ease-out;
+}
+
+// ============================================================================
+// Component Styles
+// ============================================================================
 
 .drop-zone {
   cursor: pointer;

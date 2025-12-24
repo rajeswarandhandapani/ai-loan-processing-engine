@@ -15,7 +15,6 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { routes } from './app.routes';
 
@@ -28,18 +27,21 @@ import { routes } from './app.routes';
  * - provideBrowserGlobalErrorListeners(): Global error handling
  * - provideRouter(routes): Enable routing between pages
  * - provideHttpClient(): Enable HTTP requests to backend API
- * - provideAnimationsAsync(): Enable Angular animations (lazy loaded)
  * 
  * withInterceptorsFromDi(): Allows HTTP interceptors for:
  * - Adding auth headers to requests
  * - Handling errors globally
  * - Logging requests/responses
+ * 
+ * Note on Animations:
+ * As of Angular v20.2, @angular/animations is deprecated.
+ * Use native CSS animations with animate.enter and animate.leave instead.
+ * See: https://angular.dev/guide/animations
  */
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),  // Global error handling
     provideRouter(routes),                  // Client-side routing
-    provideHttpClient(withInterceptorsFromDi()),  // HTTP client with interceptors
-    provideAnimationsAsync()                // Animations (lazy loaded)
+    provideHttpClient(withInterceptorsFromDi())  // HTTP client with interceptors
   ]
 };
