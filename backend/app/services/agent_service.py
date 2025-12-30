@@ -44,18 +44,6 @@ from app.tools.session_document_tool import current_session_id
 logger = get_logger(__name__)
 
 
-# ============================================================================
-# System Prompt Loading
-# ============================================================================
-# The system prompt defines the agent's personality and behavior.
-# Stored in a separate markdown file for easy editing without code changes.
-# 
-# Why external file?
-# - Easier to iterate on prompts
-# - Non-developers can edit prompts
-# - Version control for prompt changes
-# - Can swap prompts for different use cases
-
 def _load_system_prompt() -> str:
     """Load the system prompt from the markdown file."""
     prompt_file = Path(__file__).parent.parent / "prompts" / "loan_officer_system_prompt.md"
@@ -76,32 +64,20 @@ def _load_system_prompt() -> str:
         raise
 
 
-# ============================================================================
-# LLM Factory Function
-# ============================================================================
-# Creates the appropriate LLM based on configuration.
-# Supports multiple providers for flexibility and failover.
-# 
-# Timeout and retry settings ensure reliability:
-# - timeout: Cancel slow requests
-# - max_retries: Handle transient failures
-
 def _create_llm() -> BaseChatModel:
-    """Create the LLM based on configured provider with timeout and retry settings."""
+    """Create the LLM based on configured provider."""
     provider = settings.LLM_PROVIDER
     
     if provider == "anthropic":
-        # === Anthropic Claude Configuration ===
         logger.info(f"Initializing Anthropic Claude with model: {settings.ANTHROPIC_MODEL}")
         return ChatAnthropic(
             api_key=settings.ANTHROPIC_API_KEY,
             model=settings.ANTHROPIC_MODEL,
             max_tokens=2048,
-            timeout=60.0,       # 60 second timeout
-            max_retries=2       # Retry twice on failure
+            timeout=60.0,
+            max_retries=2
         )
     else:
-        # === Azure OpenAI Configuration ===
         logger.info(f"Initializing Azure OpenAI LLM with deployment: {settings.AZURE_OPENAI_DEPLOYMENT_NAME}")
         return AzureChatOpenAI(
             azure_endpoint=settings.AZURE_OPENAI_ENDPOINT,
@@ -109,8 +85,8 @@ def _create_llm() -> BaseChatModel:
             azure_deployment=settings.AZURE_OPENAI_DEPLOYMENT_NAME,
             api_version=settings.AZURE_OPENAI_API_VERSION,
             max_tokens=2048,
-            timeout=60.0,       # 60 second timeout
-            max_retries=2       # Retry twice on failure
+            timeout=60.0,
+            max_retries=2
         )
 
 
@@ -131,9 +107,7 @@ class AgentService:
     def __init__(self):
         logger.info("Initializing AgentService...")
         
-        # === LangSmith Tracing Setup ===
-        # LangSmith provides observability for LangChain/LangGraph applications.
-        # Useful for debugging agent decisions and tool usage.
+        # LangSmith Tracing Setup
         import os
         if settings.LANGSMITH_TRACING:
             logger.debug("LangSmith tracing enabled")
@@ -145,37 +119,28 @@ class AgentService:
         else:
             logger.debug("LangSmith tracing disabled")
 
-        # === LLM Initialization ===
+        # LLM Initialization
         self.llm = _create_llm()
 
-        # === Tool Registration ===
-        # These tools give the agent capabilities beyond just text generation.
-        # The agent decides when to use each tool based on user messages.
+        # Tool Registration
         self.tools = [
-            search_lending_policy,                      # RAG for policy Q&A
-            analyze_user_sentiment,                     # Sentiment detection
-            extract_entities,                           # Entity extraction
-            analyze_text_comprehensive,                 # Combined NLP analysis
-            get_analyzed_financial_documents_from_session  # Document access
+            search_lending_policy,
+            analyze_user_sentiment,
+            extract_entities,
+            analyze_text_comprehensive,
+            get_analyzed_financial_documents_from_session
         ]
 
-        # === System Prompt Loading ===
+        # System Prompt Loading
         logger.debug("Loading system prompt from file...")
         self.system_prompt = _load_system_prompt()
         logger.info(f"System prompt loaded successfully ({len(self.system_prompt)} characters)")
 
-        # === Checkpointer for Conversation Memory ===
-        # InMemorySaver stores conversation history in RAM.
-        # Each session_id gets its own conversation thread.
-        # Note: Data is lost on server restart (use PostgresSaver for persistence)
+        # Checkpointer for Conversation Memory
         logger.debug("Initializing in-memory checkpointer for session state")
         self.checkpointer = InMemorySaver()
 
-        # === Agent Creation ===
-        # create_agent() builds a LangGraph agent that:
-        # 1. Takes user messages
-        # 2. Decides if tools are needed
-        # 3. Executes tools and generates responses
+        # Agent Creation
         logger.debug(f"Creating agent with {len(self.tools)} tools")
         self.agent = create_agent(
             model=self.llm,

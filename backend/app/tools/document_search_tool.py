@@ -37,43 +37,19 @@ from app.logging_config import get_logger
 logger = get_logger(__name__)
 
 
-# ============================================================================
-# Embedding Generation
-# ============================================================================
-# Embeddings convert text to numerical vectors that capture meaning.
-# Similar texts have similar vectors (close in vector space).
-# 
-# Example:
-# - "loan application" -> [0.12, -0.34, 0.56, ...] (1536 dimensions)
-# - "credit request" -> [0.11, -0.33, 0.55, ...]  (similar vector!)
-# - "weather forecast" -> [-0.45, 0.22, -0.11, ...] (very different)
-
 def _generate_embedding(text: str) -> List[float]:
-    """
-    Generate an embedding for the given text.
-
-    Args:
-        text: The text to generate an embedding for
-    
-    Returns:
-        A list of floating-point numbers representing the embedding
-        
-    Raises:
-        Exception: If embedding generation fails with descriptive error message
-    """
+    """Generate an embedding for the given text."""
     logger.debug(f"Generating embedding for text: {text[:100]}...")
     
     try:
-        # Create Azure OpenAI client for embeddings
         openai_client = AzureOpenAI(
             azure_endpoint=settings.AZURE_OPENAI_ENDPOINT,
             api_key=settings.AZURE_OPENAI_API_KEY,
             api_version=settings.AZURE_OPENAI_API_VERSION,
-            timeout=30.0,       # 30 second timeout
-            max_retries=2       # Retry on transient failures
+            timeout=30.0,
+            max_retries=2
         )
         
-        # Generate embedding using text-embedding model
         response = openai_client.embeddings.create(
             input=text,
             model=settings.AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME
@@ -82,8 +58,6 @@ def _generate_embedding(text: str) -> List[float]:
         logger.debug(f"Embedding generated successfully (dimension: {len(response.data[0].embedding)})")
         return response.data[0].embedding
         
-    # === Error Handling ===
-    # Provide user-friendly error messages for different failure modes
     except APITimeoutError as e:
         logger.error(f"Timeout generating embedding: {str(e)}")
         raise Exception("Embedding generation timed out. Please try again.")

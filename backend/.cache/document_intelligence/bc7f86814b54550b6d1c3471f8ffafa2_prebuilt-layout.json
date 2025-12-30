@@ -1,0 +1,1232 @@
+{
+  "document_type": "prebuilt-layout",
+  "model_id": "prebuilt-layout",
+  "content": "ACME TECH SOLUTIONS LLC Accounts Receivable Aging Report As of December 15, 2024\nAccounts Receivable Collateral Summary\nTotal Accounts Receivable:\n$127,500.00\nEligible Receivables (Current + 1-30 days):\n$118,500.00\nCollateral Value (80% advance rate):\n$94,800.00\nAverage Days Sales Outstanding:\n28 days\n$95,000 Current (0-30 days)\n$23,500 31-60 Days\n$7,500 61-90 Days\n$1,500 Over 90 Days\nDetailed Accounts Receivable Aging\nCustomer\nInvoice #\nInvoice Date\nDue Date\nCurrent\n1-30 Days\n31-60 Days\n90+ Day\nTechCorp Industries\nINV-2024-089\nDec 1, 2024\nDec 31, 2024\n$28,500.00\n-\n-\nTechCorp Industries\nINV-2024-082\nNov 15, 2024\nDec 15, 2024\n$15,000.00\n-\n-\nGlobal Financial Services\nINV-2024-085\nNov 20, 2024\nDec 20, 2024\n$22,000.00\n-\n-\nGlobal Financial Services\nINV-2024-078\nOct 25, 2024\nNov 24, 2024\n-\n$12,500.00\n-\nMedTech Solutions Inc.\nINV-2024-087\nNov 25, 2024\nJan 9, 2025\n$18,500.00\n-\n-\nStartupXYZ LLC\nINV-2024-080\nNov 5, 2024\nDec 5, 2024\n-\n$11,000.00\n-\nRetail Solutions Co.\nINV-2024-072\nOct 10, 2024\nNov 9, 2024\n-\n-\n$7,500.00\nDataDriven Analytics\nINV-2024-090\nDec 5, 2024\nJan 4, 2025\n$11,000.00\n-\n-\nLegacy Systems\nAug 15, 2024\nSep\n-\nINV-2024-058\n14,\n-\n-\n$1,500.0\nInc.\n2024\nTOTAL ACCOUNTS RECEIVABLE\n$95,000.00\n$23,500.00\n$7,500.00\n$1,500.0\nCollateral Eligibility Calculation\nCategory\nAmount\nEligibility\nAdvance Rate\nCollateral Value\nCurrent (0-30 days)\n$95,000.00\nEligible\n80%\n$76,000.00\n1-30 Days Past Due\n$23,500.00\nEligible\n80%\n$18,800.00\n31-60 Days Past Due\n$7,500.00\nPartially Eligible\n50%\n$3,750.00\nOver 90 Days Past Due\n$1,500.00\nIneligible\n0%\n$0.00\nTOTAL COLLATERAL VALUE\n$127,500.00\n$98,550.00\nTop Customer Concentration\nCustomer\nOutstanding\n% of AR\nCredit Rating\nPayment History\nTechCorp Industries\n$43,500.00\n34.1%\nA+\nExcellent\nGlobal Financial Services\n$34,500.00\n27.1%\nA\nGood\nMedTech Solutions Inc.\n$18,500.00\n14.5%\nA\nExcellent\nAll Others\n$31,000.00\n24.3%\nVarious\nMixed\nAccounts Receivable Notes\n\u00b7 Bad Debt Reserve: $2,500 (2% of total AR) - Legacy Systems Inc. invoice under collection.\n. Concentration: Top 3 customers represent 75.7% of AR - all with strong credit ratings.\n. Collection Policy: Net 30 terms standard; Net 45 for select enterprise clients.\n\u00b7 Verification: All receivables verified against customer purchase orders and contracts.\nOwner Certification\nI, Michael Chen, as Managing Member of Acme Tech Solutions LLC, hereby certify that the accounts receivable listed above represent valid, undisputed amounts owed to the company, and I authorize the lender to verify these receivables directly with customers if required.\nSignature:\nDate: December 15, 2024",
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "ACME TECH SOLUTIONS LLC",
+        "Accounts Receivable Aging Report",
+        "As of December 15, 2024",
+        "Accounts Receivable Collateral Summary",
+        "Total Accounts Receivable:",
+        "$127,500.00",
+        "Eligible Receivables (Current + 1-30 days):",
+        "$118,500.00",
+        "Collateral Value (80% advance rate):",
+        "$94,800.00",
+        "Average Days Sales Outstanding:",
+        "28 days",
+        "$95,000",
+        "Current (0-30 days)",
+        "$23,500",
+        "31-60 Days",
+        "$7,500",
+        "61-90 Days",
+        "$1,500",
+        "Over 90 Days",
+        "Detailed Accounts Receivable Aging",
+        "Customer",
+        "Invoice #",
+        "Invoice",
+        "Date",
+        "Due",
+        "Date",
+        "Current",
+        "1-30 Days",
+        "31-60",
+        "Days",
+        "90+ Day",
+        "TechCorp",
+        "Industries",
+        "INV-2024-089",
+        "Dec 1,",
+        "2024",
+        "Dec",
+        "31,",
+        "2024",
+        "$28,500.00",
+        "-",
+        "-",
+        "TechCorp",
+        "Industries",
+        "INV-2024-082",
+        "Nov 15,",
+        "2024",
+        "Dec",
+        "15,",
+        "2024",
+        "$15,000.00",
+        "-",
+        "-",
+        "Global",
+        "Financial",
+        "Services",
+        "INV-2024-085",
+        "Nov 20,",
+        "2024",
+        "Dec",
+        "20,",
+        "2024",
+        "$22,000.00",
+        "-",
+        "-",
+        "Global",
+        "Financial",
+        "Services",
+        "INV-2024-078",
+        "Oct 25,",
+        "2024",
+        "Nov",
+        "24,",
+        "2024",
+        "-",
+        "$12,500.00",
+        "-",
+        "MedTech",
+        "Solutions",
+        "Inc.",
+        "INV-2024-087",
+        "Nov 25,",
+        "2024",
+        "Jan",
+        "9,",
+        "2025",
+        "$18,500.00",
+        "-",
+        "-",
+        "StartupXYZ",
+        "LLC",
+        "INV-2024-080",
+        "Nov 5,",
+        "2024",
+        "Dec",
+        "5,",
+        "2024",
+        "-",
+        "$11,000.00",
+        "-",
+        "Retail",
+        "Solutions",
+        "Co.",
+        "INV-2024-072",
+        "Oct 10,",
+        "2024",
+        "Nov",
+        "9,",
+        "2024",
+        "-",
+        "-",
+        "$7,500.00"
+      ],
+      "words_count": 160
+    },
+    {
+      "page_number": 2,
+      "width": 8.2639,
+      "height": 11.6806,
+      "unit": "inch",
+      "lines": [
+        "DataDriven",
+        "Analytics",
+        "INV-2024-090",
+        "Dec 5,",
+        "2024",
+        "Jan",
+        "4,",
+        "2025",
+        "$11,000.00",
+        "-",
+        "-",
+        "Legacy",
+        "Systems",
+        "Aug 15,",
+        "2024",
+        "Sep",
+        "-",
+        "INV-2024-058",
+        "14,",
+        "-",
+        "-",
+        "$1,500.0",
+        "Inc.",
+        "2024",
+        "TOTAL ACCOUNTS RECEIVABLE",
+        "$95,000.00",
+        "$23,500.00",
+        "$7,500.00",
+        "$1,500.0",
+        "Collateral Eligibility Calculation",
+        "Category",
+        "Amount",
+        "Eligibility",
+        "Advance",
+        "Rate",
+        "Collateral",
+        "Value",
+        "Current (0-30 days)",
+        "$95,000.00",
+        "Eligible",
+        "80%",
+        "$76,000.00",
+        "1-30 Days Past Due",
+        "$23,500.00",
+        "Eligible",
+        "80%",
+        "$18,800.00",
+        "31-60 Days Past Due",
+        "$7,500.00",
+        "Partially",
+        "Eligible",
+        "50%",
+        "$3,750.00",
+        "Over 90 Days Past Due",
+        "$1,500.00",
+        "Ineligible",
+        "0%",
+        "$0.00",
+        "TOTAL",
+        "COLLATERAL",
+        "VALUE",
+        "$127,500.00",
+        "$98,550.00",
+        "Top Customer Concentration",
+        "Customer",
+        "Outstanding",
+        "% of",
+        "AR",
+        "Credit",
+        "Rating",
+        "Payment",
+        "History",
+        "TechCorp Industries",
+        "$43,500.00",
+        "34.1%",
+        "A+",
+        "Excellent",
+        "Global Financial",
+        "Services",
+        "$34,500.00",
+        "27.1%",
+        "A",
+        "Good",
+        "MedTech Solutions Inc.",
+        "$18,500.00",
+        "14.5%",
+        "A",
+        "Excellent",
+        "All Others",
+        "$31,000.00",
+        "24.3%",
+        "Various",
+        "Mixed",
+        "Accounts Receivable Notes",
+        "\u00b7 Bad Debt Reserve: $2,500 (2% of total AR) - Legacy Systems Inc. invoice under",
+        "collection.",
+        ". Concentration: Top 3 customers represent 75.7% of AR - all with strong credit ratings.",
+        ". Collection Policy: Net 30 terms standard; Net 45 for select enterprise clients.",
+        "\u00b7 Verification: All receivables verified against customer purchase orders and contracts.",
+        "Owner Certification",
+        "I, Michael Chen, as Managing Member of Acme Tech Solutions LLC, hereby certify that the",
+        "accounts receivable listed above represent valid, undisputed amounts owed to the company,",
+        "and I authorize the lender to verify these receivables directly with customers if required.",
+        "Signature:",
+        "Date: December 15, 2024"
+      ],
+      "words_count": 225
+    }
+  ],
+  "tables": [
+    {
+      "row_count": 5,
+      "column_count": 2,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Accounts Receivable Collateral Summary",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Total Accounts Receivable:",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "$127,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Eligible Receivables (Current + 1-30 days):",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "$118,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Collateral Value (80% advance rate):",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$94,800.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Average Days Sales Outstanding:",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "28 days",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 8,
+      "column_count": 8,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Customer",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Invoice #",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "Invoice Date",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 3,
+          "content": "Due Date",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 4,
+          "content": "Current",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 5,
+          "content": "1-30 Days",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 6,
+          "content": "31-60 Days",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 7,
+          "content": "90+ Day",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "TechCorp Industries",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "INV-2024-089",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "Dec 1, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 3,
+          "content": "Dec 31, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 4,
+          "content": "$28,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 5,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 6,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 7,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "TechCorp Industries",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "INV-2024-082",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 2,
+          "content": "Nov 15, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 3,
+          "content": "Dec 15, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 4,
+          "content": "$15,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 5,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 6,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 7,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Global Financial Services",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "INV-2024-085",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 2,
+          "content": "Nov 20, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 3,
+          "content": "Dec 20, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 4,
+          "content": "$22,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 5,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 6,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 7,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Global Financial Services",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "INV-2024-078",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 2,
+          "content": "Oct 25, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 3,
+          "content": "Nov 24, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 4,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 5,
+          "content": "$12,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 6,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 7,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "MedTech Solutions Inc.",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "INV-2024-087",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 2,
+          "content": "Nov 25, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 3,
+          "content": "Jan 9, 2025",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 4,
+          "content": "$18,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 5,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 6,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 7,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 0,
+          "content": "StartupXYZ LLC",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 1,
+          "content": "INV-2024-080",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 2,
+          "content": "Nov 5, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 3,
+          "content": "Dec 5, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 4,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 5,
+          "content": "$11,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 6,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 6,
+          "column_index": 7,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 0,
+          "content": "Retail Solutions Co.",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 1,
+          "content": "INV-2024-072",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 2,
+          "content": "Oct 10, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 3,
+          "content": "Nov 9, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 4,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 5,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 6,
+          "content": "$7,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 7,
+          "column_index": 7,
+          "content": "",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 5,
+      "column_count": 8,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "DataDriven Analytics",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "INV-2024-090",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "Dec 5, 2024",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 3,
+          "content": "Jan 4, 2025",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 4,
+          "content": "$11,000.00",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 5,
+          "content": "-",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 6,
+          "content": "-",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 7,
+          "content": "",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Legacy Systems",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "Aug 15, 2024",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 3,
+          "content": "Sep",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 4,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 5,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 6,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 7,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "INV-2024-058",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 3,
+          "content": "14,",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 4,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 5,
+          "content": "-",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 7,
+          "content": "$1,500.0",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "Inc.",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 3,
+          "content": "2024",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 4,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 5,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "TOTAL ACCOUNTS RECEIVABLE",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 3,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 4,
+          "content": "$95,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 5,
+          "content": "$23,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 6,
+          "content": "$7,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 7,
+          "content": "$1,500.0",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 6,
+      "column_count": 5,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Category",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Amount",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "Eligibility",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 3,
+          "content": "Advance Rate",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 4,
+          "content": "Collateral Value",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "Current (0-30 days)",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "$95,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "Eligible",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 3,
+          "content": "80%",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 4,
+          "content": "$76,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "1-30 Days Past Due",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "$23,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 2,
+          "content": "Eligible",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 3,
+          "content": "80%",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 4,
+          "content": "$18,800.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "31-60 Days Past Due",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$7,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 2,
+          "content": "Partially Eligible",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 3,
+          "content": "50%",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 4,
+          "content": "$3,750.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "Over 90 Days Past Due",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "$1,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 2,
+          "content": "Ineligible",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 3,
+          "content": "0%",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 4,
+          "content": "$0.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 0,
+          "content": "TOTAL COLLATERAL VALUE",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 1,
+          "content": "$127,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 2,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 3,
+          "content": "",
+          "kind": null
+        },
+        {
+          "row_index": 5,
+          "column_index": 4,
+          "content": "$98,550.00",
+          "kind": null
+        }
+      ]
+    },
+    {
+      "row_count": 5,
+      "column_count": 5,
+      "cells": [
+        {
+          "row_index": 0,
+          "column_index": 0,
+          "content": "Customer",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 1,
+          "content": "Outstanding",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 2,
+          "content": "% of AR",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 3,
+          "content": "Credit Rating",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 0,
+          "column_index": 4,
+          "content": "Payment History",
+          "kind": "columnHeader"
+        },
+        {
+          "row_index": 1,
+          "column_index": 0,
+          "content": "TechCorp Industries",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 1,
+          "content": "$43,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 2,
+          "content": "34.1%",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 3,
+          "content": "A+",
+          "kind": null
+        },
+        {
+          "row_index": 1,
+          "column_index": 4,
+          "content": "Excellent",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 0,
+          "content": "Global Financial Services",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 1,
+          "content": "$34,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 2,
+          "content": "27.1%",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 3,
+          "content": "A",
+          "kind": null
+        },
+        {
+          "row_index": 2,
+          "column_index": 4,
+          "content": "Good",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 0,
+          "content": "MedTech Solutions Inc.",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 1,
+          "content": "$18,500.00",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 2,
+          "content": "14.5%",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 3,
+          "content": "A",
+          "kind": null
+        },
+        {
+          "row_index": 3,
+          "column_index": 4,
+          "content": "Excellent",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 0,
+          "content": "All Others",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 1,
+          "content": "$31,000.00",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 2,
+          "content": "24.3%",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 3,
+          "content": "Various",
+          "kind": null
+        },
+        {
+          "row_index": 4,
+          "column_index": 4,
+          "content": "Mixed",
+          "kind": null
+        }
+      ]
+    }
+  ],
+  "fields": {},
+  "documents": [],
+  "raw_response": null
+}

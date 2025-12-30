@@ -98,7 +98,6 @@ class DocumentCache:
         Args:
             cache_key: Cache key to save under
             data: Pydantic model instance to cache
-            
         Returns:
             True if saved successfully, False otherwise
         """
@@ -114,6 +113,30 @@ class DocumentCache:
         except Exception as e:
             logger.warning(f"Failed to save cache {cache_path.name}: {e}")
             return False
+    
+    def invalidate(self, cache_key: str) -> bool:
+        """
+        Invalidate a cached item.
+        
+        Args:
+            cache_key: Cache key to invalidate
+            
+        Returns:
+            True if item was invalidated, False if not found
+        """
+        if not self.enabled:
+            return False
+        
+        cache_path = self.get_cache_path(cache_key)
+        if cache_path.exists():
+            cache_path.unlink()
+            logger.info(f"Invalidated cache: {cache_path.name}")
+            return True
+        return False
+    
+    def is_enabled(self) -> bool:
+        """Check if caching is enabled."""
+        return self.enabled
     
     def clear(self, cache_key: Optional[str] = None) -> int:
         """

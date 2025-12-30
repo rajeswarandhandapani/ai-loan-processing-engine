@@ -19,6 +19,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpEventType, HttpRequest } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 
 /**
@@ -80,10 +81,10 @@ export interface DocumentUploadResponse {
 })
 export class ApiService {
   /**
-   * Backend API base URL.
-   * In production, use environment.ts for configuration.
+   * Backend API base URL from environment configuration.
+   * Follows Open/Closed: Configuration can change without code changes.
    */
-  private readonly baseUrl = 'http://localhost:8000/api/v1';
+  private readonly baseUrl = environment.apiBaseUrl;
 
   /**
    * Constructor Dependency Injection.

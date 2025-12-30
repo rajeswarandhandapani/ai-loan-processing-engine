@@ -22,6 +22,7 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService, DocumentUploadResponse, UploadProgress } from '../../services/api.service';
+import { FileValidationService, ValidationResult } from '../../services/file-validation.service';
 
 
 /**
@@ -83,21 +84,17 @@ export class FileUploadComponent {
   isDragOver = false;              // Visual feedback for drag state
 
   /**
-   * ========================================================================
-   * Validation Configuration
-   * ========================================================================
-   * These limits must match the backend to avoid server-side rejections.
-   * Keep in sync with: backend/app/routers/document_intelligence_router.py
-   */
-  private readonly allowedExtensions = ['.pdf', '.png', '.jpg', '.jpeg', '.tiff', '.bmp'];
-  private readonly maxPdfSize = 15 * 1024 * 1024;   // 15MB for PDFs
-  private readonly maxImageSize = 5 * 1024 * 1024;  // 5MB for images
-
-  /**
    * Constructor with Dependency Injection.
-   * ApiService is injected to handle HTTP uploads.
+   * 
+   * Follows Dependency Inversion: Depends on abstractions (services).
+   * 
+   * @param apiService - Handles HTTP uploads
+   * @param validationService - Handles file validation (Single Responsibility)
    */
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private validationService: FileValidationService
+  ) {}
 
   /**
    * ========================================================================
@@ -192,33 +189,13 @@ export class FileUploadComponent {
 
   /**
    * ========================================================================
-   * File Validation
+   * File Validation (Delegated to Service)
    * ========================================================================
-   * Validate file type and size before uploading.
-   * Returns validation result with optional error message.
+   * Delegates to FileValidationService following Single Responsibility.
+   * Validation logic is centralized and reusable.
    */
-  private validateFile(file: File): { valid: boolean; error?: string } {
-    // === Extension Check ===
-    const extension = '.' + file.name.split('.').pop()?.toLowerCase();
-    if (!this.allowedExtensions.includes(extension)) {
-      return {
-        valid: false,
-        error: `Invalid file type. Allowed: ${this.allowedExtensions.join(', ')}`
-      };
-    }
-
-    // === Size Check ===
-    // PDFs get larger limit than images
-    const maxSize = extension === '.pdf' ? this.maxPdfSize : this.maxImageSize;
-    if (file.size > maxSize) {
-      const maxSizeMB = maxSize / 1024 / 1024;
-      return {
-        valid: false,
-        error: `File too large. Maximum size: ${maxSizeMB}MB`
-      };
-    }
-
-    return { valid: true };
+  private validateFile(file: File): ValidationResult {
+    return this.validationService.validateFile(file);
   }
 
   /**
@@ -359,12 +336,10 @@ export class FileUploadComponent {
 
   /**
    * Format file size for human-readable display.
-   * Examples: "512 B", "2.5 KB", "1.2 MB"
+   * Delegates to validation service for consistency.
    */
   formatFileSize(bytes: number): string {
-    if (bytes < 1024) return bytes + ' B';
-    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
-    return (bytes / 1024 / 1024).toFixed(1) + ' MB';
+    return this.validationService.formatFileSize(bytes);
   }
 
   /**

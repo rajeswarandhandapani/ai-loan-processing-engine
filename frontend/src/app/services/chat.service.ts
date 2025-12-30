@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, BehaviorSubject, throwError, of } from 'rxjs';
 import { catchError, map, tap, delay, retry, timeout } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 /**
  * ============================================================================
@@ -61,13 +62,11 @@ export class ChatService {
    * ========================================================================
    * Environment Configuration
    * ========================================================================
-   * In production, you'd use environment.ts files:
-   * - environment.ts (development)
-   * - environment.prod.ts (production)
-   * 
-   * For now, we hardcode the URL. In Day 27, we'll make this configurable.
+   * Configuration loaded from environment files following Open/Closed Principle.
+   * Settings can change without modifying service code.
    */
-  private readonly baseUrl = 'http://localhost:8000/api/v1';
+  private readonly baseUrl = environment.apiBaseUrl;
+  private readonly config = environment.chat;
 
   /**
    * ========================================================================
@@ -180,11 +179,11 @@ export class ChatService {
      *    - Not used here, but common for data transformation
      */
     return this.http.post<ChatResponse>(`${this.baseUrl}/chat/`, payload).pipe(
-      // Cancel if no response after 30 seconds
-      timeout(30000),
+      // Cancel if no response after configured timeout
+      timeout(this.config.requestTimeoutMs),
       
-      // Retry once if request fails (network issues)
-      retry(1),
+      // Retry configured number of times if request fails (network issues)
+      retry(this.config.retryAttempts),
       
       // Handle errors gracefully
       catchError((error: HttpErrorResponse) => {
