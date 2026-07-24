@@ -15,31 +15,32 @@ Usage:
 import logging
 import os
 import sys
-from pathlib import Path
-from typing import List, Dict
 import time
+from pathlib import Path
 
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
+from azure.ai.documentintelligence import DocumentIntelligenceClient
 from azure.core.credentials import AzureKeyCredential
 from azure.search.documents import SearchClient
 from azure.search.documents.indexes import SearchIndexClient
 from azure.search.documents.indexes.models import (
-    SearchIndex,
+    HnswAlgorithmConfiguration,
+    SearchableField,
     SearchField,
     SearchFieldDataType,
+    SearchIndex,
     SimpleField,
-    SearchableField,
     VectorSearch,
     VectorSearchProfile,
-    HnswAlgorithmConfiguration,
 )
-from azure.ai.documentintelligence import DocumentIntelligenceClient
-from openai import AzureOpenAI
 
-from app.config import settings
-from app.logging_config import setup_logging, get_logger
+from app.core.clients import make_embeddings
+from app.core.config import get_settings
+from app.core.logging import get_logger, setup_logging
+
+settings = get_settings()
 
 # Initialize logging
 setup_logging()
@@ -67,16 +68,9 @@ class LendingPolicyIndexer:
         self.search_credential = AzureKeyCredential(settings.AZURE_SEARCH_KEY)
         self.index_name = "lending-policies"
         
-        # Initialize Azure OpenAI client for embeddings
-        self.openai_client = AzureOpenAI(
-            api_key=settings.AZURE_OPENAI_API_KEY,
-            api_version="2024-06-01",
-            azure_endpoint=settings.AZURE_OPENAI_ENDPOINT
-        )
-        
-        # Embedding model (text-embedding-ada-002 is common)
-        self.embedding_model = "text-embedding-ada-002"
-        
+        # Shared embeddings client (Azure OpenAI) — same factory the app uses
+        self.embeddings = make_embeddings(settings)
+
         # Initialize Document Intelligence client (optional, for PDF extraction)
         self.doc_intelligence_client = None
         if settings.AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT and settings.AZURE_DOCUMENT_INTELLIGENCE_KEY:
@@ -194,7 +188,7 @@ class LendingPolicyIndexer:
         result = index_client.create_or_update_index(index)
         logger.info(f"Index '{result.name}' created successfully")
     
-    def generate_embedding(self, text: str) -> List[float]:
+    def generate_embedding(self, text: str) -> list[float]:
         """Generate embeddings for text using Azure OpenAI.
         
         Args:
@@ -204,17 +198,13 @@ class LendingPolicyIndexer:
             List of floats representing the embedding vector
         """
         try:
-            response = self.openai_client.embeddings.create(
-                input=text,
-                model=self.embedding_model
-            )
-            return response.data[0].embedding
+            return self.embeddings.embed_query(text)
         except Exception as e:
             logger.warning(f"Error generating embedding: {e}")
             # Return a zero vector as fallback
             return [0.0] * 1536
     
-    def chunk_text(self, text: str, chunk_size: int = 1000, overlap: int = 200) -> List[str]:
+    def chunk_text(self, text: str, chunk_size: int = 1000, overlap: int = 200) -> list[str]:
         """Split text into overlapping chunks.
         
         Args:

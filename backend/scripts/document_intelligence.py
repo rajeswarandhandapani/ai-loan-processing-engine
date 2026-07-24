@@ -1,14 +1,17 @@
+import json
 import sys
 from pathlib import Path
-import json
-from azure.core.credentials import AzureKeyCredential
+
 from azure.ai.documentintelligence import DocumentIntelligenceClient
+from azure.core.credentials import AzureKeyCredential
 
 BACKEND_DIR = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = BACKEND_DIR / "tests/tests-output"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(BACKEND_DIR))
-from app.config import settings
+from app.core.config import get_settings
+
+settings = get_settings()
 
 document_intelligence_client = DocumentIntelligenceClient(
     endpoint=settings.AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT,

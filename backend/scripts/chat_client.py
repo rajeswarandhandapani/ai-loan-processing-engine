@@ -1,13 +1,16 @@
-import sys
 import logging
+import sys
 from pathlib import Path
+
 from openai import AzureOpenAI
 
 # Add backend directory to path to import app.config
 BACKEND_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BACKEND_DIR))
-from app.config import settings
-from app.logging_config import setup_logging, get_logger
+from app.core.config import get_settings
+from app.core.logging import get_logger, setup_logging
+
+settings = get_settings()
 
 # Initialize logging
 setup_logging()
