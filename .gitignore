@@ -28,10 +28,12 @@ env.bak/
 .mypy_cache/
 .dmypy.json
 .pyre/
+.ruff_cache/
 .coverage
 .coverage.*
 htmlcov/
 /.cache/
+# Note: backend/uv.lock is intentionally NOT ignored (committed for reproducibility)
 
 # Backend-specific (FastAPI app)
 backend/__pycache__/

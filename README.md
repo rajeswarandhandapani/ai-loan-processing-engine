@@ -133,7 +133,7 @@ ai-loan-processing-engine/
 
 ### Prerequisites
 - Azure Subscription (Free Tier works)
-- Python 3.11+
+- [uv](https://docs.astral.sh/uv/) (manages Python; the backend pins Python 3.12)
 - Node.js 18+
 - npm 9+
 
@@ -151,23 +151,20 @@ cd ai-loan-processing-engine
 # Navigate to backend directory
 cd backend
 
-# Create virtual environment
-python -m venv .venv
-
-# Activate virtual environment
-source .venv/bin/activate        # Linux/Mac
-# .venv\Scripts\activate         # Windows
-
-# Install dependencies
-pip install -r requirements.txt
+# Install dependencies (uv creates .venv and installs from uv.lock;
+# it auto-downloads Python 3.12 if needed)
+uv sync
 
 # Configure environment variables
 cp .env.example .env
 # Edit .env with your Azure credentials
 
 # Start the backend server
-uvicorn app.main:app --reload --port 8000
+uv run uvicorn app.main:app --reload --port 8000
 ```
+
+> 💡 Standalone scripts run the same way, e.g. `uv run python scripts/index_lending_policy.py`.
+> Dev tools are included via the `dev` group: `uv run pytest`, `uv run ruff check app`.
 
 > 🌐 Backend API will be available at: `http://localhost:8000`  
 > 📚 API Docs (Swagger): `http://localhost:8000/docs`
