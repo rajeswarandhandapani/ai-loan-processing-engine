@@ -4,27 +4,36 @@ version = "0.1.0"
 description = "AI Loan Processing Engine backend (FastAPI)"
 readme = "README.md"
 requires-python = ">=3.12"
+# Only DIRECT dependencies are declared here (packages the code imports or needs
+# to run). Transitive dependencies — pulled in automatically by the packages below —
+# are resolved and pinned in uv.lock, not listed here. Notably dropped from the
+# original requirements.txt as transitive/unused:
+#   - python-dotenv  (hard dependency of pydantic-settings; never imported directly)
+#   - azure-identity (never imported; AzureKeyCredential comes from azure-core)
+#   - aiofiles       (never imported anywhere)
+#   - httpx          (never imported anywhere)
 dependencies = [
-    # Core Frameworks
+    # Web framework / server
     "fastapi==0.122.0",
-    "uvicorn[standard]==0.38.0",
-    "python-multipart==0.0.20",
-    "python-dotenv==1.2.1",
+    "uvicorn[standard]==0.38.0",     # ASGI server used to run the app
+    "python-multipart==0.0.20",      # required by FastAPI for UploadFile / form parsing
+    # Data models / settings
     "pydantic==2.12.5",
     "pydantic-settings==2.12.0",
     # Azure AI Services
     "azure-ai-textanalytics==5.3.0",
     "azure-ai-documentintelligence==1.0.2",
     "azure-search-documents==11.6.0",
-    "azure-identity==1.25.1",
-    "openai==2.8.1",
+    # LLM providers
+    "openai==2.48.0",                # bumped from 2.8.1: langchain-openai 1.4.1 needs openai>=2.45.0
     # LangChain
-    "langchain==1.1.0",
-    "langchain-openai==1.1.0",
-    "langchain-anthropic==1.3.0",
-    # Utils
-    "aiofiles==25.1.0",
-    "httpx==0.28.1",
+    # NOTE: langchain 1.1.0 is broken on current PyPI — it pins langgraph<1.1.0
+    # (max 1.0.10), but every langgraph-prebuilt in that range imports
+    # `ExecutionInfo` from langgraph.runtime, which 1.0.x does not define.
+    # Bumped to the 1.3.x line, which resolves to langgraph 1.2.x (has ExecutionInfo).
+    "langchain==1.3.14",
+    "langchain-openai==1.4.1",
+    "langchain-anthropic==1.5.1",
 ]
 
 [dependency-groups]
