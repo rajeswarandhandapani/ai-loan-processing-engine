@@ -71,6 +71,10 @@ backend/.env
 backend/.env.*
 frontend/.env
 frontend/.env.*
+# Keep placeholder templates (safe to commit — no real secrets)
+!.env.example
+!backend/.env.example
+!frontend/.env.example
 
 # Local databases
 *.sqlite3
