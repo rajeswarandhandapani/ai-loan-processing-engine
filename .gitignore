@@ -37,6 +37,7 @@ htmlcov/
 
 # Backend-specific (FastAPI app)
 backend/__pycache__/
+backend/.chroma/
 backend/.pytest_cache/
 backend/.mypy_cache/
 backend/.coverage

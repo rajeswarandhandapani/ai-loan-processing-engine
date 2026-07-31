@@ -13,7 +13,7 @@ The **AI Loan Processing Engine** is a portfolio project demonstrating advanced 
 It acts as a virtual loan officer that:
 1.  **Interviews** applicants via a natural language chat.
 2.  **Analyzes** uploaded financial documents (PDFs) using **Azure Document Intelligence**.
-3.  **Validates** eligibility against complex internal policies using **Azure AI Search** (RAG).
+3.  **Validates** eligibility against complex internal policies using **RAG** — a local **ChromaDB** pipeline by default, or **Azure AI Search**.
 4.  **Decides** on pre-qualification using **Azure OpenAI (GPT-5)** or **Anthropic Claude**.
 
 ## 📸 Screenshots
@@ -38,7 +38,7 @@ It acts as a virtual loan officer that:
 |---------|-------------|---------------|
 | **Document Intelligence** | Extract data from bank statements, invoices, receipts, tax forms | Azure Document Intelligence |
 | **AI Chat Assistant** | Natural language conversation with context awareness | Azure OpenAI + LangChain |
-| **Policy RAG Search** | Query lending policies using vector similarity search | Azure AI Search |
+| **Policy RAG Search** | Query lending policies using vector similarity search | Local ChromaDB (default) *or* Azure AI Search |
 | **Sentiment Analysis** | Detect user emotions for empathetic responses | Azure AI Language |
 | **Entity Extraction** | Identify loan amounts, business types, dates automatically | Azure AI Language |
 | **Session Management** | Maintain conversation context across multiple messages | LangGraph Memory |
@@ -115,7 +115,7 @@ flowchart TB
   - **Anthropic:** Claude models as alternate LLM provider.
 - **AI Services:**
   - **Azure Document Intelligence:** Extracting data from Bank Statements/Invoices.
-  - **Azure AI Search:** Vector-based knowledge retrieval for policy documents.
+  - **ChromaDB / Azure AI Search:** Vector-based knowledge retrieval for policy documents — local by default, hosted if configured ([details](backend/app/rag/README.md)).
   - **Azure AI Language:** Sentiment analysis and entity extraction.
 - **Backend:** Python, FastAPI, Pydantic.
 - **Frontend:** Angular 21, TypeScript, RxJS.
@@ -163,8 +163,14 @@ cp .env.example .env
 uv run uvicorn app.main:app --reload --port 8000
 ```
 
-> 💡 Standalone scripts run the same way, e.g. `uv run python scripts/index_lending_policy.py`.
+> 💡 Standalone scripts run the same way, e.g. `uv run python scripts/index_lending_policy.py`
+> (indexes the lending policy so RAG search has something to retrieve — run it once).
 > Dev tools are included via the `dev` group: `uv run pytest`, `uv run ruff check app`.
+
+> 🏠 **RAG runs locally by default.** Policy search uses ChromaDB with a local
+> embedding model — no Azure account, no API keys, nothing extra to install.
+> Set `VECTOR_STORE_PROVIDER=azure` to use hosted Azure AI Search instead.
+> See [backend/app/rag/README.md](backend/app/rag/README.md).
 
 > 🌐 Backend API will be available at: `http://localhost:8000`  
 > 📚 API Docs (Swagger): `http://localhost:8000/docs`

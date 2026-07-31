@@ -35,6 +35,10 @@ dependencies = [
     "langchain-anthropic==1.5.1",
     "langgraph>=1.2,<2",               # explicit: StateGraph / ToolNode / checkpointers
     "langchain-community>=0.4,<0.5",   # AzureSearch vector store for RAG retrieval
+    # RAG — see app/rag/ for the pipeline these power
+    "langchain-chroma==1.1.0",         # local ChromaDB vector store (pulls chromadb 1.x)
+    "langchain-text-splitters>=1.1,<2", # RecursiveCharacterTextSplitter used by app/rag/ingestion.py
+    "pypdf>=5",                        # local PDF text extraction (no Azure needed)
 ]
 
 [dependency-groups]
@@ -43,6 +47,12 @@ dev = [
     "pytest-asyncio>=0.24",
     "httpx>=0.27",
     "ruff>=0.6",
+]
+# Local embedding models — opt in with `uv sync --group local-rag`. Kept out of the
+# default install because sentence-transformers pulls torch (multiple GB).
+local-rag = [
+    "langchain-huggingface>=1.0",
+    "sentence-transformers>=3",
 ]
 
 [tool.pytest.ini_options]

@@ -34,6 +34,20 @@ class Settings(BaseSettings):
     AZURE_SEARCH_ENDPOINT: str | None = None
     AZURE_SEARCH_KEY: str | None = None
 
+    # RAG / vector store — see app/rag/README.md for the full provider matrix.
+    # Vector store backend: "chroma" (local ChromaDB) or "azure" (Azure AI Search)
+    VECTOR_STORE_PROVIDER: str = "chroma"
+    # Embedding backend: "local" (ONNX, bundled with ChromaDB), "huggingface"
+    # (sentence-transformers), or "azure" (Azure OpenAI)
+    EMBEDDING_PROVIDER: str = "local"
+    # Where ChromaDB persists its data. Relative paths resolve against backend/.
+    CHROMA_PERSIST_DIR: str = ".chroma"
+    # Local embedding model, used only when EMBEDDING_PROVIDER=huggingface
+    HUGGINGFACE_EMBEDDING_MODEL: str = "sentence-transformers/all-MiniLM-L6-v2"
+    # PDF parser for policy ingestion: "auto" (Azure DI if configured, else pypdf),
+    # "pypdf" (local), or "azure_di" (Azure Document Intelligence)
+    POLICY_PDF_PARSER: str = "auto"
+
     # Azure AI Language — sentiment analysis + entity extraction
     AZURE_LANGUAGE_ENDPOINT: str | None = None
     AZURE_LANGUAGE_KEY: str | None = None
@@ -68,3 +82,16 @@ class Settings(BaseSettings):
 def get_settings() -> Settings:
     """Return the cached Settings instance (reads .env once)."""
     return Settings()
+
+
+def is_configured(value: str | None) -> bool:
+    """True if a setting holds a real value rather than a placeholder.
+
+    `.env.example` ships values like `https://<your-resource>.search.windows.net`,
+    and a half-filled `.env` is the normal state of this project. Treating those
+    as configured produces confusing DNS errors deep inside an SDK, so anything
+    still carrying the `<...>` placeholder markers counts as unset.
+    """
+    if not value or not value.strip():
+        return False
+    return "<" not in value and ">" not in value

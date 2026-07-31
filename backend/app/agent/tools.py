@@ -14,8 +14,8 @@ from collections.abc import Callable
 
 from azure.ai.textanalytics import TextAnalyticsClient
 from langchain.tools import ToolRuntime
-from langchain_community.vectorstores.azuresearch import AzureSearch
 from langchain_core.tools import BaseTool, tool
+from langchain_core.vectorstores import VectorStore
 
 from app.core.errors import tool_errors
 from app.core.logging import get_logger
@@ -28,7 +28,7 @@ POLICY_SEARCH_K = 5
 
 
 def make_tools(
-    vector_store_factory: Callable[[], AzureSearch],
+    vector_store_factory: Callable[[], VectorStore],
     language_client: TextAnalyticsClient,
     session_store: SessionDocumentStore,
 ) -> list[BaseTool]:
@@ -36,11 +36,12 @@ def make_tools(
 
     The vector store is created lazily on first search (via
     `vector_store_factory`) so app startup does not require a live connection to
-    Azure AI Search — only actually using the RAG tool does.
+    the search backend — only actually using the RAG tool does. Any LangChain
+    `VectorStore` works here; which one is live is a config choice (see app/rag/).
     """
-    cached: dict[str, AzureSearch] = {}
+    cached: dict[str, VectorStore] = {}
 
-    def vector_store() -> AzureSearch:
+    def vector_store() -> VectorStore:
         if "store" not in cached:
             cached["store"] = vector_store_factory()
         return cached["store"]

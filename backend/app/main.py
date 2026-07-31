@@ -18,10 +18,10 @@ from app.api import chat, documents
 from app.core.clients import (
     make_chat_model,
     make_language_client,
-    make_vector_store,
 )
 from app.core.config import Settings, get_settings
 from app.core.logging import get_logger, setup_logging
+from app.rag import make_vector_store
 from app.services.document_intelligence import DocumentIntelligenceService
 from app.services.session_store import SessionDocumentStore
 
