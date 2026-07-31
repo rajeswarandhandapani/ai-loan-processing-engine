@@ -33,7 +33,7 @@
       </h6>
       
       @for (uploadFile of uploadFiles; track uploadFile.file.name; let i = $index) {
-        <div class="d-flex align-items-start gap-3 p-3 bg-white border rounded mb-2" @fadeSlideIn>
+        <div class="d-flex align-items-start gap-3 p-3 bg-white border rounded mb-2" animate.enter="file-item">
           <!-- File Icon -->
           <div class="file-icon bg-primary rounded d-flex align-items-center justify-content-center flex-shrink-0">
             <i class="bi text-white" [ngClass]="getFileIcon(uploadFile.file.name)"></i>

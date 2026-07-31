@@ -1,7 +1,6 @@
 import { Component, ElementRef, ViewChild, AfterViewChecked, Output, EventEmitter, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { trigger, transition, style, animate } from '@angular/animations';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ChatService } from '../../services/chat.service';
 import { Subscription } from 'rxjs';
@@ -37,7 +36,12 @@ export interface ChatMessage {
  * - imports: Other modules/components this component needs
  * - templateUrl: Path to the HTML template
  * - styleUrl: Path to the component-specific styles
- * - animations: Angular animations for smooth UI transitions
+ *
+ * Note on animations: message bubbles fade in via `animate.enter="message-enter"`
+ * in the template, which applies a plain CSS class (see chat.scss) while the
+ * element enters. @angular/animations is deprecated as of v20.2, and its
+ * synthetic `@trigger` bindings additionally require `provideAnimations()` to be
+ * registered — which this app deliberately does not do (see app.config.ts).
  */
 @Component({
   selector: 'app-chat',
@@ -45,26 +49,6 @@ export interface ChatMessage {
   imports: [CommonModule, FormsModule],
   templateUrl: './chat.html',
   styleUrl: './chat.scss',
-  animations: [
-    /**
-     * ======================================================================
-     * Angular Animations
-     * ======================================================================
-     * trigger() creates a named animation that can be used in templates
-     * :enter is a special state when an element is added to the DOM
-     * 
-     * This animation:
-     * 1. Starts with opacity: 0 and translateY(10px) - invisible and below
-     * 2. Animates to opacity: 1 and translateY(0) - visible and in place
-     * 3. Takes 200ms with ease-out timing (fast start, slow end)
-     */
-    trigger('messageAnimation', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(10px)' }),
-        animate('200ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
-      ])
-    ])
-  ]
 })
 /**
  * ============================================================================

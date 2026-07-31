@@ -16,6 +16,8 @@ Desktop.ini
 __pycache__/
 *.py[cod]
 *$py.class
+.playwright/
+.playwright-mcp/
 
 # Virtual environments
 .venv/

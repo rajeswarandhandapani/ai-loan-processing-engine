@@ -1,5 +1,27 @@
 // Minimal custom styles - most styling now via Bootstrap utilities
 
+// ============================================================================
+// Native CSS Animations (Angular v20.2+)
+// ============================================================================
+// Applied via `animate.enter="message-enter"` in the template, which adds this
+// class while the element enters the DOM and removes it once the animation
+// finishes. Replaces the deprecated @angular/animations `@trigger` binding.
+
+.message-enter {
+  animation: messageEnter 200ms ease-out;
+}
+
+@keyframes messageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .status-dot {
   width: 8px;
   height: 8px;

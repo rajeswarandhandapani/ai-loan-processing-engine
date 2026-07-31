@@ -51,7 +51,7 @@
       <div 
         class="d-flex gap-2 mb-3"
         [class.flex-row-reverse]="message.role === 'user'"
-        @messageAnimation>
+        animate.enter="message-enter">
         
         <!-- Avatar -->
         <div class="message-avatar rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
@@ -82,7 +82,7 @@
 
     <!-- Typing Indicator -->
     @if (isLoading) {
-      <div class="d-flex gap-2 mb-3" @messageAnimation>
+      <div class="d-flex gap-2 mb-3" animate.enter="message-enter">
         <div class="message-avatar rounded-circle bg-secondary d-flex align-items-center justify-content-center flex-shrink-0">
           <i class="bi bi-robot text-white small"></i>
         </div>
