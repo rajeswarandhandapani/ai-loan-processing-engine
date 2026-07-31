@@ -1,0 +1,18 @@
+# Copy to application-local.yml (git-ignored) and fill in your values.
+# Anything here overrides application.yml. Environment variables work equally well:
+# Spring's relaxed binding maps SPRING_AI_OPENAI_API_KEY to spring.ai.openai.api-key.
+
+spring:
+  ai:
+    openai:
+      # Resource endpoint only - application.yml appends /openai/v1.
+      base-url: https://<your-resource>.openai.azure.com/openai/v1
+      api-key: <your-azure-openai-key>
+      chat:
+        model: <your-deployment-name>
+
+app:
+  azure:
+    document-intelligence:
+      endpoint: https://<your-resource>.cognitiveservices.azure.com/
+      key: <your-document-intelligence-key>

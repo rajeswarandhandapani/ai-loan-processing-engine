@@ -1,0 +1,10 @@
+# Run with: mvn spring-boot:run -Dspring-boot.run.profiles=anthropic
+spring:
+  ai:
+    model:
+      chat: anthropic
+    anthropic:
+      api-key: ${ANTHROPIC_API_KEY:}
+      chat:
+        model: ${ANTHROPIC_MODEL:claude-sonnet-5}
+        max-tokens: 2048

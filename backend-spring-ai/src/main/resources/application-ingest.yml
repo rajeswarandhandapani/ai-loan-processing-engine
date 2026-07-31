@@ -1,0 +1,7 @@
+# Profile for the one-off policy indexing job: no web server, no chat model.
+spring:
+  main:
+    web-application-type: none
+  ai:
+    model:
+      chat: none

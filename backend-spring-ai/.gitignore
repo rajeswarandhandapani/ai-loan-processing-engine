@@ -1,0 +1,8 @@
+target/
+.vectorstore/
+src/main/resources/application-local.yml
+
+# IDE
+.idea/
+*.iml
+.vscode/

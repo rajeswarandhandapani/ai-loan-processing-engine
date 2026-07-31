@@ -1,0 +1,83 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: ai-loan-processing-engine
+
+  # Java 25 + Boot 4: blocking LLM/Azure calls no longer tie up platform threads.
+  threads:
+    virtual:
+      enabled: true
+
+  jackson:
+    # The API speaks snake_case; Java stays camelCase. Only bean properties are renamed,
+    # so Azure field names inside the `fields` map (VendorName, InvoiceTotal, ...) pass through.
+    property-naming-strategy: SNAKE_CASE
+
+  servlet:
+    multipart:
+      # Deliberately above our own per-type caps so the API returns its own 413 message
+      # rather than the container's generic one.
+      max-file-size: 20MB
+      max-request-size: 25MB
+
+  mvc:
+    async:
+      # Bounds a whole chat turn, including every tool-calling round trip.
+      request-timeout: 90s
+
+  ai:
+    model:
+      chat: openai          # 'anthropic' via the anthropic profile
+      embedding: transformers
+      # The OpenAI starter auto-configures speech/transcription/image/moderation models too.
+      # This app only chats, so switch the rest off or they fail at startup.
+      audio:
+        speech: none
+        transcription: none
+      image: none
+      moderation: none
+    vectorstore:
+      # Must be set explicitly: AzureVectorStoreAutoConfiguration is matchIfMissing=true,
+      # so leaving this blank would activate the Azure store and fail without credentials.
+      type: simple
+    chat:
+      client:
+        tool-calling:
+          enabled: true     # auto-registers ToolCallingAdvisor; the agent loop comes from this
+    openai:
+      # Spring AI 2.0 removed the separate Azure OpenAI module, so Azure is reached through the
+      # OpenAI client. Point base-url at Azure's OpenAI-compatible v1 endpoint and pass the
+      # deployment name as the model.
+      #
+      # Not `microsoft-foundry: true`: that mode targets the legacy
+      # /openai/deployments/{name}/chat/completions path, which Foundry resources answer with 404.
+      # The v1 endpoint accepts the resource key as a bearer token, which is what this client sends.
+      base-url: ${AZURE_OPENAI_ENDPOINT:}/openai/v1
+      api-key: ${AZURE_OPENAI_API_KEY:}
+      chat:
+        model: ${AZURE_OPENAI_DEPLOYMENT_NAME:gpt-4o}
+        # max-completion-tokens, not max-tokens: current models reject the older parameter.
+        max-completion-tokens: 2048
+      # timeout (60s) and max-retries (3) are already the defaults.
+
+app:
+  rag:
+    policy-resource: classpath:policy/lending-policy.md
+    title: Small Business Lending Policy
+    # Tokens, not characters: TokenTextSplitter counts tokens. Small chunks matter here because
+    # the policy is short - at 250+ tokens it splits into only ~4 pieces and a top-5 search
+    # returns the entire document, which defeats the point of retrieving.
+    chunk-size: 110
+    top-k: 5
+    store-file: .vectorstore/policy.json
+  azure:
+    document-intelligence:
+      endpoint: ${AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT:}
+      key: ${AZURE_DOCUMENT_INTELLIGENCE_KEY:}
+
+logging:
+  level:
+    com.rajes.loanengine: INFO
+    org.springframework.ai: INFO
